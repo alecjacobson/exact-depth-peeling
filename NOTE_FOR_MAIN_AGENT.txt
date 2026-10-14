@@ -1,0 +1,25 @@
+User clarification from side conversation: stacked-footprint benchmark
+
+The user emphasizes that identical stacked footprints are not representative
+of most 3D models. Treat this as a targeted diagnostic of repeated-pass
+overhead, and keep it separate from conclusions about typical mesh workloads.
+Prioritize connected meshes, realistic cameras/depth complexity, and K=1,2,4
+when assessing practical usefulness.
+
+Correction to the side assistant's earlier explanation: N+(N-1)+...+1 source
+visits describes an implementation that scans every remaining source each
+pass. It is not an inherent lower bound for geometric depth peeling, and it
+does not establish this fixture as a pathological hard case for the problem.
+These constant-depth, identical-footprint surfaces can be sorted once in
+O(N log N), then emitted in O(N) total. A persistent balanced structure ordered
+by depth can also find/remove the nearest remaining source in O(log N) per
+layer. A suitable BVH with certified depth bounds can reject entire subtrees;
+a hierarchy using only projected boxes cannot distinguish identical footprints.
+An arbitrary BVH does not automatically guarantee logarithmic queries.
+
+Implication for findings and next steps: attribute poor stack timings to the
+specific repeated scanning/rebuilding and lack of cross-pass reuse. Consider
+a sort-once stack baseline and persistent depth-aware hierarchy before treating
+those timings as evidence against peeling. The user correctly pointed out
+that this stack is solvable efficiently; finding a genuinely difficult case
+requires more than identical footprints at distinct constant depths.
