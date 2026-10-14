@@ -1,0 +1,200 @@
+{
+  "status": "passed",
+  "subprocess_checks": 2216,
+  "fixtures": [
+    {
+      "fixture": "single",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "window_clipped",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "disjoint",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "stacked",
+      "status": "passed",
+      "all_layers": 4
+    },
+    {
+      "fixture": "partial",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "holes",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "components",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "crossing",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "coplanar_adjacent",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "shared_vertex",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "tie",
+      "status": "expected_rejection"
+    },
+    {
+      "fixture": "hidden_tie",
+      "status": "expected_rejection"
+    },
+    {
+      "fixture": "slivers",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "edge_on",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "closed_object",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "cover_2",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "empty",
+      "status": "passed",
+      "all_layers": 0
+    },
+    {
+      "fixture": "binary_float",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "cyclic",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "perspective_partial",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "perspective_crossing",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "perspective_near",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "perspective_behind",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "camera_transform",
+      "status": "passed",
+      "all_layers": 1
+    },
+    {
+      "fixture": "random_00",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "random_01",
+      "status": "passed",
+      "all_layers": 4
+    },
+    {
+      "fixture": "random_02",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "random_03",
+      "status": "passed",
+      "all_layers": 2
+    },
+    {
+      "fixture": "random_04",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "random_05",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "random_06",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "random_07",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "random_08",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "random_09",
+      "status": "passed",
+      "all_layers": 3
+    },
+    {
+      "fixture": "random_10",
+      "status": "passed",
+      "all_layers": 4
+    },
+    {
+      "fixture": "random_11",
+      "status": "passed",
+      "all_layers": 3
+    }
+  ],
+  "requested_prefixes": [
+    1,
+    2,
+    4
+  ],
+  "orders": [
+    "input",
+    "random",
+    "near-first",
+    "reverse"
+  ],
+  "unaccelerated_orders": [
+    "input",
+    "random",
+    "near-first"
+  ]
+}

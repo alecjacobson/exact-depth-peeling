@@ -1,0 +1,39 @@
+{
+  "window": [
+    "-5",
+    "-5",
+    "5",
+    "5"
+  ],
+  "camera": {
+    "type": "perspective",
+    "near": "1/2"
+  },
+  "triangles": [
+    {
+      "vertices": [
+        [
+          "-1",
+          "-1",
+          "-1"
+        ],
+        [
+          "2",
+          "-1",
+          "2"
+        ],
+        [
+          "0",
+          "2",
+          "2"
+        ]
+      ],
+      "id": 0
+    }
+  ],
+  "metadata": {
+    "source": "scripts/generate_fixtures.py",
+    "license": "CC0-1.0",
+    "backface_culling": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "window": [
+    "-5",
+    "-5",
+    "5",
+    "5"
+  ],
+  "camera": {
+    "type": "orthographic"
+  },
+  "triangles": [],
+  "metadata": {
+    "source": "scripts/generate_fixtures.py",
+    "license": "CC0-1.0",
+    "backface_culling": false
+  }
+}

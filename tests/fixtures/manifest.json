@@ -1,0 +1,150 @@
+{
+  "generator": "scripts/generate_fixtures.py",
+  "license": "CC0-1.0",
+  "fixtures": [
+    {
+      "name": "single",
+      "expected": "accept"
+    },
+    {
+      "name": "window_clipped",
+      "expected": "accept"
+    },
+    {
+      "name": "disjoint",
+      "expected": "accept"
+    },
+    {
+      "name": "stacked",
+      "expected": "accept"
+    },
+    {
+      "name": "partial",
+      "expected": "accept"
+    },
+    {
+      "name": "holes",
+      "expected": "accept"
+    },
+    {
+      "name": "components",
+      "expected": "accept"
+    },
+    {
+      "name": "crossing",
+      "expected": "accept"
+    },
+    {
+      "name": "coplanar_adjacent",
+      "expected": "accept"
+    },
+    {
+      "name": "shared_vertex",
+      "expected": "accept"
+    },
+    {
+      "name": "tie",
+      "expected": "reject_positive_area_tie"
+    },
+    {
+      "name": "hidden_tie",
+      "expected": "reject_positive_area_tie"
+    },
+    {
+      "name": "slivers",
+      "expected": "accept"
+    },
+    {
+      "name": "edge_on",
+      "expected": "accept"
+    },
+    {
+      "name": "closed_object",
+      "expected": "accept"
+    },
+    {
+      "name": "cover_2",
+      "expected": "accept"
+    },
+    {
+      "name": "empty",
+      "expected": "accept"
+    },
+    {
+      "name": "binary_float",
+      "expected": "accept"
+    },
+    {
+      "name": "cyclic",
+      "expected": "accept"
+    },
+    {
+      "name": "perspective_partial",
+      "expected": "accept"
+    },
+    {
+      "name": "perspective_crossing",
+      "expected": "accept"
+    },
+    {
+      "name": "perspective_near",
+      "expected": "accept"
+    },
+    {
+      "name": "perspective_behind",
+      "expected": "accept"
+    },
+    {
+      "name": "camera_transform",
+      "expected": "accept"
+    },
+    {
+      "name": "random_00",
+      "expected": "accept"
+    },
+    {
+      "name": "random_01",
+      "expected": "accept"
+    },
+    {
+      "name": "random_02",
+      "expected": "accept"
+    },
+    {
+      "name": "random_03",
+      "expected": "accept"
+    },
+    {
+      "name": "random_04",
+      "expected": "accept"
+    },
+    {
+      "name": "random_05",
+      "expected": "accept"
+    },
+    {
+      "name": "random_06",
+      "expected": "accept"
+    },
+    {
+      "name": "random_07",
+      "expected": "accept"
+    },
+    {
+      "name": "random_08",
+      "expected": "accept"
+    },
+    {
+      "name": "random_09",
+      "expected": "accept"
+    },
+    {
+      "name": "random_10",
+      "expected": "accept"
+    },
+    {
+      "name": "random_11",
+      "expected": "accept"
+    }
+  ]
+}
