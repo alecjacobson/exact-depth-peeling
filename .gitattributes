@@ -1,0 +1,7 @@
+results/benchmark/runs.jsonl filter=lfs diff=lfs merge=lfs -text
+results/examples/perspective-torus-384/envelope-peel-all/exact.json filter=lfs diff=lfs merge=lfs -text
+results/examples/perspective-torus-384/envelope-peel/exact.json filter=lfs diff=lfs merge=lfs -text
+results/examples/perspective-torus-384/visible-peel-all/exact.json filter=lfs diff=lfs merge=lfs -text
+results/examples/perspective-torus-384/visible-peel/exact.json filter=lfs diff=lfs merge=lfs -text
+results/other/runs.jsonl filter=lfs diff=lfs merge=lfs -text
+results/stacks/runs.jsonl filter=lfs diff=lfs merge=lfs -text

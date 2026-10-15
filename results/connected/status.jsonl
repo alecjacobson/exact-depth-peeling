@@ -1,0 +1,8 @@
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}

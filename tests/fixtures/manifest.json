@@ -99,6 +99,10 @@
       "expected": "accept"
     },
     {
+      "name": "perspective_torus",
+      "expected": "accept"
+    },
+    {
       "name": "random_00",
       "expected": "accept"
     },

@@ -1,0 +1,12 @@
+{"suite": "perspective-torus", "size": 4, "input_sources": 384, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-torus", "size": 4, "input_sources": 384, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-torus", "size": 4, "input_sources": 384, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-torus", "size": 4, "input_sources": 384, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-torus", "size": 4, "input_sources": 384, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-torus", "size": 4, "input_sources": 384, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-box", "size": 10, "input_sources": 1200, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-box", "size": 10, "input_sources": 1200, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-box", "size": 10, "input_sources": 1200, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-box", "size": 10, "input_sources": 1200, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-box", "size": 10, "input_sources": 1200, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "perspective-box", "size": 10, "input_sources": 1200, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}

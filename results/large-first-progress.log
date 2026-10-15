@@ -1,0 +1,10 @@
+foreground-cover 64 K=1 visible-peel/near-first: 0.0041s
+foreground-cover 64 K=1 visible-peel/input: 0.0033s
+foreground-cover 64 K=1 visible-peel/random: 0.9760s
+foreground-cover 64 K=1 visible-peel/reverse: timeout
+foreground-cover 64 K=1 envelope-peel/input: 0.4989s
+no-foreground 64 K=1 visible-peel/near-first: timeout
+no-foreground 64 K=1 visible-peel/input: timeout
+no-foreground 64 K=1 visible-peel/random: timeout
+no-foreground 64 K=1 visible-peel/reverse: timeout
+no-foreground 64 K=1 envelope-peel/input: timeout

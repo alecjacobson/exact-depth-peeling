@@ -1,0 +1,9 @@
+suite,size,input_sources,layers,method,order,status,median_seconds,min_seconds,max_seconds,setup_median_seconds,peak_rss_kib,warmup_validation_seconds,output_triangles,layer1_boundary_vertices,layer1_triangles,candidate_tests,box_rejections,complete_occlusion_rejections,polygon_intersections,polygon_differences,depth_halfplane_clips,adapter_triangles,materialized_result_boundary_vertices,arrangement_vertices,arrangement_edges,max_visible_map_boundary_vertices,raw_arrangement_triangles
+nested-mesh,2,96,1,visible-peel,near-first,ok,0.053637336,0.053491099,0.053727452,0.011109303,13244,0.015334891,24,72,24,340,841,0,210,371,74,0,1346,0,0,72,0
+nested-mesh,2,96,1,envelope-peel,input,ok,0.04786916,0.04737954,0.04792333,0.011126556,13248,0.015084357,24,72,24,0,0,0,0,24,0,96,72,19,42,0,0
+nested-mesh,2,96,all,visible-peel,near-first,ok,0.144813674,0.144653528,0.145365877,0.011106169,13248,0.081603333,144,72,24,766,2499,0,639,855,208,0,3661,0,0,166,0
+nested-mesh,2,96,all,envelope-peel,input,ok,0.114076491,0.113876668,0.11465828,0.011159605,13248,0.076946215,138,72,24,0,0,0,0,103,0,220,386,98,205,0,0
+nested-mesh,7,1176,1,visible-peel,near-first,ok,2.813903304,2.807318992,2.814439295,0.229750122,30040,0.419408554,294,882,294,4406,123764,54,1891,4332,620,0,15398,0,0,882,0
+nested-mesh,7,1176,1,envelope-peel,input,ok,0.749380189,0.743274195,0.753790511,0.230780739,54012,0.460606303,294,882,294,0,0,0,0,294,0,1176,882,169,462,0,0
+nested-mesh,7,1176,all,visible-peel,near-first,ok,7.594364936,7.548037295,7.631144265,0.229513423,43012,2.296395861,1347,882,294,9989,352351,54,5240,9524,1436,0,39531,0,0,1769,0
+nested-mesh,7,1176,all,envelope-peel,input,ok,1.810082291,1.806805591,1.820113247,0.230799792,66500,2.399880578,1312,882,294,0,0,0,0,1206,0,2484,3822,741,1961,0,0

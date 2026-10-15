@@ -1,0 +1,5 @@
+suite,size,input_sources,layers,method,order,status,median_seconds,min_seconds,max_seconds,setup_median_seconds,peak_rss_kib,warmup_validation_seconds,output_triangles,layer1_boundary_vertices,layer1_triangles,candidate_tests,box_rejections,complete_occlusion_rejections,polygon_intersections,polygon_differences,depth_halfplane_clips,adapter_triangles,materialized_result_boundary_vertices,arrangement_vertices,arrangement_edges,max_visible_map_boundary_vertices,raw_arrangement_triangles
+foreground-cover,64,257,1,visible-peel,near-first,ok,0.004137737,0.004119711,0.004167075,0.044120021,11800,0.009568543,1,3,1,0,0,256,0,1,0,0,0,0,0,3,0
+foreground-cover,64,257,1,visible-peel,input,ok,0.003335027,0.003329518,0.003349811,0.0440626,11804,0.0095961,1,3,1,0,0,256,0,1,0,0,0,0,0,3,0
+foreground-cover,64,257,1,visible-peel,random,ok,0.975992386,0.973849953,0.980257737,0.043947124,13860,0.010540898,1,3,1,1230,21038,188,6,1225,0,0,80764,0,0,4420,0
+foreground-cover,64,257,1,envelope-peel,input,ok,0.49894402,0.494533302,0.50947987,0.044153488,106296,0.010318853,1,3,1,0,0,0,0,1,0,257,3,3,3,0,0

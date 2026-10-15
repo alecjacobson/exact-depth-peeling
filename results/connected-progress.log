@@ -1,0 +1,8 @@
+connected-mesh 2 K=1 visible-peel/near-first: 0.0344s
+connected-mesh 2 K=1 envelope-peel/input: 0.0248s
+connected-mesh 2 K=all visible-peel/near-first: 0.0433s
+connected-mesh 2 K=all envelope-peel/input: 0.0343s
+connected-mesh 10 K=1 visible-peel/near-first: 5.7155s
+connected-mesh 10 K=1 envelope-peel/input: 0.8943s
+connected-mesh 10 K=all visible-peel/near-first: 8.0829s
+connected-mesh 10 K=all envelope-peel/input: 1.3321s

@@ -1,0 +1,8 @@
+nested-mesh 2 K=1 visible-peel/near-first: 0.0536s
+nested-mesh 2 K=1 envelope-peel/input: 0.0479s
+nested-mesh 2 K=all visible-peel/near-first: 0.1448s
+nested-mesh 2 K=all envelope-peel/input: 0.1141s
+nested-mesh 7 K=1 visible-peel/near-first: 2.8139s
+nested-mesh 7 K=1 envelope-peel/input: 0.7494s
+nested-mesh 7 K=all visible-peel/near-first: 7.5944s
+nested-mesh 7 K=all envelope-peel/input: 1.8101s

@@ -1,0 +1,70 @@
+{
+  "executable_sha256": "f0b5f2e422b94683ec856154f37ad9a3cdc2c200223a9099002f932f60d4506e",
+  "suite": "other",
+  "methods": [
+    "visible-peel",
+    "envelope-peel",
+    "arrangement"
+  ],
+  "orders": [
+    "near-first",
+    "input",
+    "random",
+    "reverse"
+  ],
+  "layers": [
+    "1",
+    "2",
+    "4",
+    "all"
+  ],
+  "only_workloads": null,
+  "sizes": [
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "repetitions": 3,
+  "timeout_seconds": 5.0,
+  "total_budget_seconds": 180.0,
+  "memory_cap_mib": 2048,
+  "seed": 1729,
+  "cpu": "Intel(R) Xeon(R) Platinum 8362 CPU @ 2.80GHz",
+  "dependencies": {
+    "packages": {
+      "libcgal-dev": "5.4-1",
+      "libgmp-dev": "2:6.2.1+dfsg-3ubuntu1",
+      "libmpfr-dev": "4.1.0-3build3",
+      "libboost-dev": "1.74.0.3ubuntu7",
+      "nlohmann-json3-dev": "3.10.5-2"
+    },
+    "cgal": {
+      "tag": "v5.4",
+      "upstream_commit": "c58ac97e93c838ebfb1e8adaf23ff4fd185dc8e4",
+      "source": "https://github.com/CGAL/cgal",
+      "installed_from": "Ubuntu package libcgal-dev 5.4-1",
+      "documentation_reference": "6.2",
+      "api_adaptations": "Use 5.4 hole iterators and exact CDT; classify labelled faces directly rather than mark_domain_in_triangulation."
+    },
+    "vectorizer_reference": {
+      "repository": "https://github.com/MangoSister/vectorizer2-archive",
+      "commit": "da0c36ddc32d072c6cb63c1b9e87fdec004d0b57",
+      "inspected": [
+        "src/vbvh.cpp",
+        "src/vbvh.h",
+        "src/polygon.cpp"
+      ],
+      "incorporated_source": false
+    },
+    "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "cmake": "cmake version 4.4.0",
+    "python": "3.10.12",
+    "matplotlib": "3.10.9"
+  },
+  "warmups": 1,
+  "timing": "algorithm excludes validation, serialization and projection/preflight; latter separately recorded",
+  "large_scene_validation": "exact invariants without arrangement oracle; all validations in warmup only"
+}

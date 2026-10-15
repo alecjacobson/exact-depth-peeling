@@ -1,0 +1,12 @@
+perspective-torus 4 K=1 visible-peel/near-first: 0.6957s
+perspective-torus 4 K=1 envelope-peel/input: 0.3131s
+perspective-torus 4 K=2 visible-peel/near-first: 1.2504s
+perspective-torus 4 K=2 envelope-peel/input: 0.5546s
+perspective-torus 4 K=4 visible-peel/near-first: 1.3935s
+perspective-torus 4 K=4 envelope-peel/input: 0.7258s
+perspective-box 10 K=1 visible-peel/near-first: 5.3138s
+perspective-box 10 K=1 envelope-peel/input: 1.0022s
+perspective-box 10 K=2 visible-peel/near-first: 10.3841s
+perspective-box 10 K=2 envelope-peel/input: 1.9045s
+perspective-box 10 K=4 visible-peel/near-first: 10.4008s
+perspective-box 10 K=4 envelope-peel/input: 1.8856s

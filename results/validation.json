@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "subprocess_checks": 2216,
+  "subprocess_checks": 2281,
   "fixtures": [
     {
       "fixture": "single",
@@ -119,6 +119,11 @@
       "fixture": "camera_transform",
       "status": "passed",
       "all_layers": 1
+    },
+    {
+      "fixture": "perspective_torus",
+      "status": "passed",
+      "all_layers": 4
     },
     {
       "fixture": "random_00",

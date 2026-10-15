@@ -1,0 +1,672 @@
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 1, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 2, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 2, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 2, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 4, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 4, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": 4, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": "all", "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": "all", "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 2, "input_sources": 9, "layers": "all", "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 1, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 2, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": 4, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 2, "input_sources": 8, "layers": "all", "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 1, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 2, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 2, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 2, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 4, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 4, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": 4, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": "all", "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": "all", "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 4, "input_sources": 17, "layers": "all", "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 1, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 2, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": 4, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 4, "input_sources": 16, "layers": "all", "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 1, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 2, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 2, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 2, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 4, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 4, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": 4, "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": "all", "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": "all", "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 8, "input_sources": 33, "layers": "all", "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 1, "method": "arrangement", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 2, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 2, "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 4, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": 4, "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 8, "input_sources": 32, "layers": "all", "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 1, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 2, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 2, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 2, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 2, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 4, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 4, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 4, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": 4, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": "all", "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": "all", "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": "all", "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 16, "input_sources": 65, "layers": "all", "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 1, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 1, "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 2, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 2, "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 4, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": 4, "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": "all", "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 16, "input_sources": 64, "layers": "all", "method": "arrangement", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 1, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 2, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 2, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 2, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 2, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 4, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 4, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 4, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": 4, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": "all", "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": "all", "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": "all", "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 32, "input_sources": 129, "layers": "all", "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 1, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 1, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 1, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 1, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 2, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 2, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 2, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 2, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 4, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 4, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 4, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": 4, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": "all", "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": "all", "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 32, "input_sources": 128, "layers": "all", "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 2, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 4, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": "all", "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 2, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 4, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": "all", "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 2, "input_sources": 2, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 4, "input_sources": 4, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 8, "input_sources": 8, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 16, "input_sources": 16, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 32, "input_sources": 32, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "stacked", "size": 64, "input_sources": 64, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 8, "input_sources": 8, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 32, "input_sources": 32, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "disjoint", "size": 64, "input_sources": 64, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "holes", "size": 0, "input_sources": 3, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "cyclic", "size": 0, "input_sources": 3, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "crossing", "size": 0, "input_sources": 2, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "random_07", "size": 0, "input_sources": 5, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "perspective_near", "size": 0, "input_sources": 2, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 1, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 2, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": 4, "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 2, "input_sources": 48, "layers": "all", "method": "arrangement", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 1, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 2, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 2, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 2, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 2, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 2, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 2, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 4, "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 4, "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 4, "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 4, "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 4, "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": 4, "method": "arrangement", "order": "input", "status": "oracle_cap"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "visible-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "visible-peel", "order": "random", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "visible-peel", "order": "reverse", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "envelope-peel", "order": "input", "status": "total_budget_exhausted"}
+{"suite": "connected-mesh", "size": 10, "input_sources": 1200, "layers": "all", "method": "arrangement", "order": "input", "status": "oracle_cap"}

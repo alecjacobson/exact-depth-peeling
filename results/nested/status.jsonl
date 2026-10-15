@@ -1,0 +1,8 @@
+{"suite": "nested-mesh", "size": 2, "input_sources": 96, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 2, "input_sources": 96, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 2, "input_sources": 96, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 2, "input_sources": 96, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 7, "input_sources": 1176, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 7, "input_sources": 1176, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 7, "input_sources": 1176, "layers": "all", "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "nested-mesh", "size": 7, "input_sources": 1176, "layers": "all", "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}

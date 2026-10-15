@@ -1,0 +1,20 @@
+{
+  "executable_sha256": "f0b5f2e422b94683ec856154f37ad9a3cdc2c200223a9099002f932f60d4506e",
+  "suite": "all",
+  "sizes": [
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "repetitions": 3,
+  "timeout_seconds": 5.0,
+  "total_budget_seconds": 600.0,
+  "memory_cap_mib": 2048,
+  "seed": 1729,
+  "warmups": 1,
+  "timing": "algorithm excludes validation, serialization and projection/preflight; latter separately recorded",
+  "large_scene_validation": "exact invariants without arrangement oracle; all validations in warmup only"
+}

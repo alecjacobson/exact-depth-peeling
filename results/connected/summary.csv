@@ -1,0 +1,9 @@
+suite,size,input_sources,layers,method,order,status,median_seconds,min_seconds,max_seconds,setup_median_seconds,peak_rss_kib,warmup_validation_seconds,output_triangles,layer1_boundary_vertices,layer1_triangles,candidate_tests,box_rejections,complete_occlusion_rejections,polygon_intersections,polygon_differences,depth_halfplane_clips,adapter_triangles,materialized_result_boundary_vertices,arrangement_vertices,arrangement_edges,max_visible_map_boundary_vertices,raw_arrangement_triangles
+connected-mesh,2,48,1,visible-peel,near-first,ok,0.034365536,0.034334094,0.034638967,0.005551249,14200,0.080920142,24,72,24,196,397,0,210,247,74,0,1070,0,0,72,0
+connected-mesh,2,48,1,envelope-peel,input,ok,0.024772859,0.024719829,0.024857438,0.005585651,14208,0.096343168,24,72,24,0,0,0,0,24,0,48,72,19,42,0,0
+connected-mesh,2,48,all,visible-peel,near-first,ok,0.043282745,0.043222934,0.043538003,0.00560297,14208,0.11923034,48,72,24,232,629,0,246,271,74,0,1070,0,0,72,0
+connected-mesh,2,48,all,envelope-peel,input,ok,0.034264353,0.034045158,0.034379318,0.005656039,14208,0.118154534,48,72,24,0,0,0,0,48,0,72,144,38,84,0,0
+connected-mesh,10,1200,1,visible-peel,near-first,ok,5.715549199,5.683396148,5.753092522,0.332393032,34880,1.222816947,600,1800,600,4698,256128,0,3166,5002,950,0,19747,0,0,1800,0
+connected-mesh,10,1200,1,envelope-peel,input,ok,0.894257116,0.886996116,0.895792551,0.332777927,57116,1.253504953,600,1800,600,0,0,0,0,600,0,1200,1800,331,930,0,0
+connected-mesh,10,1200,all,visible-peel,near-first,ok,8.082913576,8.053427147,8.092931735,0.332711,39860,2.460046418,1200,1800,600,5758,397920,0,4226,5602,950,0,19747,0,0,1800,0
+connected-mesh,10,1200,all,envelope-peel,input,ok,1.332093601,1.330561006,1.36211725,0.333138649,58960,2.583913514,1200,1800,600,0,0,0,0,1200,0,1800,3600,662,1860,0,0

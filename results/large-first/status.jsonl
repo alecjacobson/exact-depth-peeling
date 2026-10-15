@@ -1,0 +1,10 @@
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "random", "status": "ok", "completed_repetitions": 3}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "foreground-cover", "size": 64, "input_sources": 257, "layers": 1, "method": "envelope-peel", "order": "input", "status": "ok", "completed_repetitions": 3}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "near-first", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "random", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "visible-peel", "order": "reverse", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
+{"suite": "no-foreground", "size": 64, "input_sources": 256, "layers": 1, "method": "envelope-peel", "order": "input", "status": "timeout", "phase": "warmup_validation", "repetition": -1, "completed_repetitions": 0}
