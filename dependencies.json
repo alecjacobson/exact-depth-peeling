@@ -50,5 +50,16 @@
     "constructions": "exact rational",
     "source_incorporated": false,
     "input_contract": "consistently oriented manifold with optional boundary; positive-area coincident surfaces unsupported"
+  },
+  "dragon_render": {
+    "blender": "4.5.3",
+    "engine": "Cycles / OptiX",
+    "gpu": "NVIDIA L40",
+    "numpy": "2.2.6",
+    "scipy": "1.15.0",
+    "opencv": "5.0.0",
+    "Pillow": "12.3.0",
+    "optional": true,
+    "used_for": "lossless export packing, display-resolution outlines, Blender rendering and GIF encoding; excluded from solver timings"
   }
 }

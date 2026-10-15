@@ -55,7 +55,8 @@ struct Scene {
   std::vector<Source> sources;
   std::map<int, size_t> source_lookup;
   int input_sources = 0, zero_area = 0, clipped_empty = 0;
-  Json manifest;
+  Json manifest, topology;
+  std::vector<std::array<P, 2>> contours;
   const Source &source(int id) const;
 };
 struct Face {
@@ -90,6 +91,7 @@ struct Result {
   std::vector<Layer> layers;
   Domains residual;
   Stats eager_stats;
+  Json classification;
   Json oracle_cells = Json::array();
   std::vector<Patch> residual_patches;
   bool convex_representation = false;
@@ -117,7 +119,7 @@ Set halfplane(const Score &s, const Box &w);
 Score difference(const Score &a, const Score &b);
 Json set_json(const Set &s);
 Set read_set(const Json &j);
-Scene read_scene(const std::string &path, bool convex_only = false);
+Scene read_scene(const std::string &path, bool convex_only = false, bool resolved_mesh = false);
 void materialize_scene(Scene &s);
 P3 lift(const Scene &s, const Source &src, const P &p);
 std::array<Q, 3> barycentric(const Source &s, const P3 &p);

@@ -1,0 +1,20 @@
+{
+  "executable_sha256": "a77a53be8930d4f442aad12fee496a554b6269b7f673d09a3e1c5f3897d43349",
+  "scene_sha256": "a4fed8f250f6cf0e2e64b91101a259cd34b2d56e8ad9bd0b6002fd87e66f1afd",
+  "threads": 4,
+  "warmups": 1,
+  "measured_repetitions": 3,
+  "process_timeout_seconds": 180,
+  "address_space_cap_gib": 24,
+  "algorithm_includes": [
+    "rank classification",
+    "all layers",
+    "labelled triangulation"
+  ],
+  "algorithm_excludes": [
+    "JSON import/projection/topology",
+    "intersection preprocessing",
+    "audit",
+    "export"
+  ]
+}

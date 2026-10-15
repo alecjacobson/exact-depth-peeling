@@ -13,7 +13,8 @@ void help() {
          "[--verify|--validate] "
          "[--no-accelerate] [--oracle-cap N] [--threads N] [--repeat N]\n"
          "  [--metrics-only|--mesh-only] (BVH methods) [--fast-grid-bits 12..30]\n"
-         "  [--resolved-mesh] (fast mode: all intersections must already be split into edges)\n  "
+         "  [--resolved-mesh] (bvh-peel/fast-bvh-peel: all intersections must already be split "
+         "into edges)\n  "
          "--compare "
          "EXACT_JSON "
          "EXACT_JSON\nVerification runs "
@@ -92,12 +93,12 @@ int main(int argc, char **argv) {
     if (method == "fast-bvh-peel")
       return fast::run_cli(scene, out, layers, threads, repeat, fast_bits, order, seed, accelerate,
                            metrics_only, verify, validate_only, cap, resolved_mesh, mesh_only);
-    if (resolved_mesh)
-      throw std::runtime_error("--resolved-mesh applies only to fast-bvh-peel");
+    if (resolved_mesh && method != "bvh-peel")
+      throw std::runtime_error("--resolved-mesh requires bvh-peel or fast-bvh-peel");
     if ((metrics_only || mesh_only) && method != "bvh-peel" && method != "vbvh-peel")
       throw std::runtime_error("Compact output requires bvh-peel");
     auto t = Clock::now();
-    auto s = read_scene(scene, method == "bvh-peel" || method == "vbvh-peel");
+    auto s = read_scene(scene, method == "bvh-peel" || method == "vbvh-peel", resolved_mesh);
     double setup = seconds(t);
     Result r;
     std::vector<double> timings;
@@ -130,6 +131,8 @@ int main(int argc, char **argv) {
     uname(&sys);
     Json meta = {{"method", method},
                  {"order", order},
+                 {"mesh_topology", s.topology},
+                 {"rank_classification", r.classification},
                  {"seed", seed},
                  {"requested_layers", layers ? Json(layers) : Json("all")},
                  {"accelerated", accelerate},

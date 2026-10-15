@@ -1,4 +1,5 @@
 #include "geometry.h"
+#include "peel_common.h"
 #include <fstream>
 #include <set>
 namespace peel {
@@ -70,7 +71,7 @@ static Score fit(const std::array<P, 3> &p, const std::array<Q, 3> &z) {
   s.c = z[0] - s.a * p[0].x() - s.b * p[0].y();
   return s;
 }
-Scene read_scene(const std::string &path, bool convex_only) {
+Scene read_scene(const std::string &path, bool convex_only, bool resolved_mesh) {
   std::ifstream f(path);
   if (!f)
     throw std::runtime_error("Cannot open scene: " + path);
@@ -87,6 +88,7 @@ Scene read_scene(const std::string &path, bool convex_only) {
   auto wc = s.window.corners();
   Set win = domain(polygon({wc.begin(), wc.end()}));
   std::set<int> ids;
+  common::Contours<P3, P> topology;
   for (auto &t : j.at("triangles")) {
     Source src;
     src.id = t.value("id", s.input_sources);
@@ -150,11 +152,32 @@ Scene read_scene(const std::string &path, bool convex_only) {
       ++s.clipped_empty;
       continue;
     }
+    if (resolved_mesh) {
+      bool clipped_camera = !in_window;
+      for (auto &v : src.cam)
+        clipped_camera |= s.camera.perspective && v.z() < s.camera.near;
+      if (clipped_camera) {
+        for (auto edge = src.initial_polygon.edges_begin(); edge != src.initial_polygon.edges_end();
+             ++edge) {
+          s.contours.push_back({edge->source(), edge->target()});
+          ++topology.clipped;
+        }
+      } else {
+        std::array<int, 3> ids;
+        for (int i = 0; i < 3; ++i)
+          ids[i] = topology.vertex(src.world[i]);
+        int facing =
+            CGAL::orientation(projected[0], projected[1], projected[2]) == CGAL::LEFT_TURN ? 1 : -1;
+        for (int i = 0; i < 3; ++i)
+          topology.edge(ids[i], ids[(i + 1) % 3], facing, projected[i], projected[(i + 1) % 3]);
+      }
+    }
     if (!convex_only)
       src.initial = domain(src.initial_polygon);
     s.source_lookup[src.id] = s.sources.size();
     s.sources.push_back(src);
   }
+  s.topology = topology.finish(resolved_mesh, s.contours);
   // Group exact affine planes; even fully hidden duplicates must fail.
   std::map<std::array<Q, 3>, std::vector<const Source *>> groups;
   for (auto &src : s.sources)

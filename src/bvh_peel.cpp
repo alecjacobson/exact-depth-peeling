@@ -1,4 +1,5 @@
 #include "geometry.h"
+#include "peel_common.h"
 #include <CGAL/Interval_nt.h>
 #include <algorithm>
 #include <cmath>
@@ -19,6 +20,7 @@ using Ring = std::vector<P>;
 // Every floating-point bound encloses the exact coordinate/score. Bounds only
 // reject candidates; all geometry and ambiguous decisions use exact rationals.
 struct Bounds {
+  double center(int axis) const { return lo[axis] + hi[axis]; }
   double lo[2] = {INFINITY, INFINITY}, hi[2] = {-INFINITY, -INFINITY};
   double depth_lo = INFINITY, depth_hi = -INFINITY;
   void add(const P &p) {
@@ -46,60 +48,7 @@ Bounds bound(const Ring &p) {
     b.add(v);
   return b;
 }
-class BVH {
-public:
-  struct Node {
-    Bounds box;
-    int left = -1, right = -1, begin = 0, end = 0;
-  };
-  std::vector<Node> nodes;
-  std::vector<int> ids;
-  const std::vector<Bounds> &boxes;
-  explicit BVH(const std::vector<Bounds> &b) : boxes(b) {
-    ids.resize(b.size());
-    std::iota(ids.begin(), ids.end(), 0);
-    nodes.reserve(2 * b.size());
-    if (!b.empty())
-      build(0, ids.size());
-  }
-  int build(int begin, int end) {
-    int at = nodes.size();
-    nodes.emplace_back();
-    Bounds box;
-    for (int i = begin; i != end; ++i)
-      box.add(boxes[ids[i]]);
-    nodes[at].box = box;
-    if (end - begin <= 4) {
-      nodes[at].begin = begin;
-      nodes[at].end = end;
-      return at;
-    }
-    int axis = box.hi[1] - box.lo[1] > box.hi[0] - box.lo[0];
-    int mid = (begin + end) / 2;
-    std::nth_element(ids.begin() + begin, ids.begin() + mid, ids.begin() + end, [&](int a, int b) {
-      double ca = boxes[a].lo[axis] + boxes[a].hi[axis];
-      double cb = boxes[b].lo[axis] + boxes[b].hi[axis];
-      return ca == cb ? a < b : ca < cb;
-    });
-    int left = build(begin, mid), right = build(mid, end);
-    nodes[at].left = left;
-    nodes[at].right = right;
-    return at;
-  }
-  template <class F> void visit(const Bounds &b, F &&f, int at = 0) const {
-    if (nodes.empty() || !overlap(nodes[at].box, b))
-      return;
-    const auto &n = nodes[at];
-    if (n.left < 0) {
-      for (int j = n.begin; j < n.end; ++j)
-        if (overlap(boxes[ids[j]], b))
-          f(ids[j]);
-    } else {
-      visit(b, f, n.left);
-      visit(b, f, n.right);
-    }
-  }
-};
+using BVH = common::BVH<Bounds>;
 Q side(const P &a, const P &b, const P &p) {
   return (b.x() - a.x()) * (p.y() - a.y()) - (b.y() - a.y()) * (p.x() - a.x());
 }
@@ -246,36 +195,6 @@ void cut(Work &w, const Ring &occluder, const Score &delta, bool accelerate) {
     }
   }
   w.visible = std::move(next);
-}
-void query(const Scene &s, const std::vector<Patch> &input, const BVH &tree, int target, Work &w,
-           int at) {
-  if (w.visible.empty())
-    return;
-  const auto &node = tree.nodes[at];
-  ++w.stats.index_box_tests;
-  if (!overlap(node.box, tree.boxes[target]) || node.box.depth_lo >= tree.boxes[target].depth_hi) {
-    ++w.stats.box_rejections;
-    return;
-  }
-  if (node.left < 0) {
-    for (int j = node.begin; j < node.end && !w.visible.empty(); ++j) {
-      int candidate = tree.ids[j];
-      if (input[candidate].source == input[target].source ||
-          !overlap(tree.boxes[candidate], tree.boxes[target]) ||
-          tree.boxes[candidate].depth_lo >= tree.boxes[target].depth_hi)
-        continue;
-      ++w.stats.candidate_tests;
-      auto d =
-          difference(s.source(input[target].source).score, s.source(input[candidate].source).score);
-      cut(w, input[candidate].points, d, true);
-    }
-  } else {
-    int a = node.left, b = node.right;
-    if (tree.nodes[a].box.depth_lo > tree.nodes[b].box.depth_lo)
-      std::swap(a, b);
-    query(s, input, tree, target, w, a);
-    query(s, input, tree, target, w, b);
-  }
 }
 void add_stats(Stats &a, const Stats &b) {
   a.candidate_tests += b.candidate_tests;
@@ -567,61 +486,134 @@ incremental_pass(const Scene &s, const std::vector<Patch> &input, const std::str
 // Node all boundary vertices on patch edges without a global arrangement or
 // searching all source labels. The patches already carry their source IDs.
 std::vector<Face> mesh(const std::vector<Patch> &patches, int threads) {
-  std::vector<P> points;
-  for (auto &p : patches)
-    points.insert(points.end(), p.points.begin(), p.points.end());
-  std::sort(points.begin(), points.end());
-  points.erase(std::unique(points.begin(), points.end()), points.end());
-  std::vector<Bounds> boxes(points.size());
-  for (size_t i = 0; i < points.size(); ++i)
-    boxes[i].add(points[i]);
-  BVH tree(boxes);
-  std::vector<std::vector<Face>> output(patches.size());
-#pragma omp parallel for schedule(dynamic, 32) num_threads(threads)
-  for (size_t k = 0; k < patches.size(); ++k) {
-    CGAL::Protect_FPU_rounding<true> rounding(CGAL_FE_UPWARD);
-    const auto &patch = patches[k];
-    Ring ring;
-    for (size_t i = 0; i < patch.points.size(); ++i) {
-      const P &a = patch.points[i], &b = patch.points[(i + 1) % patch.points.size()];
-      Bounds box;
-      box.add(a);
-      box.add(b);
-      std::vector<P> along;
-      tree.visit(box, [&](int j) {
-        const P &v = points[j];
-        if (v != b && side_sign(a, b, v) == 0 && K::Segment_2(a, b).has_on(v))
-          along.push_back(v);
+  return common::mesh<P, Bounds, Ring, Face, std::vector<Face>>(
+      patches, threads, [] { return CGAL::Protect_FPU_rounding<true>(CGAL_FE_UPWARD); },
+      [](const P &a, const P &b, const P &v) {
+        return side_sign(a, b, v) == 0 && K::Segment_2(a, b).has_on(v);
+      },
+      [](int source, const Ring &ring, std::vector<Face> &out) {
+        if (ring.size() == 3) {
+          out.push_back({source, {ring[0], ring[1], ring[2]}});
+        } else if (ring.size() > 3) {
+          Q x = 0, y = 0;
+          for (const auto &p : ring) {
+            x += p.x();
+            y += p.y();
+          }
+          P center(x / Q(ring.size()), y / Q(ring.size()));
+          for (size_t i = 0; i < ring.size(); ++i)
+            out.push_back({source, {center, ring[i], ring[(i + 1) % ring.size()]}});
+        }
       });
-      std::sort(along.begin(), along.end());
-      if (b < a)
-        std::reverse(along.begin(), along.end());
-      ring.insert(ring.end(), along.begin(), along.end());
-    }
-    if (ring.size() == 3) {
-      output[k].push_back({patch.source, {ring[0], ring[1], ring[2]}});
-    } else if (ring.size() > 3) {
-      Q x = 0, y = 0;
-      for (const auto &p : ring) {
-        x += p.x();
-        y += p.y();
-      }
-      P center(x / Q(ring.size()), y / Q(ring.size()));
-      for (size_t i = 0; i < ring.size(); ++i)
-        output[k].push_back({patch.source, {center, ring[i], ring[(i + 1) % ring.size()]}});
-    }
-  }
-  std::vector<Face> out;
-  for (auto &v : output)
-    out.insert(out.end(), std::make_move_iterator(v.begin()), std::make_move_iterator(v.end()));
-  return out;
 }
+
 Json patch_complexity(const std::vector<Patch> &ps) {
   long n = 0;
   for (auto &p : ps)
     n += p.points.size();
   return {{"convex_patches", ps.size()}, {"patch_vertices", n}};
 }
+struct ExactPolicy {
+  using PatchType = Patch;
+  using BoxType = Bounds;
+  using WorkType = Work;
+  using LayerType = Layer;
+  using ResultType = Result;
+  const Scene &s;
+  auto guard() const { return CGAL::Protect_FPU_rounding<true>(CGAL_FE_UPWARD); }
+  bool resolved() const { return s.topology.value("resolved_mesh_contract", false); }
+  void initialize(Result &r) const { r.convex_representation = true; }
+  void residual(Result &r, std::vector<Patch> p) const { r.residual_patches = std::move(p); }
+  std::vector<Patch> originals() const {
+    std::vector<Patch> out;
+    out.reserve(s.sources.size());
+    for (auto &src : s.sources)
+      out.push_back({src.id, {src.initial_polygon.begin(), src.initial_polygon.end()}});
+    return out;
+  }
+  std::vector<Bounds> boxes(const std::vector<Patch> &patches) const {
+    std::vector<Bounds> boxes(patches.size());
+    for (size_t i = 0; i < patches.size(); ++i) {
+      boxes[i] = bound(patches[i].points);
+      auto &score = s.source(patches[i].source).score;
+      for (auto &p : patches[i].points) {
+        auto interval = CGAL::to_interval(score.at(p));
+        boxes[i].depth_lo = std::min(boxes[i].depth_lo, interval.first);
+        boxes[i].depth_hi = std::max(boxes[i].depth_hi, interval.second);
+      }
+    }
+    return boxes;
+  }
+  std::vector<Bounds> contour_boxes() const {
+    std::vector<Bounds> out(s.contours.size());
+    for (size_t i = 0; i < s.contours.size(); ++i) {
+      out[i].add(s.contours[i][0]);
+      out[i].add(s.contours[i][1]);
+    }
+    return out;
+  }
+  bool rank_eligible(int i) const { return s.sources[i].initial_polygon.size() == 3; }
+  bool touches_contour(int i, int j) const {
+    auto &polygon = s.sources[i].initial_polygon;
+    auto &e = s.contours[j];
+    // Exact convex polygon / segment separating axes. Contact is conservative.
+    for (size_t k = 0; k < polygon.size(); ++k)
+      if (side_sign(polygon[k], polygon[(k + 1) % polygon.size()], e[0]) < 0 &&
+          side_sign(polygon[k], polygon[(k + 1) % polygon.size()], e[1]) < 0)
+        return false;
+    bool positive = false, negative = false;
+    for (auto &v : polygon) {
+      int sign = side_sign(e[0], e[1], v);
+      positive |= sign >= 0;
+      negative |= sign <= 0;
+    }
+    return positive && negative;
+  }
+  auto sample(int i) const {
+    auto &r = s.sources[i].initial_polygon;
+    P p((r[0].x() + r[1].x() + r[2].x()) / 3, (r[0].y() + r[1].y() + r[2].y()) / 3);
+    Bounds b;
+    b.add(p);
+    return std::make_pair(p, b);
+  }
+  int ray_order(int i, int j, const P &p) const {
+    auto &other = s.sources[j];
+    auto &ring = other.initial_polygon;
+    bool edge = false;
+    for (size_t k = 0; k < ring.size(); ++k) {
+      int sign = side_sign(ring[k], ring[(k + 1) % ring.size()], p);
+      if (sign < 0)
+        return 0;
+      edge |= sign == 0;
+    }
+    if (edge)
+      return -1;
+    int sign = score_sign(difference(s.sources[i].score, other.score), p);
+    return sign == 0 ? -1 : int(sign > 0);
+  }
+  double near(const Bounds &b) const { return b.depth_lo; }
+  bool behind(const Bounds &a, const Bounds &b) const { return a.depth_lo >= b.depth_hi; }
+  void node_test(Work &w) const { ++w.stats.index_box_tests; }
+  void box_reject(Work &w) const { ++w.stats.box_rejections; }
+  void occluded(Work &w) const { ++w.stats.occlusion_rejections; }
+  void cut(Work &w, const Patch &target, const Patch &candidate, bool accelerate) const {
+    ++w.stats.candidate_tests;
+    peel::cut(w, candidate.points,
+              difference(s.source(target.source).score, s.source(candidate.source).score),
+              accelerate);
+  }
+  void finish(Layer &layer, int, const std::vector<Patch> &input, const std::vector<Work> &work,
+              double visibility, int threads) const {
+    layer.residual_complexity = patch_complexity(input);
+    ++layer.stats.index_rebuilds;
+    for (auto &w : work)
+      add_stats(layer.stats, w.stats);
+    layer.stats.visibility_seconds = visibility;
+    auto t = Clock::now();
+    layer.faces = mesh(layer.patches, threads);
+    layer.stats.triangulation_seconds = seconds(t);
+  }
+};
 } // namespace
 
 Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned seed,
@@ -634,6 +626,10 @@ Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned s
 #endif
   if (order != "input" && order != "near-first" && order != "random" && order != "reverse")
     throw std::runtime_error("Unknown insertion order");
+  if (!incremental) {
+    ExactPolicy policy{s};
+    return common::extract(policy, layers, threads, order, seed, accelerate);
+  }
   Result result;
   result.convex_representation = true;
   std::vector<Patch> residual;
@@ -657,66 +653,6 @@ Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned s
       result.layers.push_back(std::move(layer));
       continue;
     }
-    std::vector<Bounds> boxes(residual.size());
-    for (size_t j = 0; j < residual.size(); ++j) {
-      boxes[j] = bound(residual[j].points);
-      auto &score = s.source(residual[j].source).score;
-      for (auto &p : residual[j].points) {
-        auto interval = CGAL::to_interval(score.at(p));
-        boxes[j].depth_lo = std::min(boxes[j].depth_lo, interval.first);
-        boxes[j].depth_hi = std::max(boxes[j].depth_hi, interval.second);
-      }
-    }
-    BVH tree(boxes);
-    ++layer.stats.index_rebuilds;
-    std::vector<Work> work(residual.size());
-    std::vector<int> schedule(residual.size());
-    std::iota(schedule.begin(), schedule.end(), 0);
-    if (order == "reverse")
-      std::reverse(schedule.begin(), schedule.end());
-    if (order == "random") {
-      std::mt19937 rng(seed);
-      std::shuffle(schedule.begin(), schedule.end(), rng);
-    }
-#pragma omp parallel for schedule(dynamic, 16) num_threads(threads)
-    for (size_t j = 0; j < schedule.size(); ++j) {
-      CGAL::Protect_FPU_rounding<true> rounding(CGAL_FE_UPWARD);
-      int i = schedule[j];
-      auto &w = work[i];
-      w.visible.push_back(residual[i].points);
-      if (accelerate) {
-        query(s, residual, tree, i, w, 0);
-      } else
-        for (auto ci : schedule) {
-          if (residual[ci].source == residual[i].source || w.visible.empty())
-            continue;
-          ++w.stats.candidate_tests;
-          cut(w, residual[ci].points,
-              difference(s.source(residual[i].source).score, s.source(residual[ci].source).score),
-              false);
-        }
-      if (w.visible.empty()) {
-        // Complete occlusion needs no partition of the surviving geometry.
-        w.hidden = {residual[i].points};
-        ++w.stats.occlusion_rejections;
-      }
-    }
-    std::vector<Patch> next;
-    for (size_t i = 0; i < work.size(); ++i) {
-      add_stats(layer.stats, work[i].stats);
-      for (auto &p : work[i].visible)
-        layer.patches.push_back({residual[i].source, std::move(p)});
-      for (auto &p : work[i].hidden)
-        next.push_back({residual[i].source, std::move(p)});
-    }
-    if (layer.patches.empty())
-      throw std::runtime_error("BVH peeling made no progress");
-    layer.stats.visibility_seconds = seconds(t);
-    t = Clock::now();
-    layer.faces = mesh(layer.patches, threads);
-    layer.stats.triangulation_seconds = seconds(t);
-    residual = std::move(next);
-    result.layers.push_back(std::move(layer));
   }
   result.residual_patches = std::move(residual);
   return result;

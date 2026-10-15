@@ -1,5 +1,8 @@
 # Recorded artifacts
 
+- `contours/`: exact contour correctness checks and before/after performance regressions, including the first failed timing attempt.
+- `dragon/`: full 721,510-face input, all-layer measurements and audits, lossless mesh archive, Blender rendering, and layer-stack animation.
+
 - `fast/`: matched exact/finite-precision measurements, mesh-contour acceleration,
   numerical error audits, and an exploded rendering of the fast-mode output.
 - `validation.json`: exact fixture checks, insertion orders, and prefix tests.

@@ -1,0 +1,162 @@
+{
+  "baseline": {
+    "executable_sha256": "81694b6f52e979a8b08c920657147ca28594f8987816350b010cd44dbf2fbf13",
+    "source_sha256": {
+      "src/arrangement_oracle.cpp": "effb12dc2cf4cf5397bde6c9f848a4c920fec0dd29d460b2c8e3c6bdc5f0a981",
+      "src/bvh_peel.cpp": "513e2fe5170d429224597462f034efb920079ac987061155b4de5f7573b04f19",
+      "src/camera.cpp": "0c4603ec2c6e001647ad122fb6fb71fe9391f88a14c13624fdf5cf2b8af61e92",
+      "src/envelope_peel.cpp": "ddc460a8422974fb0eddf2d4549f029e0b7cc4693f36e8a7508f72f121b97f17",
+      "src/exact_geometry.cpp": "c7c6053dd9277128421910d101ba2961bbc304c5bab31ffd836709a64ab855de",
+      "src/fast_peel.cpp": "937006d252346675f41edc1cebded1c32c26541e6fbbfdffff7cca11e38f6d34",
+      "src/fast_peel.h": "994144fa06eb00d7e78c2f8cc62a2dc1189014e7a700eb9c34a497ff905ab52b",
+      "src/fast_reference.cpp": "e850207e0b49229817c86a8cb88da680cb0f7cc9e67526db7afb153fd851447c",
+      "src/geometry.h": "109d1d714b09ed2d2ec18a802a994c57d9a25075ff1f699d5a6f8dea9038d1d5",
+      "src/main.cpp": "3cb09f9e6ef5cafa830d0c80116577846fe577e2a35e2f4e7f9e978be8829294",
+      "src/resolve_intersections.cpp": "f6effa2957e1f4e8f008946ccf028c1a74571e6b308e74cf729326bdfb1c349d",
+      "src/topology.h": "75ead7f0ae1863a97be63c557803035f70dfc3b9397122779b3887213176391e",
+      "src/triangulate_export.cpp": "396344389c222eab95c7780726985485154dfda25f3761e7791a58ee69e12e6d",
+      "src/validation.cpp": "63eee43c389b0c0544abd517abcbc52e6ec6488a99c12ead72c67cbe82a4bdfb",
+      "src/visible_peel.cpp": "c4a822e9714b4542de838e617bd805a79161da3c52d05251364132b61bca2478"
+    },
+    "git_base_revision": "8cd6193b7f0c26fb807088043e2db2ce34a513fd",
+    "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.35",
+    "threads": 4,
+    "omp_wait_policy": "PASSIVE",
+    "cpu": "Intel(R) Xeon(R) Platinum 8362 CPU @ 2.80GHz",
+    "warmup_repetitions": 1,
+    "exact_measured_repetitions": 3,
+    "fast_measured_repetitions": 9,
+    "grid_bits": 30,
+    "memory_cap_mib": 4096,
+    "timeout_seconds": 180,
+    "timing_includes": [
+      "BVH construction",
+      "contour rank classification",
+      "complete layer extraction",
+      "labelled triangulation"
+    ],
+    "timing_excludes": [
+      "input parse/projection/topology",
+      "optional intersection preprocessing",
+      "validation",
+      "file export"
+    ],
+    "scene_sha256": {
+      "10240": "6d27b63516a6ef430202dff4cb4b8ef2f2c48c45cc51b501c71f9be2d28ef8d8",
+      "102400": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e"
+    },
+    "cpu_quota": "400000 100000"
+  },
+  "baseline_rows": [
+    {
+      "variant": "exact-bvh",
+      "input_triangles": "10240",
+      "layers": "8",
+      "median_seconds": "0.979207248",
+      "min_seconds": "0.958481064",
+      "max_seconds": "1.055653105",
+      "setup_seconds": "0.341556452",
+      "output_triangles": "26414",
+      "candidate_tests": "314922",
+      "peak_rss_kib": "183672"
+    },
+    {
+      "variant": "fast-clipping",
+      "input_triangles": "10240",
+      "layers": "8",
+      "median_seconds": "0.049763367",
+      "min_seconds": "0.042292444",
+      "max_seconds": "0.053554412",
+      "setup_seconds": "0.053314934",
+      "output_triangles": "25105",
+      "candidate_tests": "301230",
+      "peak_rss_kib": "24472"
+    },
+    {
+      "variant": "fast-contours",
+      "input_triangles": "10240",
+      "layers": "8",
+      "median_seconds": "0.024030695",
+      "min_seconds": "0.023749177",
+      "max_seconds": "0.026365508",
+      "setup_seconds": "0.070547437",
+      "output_triangles": "24005",
+      "candidate_tests": "91309",
+      "peak_rss_kib": "21936"
+    },
+    {
+      "variant": "exact-bvh",
+      "input_triangles": "102400",
+      "layers": "10",
+      "median_seconds": "9.460882189",
+      "min_seconds": "9.262658989",
+      "max_seconds": "9.493354815",
+      "setup_seconds": "3.638140107",
+      "output_triangles": "201418",
+      "candidate_tests": "3363466",
+      "peak_rss_kib": "1775136"
+    },
+    {
+      "variant": "fast-clipping",
+      "input_triangles": "102400",
+      "layers": "10",
+      "median_seconds": "0.457789819",
+      "min_seconds": "0.452662754",
+      "max_seconds": "0.553367742",
+      "setup_seconds": "0.590944254",
+      "output_triangles": "203309",
+      "candidate_tests": "3210714",
+      "peak_rss_kib": "185984"
+    },
+    {
+      "variant": "fast-contours",
+      "input_triangles": "102400",
+      "layers": "10",
+      "median_seconds": "0.192149111",
+      "min_seconds": "0.191037633",
+      "max_seconds": "0.200784932",
+      "setup_seconds": "0.693422362",
+      "output_triangles": "187225",
+      "candidate_tests": "616757",
+      "peak_rss_kib": "167276"
+    }
+  ],
+  "maximum_allowed_ratio": 1.2,
+  "executable_sha256": "a77a53be8930d4f442aad12fee496a554b6269b7f673d09a3e1c5f3897d43349",
+  "sources": {
+    "src/arrangement_oracle.cpp": "effb12dc2cf4cf5397bde6c9f848a4c920fec0dd29d460b2c8e3c6bdc5f0a981",
+    "src/bvh_peel.cpp": "d7ee69f5c7dceee9ca942645b7466562bcedd09fcda385c5d7e8c1ce04ec6320",
+    "src/camera.cpp": "0a0f65c41af4abc12e63fa238cc6502f9b62687f9cde3e3cfedbaf0d897cb247",
+    "src/envelope_peel.cpp": "ddc460a8422974fb0eddf2d4549f029e0b7cc4693f36e8a7508f72f121b97f17",
+    "src/exact_geometry.cpp": "c7c6053dd9277128421910d101ba2961bbc304c5bab31ffd836709a64ab855de",
+    "src/fast_peel.cpp": "011b8a302625406f348d82edc92f801fd17df953561a7d48cc95eb8c93823cdf",
+    "src/fast_peel.h": "994144fa06eb00d7e78c2f8cc62a2dc1189014e7a700eb9c34a497ff905ab52b",
+    "src/fast_reference.cpp": "e850207e0b49229817c86a8cb88da680cb0f7cc9e67526db7afb153fd851447c",
+    "src/geometry.h": "595aaac52ece159e152153e73687f6345c61b865dde590405dc843cb00c5839f",
+    "src/main.cpp": "2cbc07c652dc4db8ff2adbe19c7a55eb3709672a91ade756cee56c395fa7a833",
+    "src/peel_common.h": "2e2b1fa4696bdc1690ce8fbc5b60bcaa41226b84c95ac79a675e94cde7c4c112",
+    "src/resolve_intersections.cpp": "f6effa2957e1f4e8f008946ccf028c1a74571e6b308e74cf729326bdfb1c349d",
+    "src/topology.h": "75ead7f0ae1863a97be63c557803035f70dfc3b9397122779b3887213176391e",
+    "src/triangulate_export.cpp": "396344389c222eab95c7780726985485154dfda25f3761e7791a58ee69e12e6d",
+    "src/validation.cpp": "63eee43c389b0c0544abd517abcbc52e6ec6488a99c12ead72c67cbe82a4bdfb",
+    "src/visible_peel.cpp": "c4a822e9714b4542de838e617bd805a79161da3c52d05251364132b61bca2478"
+  },
+  "paired_baseline_executable": "/tmp/geometric_peel-before-contours",
+  "paired_baseline_sha256": "81694b6f52e979a8b08c920657147ca28594f8987816350b010cd44dbf2fbf13",
+  "threads": 4,
+  "warmups": 1,
+  "measured_repetitions": {
+    "exact": 3,
+    "fast": 9
+  },
+  "timing_excludes": [
+    "projection/topology",
+    "validation",
+    "export"
+  ],
+  "timing_includes": [
+    "classification",
+    "all-layer extraction",
+    "triangulation"
+  ]
+}

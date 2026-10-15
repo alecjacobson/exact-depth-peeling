@@ -1,5 +1,11 @@
 # Findings: exact geometric depth peeling
 
+The shared exact/fast contour implementation and full dragon example supersede
+the synthetic demonstration below. See the [current README](../README.md#shared-exact-and-fast-contour-algorithm) and [paired performance comparison](contours/performance/comparison.json).
+Exact contour acceleration is now implemented; on the 100K torus it reduces
+complete extraction from 9.06 s to 3.17 s, with exact constructions. The fast
+contour refactor retains approximately 192 ms and unchanged work/output counts.
+
 The latest [fast-mode comparison](../README.md#fast-mode-with-mesh-contours) adds
 finite-precision construction, exact intersection preprocessing, and connectivity
 contours. It retains the exact solvers as references and reports numerical losses

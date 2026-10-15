@@ -27,3 +27,5 @@ add_test(NAME exact_fixtures COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/s
 set_tests_properties(exact_fixtures PROPERTIES TIMEOUT 600)
 add_test(NAME fast_fixtures COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/scripts/validate_fast.py --exe $<TARGET_FILE:geometric_peel> --resolver $<TARGET_FILE:resolve_intersections> --threads ${PEEL_TEST_THREADS})
 set_tests_properties(fast_fixtures PROPERTIES TIMEOUT 300)
+add_test(NAME exact_contours COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/scripts/validate_contours.py --exe $<TARGET_FILE:geometric_peel> --resolver $<TARGET_FILE:resolve_intersections> --threads ${PEEL_TEST_THREADS})
+set_tests_properties(exact_contours PROPERTIES TIMEOUT 600)

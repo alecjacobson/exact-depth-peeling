@@ -1,0 +1,184 @@
+[
+  {
+    "variant": "fast",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/dragon/scene.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--out",
+      "results/dragon/fast",
+      "--repeat",
+      "4"
+    ],
+    "returncode": 0,
+    "stdout": "{\"algorithm_seconds\":31.963399569,\"exact_geometry\":false,\"layers\":26,\"output\":\"results/dragon/fast\",\"validation_seconds\":0.0}\n",
+    "stderr": "",
+    "status": "completed",
+    "wall_seconds": 130.47730758041143,
+    "layers": 26,
+    "output_triangles": 13149748,
+    "setup_seconds": 6.426625119,
+    "classification": {
+      "classification_seconds": 0.436403509,
+      "constant_rank_sources": 429544,
+      "point_query_candidates": 3033563,
+      "sources_requiring_clipping": 291965
+    },
+    "median_seconds": 31.963399569,
+    "min_seconds": 29.46412736,
+    "max_seconds": 32.316501017
+  },
+  {
+    "variant": "exact",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/dragon/scene.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--out",
+      "results/dragon/exact",
+      "--repeat",
+      "4"
+    ],
+    "status": "timeout",
+    "stdout": null,
+    "stderr": null,
+    "wall_seconds": 180.75471886619925
+  },
+  {
+    "variant": "audit",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/dragon/scene.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--out",
+      "results/dragon/audit",
+      "--validate"
+    ],
+    "returncode": 3,
+    "stdout": "{\"algorithm_seconds\":38.051930584,\"exact_geometry\":false,\"layers\":26,\"output\":\"results/dragon/audit\",\"validation_seconds\":35.255705697}\n",
+    "stderr": "",
+    "status": "error",
+    "wall_seconds": 83.85823432728648,
+    "layers": 26,
+    "output_triangles": 13149748,
+    "setup_seconds": 6.360798921,
+    "classification": {
+      "classification_seconds": 0.415879339,
+      "constant_rank_sources": 429544,
+      "point_query_candidates": 3033563,
+      "sources_requiring_clipping": 291965
+    },
+    "audit": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 301,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 2779,
+      "mismatch_examples": [
+        {
+          "actual_source": 509998,
+          "expected_source": 346766,
+          "layer": 6,
+          "uv": [
+            -0.05582802150780551,
+            0.023848503659389106
+          ]
+        },
+        {
+          "actual_source": 246198,
+          "expected_source": 508272,
+          "layer": 8,
+          "uv": [
+            -0.07785564260525361,
+            -0.06969895838170505
+          ]
+        },
+        {
+          "actual_source": 136614,
+          "expected_source": 678217,
+          "layer": 10,
+          "uv": [
+            -0.019929738422637525,
+            -0.03169497780036325
+          ]
+        },
+        {
+          "actual_source": 262406,
+          "expected_source": 438117,
+          "layer": 10,
+          "uv": [
+            -0.08161040473650592,
+            -0.07015131548731597
+          ]
+        },
+        {
+          "actual_source": 381456,
+          "expected_source": null,
+          "layer": 11,
+          "uv": [
+            0.0463336351953286,
+            -0.07813278932599516
+          ]
+        },
+        {
+          "actual_source": 467111,
+          "expected_source": 257072,
+          "layer": 11,
+          "uv": [
+            -0.07832852057684943,
+            -0.06973049746127553
+          ]
+        },
+        {
+          "actual_source": 523875,
+          "expected_source": 530458,
+          "layer": 11,
+          "uv": [
+            -0.06760952738259358,
+            0.007937825478068525
+          ]
+        },
+        {
+          "actual_source": 529480,
+          "expected_source": 230071,
+          "layer": 11,
+          "uv": [
+            -0.08446374630169921,
+            -0.0716660717651433
+          ]
+        }
+      ],
+      "rank_mismatches_away_from_boundaries": 40,
+      "relative_source_area_l1_error": 4.54304923679787e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "numerical_mismatch",
+      "summed_patch_area_per_source_l1_error": 7.334838526890531e-08,
+      "summed_reference_source_area": 0.16145188274605693
+    }
+  }
+]

@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "executable_sha256": "81694b6f52e979a8b08c920657147ca28594f8987816350b010cd44dbf2fbf13",
+  "executable_sha256": "a77a53be8930d4f442aad12fee496a554b6269b7f673d09a3e1c5f3897d43349",
   "methods": [
     "arrangement",
     "envelope-peel",

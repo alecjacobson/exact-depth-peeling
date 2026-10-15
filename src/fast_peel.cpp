@@ -1,4 +1,5 @@
 #include "fast_peel.h"
+#include "peel_common.h"
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -217,13 +218,7 @@ Scene read(const std::string &path, int bits, bool resolved_mesh) {
   if (!(w[2] > w[0] && w[3] > w[1]))
     throw std::runtime_error("Invalid window");
   std::set<int> ids;
-  std::map<V3, int> vertex_ids;
-  struct Incident {
-    int direction, facing;
-    std::array<Point, 2> projected;
-  };
-  std::map<std::pair<int, int>, std::vector<Incident>> edges;
-  size_t clipping_boundaries = 0;
+  common::Contours<V3, Point> topology;
   for (auto &t : data.at("triangles")) {
     int id = t.value("id", s.input_sources++);
     if (!ids.insert(id).second)
@@ -238,8 +233,7 @@ Scene read(const std::string &path, int bits, bool resolved_mesh) {
         throw std::runtime_error("Expected 3D vertex");
       V3 world{number(v[0]), number(v[1]), number(v[2])};
       if (resolved_mesh) {
-        auto entry = vertex_ids.emplace(world, int(vertex_ids.size()));
-        connectivity[vertices.size()] = entry.first->second;
+        connectivity[vertices.size()] = topology.vertex(world);
       }
       vertices.push_back(transform(m, world));
       clipped |= s.perspective && vertices.back()[2] < s.near;
@@ -305,45 +299,22 @@ Scene read(const std::string &path, int bits, bool resolved_mesh) {
       if (clipped) {
         for (size_t i = 0; i < src.initial.size(); ++i) {
           s.contours.push_back({src.initial[i], src.initial[(i + 1) % src.initial.size()]});
-          ++clipping_boundaries;
+          ++topology.clipped;
         }
       } else
         for (int i = 0; i < 3; ++i) {
           int a = connectivity[i], b = connectivity[(i + 1) % 3];
-          edges[{std::min(a, b), std::max(a, b)}].push_back(
-              {a < b ? 1 : -1,
-               det > 0 ? 1 : -1,
-               {original_projection[i], original_projection[(i + 1) % 3]}});
+          topology.edge(a, b, det > 0 ? 1 : -1, original_projection[i],
+                        original_projection[(i + 1) % 3]);
         }
     }
     s.sources.push_back(std::move(src));
   }
-  size_t boundary = 0, silhouette = 0, nonmanifold = 0, ignored = 0;
-  for (auto &entry : edges) {
-    auto &faces = entry.second;
-    if (faces.size() == 2 && faces[0].direction != faces[1].direction &&
-        faces[0].facing == faces[1].facing) {
-      ++ignored;
-      continue;
-    }
-    if (faces.size() == 1)
-      ++boundary;
-    else if (faces.size() != 2 || faces[0].direction == faces[1].direction)
-      ++nonmanifold;
-    else
-      ++silhouette;
-    s.contours.push_back(faces.front().projected);
-  }
-  s.topology = {{"resolved_mesh_contract", resolved_mesh},
-                {"boundary_edges", boundary},
-                {"silhouette_edges", silhouette},
-                {"nonmanifold_or_inconsistent_edges", nonmanifold},
-                {"same_facing_internal_edges_ignored", ignored},
-                {"camera_clipping_boundary_edges", clipping_boundaries},
-                {"contour_segments", s.contours.size()}};
+  s.topology = topology.finish(resolved_mesh, s.contours);
   return s;
 }
 struct Box {
+  int64_t center(int axis) const { return int64_t(lo[axis]) + hi[axis]; }
   int32_t lo[2] = {INT32_MAX, INT32_MAX}, hi[2] = {INT32_MIN, INT32_MIN};
   double near = INFINITY, far = -INFINITY;
   void add(Point p) {
@@ -370,59 +341,7 @@ Box bound(const Ring &r) {
     b.add(p);
   return b;
 }
-class BVH {
-public:
-  struct Node {
-    Box box;
-    int left = -1, right = -1, begin = 0, end = 0;
-  };
-  std::vector<Node> nodes;
-  std::vector<int> ids;
-  const std::vector<Box> &boxes;
-  explicit BVH(const std::vector<Box> &b) : boxes(b) {
-    ids.resize(b.size());
-    std::iota(ids.begin(), ids.end(), 0);
-    nodes.reserve(b.size());
-    if (!b.empty())
-      build(0, b.size());
-  }
-  int build(int begin, int end) {
-    int i = nodes.size();
-    nodes.emplace_back();
-    Box box;
-    for (int j = begin; j < end; ++j)
-      box.add(boxes[ids[j]]);
-    nodes[i].box = box;
-    if (end - begin <= 4) {
-      nodes[i].begin = begin;
-      nodes[i].end = end;
-      return i;
-    }
-    int axis = box.hi[1] - box.lo[1] > box.hi[0] - box.lo[0], mid = (begin + end) / 2;
-    std::nth_element(ids.begin() + begin, ids.begin() + mid, ids.begin() + end, [&](int a, int b) {
-      int64_t x = int64_t(boxes[a].lo[axis]) + boxes[a].hi[axis],
-              y = int64_t(boxes[b].lo[axis]) + boxes[b].hi[axis];
-      return x == y ? a < b : x < y;
-    });
-    int a = build(begin, mid), b = build(mid, end);
-    nodes[i].left = a;
-    nodes[i].right = b;
-    return i;
-  }
-  template <class F> void visit(const Box &b, F &&f, int i = 0) const {
-    if (nodes.empty() || !overlap(nodes[i].box, b))
-      return;
-    auto &n = nodes[i];
-    if (n.left < 0) {
-      for (int j = n.begin; j < n.end; ++j)
-        if (overlap(boxes[ids[j]], b))
-          f(ids[j]);
-    } else {
-      visit(b, f, n.left);
-      visit(b, f, n.right);
-    }
-  }
-};
+using BVH = common::BVH<Box>;
 template <class F> std::pair<Ring, Ring> split(const Ring &r, F eval, Counts &c) {
   boost::container::small_vector<double, 8> d;
   bool pos = false, neg = false;
@@ -534,188 +453,47 @@ void cut(Work &w, const Patch &candidate, const Source &target, const Source &ot
   }
   w.visible = std::move(next);
 }
-void query(const Scene &s, const std::vector<Patch> &input, const BVH &tree, const Patch &target,
-           const Box &target_box, Work &w, int index, const std::vector<int> *ranks = nullptr,
-           int layer = 0) {
-  if (w.visible.empty() || tree.nodes.empty())
-    return;
-  auto &node = tree.nodes[index];
-  ++w.counts.nodes;
-  // Strict separation retains equal-depth candidates for deterministic ID ties.
-  if (!overlap(node.box, target_box) || node.box.near > target_box.far)
-    return;
-  if (node.left < 0) {
-    for (int j = node.begin; j < node.end && !w.visible.empty(); ++j) {
-      int candidate = tree.ids[j];
-      if (input[candidate].source == target.source ||
-          (ranks && (*ranks)[input[candidate].source] < layer) ||
-          !overlap(tree.boxes[candidate], target_box) ||
-          tree.boxes[candidate].near > target_box.far)
-        continue;
-      ++w.counts.candidates;
-      cut(w, input[candidate], s.sources[target.source], s.sources[input[candidate].source]);
-    }
-  } else {
-    int a = node.left, b = node.right;
-    if (tree.nodes[a].box.near > tree.nodes[b].box.near)
-      std::swap(a, b);
-    query(s, input, tree, target, target_box, w, a, ranks, layer);
-    query(s, input, tree, target, target_box, w, b, ranks, layer);
-  }
-}
 std::vector<Face> mesh(const std::vector<Patch> &patches, int threads) {
-  std::vector<Point> points;
-  for (auto &p : patches)
-    points.insert(points.end(), p.points.begin(), p.points.end());
-  std::sort(points.begin(), points.end());
-  points.erase(std::unique(points.begin(), points.end()), points.end());
-  std::vector<Box> boxes(points.size());
-  for (size_t j = 0; j < points.size(); ++j)
-    boxes[j].add(points[j]);
-  BVH tree(boxes);
-  std::vector<boost::container::small_vector<Face, 4>> output(patches.size());
-#pragma omp parallel for schedule(dynamic, 64) num_threads(threads)
-  for (size_t j = 0; j < patches.size(); ++j) {
-    auto &p = patches[j];
-    Ring ring;
-    for (size_t i = 0; i < p.points.size(); ++i) {
-      auto a = p.points[i], b = p.points[(i + 1) % p.points.size()];
-      Box box;
-      box.add(a);
-      box.add(b);
-      Ring along;
-      tree.visit(box, [&](int k) {
-        auto v = points[k];
-        if (v != b && side(a, b, v) == 0)
-          along.push_back(v);
+  return common::mesh<Point, Box, Ring, Face, boost::container::small_vector<Face, 4>>(
+      patches, threads, [] { return common::NoRoundingGuard{}; },
+      [](Point a, Point b, Point v) { return side(a, b, v) == 0; },
+      [](int source, const Ring &ring, boost::container::small_vector<Face, 4> &out) {
+        auto point = [](Point v) { return V2{double(v.x), double(v.y)}; };
+        if (ring.size() == 3)
+          out.push_back({source, {point(ring[0]), point(ring[1]), point(ring[2])}});
+        else if (ring.size() > 3) {
+          V2 center{};
+          for (auto v : ring) {
+            center[0] += v.x;
+            center[1] += v.y;
+          }
+          for (auto &v : center)
+            v /= ring.size();
+          for (size_t i = 0; i < ring.size(); ++i)
+            out.push_back({source, {center, point(ring[i]), point(ring[(i + 1) % ring.size()])}});
+        }
       });
-      std::sort(along.begin(), along.end());
-      if (b < a)
-        std::reverse(along.begin(), along.end());
-      ring.insert(ring.end(), along.begin(), along.end());
-    }
-    auto point = [](Point v) { return V2{double(v.x), double(v.y)}; };
-    if (ring.size() == 3)
-      output[j].push_back({p.source, {point(ring[0]), point(ring[1]), point(ring[2])}});
-    else if (ring.size() > 3) {
-      V2 center{};
-      for (auto v : ring) {
-        center[0] += v.x;
-        center[1] += v.y;
-      }
-      for (auto &v : center)
-        v /= ring.size();
-      for (size_t i = 0; i < ring.size(); ++i)
-        output[j].push_back(
-            {p.source, {center, point(ring[i]), point(ring[(i + 1) % ring.size()])}});
-    }
-  }
-  size_t count = 0;
-  for (auto &v : output)
-    count += v.size();
-  std::vector<Face> out;
-  out.reserve(count);
-  for (auto &v : output)
-    out.insert(out.end(), v.begin(), v.end());
-  return out;
 }
-std::vector<int> classify_ranks(const Scene &s, int threads, Json &metrics, const BVH &sources) {
-  auto start = Clock::now();
-  std::vector<int> ranks(s.sources.size(), -1);
-  if (!s.topology.value("resolved_mesh_contract", false))
-    return ranks;
-  std::vector<Box> edges;
-  for (auto e : s.contours) {
-    Box b;
-    b.add(e[0]);
-    b.add(e[1]);
-    for (int d = 0; d < 2; ++d) {
-      b.lo[d] -= 4;
-      b.hi[d] += 4;
-    }
-    edges.push_back(b);
+
+struct FastPolicy {
+  using PatchType = Patch;
+  using BoxType = Box;
+  using WorkType = Work;
+  using LayerType = Layer;
+  using ResultType = Result;
+  const Scene &s;
+  common::NoRoundingGuard guard() const { return {}; }
+  bool resolved() const { return s.topology.value("resolved_mesh_contract", false); }
+  void initialize(Result &) const {}
+  void residual(Result &r, std::vector<Patch> p) const { r.residual = std::move(p); }
+  std::vector<Patch> originals() const {
+    std::vector<Patch> out;
+    out.reserve(s.sources.size());
+    for (size_t i = 0; i < s.sources.size(); ++i)
+      out.push_back({int(i), s.sources[i].initial});
+    return out;
   }
-  BVH contour_tree(edges);
-  std::vector<uint64_t> candidates(ranks.size(), 0);
-#pragma omp parallel for schedule(dynamic, 64) num_threads(threads)
-  for (size_t i = 0; i < s.sources.size(); ++i) {
-    auto &src = s.sources[i];
-    bool boundary = false;
-    contour_tree.visit(sources.boxes[i], [&](int j) {
-      if (boundary)
-        return;
-      auto e = s.contours[j];
-      // Conservative four-cell guard around each contour, including endpoints.
-      for (size_t k = 0; k < src.initial.size(); ++k) {
-        auto a = src.initial[k], b = src.initial[(k + 1) % src.initial.size()];
-        int64_t margin = 4 * (int64_t(std::abs(b.x - a.x)) + std::abs(b.y - a.y));
-        if (side(a, b, e[0]) < -margin && side(a, b, e[1]) < -margin)
-          return;
-      }
-      bool positive = false, negative = false;
-      int64_t margin = 4 * (int64_t(std::abs(e[1].x - e[0].x)) + std::abs(e[1].y - e[0].y));
-      for (auto p : src.initial) {
-        auto value = side(e[0], e[1], p);
-        positive |= value >= -margin;
-        negative |= value <= margin;
-      }
-      if (positive && negative)
-        boundary = true;
-    });
-    if (boundary || src.initial.size() != 3)
-      continue;
-    int64_t px = 0, py = 0;
-    for (auto p : src.initial) {
-      px += p.x;
-      py += p.y;
-    }
-    Box point;
-    point.add(Point{int32_t(px / 3), int32_t(py / 3)});
-    point.add(Point{int32_t((px + 2) / 3), int32_t((py + 2) / 3)});
-    double target = src.score[0] * (px / 3.) + src.score[1] * (py / 3.) + src.score[2];
-    int rank = 0;
-    bool ambiguous = false;
-    sources.visit(point, [&](int j) {
-      if (j == int(i))
-        return;
-      ++candidates[i];
-      auto &other = s.sources[j];
-      bool edge = false;
-      for (size_t k = 0; k < other.initial.size(); ++k) {
-        auto a = other.initial[k], b = other.initial[(k + 1) % other.initial.size()];
-        int64_t cross = int64_t(b.x - a.x) * (py - 3 * int64_t(a.y)) -
-                        int64_t(b.y - a.y) * (px - 3 * int64_t(a.x));
-        if (cross < 0)
-          return;
-        edge |= cross == 0;
-      }
-      if (edge) {
-        ambiguous = true;
-        return;
-      }
-      double z = other.score[0] * (px / 3.) + other.score[1] * (py / 3.) + other.score[2];
-      double tol = 64 * std::numeric_limits<double>::epsilon() *
-                   std::max({std::abs(z), std::abs(target), 1e-300});
-      if (std::abs(z - target) <= tol) {
-        ambiguous = true;
-        return;
-      }
-      rank += z < target;
-    });
-    if (!ambiguous)
-      ranks[i] = rank;
-  }
-  size_t known = std::count_if(ranks.begin(), ranks.end(), [](int r) { return r >= 0; });
-  metrics = {{"constant_rank_sources", known},
-             {"sources_requiring_clipping", ranks.size() - known},
-             {"point_query_candidates",
-              std::accumulate(candidates.begin(), candidates.end(), uint64_t(0))},
-             {"classification_seconds", elapsed(start)}};
-  return ranks;
-}
-Result extract(const Scene &s, int layers, int threads, const std::string &order, unsigned seed,
-               bool accelerate) {
-  auto prepare_boxes = [&](const std::vector<Patch> &patches) {
+  std::vector<Box> boxes(const std::vector<Patch> &patches) const {
     std::vector<Box> boxes(patches.size());
     for (size_t i = 0; i < patches.size(); ++i) {
       boxes[i] = bound(patches[i].points);
@@ -729,85 +507,96 @@ Result extract(const Scene &s, int layers, int threads, const std::string &order
       }
     }
     return boxes;
-  };
-  std::vector<Patch> originals;
-  originals.reserve(s.sources.size());
-  for (size_t i = 0; i < s.sources.size(); ++i)
-    originals.push_back({int(i), s.sources[i].initial});
-  auto original_boxes = prepare_boxes(originals);
-  BVH original_tree(original_boxes);
-  Result r;
-  auto ranks = classify_ranks(s, threads, r.classification, original_tree);
-  std::vector<Patch> residual;
-  std::vector<std::vector<int>> direct;
-  for (size_t i = 0; i < originals.size(); ++i) {
-    if (ranks[i] < 0)
-      residual.push_back(originals[i]);
-    else {
-      if (direct.size() <= size_t(ranks[i]))
-        direct.resize(ranks[i] + 1);
-      direct[ranks[i]].push_back(i);
-    }
   }
-  int limit = layers ? layers : s.sources.size();
-  for (int k = 0; k < limit && (!residual.empty() || size_t(k) < direct.size()); ++k) {
+  std::vector<Box> contour_boxes() const {
+    std::vector<Box> edges;
+    for (auto e : s.contours) {
+      Box b;
+      b.add(e[0]);
+      b.add(e[1]);
+      for (int d = 0; d < 2; ++d) {
+        b.lo[d] -= 4;
+        b.hi[d] += 4;
+      }
+      edges.push_back(b);
+    }
+    return edges;
+  }
+  bool rank_eligible(int i) const { return s.sources[i].initial.size() == 3; }
+  bool touches_contour(int i, int j) const {
+    auto &src = s.sources[i];
+    auto e = s.contours[j];
+    // Conservative four-cell guard around each contour, including endpoints.
+    for (size_t k = 0; k < src.initial.size(); ++k) {
+      auto a = src.initial[k], b = src.initial[(k + 1) % src.initial.size()];
+      int64_t margin = 4 * (int64_t(std::abs(b.x - a.x)) + std::abs(b.y - a.y));
+      if (side(a, b, e[0]) < -margin && side(a, b, e[1]) < -margin)
+        return false;
+    }
+    bool positive = false, negative = false;
+    int64_t margin = 4 * (int64_t(std::abs(e[1].x - e[0].x)) + std::abs(e[1].y - e[0].y));
+    for (auto p : src.initial) {
+      auto value = side(e[0], e[1], p);
+      positive |= value >= -margin;
+      negative |= value <= margin;
+    }
+    if (positive && negative)
+      return true;
+    return false;
+  }
+  auto sample(int i) const {
+    auto &src = s.sources[i];
+    int64_t px = 0, py = 0;
+    for (auto p : src.initial) {
+      px += p.x;
+      py += p.y;
+    }
+    Box point;
+    point.add(Point{int32_t(px / 3), int32_t(py / 3)});
+    point.add(Point{int32_t((px + 2) / 3), int32_t((py + 2) / 3)});
+    return std::make_pair(std::array<int64_t, 2>{px, py}, point);
+  }
+  int ray_order(int i, int j, const std::array<int64_t, 2> &sample) const {
+    auto &src = s.sources[i];
+    auto px = sample[0], py = sample[1];
+    double target = src.score[0] * (px / 3.) + src.score[1] * (py / 3.) + src.score[2];
+    auto &other = s.sources[j];
+    bool edge = false;
+    for (size_t k = 0; k < other.initial.size(); ++k) {
+      auto a = other.initial[k], b = other.initial[(k + 1) % other.initial.size()];
+      int64_t cross = int64_t(b.x - a.x) * (py - 3 * int64_t(a.y)) -
+                      int64_t(b.y - a.y) * (px - 3 * int64_t(a.x));
+      if (cross < 0)
+        return 0;
+      edge |= cross == 0;
+    }
+    if (edge) {
+      return -1;
+    }
+    double z = other.score[0] * (px / 3.) + other.score[1] * (py / 3.) + other.score[2];
+    double tol = 64 * std::numeric_limits<double>::epsilon() *
+                 std::max({std::abs(z), std::abs(target), 1e-300});
+    if (std::abs(z - target) <= tol) {
+      return -1;
+    }
+    return int(z < target);
+  }
+  double near(const Box &b) const { return b.near; }
+  bool behind(const Box &a, const Box &b) const { return a.near > b.far; }
+  void node_test(Work &w) const { ++w.counts.nodes; }
+  void box_reject(Work &) const {}
+  void occluded(Work &w) const { ++w.counts.rejected; }
+  void cut(Work &w, const Patch &target, const Patch &candidate, bool) const {
+    ++w.counts.candidates;
+    fast::cut(w, candidate, s.sources[target.source], s.sources[candidate.source]);
+  }
+  void finish(Layer &l, int k, const std::vector<Patch> &input, const std::vector<Work> &work,
+              double visibility, int threads) const {
     auto t = Clock::now();
-    size_t initial_count = residual.size();
-    auto boxes = prepare_boxes(residual);
-    BVH tree(boxes);
-    std::vector<Work> work(residual.size());
-    std::vector<int> schedule(residual.size());
-    std::iota(schedule.begin(), schedule.end(), 0);
-    if (order == "reverse")
-      std::reverse(schedule.begin(), schedule.end());
-    if (order == "random") {
-      std::mt19937 rng(seed);
-      std::shuffle(schedule.begin(), schedule.end(), rng);
-    }
-#pragma omp parallel for schedule(dynamic, 32) num_threads(threads)
-    for (size_t j = 0; j < schedule.size(); ++j) {
-      int i = schedule[j];
-      auto &w = work[i];
-      w.visible.push_back(residual[i].points);
-      if (accelerate) {
-        query(s, originals, original_tree, residual[i], boxes[i], w, 0, &ranks, k);
-        query(s, residual, tree, residual[i], boxes[i], w, 0);
-      } else {
-        for (size_t ci = 0; ci < originals.size() && !w.visible.empty(); ++ci)
-          if (ranks[ci] >= k) {
-            ++w.counts.candidates;
-            cut(w, originals[ci], s.sources[residual[i].source], s.sources[ci]);
-          }
-        for (int ci : schedule) {
-          if (residual[ci].source == residual[i].source || w.visible.empty())
-            continue;
-          ++w.counts.candidates;
-          cut(w, residual[ci], s.sources[residual[i].source], s.sources[residual[ci].source]);
-        }
-      }
-      if (w.visible.empty()) {
-        w.hidden.clear();
-        w.hidden.push_back(residual[i].points);
-        ++w.counts.rejected;
-      }
-    }
-    Layer l;
-    if (size_t(k) < direct.size())
-      for (int i : direct[k])
-        l.patches.push_back(originals[i]);
-    std::vector<Patch> next;
+    size_t initial_count = input.size();
     Counts counts;
-    for (size_t i = 0; i < work.size(); ++i) {
-      counts.add(work[i].counts);
-      for (auto &p : work[i].visible)
-        l.patches.push_back({residual[i].source, std::move(p)});
-      for (auto &p : work[i].hidden)
-        next.push_back({residual[i].source, std::move(p)});
-    }
-    if (l.patches.empty())
-      throw std::runtime_error("Fast peeling stalled after rounding; use finer grid or exact mode");
-    double visibility = elapsed(t);
-    t = Clock::now();
+    for (auto &w : work)
+      counts.add(w.counts);
     l.faces = mesh(l.patches, threads);
     l.metrics = {{"layer_index", k + 1},
                  {"visibility_seconds", visibility},
@@ -822,16 +611,12 @@ Result extract(const Scene &s, int layers, int threads, const std::string &order
                  {"input_residual", {{"convex_patches", initial_count}}},
                  {"output", {{"convex_patches", l.patches.size()}}},
                  {"exported_triangles", l.faces.size()}};
-    r.layers.push_back(std::move(l));
-    residual = std::move(next);
   }
-  if (layers == 0 && !residual.empty())
-    throw std::runtime_error("Fast peeling exceeded source-count layer limit");
-  r.residual = std::move(residual);
-  for (size_t k = r.layers.size(); k < direct.size(); ++k)
-    for (int i : direct[k])
-      r.residual.push_back(originals[i]);
-  return r;
+};
+Result extract(const Scene &s, int layers, int threads, const std::string &order, unsigned seed,
+               bool accelerate) {
+  FastPolicy policy{s};
+  return common::extract(policy, layers, threads, order, seed, accelerate);
 }
 V2 uv(const Scene &s, V2 p) {
   double g = double(int64_t(1) << s.bits);
@@ -929,6 +714,8 @@ int run_cli(const std::string &path, const std::string &out, int layers, int thr
           << ' ' << corner + 2 << '\n';
       corner += 3;
     }
+    obj.flush();
+    if (!obj) throw std::runtime_error("Failed to write layer mesh (check available disk space)");
     Json patches = Json::array();
     for (auto &p : l.patches) {
       if (mesh_only)

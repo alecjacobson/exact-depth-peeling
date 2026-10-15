@@ -9,9 +9,11 @@ with exact rational fallback and exact constructions. Orthographic and normalize
 pinhole cameras, intersecting triangles, holes, disconnected residuals, and
 original-source reconstruction are implemented.
 
-For finite-precision performance, use `fast-bvh-peel --resolved-mesh` after resolving
-surface intersections. The new [fast-mode measurements](#fast-mode-with-mesh-contours)
-describe its grid, numerical losses, connectivity shortcuts, and exact validation.
+Use `bvh-peel --resolved-mesh` for exact contour acceleration or
+`fast-bvh-peel --resolved-mesh` for finite-precision performance, after resolving
+surface intersections. Both use a [shared contour algorithm](#shared-exact-and-fast-contour-algorithm)
+with separate numerical policies. The [full dragon example](#full-dragon-example)
+reports performance and numerical limitations alongside the actual output.
 
 The current exact performance implementation is `bvh-peel`: parallel, target-relative
 occlusion queries over a BVH of surviving convex patches. `vbvh-peel` implements
@@ -21,6 +23,154 @@ hidden portions for subsequent layers and triangulate the completed layers with
 original source labels. They preserve exact geometry; neither uses R3's fixed-point
 rounding or convex-hull repair. See the [algorithm description](#algorithm-description).
 
+<!-- DRAGON_RESULTS_BEGIN -->
+## Full dragon example
+
+The main example now uses the requested
+`sparse-solver-benchmark/xyzrgb_dragon-720K.ply`: **360,757 vertices and 721,510
+triangles**, with no further decimation. Exact camera-independent autorefinement
+found no surface intersections, so the original mesh is used with the resolved-mesh
+contract. All front and back surfaces participate.
+
+![Dragon input, acquisition camera, and extracted layer stack](results/dragon/exploded.png)
+
+![Camera-view layer stacking, orbit, reconstruction to 3D, and return](results/dragon/layers.gif)
+
+The still displays the input copy separately; its camera and frustum belong to
+the layer stack. The animation adds the **26 fast-mode layers** one by one at 40% opacity, outlines
+their projected coverage at display resolution, orbits to reveal the separate billboards, then moves
+each vertex along its acquisition ray to its exported 3D location and returns to
+the camera. These are the actual extracted meshes, with **13,149,748 output
+triangles**; the render is not a decimated stand-in. Tiny late layers are retained,
+though they may be invisible at GIF resolution.
+
+| Full dragon, four CPU threads | Result |
+| --- | ---: |
+| Fast complete extraction + triangulation, median | **31.96 s** |
+| Three measured repetitions, min–max | 29.46–32.32 s |
+| Import, projection, topology setup | 6.43 s |
+| Exact intersection check/preprocess, once | 100.32 s + 6.14 s import |
+| Whole-source ranks / sources needing clipping | 429,544 / 291,965 |
+| Retained contour segments | 63,593 |
+| Exact benchmark attempt | 180 s process timeout; no complete timing record |
+
+This example **does not meet the real-time target**. The surface has many projected
+silhouettes, and clipping/triangulation substantially expands the output. CPU
+measurements include one warm-up and three measured repetitions on the shared
+four-core quota; they exclude preprocessing, setup, validation, and export. The
+exact timeout covers setup plus a requested four-extraction benchmark invocation;
+it is not a lower bound on one exact extraction.
+
+**The fast dragon audit reports numerical mismatches:** 40 of 2,779 checked ray
+ranks disagree with independent exact intersections; 301 samples near source
+edges are skipped. The summed per-source area L1 error is 4.54e-7 relative to input
+projected area. Sampling faces weights tiny fragments as well as large faces, and
+area conservation does not certify ranks. The 30-bit approximation and sub-grid
+removal can affect thin fragments and late layers. The pictures are therefore an
+approximate output demonstration, **not an exact or fully validated dragon
+solution**. The existing fast policy is preserved by this refactor; its unresolved
+numerical cases are not hidden by changing the audit or discarding failed samples.
+
+See [timings and all attempts](results/dragon/runs.json),
+[full audit diagnostics](results/dragon/audit/metrics.json),
+[input/camera manifest](results/dragon/input.json),
+[lossless geometry archive](results/dragon/meshes.npz),
+[editable Blender animation](results/dragon/dragon-layers.blend), and
+[reproduction instructions](results/dragon/README.md).
+The source model is credited to XYZ RGB Inc. via the
+[Stanford scanning repository](https://graphics.stanford.edu/data/3Dscanrep/);
+the supplied 720K file's checksum identifies the exact version used here.
+
+
+<!-- DRAGON_RESULTS_END -->
+
+<!-- CONTOUR_RESULTS_BEGIN -->
+## Shared exact and fast contour algorithm
+
+Both `bvh-peel --resolved-mesh` and `fast-bvh-peel --resolved-mesh` now use the same
+algorithm in [`src/peel_common.h`](src/peel_common.h). Mesh topology, median-split
+BVHs, contour-clear classification, near-first occlusion traversal, rank masks,
+layer scheduling, whole-occlusion reuse, prefix residuals, and mesh-boundary
+noding are shared templates. There is no virtual dispatch in the hot loops.
+The exact arrangement, envelope, and visible-map methods remain independent
+small-scene references.
+
+1. Resolve 3D surface intersections once, independently of the camera. On import,
+   retain open boundaries, silhouettes, non-manifold/inconsistently oriented edges,
+   and conservative boundaries introduced by camera clipping. Omit consistently
+   oriented, same-facing interior edges from the contour set.
+2. Certify that a source triangle is clear of all projected contours. Its rank is
+   then constant: one interior ray counts covering surfaces in front. An ambiguous
+   boundary/depth sample falls back to clipping. Whole triangles are assigned
+   directly to their ranks, with no per-layer reclassification.
+3. Keep one static BVH of the original sources, masking known ranks after they are
+   emitted. Only contour-near surviving fragments enter the rebuilt residual BVH.
+   Clip these targets against nearer candidates, save visible pieces to the current
+   layer, and carry hidden pieces forward. Complete occlusion preserves the incoming
+   patch unchanged. Stop when every positive-area patch has been emitted.
+4. Node shared patch-boundary vertices, triangulate with source labels, and reconstruct
+   vertices on their source planes. The same noding traversal serves both modes.
+
+The exact policy uses outward interval boxes, exact contour-separation tests,
+exact interior points, exact depth ordering, and exact clipping/meshing constructions.
+It never rounds vertices or removes positive-area slivers. The fast policy retains
+its documented 30-bit grid, guarded contour tests, binary64 depths, rounding,
+convexity repair, and sub-grid removal. Their combinatorial algorithm is shared;
+their numerical guarantees are deliberately different. The remaining separate
+clipping kernels implement these arithmetic contracts.
+
+This avoids constructing intersections between pairs of occluders merely because
+they enter the same target cone. It does not promise a universal subquadratic bound:
+BVH queries can be linear in the worst case, and overlapping contours and output
+fragmentation still cost work. Constant-rank classification costs contour queries
+plus one source-ray query per eligible triangle; subsequent passes process the
+remaining fragments and the actual output. Full contour-region clipping masks are
+still a possible improvement.
+
+The new exact contour regressions compare source-labelled regions with the full
+arrangement for orders, thread counts, independent prefixes, and unaccelerated
+clipping. They include sparse source IDs, non-manifold junctions, exact slivers,
+near/window clipping, resolved crossings, and internal mesh-edge rank transitions.
+See [175 checks](results/contours/validation.json). Existing exact and fast suites
+also pass. The [100K exact contour audit](results/contours/audit-102400/metrics.json)
+checks exact containment, conservation, disjointness and mesh areas, plus 577
+independent exact ray ranks; all pass. It is not a full large-scene rank certificate. The opt-in [performance regression](scripts/performance_regression.py)
+compares preserved pre-refactor binaries against the current build on the same
+10K/100K scenes, checks unchanged output/work counts for unchanged modes, and fails
+above a 20% median slowdown. It includes classification and triangulation and
+excludes setup, audits, and export. Raw failed attempts are retained.
+
+| Mode | Triangles | Before | After | After / before |
+| --- | ---: | ---: | ---: | ---: |
+| exact-bvh | 10,240 | 1,595.6 ms | 1,592.7 ms | 0.998 |
+| fast-clipping | 10,240 | 78.6 ms | 72.0 ms | 0.915 |
+| fast-contours | 10,240 | 25.3 ms | 23.8 ms | 0.942 |
+| exact-bvh | 102,400 | 11,520.4 ms | 9,586.0 ms | 0.832 |
+| fast-clipping | 102,400 | 461.2 ms | 400.5 ms | 0.868 |
+| fast-contours | 102,400 | 192.1 ms | 192.5 ms | 1.002 |
+| exact-contours | 10,240 | 952.8 ms | 472.1 ms | 0.495 |
+| exact-contours | 102,400 | 9,062.3 ms | 3,170.7 ms | 0.350 |
+
+All eight timing gates pass in the [paired comparison](results/contours/performance/comparison.json). The six unchanged modes retain identical layer, output-triangle, and clipping-candidate counts. Exact contour mode changes the partition while retaining exact region semantics; on 100K it classifies 97,314 whole triangles and reduces clipping candidates from 3,363,466 to 622,917. The initial non-paired run flagged slowdowns during another process’s CPU-intensive benchmark; its [failed measurements](results/contours/performance-first-attempt/comparison.json) are retained. Each row has its own paired baseline; different baseline medians reflect changing shared-host load. These are not dedicated-hardware measurements.
+
+
+```sh
+build/geometric_peel --scene resolved.json --method bvh-peel --resolved-mesh \
+  --layers all --threads 4 --validate --mesh-only --out out/exact-contours
+# Before refactoring, preserve the executable and baseline measurements:
+cp build/geometric_peel /tmp/geometric_peel-before
+python scripts/benchmark_fast.py --exe /tmp/geometric_peel-before --output out/before
+# After rebuilding, run without other build/test/render work:
+python scripts/performance_regression.py --baseline out/before \
+  --baseline-exe /tmp/geometric_peel-before
+```
+<!-- CONTOUR_RESULTS_END -->
+
+
+
+<details>
+<summary>Earlier synthetic torus experiments and numerical-contract details</summary>
+
 <!-- FAST_RESULTS_BEGIN -->
 ## Fast mode with mesh contours
 
@@ -28,7 +178,7 @@ rounding or convex-hull repair. See the [algorithm description](#algorithm-descr
 reference solvers. It adopts R3's fixed-point orientation and convexity-repair
 approach, and uses mesh connectivity to avoid most fragment clipping.
 
-![Fast-mode exploded view: input, acquisition camera, and every extracted layer](results/fast/demo/exploded.png)
+[Earlier torus exploded view](results/fast/demo/exploded.png)
 
 | Input | Layers | Exact BVH | Fast clipping | Fast + mesh contours | Speedup over exact |
 | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -159,7 +309,7 @@ and large meshes are stored with Git LFS.
 <!-- LARGE_RESULTS_BEGIN -->
 ## Large connected-mesh example
 
-![Exploded view of the input mesh, perspective camera, and every extracted layer](results/large/demo/exploded.png)
+[Earlier exact torus exploded view](results/large/demo/exploded.png)
 
 The example is a connected, closed sculpted torus with **10,240 triangles**,
 viewed through an oblique perspective camera. Each coloured layer is lifted onto
@@ -234,6 +384,8 @@ python scripts/report_large_results.py results/large
 Rendering requires Blender (the recorded figure uses 4.5.3) and Pillow; plotting
 requires matplotlib. They are not part of the extraction timer.
 <!-- LARGE_RESULTS_END -->
+
+</details>
 
 ## Build and validate
 

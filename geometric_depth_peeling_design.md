@@ -6,6 +6,20 @@ The immediate deliverable is a working research prototype, reproducible fixtures
 
 Prepared 14 October 2026. References and code links appear at the end and use labels such as [R1] and [C1].
 
+## Implementation update, 15 October 2026
+
+The authorized implementation now includes finite-precision fast mode alongside
+exact references. `bvh-peel --resolved-mesh` and `fast-bvh-peel --resolved-mesh`
+share the contour/rank algorithm in `src/peel_common.h`: mesh-edge classification,
+static BVH traversal, whole-source ray-rank classification, rank masks, residual
+peeling, prefix handling, and output-boundary noding. Numeric policies keep exact
+rational predicates/constructions separate from fixed-grid rounding and repair.
+The original arrangement/envelope/visible-map methods remain independent references.
+Surface intersections must be resolved before enabling the contour contract;
+open and non-manifold edges are retained as contours. Current measurements and
+explicit numerical limitations are in the README. The full dragon example and
+before/after performance regression supplement the earlier synthetic experiments.
+
 # 1 Research question and success criteria
 
 A foreground triangle may cover a complicated mesh while remaining entirely visible. Its layer should contain the original triangle, even if the projections of hidden edges have thousands of intersections. A global arrangement of projected edges can unnecessarily cut that foreground triangle at every background event.

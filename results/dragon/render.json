@@ -1,0 +1,27 @@
+{
+  "rendered_frames": 192,
+  "gif_frames": 192,
+  "gif_duration_ms": 11520,
+  "gif_size": [
+    1100,
+    780
+  ],
+  "loop": 0,
+  "Blender": "4.5.3",
+  "engine": "Cycles / OptiX",
+  "gpu": "NVIDIA L40",
+  "animation_samples": 16,
+  "still_samples": 64,
+  "surface_opacity": 0.4,
+  "camera_orbit_degrees": 58,
+  "outlines": "2800-pixel coverage union, fades before surface morph",
+  "geometry": "all 13,149,748 exported triangles; no decimation; render-only welding at 1e-8 model units",
+  "precision": "finite; exact-ray audit has 40 mismatches / 2779 checked samples",
+  "sha256": {
+    "meshes.npz": "4e9ead90cd25ec763cf7c99646a2fa24889c9f9f608f6f43c0c4c728f557ce3b",
+    "outlines.npz": "56aa0ca30a20d9eaefffde572d1a68a2ccb4fed4dcb556f52f6f82878663a014",
+    "dragon-layers.blend": "0ebff6de2e34b1bf1e57acb6e228ba193aa47aeeb3de49751f9ff5cbef29604e",
+    "layers.gif": "fc02997c57c4418054ec67bdc8ac72d933f44be545627a08785eb0634707e1f6",
+    "exploded.png": "efec3a3947d21926714ea6f5f1d42a1aabbc5b392785cb6122b7fc5fcf6bd298"
+  }
+}

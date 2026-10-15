@@ -2,7 +2,7 @@
   "status": "passed",
   "failures": [],
   "expected_precision_loss_fixture": "slivers",
-  "executable_sha256": "81694b6f52e979a8b08c920657147ca28594f8987816350b010cd44dbf2fbf13",
+  "executable_sha256": "a77a53be8930d4f442aad12fee496a554b6269b7f673d09a3e1c5f3897d43349",
   "resolver_sha256": "ade5f99835318a23732f83f95bc31f5f7c8ae7c1d670819e65b30918f80bba2a",
   "records": [
     {
@@ -20,12 +20,12 @@
         "mismatch_examples": [],
         "oracle_layers": 1,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 1.8626447051417464e-09,
+        "relative_source_area_l1_error": 1.862645149230957e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.4901157641133977e-08,
-        "summed_reference_source_area": 8.000000000000004
+        "summed_patch_area_per_source_l1_error": 1.4901161193847656e-08,
+        "summed_reference_source_area": 8.0
       },
       "topology": {
         "boundary_edges": 0,
@@ -71,7 +71,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.00011192,
+        "classification_seconds": 0.000114357,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -144,7 +144,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000115206,
+        "classification_seconds": 0.000101922,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -217,7 +217,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000108485,
+        "classification_seconds": 0.000101612,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -290,7 +290,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000103739,
+        "classification_seconds": 0.000102967,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -363,7 +363,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.5874e-05,
+        "classification_seconds": 0.00010557,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -436,7 +436,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000108481,
+        "classification_seconds": 0.000102451,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -509,7 +509,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000113527,
+        "classification_seconds": 0.000111225,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -616,7 +616,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000111307,
+        "classification_seconds": 0.000105446,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -689,7 +689,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000106402,
+        "classification_seconds": 9.9267e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -826,7 +826,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.6398e-05,
+        "classification_seconds": 9.2425e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -899,7 +899,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.7637e-05,
+        "classification_seconds": 0.000102939,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -972,7 +972,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000120502,
+        "classification_seconds": 0.000104795,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1045,7 +1045,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000107183,
+        "classification_seconds": 9.4823e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1118,7 +1118,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 8.9676e-05,
+        "classification_seconds": 0.000105473,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1191,7 +1191,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.2299e-05,
+        "classification_seconds": 9.5096e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1264,7 +1264,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.5118e-05,
+        "classification_seconds": 9.5255e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1371,7 +1371,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.565e-05,
+        "classification_seconds": 0.000110349,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1444,7 +1444,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.2274e-05,
+        "classification_seconds": 9.4437e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1517,7 +1517,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.7373e-05,
+        "classification_seconds": 0.000100432,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1590,7 +1590,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 0.000101784,
+        "classification_seconds": 0.000110672,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2037,7 +2037,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 7.369e-06,
+        "classification_seconds": 9.527e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -2076,7 +2076,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 1.019e-05,
+        "classification_seconds": 9.533e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -2115,7 +2115,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.877e-06,
+        "classification_seconds": 1.0178e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -2154,7 +2154,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.3369e-05,
+        "classification_seconds": 1.2918e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2193,7 +2193,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.5089e-05,
+        "classification_seconds": 1.4772e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2232,7 +2232,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.5739e-05,
+        "classification_seconds": 1.5506e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2271,7 +2271,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.8595e-05,
+        "classification_seconds": 0.000105457,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2310,7 +2310,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000105207,
+        "classification_seconds": 0.000101706,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2322,13 +2322,13 @@
       "status": "passed",
       "details": {
         "arithmetic": "exact rational constructions",
-        "import_seconds": 0.000135888,
+        "import_seconds": 0.000127395,
         "input_triangles": 2,
         "marked_intersection_edges": 2,
         "method": "CGAL PMP experimental::autorefine",
         "output_triangles": 4,
         "positive_area_coincident_surfaces_supported": false,
-        "refinement_seconds": 7.9464e-05
+        "refinement_seconds": 8.7795e-05
       }
     },
     {
@@ -2363,7 +2363,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.949e-05,
+        "classification_seconds": 0.000104902,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2375,13 +2375,13 @@
       "status": "passed",
       "details": {
         "arithmetic": "exact rational constructions",
-        "import_seconds": 0.000135512,
+        "import_seconds": 0.000131225,
         "input_triangles": 2,
         "marked_intersection_edges": 2,
         "method": "CGAL PMP experimental::autorefine",
         "output_triangles": 4,
         "positive_area_coincident_surfaces_supported": false,
-        "refinement_seconds": 0.000137036
+        "refinement_seconds": 0.000141283
       }
     }
   ]
