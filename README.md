@@ -7,6 +7,14 @@ geometry uses `CGAL::Cartesian<CGAL::Exact_rational>`. Orthographic and normaliz
 pinhole cameras, intersecting triangles, holes, disconnected residuals, and
 original-source reconstruction are implemented.
 
+The main method, `visible-peel`, computes one layer by inserting the remaining
+source polygons into an initially empty visibility map. It subtracts that completed
+layer from the source polygons, then rebuilds visibility for the next layer.
+**Only the residual polygons and immutable source/camera data carry over between
+passes; the visibility map and its spatial index are rebuilt.** See the
+[algorithm description](#algorithm-description) for the exact operations and
+current limitations.
+
 ## Build and validate
 
 Generated result files larger than 1 MiB are stored with Git LFS. After cloning,
@@ -95,25 +103,198 @@ are counted and omitted. Sets are regularized: isolated points and line-only
 remnants do not represent standalone surfaces. This does not define boundary-ray
 ownership or reproduce a GPU fill convention.
 
-## Algorithms and validation
+## Algorithm description
 
-`arrangement` inserts domain boundaries and equality segments clipped to pairwise
-overlap, nodes them exactly, then triangulates the whole subdivision. Its triangle
-barycenters are guaranteed interior samples. Membership and depth order are
-constant in each resulting triangle, so assigning every rank and taking labelled
-unions yields the oracle regions. This triangulation refines arrangement cells;
-raw triangle counts and arrangement face counts are reported separately.
+### Representation and meaning of a layer
 
-`envelope-peel` triangulates each residual source, builds its affine score graph,
-uses CGAL's lower envelope, extracts outer and hole cycles, then unions faces by
-original source. Residuals never retain adapter triangulation edges.
+Each original triangle `i` has an exact projected polygon `D[i]` and an affine
+score `s[i](u,v) = a*u + b*v + c`. Smaller scores mean nearer: `s=z` for an
+orthographic camera and `s=-1/z` for a perspective camera. Perspective projection
+is clipped against the positive near plane before division. The original triangle,
+source ID, and plane mapping remain fixed throughout the computation.
 
-`visible-peel` inserts each residual once into a disjoint visible map. Exact affine
-half-planes resolve crossings. Conservative component-box queries, strict depth
-separation, and bounding-rectangle containment in a single convex visible component
-avoid unnecessary Boolean operations. The xmin-sorted component index is rebuilt
-after each mutation. It is deliberately simple; it is not a hierarchical BVH.
-Persistent residuals change only after the pass is finalized.
+`R[i]` is the part of `D[i]` that has not yet appeared in an output layer. It is a
+CGAL polygon set and may have holes or disconnected components. It stores an area
+of the original triangle's projection, rather than a collection of newly lifted
+3D triangles. At each image point, layer `k` contains the kth nearest surface hit
+in the original input, found as the nearest hit still remaining. Different parts
+of one source triangle can therefore appear in different layers. Background outside another triangle's
+footprint can already appear in layer 1.
+
+The two peeling methods share this loop, implemented in
+[`run()`](src/visible_peel.cpp):
+
+```text
+R[i] = D[i] for every source i
+repeat until K layers have been emitted, or all R[i] are empty:
+    V = nearest_visible_regions(R)       # visible-peel or envelope-peel
+    for each source i represented in V:
+        R[i] = R[i] minus V[i]           # remove only its visible portion
+    triangulate the completed labelled regions V and append this layer
+```
+
+A source hidden in this pass keeps its residual for later passes. Removing exactly
+the nearest remaining hit at each image point exposes the next hit, so the loop
+produces depth ranks without requiring a global front-to-back triangle order.
+The final output is reconstructed on the original source planes. All set
+operations below are regularized: boundaries and isolated line/point remnants do
+not define extra layers. Positive-area depth ties are rejected during setup.
+
+### `visible-peel`: incremental visibility within each pass
+
+[`visible()`](src/visible_peel.cpp) maintains a map `M[source_id]` of exact polygon
+sets whose interiors are disjoint. After each insertion, `M` describes the nearest
+surface among the sources inserted so far. At the start of **every layer**, `M`
+is empty.
+
+For each nonempty residual source `i`, copy `R[i]` into a temporary `pending`
+polygon set. Take a snapshot of candidate source IDs already in `M`. The core
+insertion, without the accelerations described below, is:
+
+```text
+pending = R[i]
+for each old source j in the candidate snapshot:
+    if pending is empty: break
+    overlap = pending intersect M[j]
+    if overlap is empty: continue
+
+    H = image-window portion of the half-plane s[i](u,v) <= s[j](u,v)
+    wins  = overlap intersect H
+    loses = overlap minus wins
+
+    M[j] = M[j] minus wins
+    pending = pending minus loses
+
+if pending is nonempty:
+    M[i] = pending
+```
+
+The affine score difference makes `H` a linear half-plane, including under
+perspective projection. Where two triangles cross in depth, it divides their
+overlap into the part won by each source. Equality along the dividing line has no
+positive area. The code updates old entries as it visits them; this is safe because
+old map interiors are disjoint and the new entry is inserted only after visiting
+the snapshot.
+
+Crucially, losing pieces are discarded from **temporary `pending` only**. The
+persistent `R[i]` stays untouched throughout all insertions. Only the finalized
+map is removed from residuals in the outer loop. Otherwise a source temporarily
+visible before a later insertion could be incorrectly removed from future layers.
+The final map itself becomes the layer; there is no all-rank subdivision to slice
+apart in this method.
+
+The default `near-first` order sorts sources by the minimum score at the four
+corners of each residual's bounding box. This is a conservative lower bound and
+an insertion heuristic, not a valid global depth order. `input`, seeded `random`,
+and `reverse` (reverse input order) are also available. The order is chosen again
+for each pass; exact positive-area results must agree across orders.
+
+The accelerated path adds these tests before constructing overlap polygons:
+
+| Test | Actual implementation | What it avoids |
+| --- | --- | --- |
+| Projected bounds | Query an xmin-sorted list of visible component boxes; return deduplicated source IDs whose boxes overlap the incoming box | Polygon operations on excluded sources |
+| Complete occlusion | One hole-free convex visible component must contain all four corners of the incoming bounding rectangle, with a strictly nearer score at every corner | The entire incoming insertion, including polygon differences |
+| Depth separation | Evaluate the affine score difference at all corners of the current pending box | The overlap/half-plane construction; one polygon difference still clips coverage |
+
+If incoming `i` is nearer throughout that box, the depth shortcut performs
+`M[j] = M[j] minus pending`. If old `j` is nearer, it performs
+`pending = pending minus M[j]`. If neither is certified, it uses the full overlap
+and half-plane steps above. Failed certificates always fall back to exact work.
+`--no-accelerate` visits all nonempty old entries and uses the core insertion.
+
+The component index is rebuilt after every insertion that was not rejected by the
+complete-occlusion certificate, even if that insertion leaves the map unchanged.
+It scans a sorted prefix and filters the other box bounds; it is not a BVH.
+Candidate IDs are visited in source-ID order, not depth order. Each candidate
+refers to the source's whole polygon set, potentially containing several components.
+
+### Two examples of what is peeled
+
+If a foreground triangle `F` completely covers a background triangle `B`, layer 1
+contains `F`, and only `R[F]` is removed. `R[B]` survives unchanged and appears in
+layer 2. Inserting `F` first can reject `B` without polygon Boolean operations
+when the single-component bounding-rectangle certificate succeeds. Containment
+of `B` itself does not guarantee containment of its bounding rectangle. Inserting
+`B` first builds temporary background visibility before `F` replaces it.
+
+For a crossing example, suppose two triangles have the same projected domain `D`
+spanning `u=0`, with orthographic scores `s[A]=2+u` and `s[B]=2-u`. Layer 1 contains
+`A` on `D intersect {u<0}` and `B` on `D intersect {u>0}`. After subtracting those
+regions, layer 2 contains `B` on the left and `A` on the right. Peeling removes
+visible **portions**, rather than deleting a whole triangle when any part is seen.
+
+### `envelope-peel`: recompute a lower envelope per layer
+
+[`envelope()`](src/envelope_peel.cpp) implements the same outer residual loop with
+a different visibility subroutine:
+
+1. Triangulate each nonempty `R[i]` independently, including holes/components.
+2. Lift each adapter triangle to `(u,v,s[i](u,v))` and attach its original source ID.
+3. Call CGAL's `lower_envelope_3` on all those graph triangles.
+4. Extract bounded covered faces, subtract their hole cycles, and union faces
+   belonging to the same original source.
+5. Return those labelled polygon sets as `V` to the outer loop.
+
+Under perspective, the graph coordinate is `-1/z`, not `z`. Adapter triangulation
+edges are dissolved when regions are unioned by source; they do not become stored
+residual boundaries. The adapter triangles and envelope diagram are rebuilt each
+pass. CGAL may construct intermediate hidden subdivisions internally; this
+baseline does not certify that such work is avoided.
+
+### `arrangement`: build the subdivision for all ranks
+
+[`arrangement()`](src/arrangement_oracle.cpp) is the independent small-scene oracle:
+
+1. Insert all initial projected domain boundaries and the image-window boundary.
+2. For every pair with overlapping domains, insert the segment where their affine
+   scores are equal, clipped to their overlap, when such a segment exists.
+3. Split segments at exact intersections and form a constrained triangulation.
+4. At each triangle's interior barycenter, find all covering sources and sort
+   their scores. Coverage and depth order are constant throughout its interior.
+5. Assign that cell to the requested depth ranks, union cells by source and rank,
+   then triangulate each normalized output layer.
+
+Even `--layers 1` builds the full subdivision and sorts complete depth lists.
+Unioning cells can give minimal foreground output after substantial hidden work
+has already occurred. The default 64-source cap keeps this oracle tractable; it
+is not used inside either peeling algorithm unless requested by `--verify`.
+
+### Triangulation, reconstruction, and scope of the prototype
+
+[`triangulate()`](src/triangulate_export.cpp) collects the completed layer's outer
+and hole boundaries, splits them at intersections and shared endpoints with a
+CGAL arrangement, and constructs one constrained Delaunay triangulation. It labels
+each triangle by testing an interior point against the source regions and discards
+uncovered cells. This arrangement contains **that layer's final boundaries**;
+other layers' boundaries are not added to it. Original source boundaries remain
+constraints, including between adjacent coplanar input faces.
+
+[`lift()`](src/camera.cpp) maps each output corner back to the owning original
+plane: `(u,v,s)` in orthographic camera coordinates, or `(u/q,v/q,1/q)` with
+`q=-s` under perspective, followed by the inverse camera transform. Corners on
+opposite sides of a depth jump retain separate 3D positions and source barycentrics.
+Exported triangles are derived output and never become next-pass residuals.
+
+This implements the repeated-pass polygon-set prototype in sections 5–6 of the
+[design](geometric_depth_peeling_design.md). Its performance scope is specific:
+
+- All nonempty residual sources are enumerated each pass. Only residual polygon
+  sets and fixed source/camera data are reused; there is no persistent depth order,
+  visibility graph, or local reveal/update when a foreground region is removed.
+- The visible-map index has projected boxes only. It provides neither hierarchical
+  depth pruning nor a certificate for coverage by several visible components.
+- Polygon clipping uses general CGAL polygon-set Boolean operations, which can
+  construct arrangements internally. Skipping an explicit global all-rank
+  arrangement does not mean every hidden intersection is avoided.
+- Input mesh adjacency is not used to traverse connected surfaces. For identical
+  constant-depth stacked footprints, the implementation revisits remaining sources
+  each pass; a sort-once solution is possible but is not implemented here.
+
+Consequently, the measurements characterize these implementations. They do not
+measure a persistent depth-aware hierarchy or establish a lower bound for peeling.
+
+## Validation
 
 The fixture driver compares all methods and insertion orders, unaccelerated
 variants, and independent K=1,2,4 prefixes against all-layer results. Exact checks
