@@ -1,5 +1,7 @@
 # Recorded artifacts
 
+- `fast/`: matched exact/finite-precision measurements, mesh-contour acceleration,
+  numerical error audits, and an exploded rendering of the fast-mode output.
 - `validation.json`: exact fixture checks, insertion orders, and prefix tests.
 - `findings.md`: interpretation of the measurements and next steps.
 - `benchmark/`: the budgeted cover/no-cover sweep and any remaining default-suite cases.

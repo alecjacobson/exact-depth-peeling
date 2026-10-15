@@ -1,0 +1,112 @@
+[
+  {
+    "name": "INPUT MESH",
+    "detail": "10,240 triangles",
+    "color": "71849A",
+    "screen": [
+      176.87076330184937,
+      612.7527952194214
+    ]
+  },
+  {
+    "name": "LAYER 1",
+    "detail": "5,072 faces",
+    "color": "4D7BCB",
+    "fragment_point": null,
+    "screen": [
+      432.65308141708374,
+      612.7527952194214
+    ]
+  },
+  {
+    "name": "LAYER 2",
+    "detail": "6,665 faces",
+    "color": "28A699",
+    "fragment_point": null,
+    "screen": [
+      688.4353637695312,
+      612.7527952194214
+    ]
+  },
+  {
+    "name": "LAYER 3",
+    "detail": "3,792 faces",
+    "color": "E3AA43",
+    "fragment_point": null,
+    "screen": [
+      944.2177534103394,
+      612.7527952194214
+    ]
+  },
+  {
+    "name": "LAYER 4",
+    "detail": "7,180 faces",
+    "color": "D9684E",
+    "fragment_point": null,
+    "screen": [
+      1200.0,
+      612.7527952194214
+    ]
+  },
+  {
+    "name": "LAYER 5",
+    "detail": "476 faces",
+    "color": "946BC6",
+    "screen": [
+      1455.7823181152344,
+      612.7527952194214
+    ],
+    "fragment_screen": [
+      1540.0248527526855,
+      480.40318489074707
+    ]
+  },
+  {
+    "name": "LAYER 6",
+    "detail": "709 faces",
+    "color": "40AAC6",
+    "screen": [
+      1711.5647792816162,
+      612.7527952194214
+    ],
+    "fragment_screen": [
+      1796.6185569763184,
+      478.19769382476807
+    ]
+  },
+  {
+    "name": "LAYER 7",
+    "detail": "40 faces",
+    "color": "D579A6",
+    "screen": [
+      1967.3470973968506,
+      612.7527952194214
+    ],
+    "fragment_screen": [
+      2052.4516582489014,
+      475.7808446884155
+    ]
+  },
+  {
+    "name": "LAYER 8",
+    "detail": "71 faces",
+    "color": "88A64C",
+    "screen": [
+      2223.1292724609375,
+      612.7527952194214
+    ],
+    "fragment_screen": [
+      2308.689594268799,
+      475.1281142234802
+    ]
+  },
+  {
+    "name": "CAMERA",
+    "detail": "Perspective / no backface culling",
+    "color": "27364A",
+    "screen": [
+      176.87076330184937,
+      904.3358936905861
+    ]
+  }
+]

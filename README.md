@@ -9,13 +9,152 @@ with exact rational fallback and exact constructions. Orthographic and normalize
 pinhole cameras, intersecting triangles, holes, disconnected residuals, and
 original-source reconstruction are implemented.
 
-The current performance implementation is `bvh-peel`: parallel, target-relative
+For finite-precision performance, use `fast-bvh-peel --resolved-mesh` after resolving
+surface intersections. The new [fast-mode measurements](#fast-mode-with-mesh-contours)
+describe its grid, numerical losses, connectivity shortcuts, and exact validation.
+
+The current exact performance implementation is `bvh-peel`: parallel, target-relative
 occlusion queries over a BVH of surviving convex patches. `vbvh-peel` implements
 an [R3-inspired](https://cseweb.ucsd.edu/~ravir/lifan_vectorizer.pdf) incremental
 visibility map with a balanced dynamic BVH. Both retain
 hidden portions for subsequent layers and triangulate the completed layers with
 original source labels. They preserve exact geometry; neither uses R3's fixed-point
 rounding or convex-hull repair. See the [algorithm description](#algorithm-description).
+
+<!-- FAST_RESULTS_BEGIN -->
+## Fast mode with mesh contours
+
+`fast-bvh-peel` is an explicitly **finite-precision** mode alongside the exact
+reference solvers. It adopts R3's fixed-point orientation and convexity-repair
+approach, and uses mesh connectivity to avoid most fragment clipping.
+
+![Fast-mode exploded view: input, acquisition camera, and every extracted layer](results/fast/demo/exploded.png)
+
+| Input | Layers | Exact BVH | Fast clipping | Fast + mesh contours | Speedup over exact |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 10,240 | 8 | 943.7 ms | 45.2 ms | **23.4 ms** | 40.3× |
+| 102,400 | 10 | 9,554.6 ms | 453.8 ms | **194.7 ms** | 49.1× |
+
+These are complete extractions on the same connected meshes, including labelled
+triangulation. There is one warm-up, then nine timed fast runs or three exact runs.
+The 10K case is within a 30 Hz **extraction** budget; the 100K case is still above
+the 100 ms reference. This is a substantial improvement, but not a claim of
+end-to-end real-time rendering or a reproduction of R3's benchmark results.
+
+Parsing, projection and connectivity setup are separate from extraction
+(fast contour mode: 10,240: 61.5 ms; 102,400: 676.6 ms), as are optional intersection
+preprocessing, validation and file export. Repetitions reuse the projected input;
+they do not simulate a moving camera. The four-thread runs use a four-core CPU
+quota on an Intel Xeon Platinum 8362 host.
+
+![Measured exact and finite-precision complete-extraction times](results/fast/comparison.png)
+
+### Connectivity and intersection preprocessing
+
+The `--resolved-mesh` contract is that surface intersections have already been
+split into mesh edges. The supplied `resolve_intersections` tool performs this
+camera-independent preprocessing with **exact** CGAL autorefinement. It preserves
+`original_source_id`, `mesh_face_id`, and the original triangle records. It splits
+intersections without deleting the intersecting surfaces. Its current importer
+requires consistently oriented manifold connectivity, optionally with boundary;
+the resulting geometrically non-manifold edges are supported by the fast extractor.
+Already-resolved non-manifold input can also be passed directly to the extractor.
+Positive-area coincident surfaces remain outside this preprocessing contract.
+
+After projection, the extractor identifies edges by their imported 3D endpoints.
+It retains open boundaries, front/back silhouette edges, all non-manifold or
+inconsistently oriented edges, and conservative boundaries from camera clipping.
+An edge with exactly two consistently oriented, same-facing incident faces is
+excluded from the clipping-contour set. Source-triangle edges still define output
+provenance and reconstruction; they have not been erased from the mesh.
+
+For a triangle whose projected interior is clear of those contours (with a
+four-grid-cell guard), the depth rank is constant. One interior ray classifies its
+whole area directly into the corresponding layer. A static source BVH is reused
+throughout extraction, with rank masks retiring these whole triangles at the right
+layer. Only contour-near residual fragments undergo repeated clipping and index
+rebuilding. The `--no-accelerate` option retains a direct-query correctness control.
+Without `--resolved-mesh`, the same fast clipping machinery runs without the
+constant-rank shortcut; it is retained as the comparison in the table.
+
+On the 100K example, **152,501** internal edges are excluded
+from the contour set, leaving **1,099** contour segments.
+**97,314 of 102,400** triangles receive a whole-triangle rank.
+
+The remaining fragments still use local triangle clipping; full contour regions
+are not yet assembled into clipping masks. Complexity depends on contour overlap,
+ray candidates, generated fragments and output size. This is not a universal
+linear-time bound, and intersection preprocessing can itself have large output.
+
+### Numerical contract and measured error
+
+The default is a **30-bit grid per image-window axis** (`--fast-grid-bits 12..30`).
+Integer orientation tests are exact for the grid coordinates; projection, depth
+planes and intersection construction use binary64. Constructed vertices are rounded
+to the grid and non-convex results are repaired with a convex hull. This is not exact
+geometry relative to the original input. Unresolvable depth comparisons use a
+documented binary64-scale band with lower source ID winning ties.
+
+To prevent rounded remnants from being peeled repeatedly, the fast path removes
+polygons of area at most one grid cell squared and narrow polygons satisfying
+`max cross(edge, vertex) <= 2*(abs(edge.dx)+abs(edge.dy))` for any edge. These losses,
+convexity repairs and tie breaks are counted in the metrics. Small features or even
+an entire tiny late layer can disappear: the `slivers` fixture has two exact layers
+and one fast layer. Increase grid resolution or use the exact solver when those
+features matter. The exact modes retain their original no-sliver-discard contract.
+
+The fast mesh exporter nodes grid-collinear boundary vertices and preserves source
+labels. It does **not** promise exact conforming geometry after rounding. Default
+export is `approximate.json` plus OBJ meshes; `--mesh-only` and `--metrics-only`
+still compute the triangulation. Fast output is never labelled `exact.json`.
+
+| Mesh-contour mode | Exact ray ranks checked | Samples near edges skipped | Rank mismatches checked | Relative per-source area error |
+| ---: | ---: | ---: | ---: | ---: |
+| 10,240 | 878 | 1 | 0 | 1.2e-07 |
+| 102,400 | 1066 | 27 | 0 | 3.75e-07 |
+
+The clipping-only fast control had 2 rank mismatches among 1074 checked 100K samples; its diagnostics are retained in the audit log.
+
+
+
+Ray checks use independent exact camera-space intersections; samples within two
+grid cells of source edges are reported separately and skipped. Area error is the
+sum of absolute per-source differences in accumulated patch area, divided by total
+exact source area. Neither sampling nor area equality is a full region certificate.
+Small fixtures additionally compare every source-labelled region with the exact
+arrangement using symmetric-difference area and an explicit tolerance budget.
+`--validate` runs the large-scene audit; `--verify` adds the small-scene oracle.
+An audit that exceeds its checks writes diagnostics and exits with code 3.
+
+The fast regression report contains 68 checks, including prefix/thread consistency,
+non-manifold junctions, and exact barycentric containment and area conservation
+through intersection preprocessing. These numerical tests supplement the unchanged
+exact solver tests; passing them does not make the fast mode exact.
+
+### Run and reproduce
+
+```sh
+# Optional once per intersecting mesh; create the output directory first.
+mkdir -p out
+build/resolve_intersections input.json out/resolved.json
+build/geometric_peel --scene out/resolved.json --method fast-bvh-peel \
+  --resolved-mesh --layers all --threads 4 --validate --mesh-only --out out/fast
+
+# These generated connected meshes already have no self-intersections.
+python scripts/benchmark_fast.py
+python scripts/render_exploded.py \
+  --scene results/large/scenes/sculpted-10240.json --layers results/fast/demo \
+  --output results/fast/demo/exploded.png
+python scripts/report_fast_results.py
+```
+
+The [raw timings](results/fast/summary.csv), [all attempts](results/fast/status.jsonl),
+[configuration and source hashes](results/fast/config.json),
+[large-scene audits](results/fast/audits.json), and
+[regression report](results/fast/validation.json) are retained. The exploded figure
+uses the actual fast-mode layer meshes; its [Blender scene](results/fast/demo/exploded.blend)
+and large meshes are stored with Git LFS.
+<!-- FAST_RESULTS_END -->
 
 <!-- LARGE_RESULTS_BEGIN -->
 ## Large connected-mesh example
@@ -37,7 +176,7 @@ higher tessellation density.
 | 102,400 | `bvh-peel` | 10 | 11.597 s (9.905–11.850) | 4.241 s | 201,418 |
 | 102,400 | `vbvh-peel` | 10 | 73.207 s (72.907–73.295) | 4.040 s | 224,101 |
 
-**The near-real-time target has not been reached.** These are measured complete
+**The near-real-time target has not been reached in exact mode.** These are measured complete
 extractions, including conforming labelled triangulation, not extrapolated timings
 or first-layer results. The plot's 100 ms line is a performance reference, not an
 achieved guarantee. Different tessellations can have different maximum depth
@@ -169,7 +308,7 @@ matrix; the default is identity. Image coordinates are normalized: orthographic
 coordinate convention. Perspective clipping precedes division, and score is
 `-1/z`; world positions and barycentrics are reconstructed on original triangles.
 
-With the default export mode, each output directory contains:
+For the exact solvers, the default export mode produces:
 
 - `exact.json`: authoritative rational source domains, scores, both camera
   transforms, labelled layers, residuals, and face-corner UV/world/barycentric data.

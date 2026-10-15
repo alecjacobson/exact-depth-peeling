@@ -250,7 +250,9 @@ def annotate(a):
     font = lambda size: ImageFont.truetype(font_path, size)
     data = json.loads(a.scene.read_text())
     metrics = json.loads((a.layers / "metrics.json").read_text())
-    draw.text((55, 24), "Exact geometric depth peeling", font=font(43), fill="#17263B")
+    fast = metrics.get("exact_geometry") is False
+    title = "Fast geometric depth peeling" if fast else "Exact geometric depth peeling"
+    draw.text((55, 24), title, font=font(43), fill="#17263B")
     draw.text(
         (57, 79),
         f"{len(data['triangles']):,} input triangles  /  {len(metrics['passes'])} complete layers  /  same scale throughout",
@@ -273,7 +275,11 @@ def annotate(a):
         )
     draw.text(
         (55, canvas.height - 88),
-        "Layers are lifted onto their original 3D surfaces, then translated for display. No geometry is simplified.",
+        (
+            f"Finite-precision extraction on a {metrics['grid_bits']}-bit grid. Rounding can change very small features."
+            if fast
+            else "Layers are lifted onto their original 3D surfaces, then translated for display. No geometry is simplified."
+        ),
         font=font(23),
         fill="#27364A",
     )

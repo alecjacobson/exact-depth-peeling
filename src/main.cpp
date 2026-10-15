@@ -1,3 +1,4 @@
+#include "fast_peel.h"
 #include "geometry.h"
 #include <CGAL/version.h>
 #include <fstream>
@@ -5,22 +6,26 @@
 #include <sys/utsname.h>
 namespace {
 void help() {
-  std::cout << "geometric_peel --scene FILE --method "
-               "vbvh-peel|bvh-peel|visible-peel|envelope-peel|arrangement\n  --layers "
-               "all|N --order input|random|near-first|reverse --seed N\n  --out DIR "
-               "[--verify|--validate] "
-               "[--no-accelerate] [--oracle-cap N] [--threads N] [--repeat N]\n"
-               "  [--metrics-only|--mesh-only] (bvh-peel only)\n  --compare EXACT_JSON "
-               "EXACT_JSON\nVerification runs "
-               "exact geometry checks and an independent arrangement oracle.\n";
+  std::cout
+      << "geometric_peel --scene FILE --method "
+         "fast-bvh-peel|vbvh-peel|bvh-peel|visible-peel|envelope-peel|arrangement\n  --layers "
+         "all|N --order input|random|near-first|reverse --seed N\n  --out DIR "
+         "[--verify|--validate] "
+         "[--no-accelerate] [--oracle-cap N] [--threads N] [--repeat N]\n"
+         "  [--metrics-only|--mesh-only] (BVH methods) [--fast-grid-bits 12..30]\n"
+         "  [--resolved-mesh] (fast mode: all intersections must already be split into edges)\n  "
+         "--compare "
+         "EXACT_JSON "
+         "EXACT_JSON\nVerification runs "
+         "exact geometry checks and an independent arrangement oracle.\n";
 }
 } // namespace
 int main(int argc, char **argv) {
   using namespace peel;
   try {
     std::string scene, method = "visible-peel", order = "near-first", out = "out/peel";
-    int layers = 0, cap = 64, threads = 1, repeat = 1;
-    bool metrics_only = false, mesh_only = false;
+    int layers = 0, cap = 64, threads = 1, repeat = 1, fast_bits = 30;
+    bool metrics_only = false, mesh_only = false, resolved_mesh = false;
     unsigned seed = 1729;
     bool verify = false, validate_only = false, accelerate = true;
     for (int i = 1; i < argc; ++i) {
@@ -54,6 +59,10 @@ int main(int argc, char **argv) {
         threads = std::stoi(value());
       else if (a == "--repeat")
         repeat = std::stoi(value());
+      else if (a == "--fast-grid-bits")
+        fast_bits = std::stoi(value());
+      else if (a == "--resolved-mesh")
+        resolved_mesh = true;
       else if (a == "--metrics-only")
         metrics_only = true;
       else if (a == "--mesh-only")
@@ -80,6 +89,11 @@ int main(int argc, char **argv) {
       throw std::runtime_error("repeat and threads must be positive");
     if (metrics_only && mesh_only)
       throw std::runtime_error("Choose only one compact output mode");
+    if (method == "fast-bvh-peel")
+      return fast::run_cli(scene, out, layers, threads, repeat, fast_bits, order, seed, accelerate,
+                           metrics_only, verify, validate_only, cap, resolved_mesh, mesh_only);
+    if (resolved_mesh)
+      throw std::runtime_error("--resolved-mesh applies only to fast-bvh-peel");
     if ((metrics_only || mesh_only) && method != "bvh-peel" && method != "vbvh-peel")
       throw std::runtime_error("Compact output requires bvh-peel");
     auto t = Clock::now();

@@ -44,5 +44,11 @@
     "default": "CGAL::Lazy_exact_nt<CGAL::Exact_rational>",
     "eager_build_option": "-DPEEL_LAZY_EXACT=OFF",
     "construction_semantics": "exact in both configurations"
+  },
+  "intersection_preprocessor": {
+    "implementation": "CGAL 5.4 PMP experimental::autorefine",
+    "constructions": "exact rational",
+    "source_incorporated": false,
+    "input_contract": "consistently oriented manifold with optional boundary; positive-area coincident surfaces unsupported"
   }
 }

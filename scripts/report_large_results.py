@@ -126,7 +126,7 @@ higher tessellation density.
         + caveats
         + """
 
-**The near-real-time target has not been reached.** These are measured complete
+**The near-real-time target has not been reached in exact mode.** These are measured complete
 extractions, including conforming labelled triangulation, not extrapolated timings
 or first-layer results. The plot's 100 ms line is a performance reference, not an
 achieved guarantee. Different tessellations can have different maximum depth

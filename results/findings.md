@@ -1,5 +1,10 @@
 # Findings: exact geometric depth peeling
 
+The latest [fast-mode comparison](../README.md#fast-mode-with-mesh-contours) adds
+finite-precision construction, exact intersection preprocessing, and connectivity
+contours. It retains the exact solvers as references and reports numerical losses
+separately from timing. The discussion below and `large/` describe exact-mode runs.
+
 The discussion below records the original polygon-set experiments. The new
 convex-fragment solvers and complete-layer measurements on 10K/100K connected
 meshes are documented in the [current README](../README.md#large-connected-mesh-example)

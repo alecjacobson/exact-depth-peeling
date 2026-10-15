@@ -1,0 +1,48 @@
+{
+  "executable_sha256": "81694b6f52e979a8b08c920657147ca28594f8987816350b010cd44dbf2fbf13",
+  "source_sha256": {
+    "src/arrangement_oracle.cpp": "effb12dc2cf4cf5397bde6c9f848a4c920fec0dd29d460b2c8e3c6bdc5f0a981",
+    "src/bvh_peel.cpp": "513e2fe5170d429224597462f034efb920079ac987061155b4de5f7573b04f19",
+    "src/camera.cpp": "0c4603ec2c6e001647ad122fb6fb71fe9391f88a14c13624fdf5cf2b8af61e92",
+    "src/envelope_peel.cpp": "ddc460a8422974fb0eddf2d4549f029e0b7cc4693f36e8a7508f72f121b97f17",
+    "src/exact_geometry.cpp": "c7c6053dd9277128421910d101ba2961bbc304c5bab31ffd836709a64ab855de",
+    "src/fast_peel.cpp": "937006d252346675f41edc1cebded1c32c26541e6fbbfdffff7cca11e38f6d34",
+    "src/fast_peel.h": "994144fa06eb00d7e78c2f8cc62a2dc1189014e7a700eb9c34a497ff905ab52b",
+    "src/fast_reference.cpp": "e850207e0b49229817c86a8cb88da680cb0f7cc9e67526db7afb153fd851447c",
+    "src/geometry.h": "109d1d714b09ed2d2ec18a802a994c57d9a25075ff1f699d5a6f8dea9038d1d5",
+    "src/main.cpp": "3cb09f9e6ef5cafa830d0c80116577846fe577e2a35e2f4e7f9e978be8829294",
+    "src/resolve_intersections.cpp": "f6effa2957e1f4e8f008946ccf028c1a74571e6b308e74cf729326bdfb1c349d",
+    "src/topology.h": "75ead7f0ae1863a97be63c557803035f70dfc3b9397122779b3887213176391e",
+    "src/triangulate_export.cpp": "396344389c222eab95c7780726985485154dfda25f3761e7791a58ee69e12e6d",
+    "src/validation.cpp": "63eee43c389b0c0544abd517abcbc52e6ec6488a99c12ead72c67cbe82a4bdfb",
+    "src/visible_peel.cpp": "c4a822e9714b4542de838e617bd805a79161da3c52d05251364132b61bca2478"
+  },
+  "git_base_revision": "775b4a84b00d965e8150ff9219385ad00f9db7a1",
+  "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.35",
+  "threads": 4,
+  "omp_wait_policy": "PASSIVE",
+  "cpu": "Intel(R) Xeon(R) Platinum 8362 CPU @ 2.80GHz",
+  "warmup_repetitions": 1,
+  "exact_measured_repetitions": 3,
+  "fast_measured_repetitions": 9,
+  "grid_bits": 30,
+  "memory_cap_mib": 4096,
+  "timeout_seconds": 180,
+  "timing_includes": [
+    "BVH construction",
+    "contour rank classification",
+    "complete layer extraction",
+    "labelled triangulation"
+  ],
+  "timing_excludes": [
+    "input parse/projection/topology",
+    "optional intersection preprocessing",
+    "validation",
+    "file export"
+  ],
+  "scene_sha256": {
+    "10240": "6d27b63516a6ef430202dff4cb4b8ef2f2c48c45cc51b501c71f9be2d28ef8d8",
+    "102400": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e"
+  },
+  "cpu_quota": "400000 100000"
+}

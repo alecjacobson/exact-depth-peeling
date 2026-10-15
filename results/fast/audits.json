@@ -1,0 +1,187 @@
+[
+  {
+    "variant": "fast-clipping",
+    "input_triangles": 10240,
+    "run": {
+      "returncode": 0,
+      "stdout": "{\"algorithm_seconds\":0.043127184,\"exact_geometry\":false,\"layers\":8,\"output\":\"/home/horde/projects/exact-depth-peeling/results/fast/audit-fast-clipping-10240\",\"validation_seconds\":0.528573528}\n",
+      "stderr": "",
+      "status": "completed",
+      "command": [
+        "/home/horde/projects/exact-depth-peeling/build/geometric_peel",
+        "--scene",
+        "/home/horde/projects/exact-depth-peeling/results/large/scenes/sculpted-10240.json",
+        "--method",
+        "fast-bvh-peel",
+        "--layers",
+        "all",
+        "--threads",
+        "4",
+        "--validate",
+        "--metrics-only",
+        "--out",
+        "/home/horde/projects/exact-depth-peeling/results/fast/audit-fast-clipping-10240"
+      ],
+      "wall_seconds": 0.7094920240342617
+    },
+    "audit": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 3,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 899,
+      "mismatch_examples": [],
+      "rank_mismatches_away_from_boundaries": 0,
+      "relative_source_area_l1_error": 1.1956932977966133e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "passed",
+      "summed_patch_area_per_source_l1_error": 4.440607239964111e-08,
+      "summed_reference_source_area": 0.37138346833147967
+    }
+  },
+  {
+    "variant": "fast-contours",
+    "input_triangles": 10240,
+    "run": {
+      "returncode": 0,
+      "stdout": "{\"algorithm_seconds\":0.023775962,\"exact_geometry\":false,\"layers\":8,\"output\":\"/home/horde/projects/exact-depth-peeling/results/fast/demo\",\"validation_seconds\":0.534226641}\n",
+      "stderr": "",
+      "status": "completed",
+      "command": [
+        "/home/horde/projects/exact-depth-peeling/build/geometric_peel",
+        "--scene",
+        "/home/horde/projects/exact-depth-peeling/results/large/scenes/sculpted-10240.json",
+        "--method",
+        "fast-bvh-peel",
+        "--layers",
+        "all",
+        "--threads",
+        "4",
+        "--validate",
+        "--mesh-only",
+        "--out",
+        "/home/horde/projects/exact-depth-peeling/results/fast/demo",
+        "--resolved-mesh"
+      ],
+      "wall_seconds": 0.7872294448316097
+    },
+    "audit": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 1,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 878,
+      "mismatch_examples": [],
+      "rank_mismatches_away_from_boundaries": 0,
+      "relative_source_area_l1_error": 1.1976426114412399e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "passed",
+      "summed_patch_area_per_source_l1_error": 4.447846668586183e-08,
+      "summed_reference_source_area": 0.37138346833147967
+    }
+  },
+  {
+    "variant": "fast-clipping",
+    "input_triangles": 102400,
+    "run": {
+      "returncode": 3,
+      "stdout": "{\"algorithm_seconds\":0.458038862,\"exact_geometry\":false,\"layers\":10,\"output\":\"/home/horde/projects/exact-depth-peeling/results/fast/audit-fast-clipping-102400\",\"validation_seconds\":6.859149313}\n",
+      "stderr": "",
+      "status": "error",
+      "command": [
+        "/home/horde/projects/exact-depth-peeling/build/geometric_peel",
+        "--scene",
+        "/home/horde/projects/exact-depth-peeling/results/large/scenes/sculpted-102400.json",
+        "--method",
+        "fast-bvh-peel",
+        "--layers",
+        "all",
+        "--threads",
+        "4",
+        "--validate",
+        "--metrics-only",
+        "--out",
+        "/home/horde/projects/exact-depth-peeling/results/fast/audit-fast-clipping-102400"
+      ],
+      "wall_seconds": 8.909355569630861
+    },
+    "audit": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 41,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 1074,
+      "mismatch_examples": [
+        {
+          "actual_source": 8736,
+          "expected_source": 97691,
+          "layer": 7,
+          "uv": [
+            0.20462501595417648,
+            0.016609740008910467
+          ]
+        },
+        {
+          "actual_source": 8736,
+          "expected_source": 97691,
+          "layer": 7,
+          "uv": [
+            0.20465445083876443,
+            0.01663149955372001
+          ]
+        }
+      ],
+      "rank_mismatches_away_from_boundaries": 2,
+      "relative_source_area_l1_error": 3.7621752441874856e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "numerical_mismatch",
+      "summed_patch_area_per_source_l1_error": 1.3990462223412852e-07,
+      "summed_reference_source_area": 0.37187162519948913
+    }
+  },
+  {
+    "variant": "fast-contours",
+    "input_triangles": 102400,
+    "run": {
+      "returncode": 0,
+      "stdout": "{\"algorithm_seconds\":0.191726808,\"exact_geometry\":false,\"layers\":10,\"output\":\"/home/horde/projects/exact-depth-peeling/results/fast/audit-fast-contours-102400\",\"validation_seconds\":6.232068464}\n",
+      "stderr": "",
+      "status": "completed",
+      "command": [
+        "/home/horde/projects/exact-depth-peeling/build/geometric_peel",
+        "--scene",
+        "/home/horde/projects/exact-depth-peeling/results/large/scenes/sculpted-102400.json",
+        "--method",
+        "fast-bvh-peel",
+        "--layers",
+        "all",
+        "--threads",
+        "4",
+        "--validate",
+        "--metrics-only",
+        "--out",
+        "/home/horde/projects/exact-depth-peeling/results/fast/audit-fast-contours-102400",
+        "--resolved-mesh"
+      ],
+      "wall_seconds": 8.132930401712656
+    },
+    "audit": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 27,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 1066,
+      "mismatch_examples": [],
+      "rank_mismatches_away_from_boundaries": 0,
+      "relative_source_area_l1_error": 3.750385659588993e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "passed",
+      "summed_patch_area_per_source_l1_error": 1.3946620103562168e-07,
+      "summed_reference_source_area": 0.37187162519948913
+    }
+  }
+]
