@@ -96,7 +96,11 @@ def main():
     axes[3].set_ylabel("Conforming output meshing (seconds)")
     axes[3].set_title("Same mesher, different exact fragments · last repetition")
     fig.suptitle("Cached dragon sequence · fixed camera · four CPU threads")
-    fig.savefig(a.results / "trends.svg")
+    svg = a.results / "trends.svg"
+    fig.savefig(svg)
+    svg.write_text(
+        "\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n"
+    )
     fig.savefig(a.results / "trends.png", dpi=160)
     lines = [
         "| Decimation target → resolved faces | Global exact | Peeling exact | Global / peeling |",

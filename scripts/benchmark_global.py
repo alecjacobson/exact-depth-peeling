@@ -156,7 +156,9 @@ def main():
             "scene_sha256",
         ]
         with (a.output / "summary.csv").open("w") as out:
-            writer = csv.DictWriter(out, fieldnames=columns, extrasaction="ignore")
+            writer = csv.DictWriter(
+                out, fieldnames=columns, extrasaction="ignore", lineterminator="\n"
+            )
             writer.writeheader()
             latest = {
                 (r["target_faces"], r["method"]): r
