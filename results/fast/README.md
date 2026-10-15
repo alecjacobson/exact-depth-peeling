@@ -12,3 +12,7 @@ has 128 logical CPUs but this session shares a four-core quota. See its
 [report](thread-scaling/README.md) for timing boundaries and contention estimates.
 `thread-scaling-loaded/` preserves the initially paused batch, which is not mixed
 into the final table.
+
+[Shared CPU algorithm experiments](../cpu-transfer/README.md) measure subtree
+rank retirement, optional convex residual merging, and finer per-layer stages
+on cached dragons and the torus, with paired exact-mode regression checks.

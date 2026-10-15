@@ -1,0 +1,35 @@
+{
+  "before_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
+  "after_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
+  "scenes": {
+    "dragon-1024": {
+      "path": "results/global/dragon-cache/1024/resolved.json",
+      "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7"
+    },
+    "dragon-4096": {
+      "path": "results/global/dragon-cache/4096/resolved.json",
+      "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996"
+    }
+  },
+  "threads": 4,
+  "warmups_per_process": 1,
+  "repetitions": 3,
+  "batches": 2,
+  "exact": true,
+  "background_load_controlled": false,
+  "cpu_max": "400000 100000",
+  "timing_includes": [
+    "classification",
+    "all-layer extraction",
+    "meshing"
+  ],
+  "timing_excludes": [
+    "import/projection/topology",
+    "validation",
+    "export"
+  ],
+  "phase_metrics": "last repetition of each process",
+  "max_ratio": 1.2,
+  "timeout_seconds": 600,
+  "address_space_cap_gib": 24
+}

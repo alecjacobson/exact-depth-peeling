@@ -14,6 +14,7 @@ void help() {
          "[--verify|--verify-global|--validate] "
          "[--no-accelerate] [--oracle-cap N] [--threads N] [--repeat N]\n"
          "  [--metrics-only|--mesh-only] (BVH/global methods) [--fast-grid-bits 12..30]\n"
+         "  [--no-rank-pruning] [--merge-residuals] (bvh-peel/fast-bvh-peel controls)\n"
          "  [--global-all-edges] (global-arrangement control: disable contour reduction)\n"
          "  [--resolved-mesh] (bvh-peel/fast-bvh-peel: all intersections must already be split "
          "into edges)\n  "
@@ -28,6 +29,7 @@ int main(int argc, char **argv) {
   try {
     std::string scene, method = "visible-peel", order = "near-first", out = "out/peel";
     int layers = 0, cap = 64, threads = 1, repeat = 1, fast_bits = 30;
+    PeelOptions peel_options;
     bool metrics_only = false, mesh_only = false, resolved_mesh = false;
     unsigned seed = 1729;
     bool verify = false, verify_global = false, global_all_edges = false;
@@ -65,6 +67,10 @@ int main(int argc, char **argv) {
         repeat = std::stoi(value());
       else if (a == "--fast-grid-bits")
         fast_bits = std::stoi(value());
+      else if (a == "--no-rank-pruning")
+        peel_options.prune_rank_subtrees = false;
+      else if (a == "--merge-residuals")
+        peel_options.merge_residuals = true;
       else if (a == "--resolved-mesh")
         resolved_mesh = true;
       else if (a == "--metrics-only")
@@ -100,9 +106,13 @@ int main(int argc, char **argv) {
     if ((global_all_edges && method != "global-arrangement") ||
         (verify_global && (method == "fast-bvh-peel" || method == "global-arrangement")))
       throw std::runtime_error("Global controls require the corresponding exact solver");
+    if ((!peel_options.prune_rank_subtrees || peel_options.merge_residuals) &&
+        method != "bvh-peel" && method != "fast-bvh-peel")
+      throw std::runtime_error("Peeling controls require bvh-peel or fast-bvh-peel");
     if (method == "fast-bvh-peel")
       return fast::run_cli(scene, out, layers, threads, repeat, fast_bits, order, seed, accelerate,
-                           metrics_only, verify, validate_only, cap, resolved_mesh, mesh_only);
+                           metrics_only, verify, validate_only, cap, resolved_mesh, mesh_only,
+                           peel_options);
     if (resolved_mesh && method != "bvh-peel" && method != "global-arrangement")
       throw std::runtime_error(
           "--resolved-mesh requires a BVH peeling or global-arrangement method");
@@ -123,7 +133,8 @@ int main(int argc, char **argv) {
       r = method == "global-arrangement"
               ? global_arrangement(s, layers, threads, accelerate, !global_all_edges)
           : (method == "bvh-peel" || method == "vbvh-peel")
-              ? bvh_peel(s, layers, order, seed, accelerate, threads, method == "vbvh-peel")
+              ? bvh_peel(s, layers, order, seed, accelerate, threads, method == "vbvh-peel",
+                         peel_options)
               : run(s, method, layers, order, seed, accelerate, cap);
       timings.push_back(seconds(t));
     }

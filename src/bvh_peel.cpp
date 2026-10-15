@@ -134,6 +134,7 @@ bool separated(const Ring &a, const Ring &b) {
   return false;
 }
 struct Work {
+  uint64_t retired_subtrees = 0;
   std::vector<Ring> visible, hidden;
   Stats stats;
 };
@@ -485,7 +486,7 @@ incremental_pass(const Scene &s, const std::vector<Patch> &input, const std::str
 }
 // Node all boundary vertices on patch edges without a global arrangement or
 // searching all source labels. The patches already carry their source IDs.
-std::vector<Face> mesh(const std::vector<Patch> &patches, int threads) {
+std::vector<Face> mesh(const std::vector<Patch> &patches, int threads, Json *phases = nullptr) {
   return common::mesh<P, Bounds, Ring, Face, std::vector<Face>>(
       patches, threads, [] { return CGAL::Protect_FPU_rounding<true>(CGAL_FE_UPWARD); },
       [](const P &a, const P &b, const P &v) {
@@ -504,7 +505,8 @@ std::vector<Face> mesh(const std::vector<Patch> &patches, int threads) {
           for (size_t i = 0; i < ring.size(); ++i)
             out.push_back({source, {center, ring[i], ring[(i + 1) % ring.size()]}});
         }
-      });
+      },
+      phases);
 }
 
 Json patch_complexity(const std::vector<Patch> &ps) {
@@ -521,6 +523,7 @@ struct ExactPolicy {
   using ResultType = Result;
   const Scene &s;
   auto guard() const { return CGAL::Protect_FPU_rounding<true>(CGAL_FE_UPWARD); }
+  int turn(const P &a, const P &b, const P &c) const { return side_sign(a, b, c); }
   bool resolved() const { return s.topology.value("resolved_mesh_contract", false); }
   void initialize(Result &r) const { r.convex_representation = true; }
   void residual(Result &r, std::vector<Patch> p) const { r.residual_patches = std::move(p); }
@@ -603,14 +606,15 @@ struct ExactPolicy {
               accelerate);
   }
   void finish(Layer &layer, int, const std::vector<Patch> &input, const std::vector<Work> &work,
-              double visibility, int threads) const {
+              double visibility, int threads, const Json &phases) const {
     layer.residual_complexity = patch_complexity(input);
     ++layer.stats.index_rebuilds;
     for (auto &w : work)
       add_stats(layer.stats, w.stats);
     layer.stats.visibility_seconds = visibility;
     auto t = Clock::now();
-    layer.faces = mesh(layer.patches, threads);
+    layer.phase_metrics = phases;
+    layer.faces = mesh(layer.patches, threads, &layer.phase_metrics["meshing"]);
     layer.stats.triangulation_seconds = seconds(t);
   }
 };
@@ -621,7 +625,7 @@ std::vector<Face> triangulate_patches(const std::vector<Patch> &patches, int thr
 }
 
 Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned seed,
-                bool accelerate, int threads, bool incremental) {
+                bool accelerate, int threads, bool incremental, PeelOptions options) {
   if (threads < 1)
     throw std::runtime_error("threads must be positive");
 #ifndef _OPENMP
@@ -632,7 +636,7 @@ Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned s
     throw std::runtime_error("Unknown insertion order");
   if (!incremental) {
     ExactPolicy policy{s};
-    return common::extract(policy, layers, threads, order, seed, accelerate);
+    return common::extract(policy, layers, threads, order, seed, accelerate, options);
   }
   Result result;
   result.convex_representation = true;
@@ -813,6 +817,7 @@ void write_convex_result(const Scene &s, Result &r, const std::string &path, Jso
     auto p = l.stats.json();
     p["layer_index"] = k + 1;
     p["input_residual"] = l.residual_complexity;
+    p["phases"] = l.phase_metrics;
     p["output"] = patch_complexity(l.patches);
     p["exported_triangles"] = l.faces.size();
     passes.push_back(p);

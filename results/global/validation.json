@@ -1,6 +1,6 @@
 {
   "checks": 243,
-  "executable_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
+  "executable_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
   "results": [
     {
       "scene": "binary_float",
@@ -40,19 +40,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000251154,
-        "boundary_seconds": 2.0747e-05,
+        "arrangement_seconds": 0.000244252,
+        "boundary_seconds": 1.7962e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000124561,
+        "labeling_seconds": 0.000134322,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 2.0864e-05
+        "triangulation_seconds": 1.8988e-05
       }
     },
     {
@@ -93,19 +93,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000302609,
-        "boundary_seconds": 0.000125663,
+        "arrangement_seconds": 0.000304588,
+        "boundary_seconds": 0.000117797,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000138488,
+        "labeling_seconds": 0.000146323,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.6881e-05
+        "triangulation_seconds": 1.4905e-05
       }
     },
     {
@@ -146,19 +146,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000226162,
-        "boundary_seconds": 1.22e-05,
+        "arrangement_seconds": 0.000228648,
+        "boundary_seconds": 9.166e-06,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000121342,
+        "labeling_seconds": 0.000116948,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.0441e-05
+        "triangulation_seconds": 1.1688e-05
       }
     },
     {
@@ -199,19 +199,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000295048,
-        "boundary_seconds": 0.000110265,
+        "arrangement_seconds": 0.000303237,
+        "boundary_seconds": 0.000117148,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000145851,
+        "labeling_seconds": 0.000141445,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.9619e-05
+        "triangulation_seconds": 1.4667e-05
       }
     },
     {
@@ -252,19 +252,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000301584,
-        "boundary_seconds": 0.000121678,
+        "arrangement_seconds": 0.000294172,
+        "boundary_seconds": 0.000102217,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000148604,
+        "labeling_seconds": 0.000140972,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.9229e-05
+        "triangulation_seconds": 1.4776e-05
       }
     },
     {
@@ -305,19 +305,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000251487,
-        "boundary_seconds": 1.313e-05,
+        "arrangement_seconds": 0.000220141,
+        "boundary_seconds": 1.1202e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000121456,
+        "labeling_seconds": 0.000127655,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.6686e-05
+        "triangulation_seconds": 1.1616e-05
       }
     },
     {
@@ -358,19 +358,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000295033,
-        "boundary_seconds": 1.2979e-05,
+        "arrangement_seconds": 0.000289932,
+        "boundary_seconds": 1.0386e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000164451,
+        "labeling_seconds": 0.00017075,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 2.1307e-05
+        "triangulation_seconds": 1.7957e-05
       }
     },
     {
@@ -411,19 +411,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000363463,
-        "boundary_seconds": 0.000118517,
+        "arrangement_seconds": 0.000363864,
+        "boundary_seconds": 0.000107275,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000194005,
+        "labeling_seconds": 0.000191965,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.9044e-05
+        "triangulation_seconds": 2.0961e-05
       }
     },
     {
@@ -464,19 +464,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000294235,
-        "boundary_seconds": 1.0038e-05,
+        "arrangement_seconds": 0.000281533,
+        "boundary_seconds": 1.0575e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000169468,
+        "labeling_seconds": 0.000162948,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.604e-05
+        "triangulation_seconds": 1.4423e-05
       }
     },
     {
@@ -517,19 +517,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000361497,
-        "boundary_seconds": 0.000121787,
+        "arrangement_seconds": 0.000364583,
+        "boundary_seconds": 0.000113878,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000195026,
+        "labeling_seconds": 0.000191356,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.9624e-05
+        "triangulation_seconds": 2.0906e-05
       }
     },
     {
@@ -570,19 +570,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000365736,
-        "boundary_seconds": 0.000113063,
+        "arrangement_seconds": 0.000359954,
+        "boundary_seconds": 0.000101427,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000188525,
+        "labeling_seconds": 0.000192072,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 2.2827e-05
+        "triangulation_seconds": 2.0149e-05
       }
     },
     {
@@ -623,19 +623,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000280154,
-        "boundary_seconds": 1.1597e-05,
+        "arrangement_seconds": 0.000280167,
+        "boundary_seconds": 1.1507e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000167698,
+        "labeling_seconds": 0.000164942,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.5463e-05
+        "triangulation_seconds": 1.7791e-05
       }
     },
     {
@@ -676,19 +676,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000511706,
-        "boundary_seconds": 0.000469383,
+        "arrangement_seconds": 0.024521996,
+        "boundary_seconds": 0.000465466,
         "boundary_segments": 10,
         "cell_candidates": 164,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 2,
-        "labeling_seconds": 0.002902979,
+        "labeling_seconds": 0.002944862,
         "pair_candidates": 58,
         "pair_polygon_intersections": 0,
         "ray_candidates": 115,
         "source_cell_fragments": 36,
-        "triangulation_seconds": 0.00070437
+        "triangulation_seconds": 0.000693936
       }
     },
     {
@@ -729,19 +729,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000688317,
-        "boundary_seconds": 0.000624165,
+        "arrangement_seconds": 0.000691227,
+        "boundary_seconds": 0.000637497,
         "boundary_segments": 10,
         "cell_candidates": 164,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 2,
-        "labeling_seconds": 0.003423842,
+        "labeling_seconds": 0.003443161,
         "pair_candidates": 58,
         "pair_polygon_intersections": 0,
         "ray_candidates": 115,
         "source_cell_fragments": 36,
-        "triangulation_seconds": 0.0007139609999999999
+        "triangulation_seconds": 0.000706866
       }
     },
     {
@@ -782,19 +782,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000524208,
-        "boundary_seconds": 0.000463221,
+        "arrangement_seconds": 0.0005082,
+        "boundary_seconds": 0.000478284,
         "boundary_segments": 10,
         "cell_candidates": 216,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 2,
-        "labeling_seconds": 0.003318069,
+        "labeling_seconds": 0.003030246,
         "pair_candidates": 66,
         "pair_polygon_intersections": 0,
         "ray_candidates": 408,
         "source_cell_fragments": 36,
-        "triangulation_seconds": 0.000799368
+        "triangulation_seconds": 0.000706674
       }
     },
     {
@@ -835,19 +835,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002744887,
-        "boundary_seconds": 0.000627832,
+        "arrangement_seconds": 0.002683726,
+        "boundary_seconds": 0.000629996,
         "boundary_segments": 36,
         "cell_candidates": 316,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008563737,
+        "labeling_seconds": 0.008536656,
         "pair_candidates": 58,
         "pair_polygon_intersections": 0,
         "ray_candidates": 176,
         "source_cell_fragments": 56,
-        "triangulation_seconds": 0.001438197
+        "triangulation_seconds": 0.001418039
       }
     },
     {
@@ -888,19 +888,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000696249,
-        "boundary_seconds": 0.00063098,
+        "arrangement_seconds": 0.000693302,
+        "boundary_seconds": 0.000616534,
         "boundary_segments": 10,
         "cell_candidates": 164,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 2,
-        "labeling_seconds": 0.003456169,
+        "labeling_seconds": 0.003440996,
         "pair_candidates": 58,
         "pair_polygon_intersections": 0,
         "ray_candidates": 115,
         "source_cell_fragments": 36,
-        "triangulation_seconds": 0.000388348
+        "triangulation_seconds": 0.000382793
       }
     },
     {
@@ -941,19 +941,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000517311,
-        "boundary_seconds": 0.000467169,
+        "arrangement_seconds": 0.024529006,
+        "boundary_seconds": 0.000457717,
         "boundary_segments": 10,
         "cell_candidates": 164,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 2,
-        "labeling_seconds": 0.002915704,
+        "labeling_seconds": 0.002907939,
         "pair_candidates": 58,
         "pair_polygon_intersections": 0,
         "ray_candidates": 115,
         "source_cell_fragments": 36,
-        "triangulation_seconds": 0.000704496
+        "triangulation_seconds": 0.00069346
       }
     },
     {
@@ -994,19 +994,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000679945,
-        "boundary_seconds": 2.0142e-05,
+        "arrangement_seconds": 0.000708539,
+        "boundary_seconds": 2.1776e-05,
         "boundary_segments": 11,
         "cell_candidates": 126,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001317624,
+        "labeling_seconds": 0.001271982,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 47,
         "source_cell_fragments": 31,
-        "triangulation_seconds": 0.0008644060000000001
+        "triangulation_seconds": 0.0008680999999999999
       }
     },
     {
@@ -1047,19 +1047,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001335465,
-        "boundary_seconds": 0.00015412,
+        "arrangement_seconds": 0.001127419,
+        "boundary_seconds": 0.000145971,
         "boundary_segments": 11,
         "cell_candidates": 126,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001745096,
+        "labeling_seconds": 0.001729024,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 47,
         "source_cell_fragments": 31,
-        "triangulation_seconds": 0.000898541
+        "triangulation_seconds": 0.000899856
       }
     },
     {
@@ -1100,19 +1100,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000682955,
-        "boundary_seconds": 1.9346e-05,
+        "arrangement_seconds": 0.000732926,
+        "boundary_seconds": 2.1012e-05,
         "boundary_segments": 11,
         "cell_candidates": 200,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001480958,
+        "labeling_seconds": 0.001484205,
         "pair_candidates": 10,
         "pair_polygon_intersections": 0,
         "ray_candidates": 124,
         "source_cell_fragments": 31,
-        "triangulation_seconds": 0.000848963
+        "triangulation_seconds": 0.000839042
       }
     },
     {
@@ -1153,19 +1153,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002212727,
-        "boundary_seconds": 0.000135656,
+        "arrangement_seconds": 0.002222516,
+        "boundary_seconds": 0.000133803,
         "boundary_segments": 15,
         "cell_candidates": 150,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003373506,
+        "labeling_seconds": 0.003370007,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 52,
         "source_cell_fragments": 33,
-        "triangulation_seconds": 0.0007715830000000001
+        "triangulation_seconds": 0.000614096
       }
     },
     {
@@ -1206,19 +1206,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001113892,
-        "boundary_seconds": 0.000157237,
+        "arrangement_seconds": 0.001117821,
+        "boundary_seconds": 0.000132833,
         "boundary_segments": 11,
         "cell_candidates": 126,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00171888,
+        "labeling_seconds": 0.001714761,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 47,
         "source_cell_fragments": 31,
-        "triangulation_seconds": 0.000846946
+        "triangulation_seconds": 0.00091178
       }
     },
     {
@@ -1259,19 +1259,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000693823,
-        "boundary_seconds": 2.1356e-05,
+        "arrangement_seconds": 0.000685655,
+        "boundary_seconds": 1.7945e-05,
         "boundary_segments": 11,
         "cell_candidates": 126,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001261632,
+        "labeling_seconds": 0.001247824,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 47,
         "source_cell_fragments": 31,
-        "triangulation_seconds": 0.000864599
+        "triangulation_seconds": 0.000855579
       }
     },
     {
@@ -1312,19 +1312,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000175203,
-        "boundary_seconds": 1.3184e-05,
+        "arrangement_seconds": 0.000175433,
+        "boundary_seconds": 1.3317e-05,
         "boundary_segments": 4,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 9.7378e-05,
+        "labeling_seconds": 9.6951e-05,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.8965e-05
+        "triangulation_seconds": 1.7051e-05
       }
     },
     {
@@ -1365,19 +1365,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000242239,
-        "boundary_seconds": 0.000130396,
+        "arrangement_seconds": 0.000249838,
+        "boundary_seconds": 0.00014331,
         "boundary_segments": 4,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000160152,
+        "labeling_seconds": 0.000161895,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9872e-05
+        "triangulation_seconds": 2.1288e-05
       }
     },
     {
@@ -1418,19 +1418,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000177744,
-        "boundary_seconds": 1.3979e-05,
+        "arrangement_seconds": 0.000171994,
+        "boundary_seconds": 1.1625e-05,
         "boundary_segments": 4,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 9.6258e-05,
+        "labeling_seconds": 0.000102039,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.8304e-05
+        "triangulation_seconds": 1.45e-05
       }
     },
     {
@@ -1471,19 +1471,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000335353,
-        "boundary_seconds": 0.00012851,
+        "arrangement_seconds": 0.000335301,
+        "boundary_seconds": 0.000132144,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000140731,
+        "labeling_seconds": 0.000142044,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 2,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.9425e-05
+        "triangulation_seconds": 1.7892e-05
       }
     },
     {
@@ -1524,19 +1524,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000249679,
-        "boundary_seconds": 0.000127886,
+        "arrangement_seconds": 0.000248052,
+        "boundary_seconds": 0.000124304,
         "boundary_segments": 4,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000155013,
+        "labeling_seconds": 0.000157307,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.3451e-05
+        "triangulation_seconds": 1.858e-05
       }
     },
     {
@@ -1577,19 +1577,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000178731,
-        "boundary_seconds": 9.962e-06,
+        "arrangement_seconds": 0.000179949,
+        "boundary_seconds": 1.0682e-05,
         "boundary_segments": 4,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000100425,
+        "labeling_seconds": 0.000103545,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.5906e-05
+        "triangulation_seconds": 1.7086e-05
       }
     },
     {
@@ -1630,19 +1630,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001023087,
-        "boundary_seconds": 3.8897e-05,
+        "arrangement_seconds": 0.001002107,
+        "boundary_seconds": 3.6901e-05,
         "boundary_segments": 19,
         "cell_candidates": 310,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004307323,
+        "labeling_seconds": 0.004239316,
         "pair_candidates": 28,
         "pair_polygon_intersections": 0,
         "ray_candidates": 256,
         "source_cell_fragments": 113,
-        "triangulation_seconds": 0.003251769
+        "triangulation_seconds": 0.0031149769999999997
       }
     },
     {
@@ -1683,19 +1683,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00165581,
-        "boundary_seconds": 0.00017075,
+        "arrangement_seconds": 0.001659362,
+        "boundary_seconds": 0.000164469,
         "boundary_segments": 19,
         "cell_candidates": 310,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005570781,
+        "labeling_seconds": 0.005541641,
         "pair_candidates": 28,
         "pair_polygon_intersections": 0,
         "ray_candidates": 256,
         "source_cell_fragments": 113,
-        "triangulation_seconds": 0.003184046
+        "triangulation_seconds": 0.003138238
       }
     },
     {
@@ -1736,19 +1736,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001008885,
-        "boundary_seconds": 4.1988e-05,
+        "arrangement_seconds": 0.001004697,
+        "boundary_seconds": 4.0609e-05,
         "boundary_segments": 19,
         "cell_candidates": 504,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005122069,
+        "labeling_seconds": 0.005057868,
         "pair_candidates": 36,
         "pair_polygon_intersections": 0,
         "ray_candidates": 904,
         "source_cell_fragments": 113,
-        "triangulation_seconds": 0.0032023139999999995
+        "triangulation_seconds": 0.023224208
       }
     },
     {
@@ -1789,19 +1789,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003833744,
-        "boundary_seconds": 0.00018343,
+        "arrangement_seconds": 0.003825558,
+        "boundary_seconds": 0.000189477,
         "boundary_segments": 27,
         "cell_candidates": 476,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009898233,
+        "labeling_seconds": 0.009820065,
         "pair_candidates": 28,
         "pair_polygon_intersections": 0,
         "ray_candidates": 424,
         "source_cell_fragments": 159,
-        "triangulation_seconds": 0.004958254999999999
+        "triangulation_seconds": 0.004837452
       }
     },
     {
@@ -1842,19 +1842,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00165265,
-        "boundary_seconds": 0.000170544,
+        "arrangement_seconds": 0.001658352,
+        "boundary_seconds": 0.000183526,
         "boundary_segments": 19,
         "cell_candidates": 310,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005546572,
+        "labeling_seconds": 0.005498548,
         "pair_candidates": 28,
         "pair_polygon_intersections": 0,
         "ray_candidates": 256,
         "source_cell_fragments": 113,
-        "triangulation_seconds": 0.001552858
+        "triangulation_seconds": 0.001478239
       }
     },
     {
@@ -1895,19 +1895,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001013846,
-        "boundary_seconds": 3.8833e-05,
+        "arrangement_seconds": 0.001008285,
+        "boundary_seconds": 3.5627e-05,
         "boundary_segments": 19,
         "cell_candidates": 310,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004294778,
+        "labeling_seconds": 0.004181889,
         "pair_candidates": 28,
         "pair_polygon_intersections": 0,
         "ray_candidates": 256,
         "source_cell_fragments": 113,
-        "triangulation_seconds": 0.0026476110000000002
+        "triangulation_seconds": 0.002537284
       }
     },
     {
@@ -1948,19 +1948,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000254838,
-        "boundary_seconds": 2.6173e-05,
+        "arrangement_seconds": 0.00023745,
+        "boundary_seconds": 2.5884e-05,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000110588,
+        "labeling_seconds": 0.000109157,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.194e-05
+        "triangulation_seconds": 1.6138e-05
       }
     },
     {
@@ -2001,19 +2001,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000362662,
-        "boundary_seconds": 0.000168767,
+        "arrangement_seconds": 0.000349015,
+        "boundary_seconds": 0.000156989,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000178763,
+        "labeling_seconds": 0.000179622,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 3.5414e-05
+        "triangulation_seconds": 5.1789e-05
       }
     },
     {
@@ -2054,19 +2054,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000247984,
-        "boundary_seconds": 2.44e-05,
+        "arrangement_seconds": 0.000249574,
+        "boundary_seconds": 2.4054e-05,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000111788,
+        "labeling_seconds": 0.000112844,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9514e-05
+        "triangulation_seconds": 1.8752999999999998e-05
       }
     },
     {
@@ -2107,19 +2107,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000358794,
-        "boundary_seconds": 0.000153699,
+        "arrangement_seconds": 0.000346463,
+        "boundary_seconds": 0.000161559,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": false,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000181635,
+        "labeling_seconds": 0.000180497,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 4.7416e-05
+        "triangulation_seconds": 3.6649e-05
       }
     },
     {
@@ -2160,19 +2160,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000347196,
-        "boundary_seconds": 0.000145223,
+        "arrangement_seconds": 0.00034393,
+        "boundary_seconds": 0.000154824,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000177973,
+        "labeling_seconds": 0.000182261,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.6041e-05
+        "triangulation_seconds": 1.6984e-05
       }
     },
     {
@@ -2213,19 +2213,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000254264,
-        "boundary_seconds": 2.5132e-05,
+        "arrangement_seconds": 0.000235533,
+        "boundary_seconds": 2.4136e-05,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000111112,
+        "labeling_seconds": 0.000107362,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9429e-05
+        "triangulation_seconds": 1.5835e-05
       }
     },
     {
@@ -2266,19 +2266,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001673169,
-        "boundary_seconds": 0.000144939,
+        "arrangement_seconds": 0.001678885,
+        "boundary_seconds": 0.00013855,
         "boundary_segments": 9,
         "cell_candidates": 103,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003215583,
+        "labeling_seconds": 0.023211835,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 20,
         "source_cell_fragments": 27,
-        "triangulation_seconds": 0.000595951
+        "triangulation_seconds": 0.000598333
       }
     },
     {
@@ -2319,19 +2319,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002268401,
-        "boundary_seconds": 0.00030827,
+        "arrangement_seconds": 0.002238538,
+        "boundary_seconds": 0.000279426,
         "boundary_segments": 9,
         "cell_candidates": 103,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003808486,
+        "labeling_seconds": 0.003668868,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 20,
         "source_cell_fragments": 27,
-        "triangulation_seconds": 0.000637031
+        "triangulation_seconds": 0.000629272
       }
     },
     {
@@ -2372,19 +2372,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001693627,
-        "boundary_seconds": 0.000150477,
+        "arrangement_seconds": 0.001652227,
+        "boundary_seconds": 0.000136268,
         "boundary_segments": 9,
         "cell_candidates": 132,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003318057,
+        "labeling_seconds": 0.003280265,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 54,
         "source_cell_fragments": 27,
-        "triangulation_seconds": 0.00061131
+        "triangulation_seconds": 0.0005970789999999999
       }
     },
     {
@@ -2425,19 +2425,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002298438,
-        "boundary_seconds": 0.000294191,
+        "arrangement_seconds": 0.002234651,
+        "boundary_seconds": 0.000295044,
         "boundary_segments": 9,
         "cell_candidates": 103,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003697229,
+        "labeling_seconds": 0.00366088,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 20,
         "source_cell_fragments": 27,
-        "triangulation_seconds": 0.000621342
+        "triangulation_seconds": 0.0006224080000000001
       }
     },
     {
@@ -2478,19 +2478,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002247222,
-        "boundary_seconds": 0.000295644,
+        "arrangement_seconds": 0.002227304,
+        "boundary_seconds": 0.0029402,
         "boundary_segments": 9,
         "cell_candidates": 103,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00366,
+        "labeling_seconds": 0.003642132,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 20,
         "source_cell_fragments": 27,
-        "triangulation_seconds": 0.000486166
+        "triangulation_seconds": 0.000487525
       }
     },
     {
@@ -2531,19 +2531,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001684212,
-        "boundary_seconds": 0.000139967,
+        "arrangement_seconds": 0.001668524,
+        "boundary_seconds": 0.000132865,
         "boundary_segments": 9,
         "cell_candidates": 103,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003221725,
+        "labeling_seconds": 0.003190234,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 20,
         "source_cell_fragments": 27,
-        "triangulation_seconds": 0.000603764
+        "triangulation_seconds": 0.000599374
       }
     },
     {
@@ -2584,19 +2584,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000310028,
-        "boundary_seconds": 1.4671e-05,
+        "arrangement_seconds": 0.000312599,
+        "boundary_seconds": 9.912e-06,
         "boundary_segments": 9,
         "cell_candidates": 34,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00013927,
+        "labeling_seconds": 0.000134314,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 3,
-        "triangulation_seconds": 1.8253e-05
+        "triangulation_seconds": 1.7229e-05
       }
     },
     {
@@ -2637,19 +2637,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000459096,
-        "boundary_seconds": 0.000103297,
+        "arrangement_seconds": 0.000463705,
+        "boundary_seconds": 0.000110823,
         "boundary_segments": 9,
         "cell_candidates": 34,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00023116,
+        "labeling_seconds": 0.000228139,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 3,
-        "triangulation_seconds": 2.0005e-05
+        "triangulation_seconds": 2.0214e-05
       }
     },
     {
@@ -2690,19 +2690,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000309551,
-        "boundary_seconds": 1.4306e-05,
+        "arrangement_seconds": 0.000308528,
+        "boundary_seconds": 1.3246e-05,
         "boundary_segments": 9,
         "cell_candidates": 60,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000210965,
+        "labeling_seconds": 0.000213934,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 6,
         "source_cell_fragments": 3,
-        "triangulation_seconds": 1.868e-05
+        "triangulation_seconds": 1.7035e-05
       }
     },
     {
@@ -2743,19 +2743,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000457701,
-        "boundary_seconds": 0.000109968,
+        "arrangement_seconds": 0.000466889,
+        "boundary_seconds": 0.000118659,
         "boundary_segments": 9,
         "cell_candidates": 34,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000231463,
+        "labeling_seconds": 0.000227465,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 3,
-        "triangulation_seconds": 1.8658e-05
+        "triangulation_seconds": 2.095e-05
       }
     },
     {
@@ -2796,19 +2796,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000462615,
-        "boundary_seconds": 0.00011225,
+        "arrangement_seconds": 0.000461639,
+        "boundary_seconds": 0.000112413,
         "boundary_segments": 9,
         "cell_candidates": 34,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000260704,
+        "labeling_seconds": 0.000230271,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 3,
-        "triangulation_seconds": 2.1111e-05
+        "triangulation_seconds": 1.9684e-05
       }
     },
     {
@@ -2849,19 +2849,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000318053,
-        "boundary_seconds": 1.2409e-05,
+        "arrangement_seconds": 0.00032152,
+        "boundary_seconds": 1.1334e-05,
         "boundary_segments": 9,
         "cell_candidates": 34,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000136041,
+        "labeling_seconds": 0.000136738,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 3,
-        "triangulation_seconds": 1.8004e-05
+        "triangulation_seconds": 1.6448e-05
       }
     },
     {
@@ -2902,19 +2902,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000168836,
-        "boundary_seconds": 1.2718e-05,
+        "arrangement_seconds": 0.000173663,
+        "boundary_seconds": 8.289e-06,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 4.7487e-05,
+        "labeling_seconds": 4.6091e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.2789e-05
+        "triangulation_seconds": 1.1149e-05
       }
     },
     {
@@ -2955,19 +2955,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000244261,
-        "boundary_seconds": 0.000113204,
+        "arrangement_seconds": 0.000249198,
+        "boundary_seconds": 0.000114299,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 7.5591e-05,
+        "labeling_seconds": 7.2697e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.6743e-05
+        "triangulation_seconds": 1.4566e-05
       }
     },
     {
@@ -3008,19 +3008,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000167288,
-        "boundary_seconds": 9.051e-06,
+        "arrangement_seconds": 0.000174351,
+        "boundary_seconds": 1.0722e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 4.7059e-05,
+        "labeling_seconds": 4.5931e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.0062e-05
+        "triangulation_seconds": 1.1526e-05
       }
     },
     {
@@ -3061,19 +3061,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000264183,
-        "boundary_seconds": 0.000115908,
+        "arrangement_seconds": 0.000242306,
+        "boundary_seconds": 0.000111542,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 7.7313e-05,
+        "labeling_seconds": 7.2092e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 2.0012e-05
+        "triangulation_seconds": 1.786e-05
       }
     },
     {
@@ -3114,19 +3114,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000239913,
-        "boundary_seconds": 0.000102617,
+        "arrangement_seconds": 0.00024432,
+        "boundary_seconds": 0.000117526,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 7.2868e-05,
+        "labeling_seconds": 7.2574e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.252e-05
+        "triangulation_seconds": 1.8018e-05
       }
     },
     {
@@ -3167,19 +3167,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000178289,
-        "boundary_seconds": 1.1222e-05,
+        "arrangement_seconds": 0.000176814,
+        "boundary_seconds": 1.2015e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 4.8313e-05,
+        "labeling_seconds": 4.6423e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.2623e-05
+        "triangulation_seconds": 1.1165e-05
       }
     },
     {
@@ -3220,14 +3220,14 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 8.3006e-05,
-        "boundary_seconds": 9.625e-06,
+        "arrangement_seconds": 7.6935e-05,
+        "boundary_seconds": 6.679e-06,
         "boundary_segments": 0,
         "cell_candidates": 0,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 2.66e-06,
+        "labeling_seconds": 3.06e-06,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
@@ -3273,14 +3273,14 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 9.8961e-05,
-        "boundary_seconds": 0.000107248,
+        "arrangement_seconds": 9.222e-05,
+        "boundary_seconds": 0.000108297,
         "boundary_segments": 0,
         "cell_candidates": 0,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 1.1324e-05,
+        "labeling_seconds": 1.0722e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
@@ -3326,14 +3326,14 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 7.5996e-05,
-        "boundary_seconds": 9.811e-06,
+        "arrangement_seconds": 7.6021e-05,
+        "boundary_seconds": 8.708e-06,
         "boundary_segments": 0,
         "cell_candidates": 0,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 2.761e-06,
+        "labeling_seconds": 5.387e-06,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
@@ -3379,14 +3379,14 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 9.1145e-05,
-        "boundary_seconds": 9.7276e-05,
+        "arrangement_seconds": 9.0463e-05,
+        "boundary_seconds": 0.000102465,
         "boundary_segments": 0,
         "cell_candidates": 0,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 1.2091e-05,
+        "labeling_seconds": 1.0285e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
@@ -3432,14 +3432,14 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 9.6204e-05,
-        "boundary_seconds": 0.0001066,
+        "arrangement_seconds": 9.1614e-05,
+        "boundary_seconds": 0.000107394,
         "boundary_segments": 0,
         "cell_candidates": 0,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 1.1591e-05,
+        "labeling_seconds": 1.0161e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
@@ -3485,14 +3485,14 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 8.0534e-05,
-        "boundary_seconds": 8.731e-06,
+        "arrangement_seconds": 8.2784e-05,
+        "boundary_seconds": 6.611e-06,
         "boundary_segments": 0,
         "cell_candidates": 0,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 2.601e-06,
+        "labeling_seconds": 2.669e-06,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
@@ -3568,19 +3568,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000345551,
-        "boundary_seconds": 1.6485e-05,
+        "arrangement_seconds": 0.000338073,
+        "boundary_seconds": 1.4044e-05,
         "boundary_segments": 9,
         "cell_candidates": 47,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000420938,
+        "labeling_seconds": 0.000433668,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000449772
+        "triangulation_seconds": 0.000449457
       }
     },
     {
@@ -3621,19 +3621,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000501375,
-        "boundary_seconds": 0.000126297,
+        "arrangement_seconds": 0.000512025,
+        "boundary_seconds": 0.000139564,
         "boundary_segments": 9,
         "cell_candidates": 47,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000579659,
+        "labeling_seconds": 0.000567743,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000470733
+        "triangulation_seconds": 0.00050377
       }
     },
     {
@@ -3674,19 +3674,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000341879,
-        "boundary_seconds": 1.7471e-05,
+        "arrangement_seconds": 0.000337279,
+        "boundary_seconds": 1.2417e-05,
         "boundary_segments": 9,
         "cell_candidates": 60,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000463579,
+        "labeling_seconds": 0.000456969,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 30,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000450827
+        "triangulation_seconds": 0.00044645899999999996
       }
     },
     {
@@ -3727,19 +3727,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000505395,
-        "boundary_seconds": 0.000123113,
+        "arrangement_seconds": 0.000496576,
+        "boundary_seconds": 0.000121971,
         "boundary_segments": 9,
         "cell_candidates": 47,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000573162,
+        "labeling_seconds": 0.000578495,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000495184
+        "triangulation_seconds": 0.00047905800000000003
       }
     },
     {
@@ -3780,19 +3780,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000496141,
-        "boundary_seconds": 0.000117172,
+        "arrangement_seconds": 0.000495756,
+        "boundary_seconds": 0.000139891,
         "boundary_segments": 9,
         "cell_candidates": 47,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000566672,
+        "labeling_seconds": 0.000565048,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000392941
+        "triangulation_seconds": 0.000393101
       }
     },
     {
@@ -3833,19 +3833,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000333567,
-        "boundary_seconds": 1.4453e-05,
+        "arrangement_seconds": 0.020368386,
+        "boundary_seconds": 1.6185e-05,
         "boundary_segments": 9,
         "cell_candidates": 47,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000425002,
+        "labeling_seconds": 0.000424603,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000442014
+        "triangulation_seconds": 0.000441078
       }
     },
     {
@@ -3886,19 +3886,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000726102,
-        "boundary_seconds": 1.2395e-05,
+        "arrangement_seconds": 0.000704926,
+        "boundary_seconds": 1.2803e-05,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000865769,
+        "labeling_seconds": 0.000860511,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.00022742700000000002
+        "triangulation_seconds": 0.000226522
       }
     },
     {
@@ -3939,19 +3939,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001011549,
-        "boundary_seconds": 0.000126241,
+        "arrangement_seconds": 0.001024536,
+        "boundary_seconds": 0.000124422,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001069144,
+        "labeling_seconds": 0.001063546,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.00023055
+        "triangulation_seconds": 0.000231655
       }
     },
     {
@@ -3992,19 +3992,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000722212,
-        "boundary_seconds": 1.2453e-05,
+        "arrangement_seconds": 0.000705237,
+        "boundary_seconds": 1.2469e-05,
         "boundary_segments": 6,
         "cell_candidates": 52,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000874539,
+        "labeling_seconds": 0.000864275,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 14,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.00022141
+        "triangulation_seconds": 0.000224591
       }
     },
     {
@@ -4045,19 +4045,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001021293,
-        "boundary_seconds": 0.000133602,
+        "arrangement_seconds": 0.001029923,
+        "boundary_seconds": 0.000127311,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001077354,
+        "labeling_seconds": 0.001060519,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000232351
+        "triangulation_seconds": 0.00023205
       }
     },
     {
@@ -4098,19 +4098,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001018538,
-        "boundary_seconds": 0.000123279,
+        "arrangement_seconds": 0.001007747,
+        "boundary_seconds": 0.000124913,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001060335,
+        "labeling_seconds": 0.001061687,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000184459
+        "triangulation_seconds": 0.000176488
       }
     },
     {
@@ -4151,19 +4151,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000715323,
-        "boundary_seconds": 1.2269e-05,
+        "arrangement_seconds": 0.000722448,
+        "boundary_seconds": 1.3219e-05,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000884749,
+        "labeling_seconds": 0.00085731,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000227888
+        "triangulation_seconds": 0.000216506
       }
     },
     {
@@ -4204,19 +4204,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00022121,
-        "boundary_seconds": 1.2549e-05,
+        "arrangement_seconds": 0.000220302,
+        "boundary_seconds": 1.2424e-05,
         "boundary_segments": 4,
         "cell_candidates": 10,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 6.2225e-05,
+        "labeling_seconds": 6.3325e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.4973e-05
+        "triangulation_seconds": 1.3653e-05
       }
     },
     {
@@ -4257,19 +4257,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000318429,
-        "boundary_seconds": 0.000110109,
+        "arrangement_seconds": 0.000303741,
+        "boundary_seconds": 0.000105882,
         "boundary_segments": 4,
         "cell_candidates": 10,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 9.8686e-05,
+        "labeling_seconds": 9.9141e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.8425e-05
+        "triangulation_seconds": 1.5913e-05
       }
     },
     {
@@ -4310,19 +4310,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000228844,
-        "boundary_seconds": 1.1052e-05,
+        "arrangement_seconds": 0.000226534,
+        "boundary_seconds": 1.0156e-05,
         "boundary_segments": 4,
         "cell_candidates": 10,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 6.2924e-05,
+        "labeling_seconds": 6.208e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.5183e-05
+        "triangulation_seconds": 1.4036e-05
       }
     },
     {
@@ -4363,19 +4363,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000307919,
-        "boundary_seconds": 0.000109766,
+        "arrangement_seconds": 0.00032064,
+        "boundary_seconds": 0.000109571,
         "boundary_segments": 4,
         "cell_candidates": 10,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000101431,
+        "labeling_seconds": 0.0001013,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.5374e-05
+        "triangulation_seconds": 1.6463e-05
       }
     },
     {
@@ -4416,19 +4416,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000325927,
-        "boundary_seconds": 0.000115162,
+        "arrangement_seconds": 0.00031678,
+        "boundary_seconds": 0.000112704,
         "boundary_segments": 4,
         "cell_candidates": 10,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000101885,
+        "labeling_seconds": 9.9066e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.5341e-05
+        "triangulation_seconds": 1.6946e-05
       }
     },
     {
@@ -4469,19 +4469,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000230147,
-        "boundary_seconds": 1.0956e-05,
+        "arrangement_seconds": 0.000220177,
+        "boundary_seconds": 1.1134e-05,
         "boundary_segments": 4,
         "cell_candidates": 10,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 6.5107e-05,
+        "labeling_seconds": 6.4055e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 2,
-        "triangulation_seconds": 1.1985e-05
+        "triangulation_seconds": 1.0675e-05
       }
     },
     {
@@ -4522,19 +4522,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000197595,
-        "boundary_seconds": 0.000125981,
+        "arrangement_seconds": 0.000200128,
+        "boundary_seconds": 0.000120838,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00011334,
+        "labeling_seconds": 0.00011062,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9115999999999998e-05
+        "triangulation_seconds": 1.7685e-05
       }
     },
     {
@@ -4575,19 +4575,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000302579,
-        "boundary_seconds": 0.00026611,
+        "arrangement_seconds": 0.000301175,
+        "boundary_seconds": 0.000259633,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000178542,
+        "labeling_seconds": 0.000179028,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 3.4161e-05
+        "triangulation_seconds": 3.1879e-05
       }
     },
     {
@@ -4628,19 +4628,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000194393,
-        "boundary_seconds": 0.000124551,
+        "arrangement_seconds": 0.000192123,
+        "boundary_seconds": 0.00012371,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000115931,
+        "labeling_seconds": 0.000107933,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.6635e-05
+        "triangulation_seconds": 3.2683e-05
       }
     },
     {
@@ -4681,19 +4681,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000322571,
-        "boundary_seconds": 0.000309079,
+        "arrangement_seconds": 0.000298546,
+        "boundary_seconds": 0.000252667,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": false,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000186074,
+        "labeling_seconds": 0.000179046,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 6.6114e-05
+        "triangulation_seconds": 4.8864e-05
       }
     },
     {
@@ -4734,19 +4734,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000301304,
-        "boundary_seconds": 0.000256653,
+        "arrangement_seconds": 0.00029911,
+        "boundary_seconds": 0.000254,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000178782,
+        "labeling_seconds": 0.000179259,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.552e-05
+        "triangulation_seconds": 1.78e-05
       }
     },
     {
@@ -4787,19 +4787,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000213087,
-        "boundary_seconds": 0.000125199,
+        "arrangement_seconds": 0.000192994,
+        "boundary_seconds": 0.0001201,
         "boundary_segments": 6,
         "cell_candidates": 20,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000114502,
+        "labeling_seconds": 0.00011297,
         "pair_candidates": 1,
         "pair_polygon_intersections": 1,
         "ray_candidates": 4,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.6002e-05
+        "triangulation_seconds": 1.7585e-05
       }
     },
     {
@@ -4840,19 +4840,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000466639,
-        "boundary_seconds": 1.2183e-05,
+        "arrangement_seconds": 0.000469209,
+        "boundary_seconds": 1.2107e-05,
         "boundary_segments": 7,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000641442,
+        "labeling_seconds": 0.000633923,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 9,
-        "triangulation_seconds": 0.00036954399999999997
+        "triangulation_seconds": 0.000369218
       }
     },
     {
@@ -4893,19 +4893,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000625974,
-        "boundary_seconds": 0.000161336,
+        "arrangement_seconds": 0.000602797,
+        "boundary_seconds": 0.00012547,
         "boundary_segments": 7,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000759362,
+        "labeling_seconds": 0.00075945,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 9,
-        "triangulation_seconds": 0.000433093
+        "triangulation_seconds": 0.00041084000000000004
       }
     },
     {
@@ -4946,19 +4946,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000477494,
-        "boundary_seconds": 1.2108e-05,
+        "arrangement_seconds": 0.000464352,
+        "boundary_seconds": 1.1816e-05,
         "boundary_segments": 7,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000652405,
+        "labeling_seconds": 0.000647354,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 9,
         "source_cell_fragments": 9,
-        "triangulation_seconds": 0.000372924
+        "triangulation_seconds": 0.000382089
       }
     },
     {
@@ -4999,19 +4999,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00061325,
-        "boundary_seconds": 0.000125423,
+        "arrangement_seconds": 0.000610456,
+        "boundary_seconds": 0.000123116,
         "boundary_segments": 7,
         "cell_candidates": 27,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000754639,
+        "labeling_seconds": 0.000750397,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 9,
-        "triangulation_seconds": 0.000408318
+        "triangulation_seconds": 0.000402099
       }
     },
     {
@@ -5052,19 +5052,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000614833,
-        "boundary_seconds": 0.000123279,
+        "arrangement_seconds": 0.000617094,
+        "boundary_seconds": 0.000128652,
         "boundary_segments": 7,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000768535,
+        "labeling_seconds": 0.000750119,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 9,
-        "triangulation_seconds": 0.00036335
+        "triangulation_seconds": 0.000363702
       }
     },
     {
@@ -5105,19 +5105,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000477576,
-        "boundary_seconds": 1.3313e-05,
+        "arrangement_seconds": 0.000458131,
+        "boundary_seconds": 1.4077e-05,
         "boundary_segments": 7,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000643137,
+        "labeling_seconds": 0.000641054,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 9,
-        "triangulation_seconds": 0.000376766
+        "triangulation_seconds": 0.00036540000000000005
       }
     },
     {
@@ -5158,19 +5158,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000659531,
-        "boundary_seconds": 1.3892e-05,
+        "arrangement_seconds": 0.000654828,
+        "boundary_seconds": 1.4258e-05,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000861958,
+        "labeling_seconds": 0.00084905,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000271669
+        "triangulation_seconds": 0.000223454
       }
     },
     {
@@ -5211,19 +5211,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000947983,
-        "boundary_seconds": 0.000128667,
+        "arrangement_seconds": 0.000991786,
+        "boundary_seconds": 0.000128767,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001069921,
+        "labeling_seconds": 0.001059582,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000229361
+        "triangulation_seconds": 0.00023927
       }
     },
     {
@@ -5264,19 +5264,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000666183,
-        "boundary_seconds": 1.4823e-05,
+        "arrangement_seconds": 0.000661754,
+        "boundary_seconds": 1.3885e-05,
         "boundary_segments": 6,
         "cell_candidates": 52,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000889719,
+        "labeling_seconds": 0.000880902,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 14,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.00021907399999999998
+        "triangulation_seconds": 0.000222258
       }
     },
     {
@@ -5317,19 +5317,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000978062,
-        "boundary_seconds": 0.000128068,
+        "arrangement_seconds": 0.000975933,
+        "boundary_seconds": 0.000155135,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001058208,
+        "labeling_seconds": 0.001075835,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000231712
+        "triangulation_seconds": 0.00023824099999999998
       }
     },
     {
@@ -5370,19 +5370,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000947812,
-        "boundary_seconds": 0.000131751,
+        "arrangement_seconds": 0.00096086,
+        "boundary_seconds": 0.00013992,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.001062782,
+        "labeling_seconds": 0.001065164,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.000178464
+        "triangulation_seconds": 0.00018206
       }
     },
     {
@@ -5423,19 +5423,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000668988,
-        "boundary_seconds": 1.571e-05,
+        "arrangement_seconds": 0.000668479,
+        "boundary_seconds": 1.8555e-05,
         "boundary_segments": 6,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000861369,
+        "labeling_seconds": 0.000863024,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 14,
-        "triangulation_seconds": 0.00022946400000000002
+        "triangulation_seconds": 0.000227925
       }
     },
     {
@@ -5476,19 +5476,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001156613,
-        "boundary_seconds": 0.003064784,
+        "arrangement_seconds": 0.001155838,
+        "boundary_seconds": 0.003046328,
         "boundary_segments": 16,
         "cell_candidates": 522,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00857374,
+        "labeling_seconds": 0.008564221,
         "pair_candidates": 446,
         "pair_polygon_intersections": 123,
         "ray_candidates": 795,
         "source_cell_fragments": 124,
-        "triangulation_seconds": 0.006326526
+        "triangulation_seconds": 0.006413022999999999
       }
     },
     {
@@ -5529,19 +5529,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001577387,
-        "boundary_seconds": 0.003950057,
+        "arrangement_seconds": 0.001587623,
+        "boundary_seconds": 0.027983057,
         "boundary_segments": 16,
         "cell_candidates": 522,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005674222,
+        "labeling_seconds": 0.005680857,
         "pair_candidates": 446,
         "pair_polygon_intersections": 123,
         "ray_candidates": 795,
         "source_cell_fragments": 124,
-        "triangulation_seconds": 0.006086073
+        "triangulation_seconds": 0.0062061189999999995
       }
     },
     {
@@ -5582,19 +5582,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001150004,
-        "boundary_seconds": 0.003150281,
+        "arrangement_seconds": 0.00113139,
+        "boundary_seconds": 0.003185643,
         "boundary_segments": 16,
         "cell_candidates": 960,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009975834,
+        "labeling_seconds": 0.009950179,
         "pair_candidates": 496,
         "pair_polygon_intersections": 140,
         "ray_candidates": 3844,
         "source_cell_fragments": 124,
-        "triangulation_seconds": 0.006309994
+        "triangulation_seconds": 0.0063139369999999995
       }
     },
     {
@@ -5635,19 +5635,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.015006545,
-        "boundary_seconds": 0.004012871,
+        "arrangement_seconds": 0.014880039,
+        "boundary_seconds": 0.003955976,
         "boundary_segments": 96,
         "cell_candidates": 2104,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.034696614,
+        "labeling_seconds": 0.058528964,
         "pair_candidates": 446,
         "pair_polygon_intersections": 123,
         "ray_candidates": 3352,
         "source_cell_fragments": 454,
-        "triangulation_seconds": 0.020894443
+        "triangulation_seconds": 0.021196827
       }
     },
     {
@@ -5688,19 +5688,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001588217,
-        "boundary_seconds": 0.003961114,
+        "arrangement_seconds": 0.00157129,
+        "boundary_seconds": 0.003984443,
         "boundary_segments": 16,
         "cell_candidates": 522,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005569255,
+        "labeling_seconds": 0.005617815,
         "pair_candidates": 446,
         "pair_polygon_intersections": 123,
         "ray_candidates": 795,
         "source_cell_fragments": 124,
-        "triangulation_seconds": 0.00255595
+        "triangulation_seconds": 0.002579562
       }
     },
     {
@@ -5741,19 +5741,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001136812,
-        "boundary_seconds": 0.003071992,
+        "arrangement_seconds": 0.001145969,
+        "boundary_seconds": 0.003045462,
         "boundary_segments": 16,
         "cell_candidates": 522,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008517502,
+        "labeling_seconds": 0.008484345,
         "pair_candidates": 446,
         "pair_polygon_intersections": 123,
         "ray_candidates": 795,
         "source_cell_fragments": 124,
-        "triangulation_seconds": 0.005229547
+        "triangulation_seconds": 0.0052106949999999996
       }
     },
     {
@@ -5794,19 +5794,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002002116,
-        "boundary_seconds": 6.9537e-05,
+        "arrangement_seconds": 0.001991243,
+        "boundary_seconds": 6.8846e-05,
         "boundary_segments": 15,
         "cell_candidates": 127,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.002913755,
+        "labeling_seconds": 0.002949769,
         "pair_candidates": 7,
         "pair_polygon_intersections": 6,
         "ray_candidates": 24,
         "source_cell_fragments": 32,
-        "triangulation_seconds": 0.001028163
+        "triangulation_seconds": 0.00105616
       }
     },
     {
@@ -5847,19 +5847,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002711183,
-        "boundary_seconds": 0.00023399,
+        "arrangement_seconds": 0.002694223,
+        "boundary_seconds": 0.000238956,
         "boundary_segments": 15,
         "cell_candidates": 127,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003478749,
+        "labeling_seconds": 0.003443911,
         "pair_candidates": 7,
         "pair_polygon_intersections": 6,
         "ray_candidates": 24,
         "source_cell_fragments": 32,
-        "triangulation_seconds": 0.001072726
+        "triangulation_seconds": 0.001055694
       }
     },
     {
@@ -5900,19 +5900,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002009646,
-        "boundary_seconds": 7.2798e-05,
+        "arrangement_seconds": 0.002012536,
+        "boundary_seconds": 7.1434e-05,
         "boundary_segments": 15,
         "cell_candidates": 250,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003321283,
+        "labeling_seconds": 0.003283349,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 128,
         "source_cell_fragments": 32,
-        "triangulation_seconds": 0.001018274
+        "triangulation_seconds": 0.001028288
       }
     },
     {
@@ -5953,19 +5953,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002826908,
-        "boundary_seconds": 0.000216756,
+        "arrangement_seconds": 0.0026915,
+        "boundary_seconds": 0.000221926,
         "boundary_segments": 15,
         "cell_candidates": 127,
         "contour_reduction": false,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00356145,
+        "labeling_seconds": 0.003451536,
         "pair_candidates": 7,
         "pair_polygon_intersections": 6,
         "ray_candidates": 24,
         "source_cell_fragments": 32,
-        "triangulation_seconds": 0.001067666
+        "triangulation_seconds": 0.001060388
       }
     },
     {
@@ -6006,19 +6006,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002713438,
-        "boundary_seconds": 0.000217146,
+        "arrangement_seconds": 0.002678422,
+        "boundary_seconds": 0.000219035,
         "boundary_segments": 15,
         "cell_candidates": 127,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003445463,
+        "labeling_seconds": 0.003463367,
         "pair_candidates": 7,
         "pair_polygon_intersections": 6,
         "ray_candidates": 24,
         "source_cell_fragments": 32,
-        "triangulation_seconds": 0.000724967
+        "triangulation_seconds": 0.000723534
       }
     },
     {
@@ -6059,19 +6059,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002014962,
-        "boundary_seconds": 6.498e-05,
+        "arrangement_seconds": 0.002019416,
+        "boundary_seconds": 6.4181e-05,
         "boundary_segments": 15,
         "cell_candidates": 127,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.002951002,
+        "labeling_seconds": 0.002956419,
         "pair_candidates": 7,
         "pair_polygon_intersections": 6,
         "ray_candidates": 24,
         "source_cell_fragments": 32,
-        "triangulation_seconds": 0.001027581
+        "triangulation_seconds": 0.001025345
       }
     },
     {
@@ -6112,19 +6112,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003044007,
-        "boundary_seconds": 0.000100099,
+        "arrangement_seconds": 0.02688204,
+        "boundary_seconds": 0.000100904,
         "boundary_segments": 15,
         "cell_candidates": 214,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005556939,
+        "labeling_seconds": 0.005475661,
         "pair_candidates": 7,
         "pair_polygon_intersections": 7,
         "ray_candidates": 159,
         "source_cell_fragments": 85,
-        "triangulation_seconds": 0.004979278
+        "triangulation_seconds": 0.0049262229999999995
       }
     },
     {
@@ -6165,19 +6165,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003874643,
-        "boundary_seconds": 0.000266817,
+        "arrangement_seconds": 0.003862669,
+        "boundary_seconds": 0.000274194,
         "boundary_segments": 15,
         "cell_candidates": 214,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006393256,
+        "labeling_seconds": 0.013013661,
         "pair_candidates": 7,
         "pair_polygon_intersections": 7,
         "ray_candidates": 159,
         "source_cell_fragments": 85,
-        "triangulation_seconds": 0.004937802999999999
+        "triangulation_seconds": 0.012295182
       }
     },
     {
@@ -6218,19 +6218,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002935868,
-        "boundary_seconds": 0.000104078,
+        "arrangement_seconds": 0.002867735,
+        "boundary_seconds": 0.000109017,
         "boundary_segments": 15,
         "cell_candidates": 340,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005930892,
+        "labeling_seconds": 0.005819899,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 340,
         "source_cell_fragments": 85,
-        "triangulation_seconds": 0.004957071
+        "triangulation_seconds": 0.004858737
       }
     },
     {
@@ -6271,19 +6271,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003857036,
-        "boundary_seconds": 0.000269536,
+        "arrangement_seconds": 0.003834743,
+        "boundary_seconds": 0.000292925,
         "boundary_segments": 15,
         "cell_candidates": 214,
         "contour_reduction": false,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00639008,
+        "labeling_seconds": 0.006374693,
         "pair_candidates": 7,
         "pair_polygon_intersections": 7,
         "ray_candidates": 159,
         "source_cell_fragments": 85,
-        "triangulation_seconds": 0.0048873779999999995
+        "triangulation_seconds": 0.0048403280000000005
       }
     },
     {
@@ -6324,19 +6324,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003939458,
-        "boundary_seconds": 0.000266537,
+        "arrangement_seconds": 0.003854838,
+        "boundary_seconds": 0.000280629,
         "boundary_segments": 15,
         "cell_candidates": 214,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006436764,
+        "labeling_seconds": 0.006381313,
         "pair_candidates": 7,
         "pair_polygon_intersections": 7,
         "ray_candidates": 159,
         "source_cell_fragments": 85,
-        "triangulation_seconds": 0.002241362
+        "triangulation_seconds": 0.002226391
       }
     },
     {
@@ -6377,19 +6377,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002892507,
-        "boundary_seconds": 0.000103919,
+        "arrangement_seconds": 0.002814652,
+        "boundary_seconds": 9.7353e-05,
         "boundary_segments": 15,
         "cell_candidates": 214,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005525483,
+        "labeling_seconds": 0.005351278,
         "pair_candidates": 7,
         "pair_polygon_intersections": 7,
         "ray_candidates": 159,
         "source_cell_fragments": 85,
-        "triangulation_seconds": 0.004159302
+        "triangulation_seconds": 0.02397625
       }
     },
     {
@@ -6430,19 +6430,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002094409,
-        "boundary_seconds": 0.000182779,
+        "arrangement_seconds": 0.002076084,
+        "boundary_seconds": 0.000168906,
         "boundary_segments": 15,
         "cell_candidates": 155,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003652753,
+        "labeling_seconds": 0.003601796,
         "pair_candidates": 8,
         "pair_polygon_intersections": 7,
         "ray_candidates": 39,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001067582
+        "triangulation_seconds": 0.00105241
       }
     },
     {
@@ -6483,19 +6483,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.005036894,
-        "boundary_seconds": 0.000374197,
+        "arrangement_seconds": 0.002853381,
+        "boundary_seconds": 0.000349225,
         "boundary_segments": 15,
         "cell_candidates": 155,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004364198,
+        "labeling_seconds": 0.004291984,
         "pair_candidates": 8,
         "pair_polygon_intersections": 7,
         "ray_candidates": 39,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001120277
+        "triangulation_seconds": 0.001110985
       }
     },
     {
@@ -6536,19 +6536,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00209951,
-        "boundary_seconds": 0.000178862,
+        "arrangement_seconds": 0.002052747,
+        "boundary_seconds": 0.00017518,
         "boundary_segments": 15,
         "cell_candidates": 280,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004046454,
+        "labeling_seconds": 0.003996632,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 148,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001057933
+        "triangulation_seconds": 0.001039527
       }
     },
     {
@@ -6589,19 +6589,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002876673,
-        "boundary_seconds": 0.000359743,
+        "arrangement_seconds": 0.002832977,
+        "boundary_seconds": 0.000341457,
         "boundary_segments": 15,
         "cell_candidates": 155,
         "contour_reduction": false,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004294504,
+        "labeling_seconds": 0.00423861,
         "pair_candidates": 8,
         "pair_polygon_intersections": 7,
         "ray_candidates": 39,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001119458
+        "triangulation_seconds": 0.001092305
       }
     },
     {
@@ -6642,19 +6642,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002857734,
-        "boundary_seconds": 0.000362249,
+        "arrangement_seconds": 0.002859819,
+        "boundary_seconds": 0.000346917,
         "boundary_segments": 15,
         "cell_candidates": 155,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004317764,
+        "labeling_seconds": 0.004238917,
         "pair_candidates": 8,
         "pair_polygon_intersections": 7,
         "ray_candidates": 39,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.000809466
+        "triangulation_seconds": 0.000791322
       }
     },
     {
@@ -6695,19 +6695,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002124009,
-        "boundary_seconds": 0.000176708,
+        "arrangement_seconds": 0.002032694,
+        "boundary_seconds": 0.000166666,
         "boundary_segments": 15,
         "cell_candidates": 155,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003636431,
+        "labeling_seconds": 0.003640752,
         "pair_candidates": 8,
         "pair_polygon_intersections": 7,
         "ray_candidates": 39,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001066027
+        "triangulation_seconds": 0.001046555
       }
     },
     {
@@ -6748,19 +6748,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002591986,
-        "boundary_seconds": 0.000137517,
+        "arrangement_seconds": 0.002543602,
+        "boundary_seconds": 0.000127025,
         "boundary_segments": 15,
         "cell_candidates": 182,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004013076,
+        "labeling_seconds": 0.003920644,
         "pair_candidates": 7,
         "pair_polygon_intersections": 5,
         "ray_candidates": 69,
         "source_cell_fragments": 49,
-        "triangulation_seconds": 0.00212172
+        "triangulation_seconds": 0.002083989
       }
     },
     {
@@ -6801,19 +6801,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003472932,
-        "boundary_seconds": 0.000312566,
+        "arrangement_seconds": 0.003474088,
+        "boundary_seconds": 0.000295892,
         "boundary_segments": 15,
         "cell_candidates": 182,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004710279,
+        "labeling_seconds": 0.004720528,
         "pair_candidates": 7,
         "pair_polygon_intersections": 5,
         "ray_candidates": 69,
         "source_cell_fragments": 49,
-        "triangulation_seconds": 0.002173945
+        "triangulation_seconds": 0.02221455
       }
     },
     {
@@ -6854,19 +6854,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002587457,
-        "boundary_seconds": 0.000150132,
+        "arrangement_seconds": 0.00256619,
+        "boundary_seconds": 0.000136285,
         "boundary_segments": 15,
         "cell_candidates": 300,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004471273,
+        "labeling_seconds": 0.004403652,
         "pair_candidates": 10,
         "pair_polygon_intersections": 5,
         "ray_candidates": 196,
         "source_cell_fragments": 49,
-        "triangulation_seconds": 0.002131731
+        "triangulation_seconds": 0.002108889
       }
     },
     {
@@ -6907,19 +6907,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003473416,
-        "boundary_seconds": 0.000296384,
+        "arrangement_seconds": 0.003444057,
+        "boundary_seconds": 0.000286945,
         "boundary_segments": 15,
         "cell_candidates": 182,
         "contour_reduction": false,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004716398,
+        "labeling_seconds": 0.004652968,
         "pair_candidates": 7,
         "pair_polygon_intersections": 5,
         "ray_candidates": 69,
         "source_cell_fragments": 49,
-        "triangulation_seconds": 0.002188264
+        "triangulation_seconds": 0.002140258
       }
     },
     {
@@ -6960,19 +6960,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003509132,
-        "boundary_seconds": 0.000313679,
+        "arrangement_seconds": 0.003447462,
+        "boundary_seconds": 0.000294541,
         "boundary_segments": 15,
         "cell_candidates": 182,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004780848,
+        "labeling_seconds": 0.004662115,
         "pair_candidates": 7,
         "pair_polygon_intersections": 5,
         "ray_candidates": 69,
         "source_cell_fragments": 49,
-        "triangulation_seconds": 0.001566793
+        "triangulation_seconds": 0.001526174
       }
     },
     {
@@ -7013,19 +7013,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002576355,
-        "boundary_seconds": 0.000137164,
+        "arrangement_seconds": 0.002531262,
+        "boundary_seconds": 0.000130435,
         "boundary_segments": 15,
         "cell_candidates": 182,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004018787,
+        "labeling_seconds": 0.003928637,
         "pair_candidates": 7,
         "pair_polygon_intersections": 5,
         "ray_candidates": 69,
         "source_cell_fragments": 49,
-        "triangulation_seconds": 0.002113195
+        "triangulation_seconds": 0.00209494
       }
     },
     {
@@ -7066,19 +7066,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001752548,
-        "boundary_seconds": 0.000144843,
+        "arrangement_seconds": 0.001701365,
+        "boundary_seconds": 0.000138214,
         "boundary_segments": 15,
         "cell_candidates": 169,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003352636,
+        "labeling_seconds": 0.003342954,
         "pair_candidates": 9,
         "pair_polygon_intersections": 6,
         "ray_candidates": 69,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001365611
+        "triangulation_seconds": 0.001343154
       }
     },
     {
@@ -7119,19 +7119,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002403444,
-        "boundary_seconds": 0.00030102,
+        "arrangement_seconds": 0.026426088,
+        "boundary_seconds": 0.000313143,
         "boundary_segments": 15,
         "cell_candidates": 169,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003960072,
+        "labeling_seconds": 0.004053036,
         "pair_candidates": 9,
         "pair_polygon_intersections": 6,
         "ray_candidates": 69,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001392247
+        "triangulation_seconds": 0.001416877
       }
     },
     {
@@ -7172,19 +7172,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.001711969,
-        "boundary_seconds": 0.000145843,
+        "arrangement_seconds": 0.001713493,
+        "boundary_seconds": 0.000142427,
         "boundary_segments": 15,
         "cell_candidates": 250,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003500266,
+        "labeling_seconds": 0.003521325,
         "pair_candidates": 10,
         "pair_polygon_intersections": 6,
         "ray_candidates": 148,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.0013530060000000001
+        "triangulation_seconds": 0.001370097
       }
     },
     {
@@ -7225,19 +7225,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00235289,
-        "boundary_seconds": 0.000306919,
+        "arrangement_seconds": 0.002643084,
+        "boundary_seconds": 0.000301672,
         "boundary_segments": 15,
         "cell_candidates": 169,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003983747,
+        "labeling_seconds": 0.004003077,
         "pair_candidates": 9,
         "pair_polygon_intersections": 6,
         "ray_candidates": 69,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001396801
+        "triangulation_seconds": 0.00139382
       }
     },
     {
@@ -7278,19 +7278,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002492108,
-        "boundary_seconds": 0.000330209,
+        "arrangement_seconds": 0.002403862,
+        "boundary_seconds": 0.000322776,
         "boundary_segments": 15,
         "cell_candidates": 169,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.004022322,
+        "labeling_seconds": 0.00398148,
         "pair_candidates": 9,
         "pair_polygon_intersections": 6,
         "ray_candidates": 69,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.000635459
+        "triangulation_seconds": 0.000630016
       }
     },
     {
@@ -7331,19 +7331,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00172828,
-        "boundary_seconds": 0.000158386,
+        "arrangement_seconds": 0.001723989,
+        "boundary_seconds": 0.00014508,
         "boundary_segments": 15,
         "cell_candidates": 169,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.003344208,
+        "labeling_seconds": 0.003364169,
         "pair_candidates": 9,
         "pair_polygon_intersections": 6,
         "ray_candidates": 69,
         "source_cell_fragments": 37,
-        "triangulation_seconds": 0.001148492
+        "triangulation_seconds": 0.001154577
       }
     },
     {
@@ -7384,19 +7384,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003651475,
-        "boundary_seconds": 0.00010329,
+        "arrangement_seconds": 0.003570647,
+        "boundary_seconds": 0.000103763,
         "boundary_segments": 15,
         "cell_candidates": 282,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006932012,
+        "labeling_seconds": 0.006915146,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 146,
         "source_cell_fragments": 71,
-        "triangulation_seconds": 0.002766818
+        "triangulation_seconds": 0.0027768539999999996
       }
     },
     {
@@ -7437,19 +7437,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004849113,
-        "boundary_seconds": 0.000278234,
+        "arrangement_seconds": 0.004921933,
+        "boundary_seconds": 0.000296335,
         "boundary_segments": 15,
         "cell_candidates": 282,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00808218,
+        "labeling_seconds": 0.008168475,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 146,
         "source_cell_fragments": 71,
-        "triangulation_seconds": 0.002745783
+        "triangulation_seconds": 0.002769986
       }
     },
     {
@@ -7490,19 +7490,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003582671,
-        "boundary_seconds": 0.00010641,
+        "arrangement_seconds": 0.003603924,
+        "boundary_seconds": 0.000111747,
         "boundary_segments": 15,
         "cell_candidates": 400,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007180907,
+        "labeling_seconds": 0.007222849,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 284,
         "source_cell_fragments": 71,
-        "triangulation_seconds": 0.002739056
+        "triangulation_seconds": 0.0027767470000000004
       }
     },
     {
@@ -7543,19 +7543,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004884527,
-        "boundary_seconds": 0.000293001,
+        "arrangement_seconds": 0.004914142,
+        "boundary_seconds": 0.000299619,
         "boundary_segments": 15,
         "cell_candidates": 282,
         "contour_reduction": false,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008150426,
+        "labeling_seconds": 0.008379208,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 146,
         "source_cell_fragments": 71,
-        "triangulation_seconds": 0.0027368790000000002
+        "triangulation_seconds": 0.0028535819999999995
       }
     },
     {
@@ -7596,19 +7596,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004888104,
-        "boundary_seconds": 0.000301058,
+        "arrangement_seconds": 0.004883052,
+        "boundary_seconds": 0.000288792,
         "boundary_segments": 15,
         "cell_candidates": 282,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008149697,
+        "labeling_seconds": 0.008196754,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 146,
         "source_cell_fragments": 71,
-        "triangulation_seconds": 0.001935299
+        "triangulation_seconds": 0.001971019
       }
     },
     {
@@ -7649,19 +7649,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003558493,
-        "boundary_seconds": 0.000103088,
+        "arrangement_seconds": 0.003614979,
+        "boundary_seconds": 0.00010625,
         "boundary_segments": 15,
         "cell_candidates": 282,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006839088,
+        "labeling_seconds": 0.042932008,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 146,
         "source_cell_fragments": 71,
-        "triangulation_seconds": 0.002653162
+        "triangulation_seconds": 0.002720157
       }
     },
     {
@@ -7702,19 +7702,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00362566,
-        "boundary_seconds": 9.6506e-05,
+        "arrangement_seconds": 0.003633584,
+        "boundary_seconds": 9.5463e-05,
         "boundary_segments": 15,
         "cell_candidates": 318,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007880652,
+        "labeling_seconds": 0.007979351,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 241,
         "source_cell_fragments": 94,
-        "triangulation_seconds": 0.004847073
+        "triangulation_seconds": 0.004882495
       }
     },
     {
@@ -7755,19 +7755,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00492575,
-        "boundary_seconds": 0.000271943,
+        "arrangement_seconds": 0.004989062,
+        "boundary_seconds": 0.000280113,
         "boundary_segments": 15,
         "cell_candidates": 318,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009272596,
+        "labeling_seconds": 0.009427827,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 241,
         "source_cell_fragments": 94,
-        "triangulation_seconds": 0.004771809000000001
+        "triangulation_seconds": 0.032921048
       }
     },
     {
@@ -7808,19 +7808,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00362616,
-        "boundary_seconds": 9.5253e-05,
+        "arrangement_seconds": 0.003637729,
+        "boundary_seconds": 9.3191e-05,
         "boundary_segments": 15,
         "cell_candidates": 410,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008110045,
+        "labeling_seconds": 0.008227704,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 376,
         "source_cell_fragments": 94,
-        "triangulation_seconds": 0.004721065
+        "triangulation_seconds": 0.004871778
       }
     },
     {
@@ -7861,19 +7861,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004909602,
-        "boundary_seconds": 0.000264862,
+        "arrangement_seconds": 0.005009475,
+        "boundary_seconds": 0.000283965,
         "boundary_segments": 15,
         "cell_candidates": 318,
         "contour_reduction": false,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009252438,
+        "labeling_seconds": 0.009414287,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 241,
         "source_cell_fragments": 94,
-        "triangulation_seconds": 0.004743300000000001
+        "triangulation_seconds": 0.004917496
       }
     },
     {
@@ -7914,19 +7914,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004956956,
-        "boundary_seconds": 0.000270206,
+        "arrangement_seconds": 0.004996201,
+        "boundary_seconds": 0.000274153,
         "boundary_segments": 15,
         "cell_candidates": 318,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009313564,
+        "labeling_seconds": 0.009465219,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 241,
         "source_cell_fragments": 94,
-        "triangulation_seconds": 0.002340011
+        "triangulation_seconds": 0.002411041
       }
     },
     {
@@ -7967,19 +7967,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003618098,
-        "boundary_seconds": 9.574e-05,
+        "arrangement_seconds": 0.047739714,
+        "boundary_seconds": 9.5042e-05,
         "boundary_segments": 15,
         "cell_candidates": 318,
         "contour_reduction": true,
         "depth_equality_segments": 3,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007860643,
+        "labeling_seconds": 0.01193697,
         "pair_candidates": 10,
         "pair_polygon_intersections": 7,
         "ray_candidates": 241,
         "source_cell_fragments": 94,
-        "triangulation_seconds": 0.004058218000000001
+        "triangulation_seconds": 0.00445708
       }
     },
     {
@@ -8020,19 +8020,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003431943,
-        "boundary_seconds": 0.000226852,
+        "arrangement_seconds": 0.003455901,
+        "boundary_seconds": 0.000242587,
         "boundary_segments": 15,
         "cell_candidates": 262,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007137709,
+        "labeling_seconds": 0.007438308,
         "pair_candidates": 9,
         "pair_polygon_intersections": 8,
         "ray_candidates": 197,
         "source_cell_fragments": 110,
-        "triangulation_seconds": 0.005811291
+        "triangulation_seconds": 0.0061460989999999995
       }
     },
     {
@@ -8073,19 +8073,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004667857,
-        "boundary_seconds": 0.000422042,
+        "arrangement_seconds": 0.004666587,
+        "boundary_seconds": 0.000453167,
         "boundary_segments": 15,
         "cell_candidates": 262,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008402516,
+        "labeling_seconds": 0.00863178,
         "pair_candidates": 9,
         "pair_polygon_intersections": 8,
         "ray_candidates": 197,
         "source_cell_fragments": 110,
-        "triangulation_seconds": 0.0057356049999999995
+        "triangulation_seconds": 0.034062577000000004
       }
     },
     {
@@ -8126,19 +8126,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003419442,
-        "boundary_seconds": 0.000235594,
+        "arrangement_seconds": 0.003517278,
+        "boundary_seconds": 0.000247181,
         "boundary_segments": 15,
         "cell_candidates": 380,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007628545,
+        "labeling_seconds": 0.007828818,
         "pair_candidates": 10,
         "pair_polygon_intersections": 9,
         "ray_candidates": 440,
         "source_cell_fragments": 110,
-        "triangulation_seconds": 0.005753994
+        "triangulation_seconds": 0.006039448
       }
     },
     {
@@ -8179,19 +8179,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004646599,
-        "boundary_seconds": 0.000426933,
+        "arrangement_seconds": 0.004694452,
+        "boundary_seconds": 0.000444654,
         "boundary_segments": 15,
         "cell_candidates": 262,
         "contour_reduction": false,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008363267,
+        "labeling_seconds": 0.020598089,
         "pair_candidates": 9,
         "pair_polygon_intersections": 8,
         "ray_candidates": 197,
         "source_cell_fragments": 110,
-        "triangulation_seconds": 0.005726215999999999
+        "triangulation_seconds": 0.005991366
       }
     },
     {
@@ -8232,19 +8232,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004686915,
-        "boundary_seconds": 0.000446242,
+        "arrangement_seconds": 0.004688724,
+        "boundary_seconds": 0.000459666,
         "boundary_segments": 15,
         "cell_candidates": 262,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.008392862,
+        "labeling_seconds": 0.008505333,
         "pair_candidates": 9,
         "pair_polygon_intersections": 8,
         "ray_candidates": 197,
         "source_cell_fragments": 110,
-        "triangulation_seconds": 0.003347945
+        "triangulation_seconds": 0.003493747
       }
     },
     {
@@ -8285,19 +8285,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003392545,
-        "boundary_seconds": 0.000226202,
+        "arrangement_seconds": 0.003766937,
+        "boundary_seconds": 0.000299618,
         "boundary_segments": 15,
         "cell_candidates": 262,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007125278,
+        "labeling_seconds": 0.035412915,
         "pair_candidates": 9,
         "pair_polygon_intersections": 8,
         "ray_candidates": 197,
         "source_cell_fragments": 110,
-        "triangulation_seconds": 0.005231469000000001
+        "triangulation_seconds": 0.005535726
       }
     },
     {
@@ -8338,19 +8338,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002868128,
-        "boundary_seconds": 0.000150925,
+        "arrangement_seconds": 0.002880295,
+        "boundary_seconds": 0.00017072,
         "boundary_segments": 15,
         "cell_candidates": 215,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005652841,
+        "labeling_seconds": 0.005727465,
         "pair_candidates": 8,
         "pair_polygon_intersections": 5,
         "ray_candidates": 111,
         "source_cell_fragments": 68,
-        "triangulation_seconds": 0.002656907
+        "triangulation_seconds": 0.0027608370000000004
       }
     },
     {
@@ -8391,19 +8391,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003923667,
-        "boundary_seconds": 0.000335045,
+        "arrangement_seconds": 0.003974176,
+        "boundary_seconds": 0.0003722,
         "boundary_segments": 15,
         "cell_candidates": 215,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006670097,
+        "labeling_seconds": 0.006728583,
         "pair_candidates": 8,
         "pair_polygon_intersections": 5,
         "ray_candidates": 111,
         "source_cell_fragments": 68,
-        "triangulation_seconds": 0.0026920830000000005
+        "triangulation_seconds": 0.002753857
       }
     },
     {
@@ -8444,19 +8444,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002869188,
-        "boundary_seconds": 0.000153254,
+        "arrangement_seconds": 0.002879326,
+        "boundary_seconds": 0.000162522,
         "boundary_segments": 15,
         "cell_candidates": 360,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006100666,
+        "labeling_seconds": 0.034286546,
         "pair_candidates": 10,
         "pair_polygon_intersections": 6,
         "ray_candidates": 272,
         "source_cell_fragments": 68,
-        "triangulation_seconds": 0.002692791
+        "triangulation_seconds": 0.002803049
       }
     },
     {
@@ -8497,19 +8497,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003919435,
-        "boundary_seconds": 0.000327655,
+        "arrangement_seconds": 0.003974357,
+        "boundary_seconds": 0.000349852,
         "boundary_segments": 15,
         "cell_candidates": 215,
         "contour_reduction": false,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006668699,
+        "labeling_seconds": 0.006773921,
         "pair_candidates": 8,
         "pair_polygon_intersections": 5,
         "ray_candidates": 111,
         "source_cell_fragments": 68,
-        "triangulation_seconds": 0.002679498
+        "triangulation_seconds": 0.002782875
       }
     },
     {
@@ -8550,19 +8550,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003916028,
-        "boundary_seconds": 0.000328394,
+        "arrangement_seconds": 0.003952015,
+        "boundary_seconds": 0.000349612,
         "boundary_segments": 15,
         "cell_candidates": 215,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006689404,
+        "labeling_seconds": 0.006719044,
         "pair_candidates": 8,
         "pair_polygon_intersections": 5,
         "ray_candidates": 111,
         "source_cell_fragments": 68,
-        "triangulation_seconds": 0.001425512
+        "triangulation_seconds": 0.001457323
       }
     },
     {
@@ -8603,19 +8603,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002890405,
-        "boundary_seconds": 0.000149257,
+        "arrangement_seconds": 0.002878147,
+        "boundary_seconds": 0.00015255,
         "boundary_segments": 15,
         "cell_candidates": 215,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.005688048,
+        "labeling_seconds": 0.005730468,
         "pair_candidates": 8,
         "pair_polygon_intersections": 5,
         "ray_candidates": 111,
         "source_cell_fragments": 68,
-        "triangulation_seconds": 0.002349096
+        "triangulation_seconds": 0.002341104
       }
     },
     {
@@ -8656,19 +8656,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004555607,
-        "boundary_seconds": 0.000237525,
+        "arrangement_seconds": 0.004616894,
+        "boundary_seconds": 0.000232657,
         "boundary_segments": 15,
         "cell_candidates": 331,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009150363,
+        "labeling_seconds": 0.009410323,
         "pair_candidates": 9,
         "pair_polygon_intersections": 9,
         "ray_candidates": 258,
         "source_cell_fragments": 133,
-        "triangulation_seconds": 0.007893012
+        "triangulation_seconds": 0.008093046
       }
     },
     {
@@ -8709,19 +8709,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.006223202,
-        "boundary_seconds": 0.000434491,
+        "arrangement_seconds": 0.006281481,
+        "boundary_seconds": 0.000454014,
         "boundary_segments": 15,
         "cell_candidates": 331,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.010685694,
+        "labeling_seconds": 0.010936181,
         "pair_candidates": 9,
         "pair_polygon_intersections": 9,
         "ray_candidates": 258,
         "source_cell_fragments": 133,
-        "triangulation_seconds": 0.0075558199999999996
+        "triangulation_seconds": 0.007825328
       }
     },
     {
@@ -8762,19 +8762,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004593917,
-        "boundary_seconds": 0.000226029,
+        "arrangement_seconds": 0.004556801,
+        "boundary_seconds": 0.00023594,
         "boundary_segments": 15,
         "cell_candidates": 490,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009730913,
+        "labeling_seconds": 0.009625153,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 532,
         "source_cell_fragments": 133,
-        "triangulation_seconds": 0.007928932999999999
+        "triangulation_seconds": 0.007777382999999999
       }
     },
     {
@@ -8815,19 +8815,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.006278145,
-        "boundary_seconds": 0.000442344,
+        "arrangement_seconds": 0.006398429,
+        "boundary_seconds": 0.000433943,
         "boundary_segments": 15,
         "cell_candidates": 331,
         "contour_reduction": false,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.01077291,
+        "labeling_seconds": 0.010633384,
         "pair_candidates": 9,
         "pair_polygon_intersections": 9,
         "ray_candidates": 258,
         "source_cell_fragments": 133,
-        "triangulation_seconds": 0.007709766
+        "triangulation_seconds": 0.007502527
       }
     },
     {
@@ -8868,19 +8868,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.006261408,
-        "boundary_seconds": 0.000443511,
+        "arrangement_seconds": 0.00625375,
+        "boundary_seconds": 0.000436078,
         "boundary_segments": 15,
         "cell_candidates": 331,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.010917782,
+        "labeling_seconds": 0.010769743,
         "pair_candidates": 9,
         "pair_polygon_intersections": 9,
         "ray_candidates": 258,
         "source_cell_fragments": 133,
-        "triangulation_seconds": 0.00439328
+        "triangulation_seconds": 0.004370405
       }
     },
     {
@@ -8921,19 +8921,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.004574663,
-        "boundary_seconds": 0.000225747,
+        "arrangement_seconds": 0.004581311,
+        "boundary_seconds": 0.000235748,
         "boundary_segments": 15,
         "cell_candidates": 331,
         "contour_reduction": true,
         "depth_equality_segments": 4,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.009172785,
+        "labeling_seconds": 0.009274615,
         "pair_candidates": 9,
         "pair_polygon_intersections": 9,
         "ray_candidates": 258,
         "source_cell_fragments": 133,
-        "triangulation_seconds": 0.0071893700000000005
+        "triangulation_seconds": 0.007321724
       }
     },
     {
@@ -8974,19 +8974,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.008087067,
-        "boundary_seconds": 0.000232439,
+        "arrangement_seconds": 0.007992588,
+        "boundary_seconds": 0.000233505,
         "boundary_segments": 15,
         "cell_candidates": 652,
         "contour_reduction": true,
         "depth_equality_segments": 7,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.017241976,
+        "labeling_seconds": 0.017081001,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 1008,
         "source_cell_fragments": 278,
-        "triangulation_seconds": 0.020895466
+        "triangulation_seconds": 0.020993459
       }
     },
     {
@@ -9027,19 +9027,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.010582468,
-        "boundary_seconds": 0.000438904,
+        "arrangement_seconds": 0.014593162,
+        "boundary_seconds": 0.000461433,
         "boundary_segments": 15,
         "cell_candidates": 652,
         "contour_reduction": true,
         "depth_equality_segments": 7,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.02043013,
+        "labeling_seconds": 0.020470626,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 1008,
         "source_cell_fragments": 278,
-        "triangulation_seconds": 0.019540893
+        "triangulation_seconds": 0.019603917000000002
       }
     },
     {
@@ -9080,19 +9080,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.007911124,
-        "boundary_seconds": 0.000227441,
+        "arrangement_seconds": 0.007909316,
+        "boundary_seconds": 0.000225437,
         "boundary_segments": 15,
         "cell_candidates": 730,
         "contour_reduction": true,
         "depth_equality_segments": 7,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.01737788,
+        "labeling_seconds": 0.017351793,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 1112,
         "source_cell_fragments": 278,
-        "triangulation_seconds": 0.020307949
+        "triangulation_seconds": 0.020347978000000003
       }
     },
     {
@@ -9133,19 +9133,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.010566627,
-        "boundary_seconds": 0.000454159,
+        "arrangement_seconds": 0.010613655,
+        "boundary_seconds": 0.000456379,
         "boundary_segments": 15,
         "cell_candidates": 652,
         "contour_reduction": false,
         "depth_equality_segments": 7,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.020540446,
+        "labeling_seconds": 0.020572536,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 1008,
         "source_cell_fragments": 278,
-        "triangulation_seconds": 0.019583585
+        "triangulation_seconds": 0.019795843
       }
     },
     {
@@ -9186,19 +9186,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.010698853,
-        "boundary_seconds": 0.000451744,
+        "arrangement_seconds": 0.010610209,
+        "boundary_seconds": 0.000449059,
         "boundary_segments": 15,
         "cell_candidates": 652,
         "contour_reduction": true,
         "depth_equality_segments": 7,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.020576149,
+        "labeling_seconds": 0.020498895,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 1008,
         "source_cell_fragments": 278,
-        "triangulation_seconds": 0.008127238
+        "triangulation_seconds": 0.008194983
       }
     },
     {
@@ -9239,19 +9239,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.007894093,
-        "boundary_seconds": 0.000234192,
+        "arrangement_seconds": 0.008122215,
+        "boundary_seconds": 0.000236743,
         "boundary_segments": 15,
         "cell_candidates": 652,
         "contour_reduction": true,
         "depth_equality_segments": 7,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.017060966,
+        "labeling_seconds": 0.017468771,
         "pair_candidates": 10,
         "pair_polygon_intersections": 10,
         "ray_candidates": 1008,
         "source_cell_fragments": 278,
-        "triangulation_seconds": 0.015899602
+        "triangulation_seconds": 0.016491101
       }
     },
     {
@@ -9292,19 +9292,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002786316,
-        "boundary_seconds": 0.000209467,
+        "arrangement_seconds": 0.002792057,
+        "boundary_seconds": 0.000208496,
         "boundary_segments": 12,
         "cell_candidates": 245,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006551884,
+        "labeling_seconds": 0.006571296,
         "pair_candidates": 6,
         "pair_polygon_intersections": 6,
         "ray_candidates": 189,
         "source_cell_fragments": 90,
-        "triangulation_seconds": 0.0038648269999999995
+        "triangulation_seconds": 0.0039102519999999995
       }
     },
     {
@@ -9345,19 +9345,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003901324,
-        "boundary_seconds": 0.000403639,
+        "arrangement_seconds": 0.003897345,
+        "boundary_seconds": 0.000417465,
         "boundary_segments": 12,
         "cell_candidates": 245,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007790679,
+        "labeling_seconds": 0.00776212,
         "pair_candidates": 6,
         "pair_polygon_intersections": 6,
         "ray_candidates": 189,
         "source_cell_fragments": 90,
-        "triangulation_seconds": 0.004025806999999999
+        "triangulation_seconds": 0.00396084
       }
     },
     {
@@ -9398,19 +9398,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002806432,
-        "boundary_seconds": 0.000209483,
+        "arrangement_seconds": 0.00278111,
+        "boundary_seconds": 0.000216347,
         "boundary_segments": 12,
         "cell_candidates": 288,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006726828,
+        "labeling_seconds": 0.0067964,
         "pair_candidates": 6,
         "pair_polygon_intersections": 6,
         "ray_candidates": 270,
         "source_cell_fragments": 90,
-        "triangulation_seconds": 0.003962615
+        "triangulation_seconds": 0.003947158
       }
     },
     {
@@ -9451,19 +9451,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003882,
-        "boundary_seconds": 0.000416655,
+        "arrangement_seconds": 0.004023762,
+        "boundary_seconds": 0.000405139,
         "boundary_segments": 12,
         "cell_candidates": 245,
         "contour_reduction": false,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007751293,
+        "labeling_seconds": 0.007772673,
         "pair_candidates": 6,
         "pair_polygon_intersections": 6,
         "ray_candidates": 189,
         "source_cell_fragments": 90,
-        "triangulation_seconds": 0.003945268
+        "triangulation_seconds": 0.0039166209999999995
       }
     },
     {
@@ -9504,19 +9504,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.003948917,
-        "boundary_seconds": 0.000409189,
+        "arrangement_seconds": 0.003884278,
+        "boundary_seconds": 0.000398821,
         "boundary_segments": 12,
         "cell_candidates": 245,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.007739882,
+        "labeling_seconds": 0.007722152,
         "pair_candidates": 6,
         "pair_polygon_intersections": 6,
         "ray_candidates": 189,
         "source_cell_fragments": 90,
-        "triangulation_seconds": 0.00209882
+        "triangulation_seconds": 0.002085975
       }
     },
     {
@@ -9557,19 +9557,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.002801826,
-        "boundary_seconds": 0.000209458,
+        "arrangement_seconds": 0.002829915,
+        "boundary_seconds": 0.000197448,
         "boundary_segments": 12,
         "cell_candidates": 245,
         "contour_reduction": true,
         "depth_equality_segments": 1,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.006611677,
+        "labeling_seconds": 0.006486912,
         "pair_candidates": 6,
         "pair_polygon_intersections": 6,
         "ray_candidates": 189,
         "source_cell_fragments": 90,
-        "triangulation_seconds": 0.003464221
+        "triangulation_seconds": 0.003374322
       }
     },
     {
@@ -9610,19 +9610,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000222992,
-        "boundary_seconds": 2.3578e-05,
+        "arrangement_seconds": 0.000217566,
+        "boundary_seconds": 1.7423e-05,
         "boundary_segments": 4,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00013535,
+        "labeling_seconds": 0.000133683,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9819e-05
+        "triangulation_seconds": 1.6425e-05
       }
     },
     {
@@ -9663,19 +9663,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00031034,
-        "boundary_seconds": 0.000161538,
+        "arrangement_seconds": 0.000297691,
+        "boundary_seconds": 0.000146773,
         "boundary_segments": 4,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000219547,
+        "labeling_seconds": 0.0002214,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.4636e-05
+        "triangulation_seconds": 2.2249e-05
       }
     },
     {
@@ -9716,19 +9716,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000223193,
-        "boundary_seconds": 2.0108e-05,
+        "arrangement_seconds": 0.000206393,
+        "boundary_seconds": 1.7815e-05,
         "boundary_segments": 4,
         "cell_candidates": 40,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000148491,
+        "labeling_seconds": 0.000149709,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9549e-05
+        "triangulation_seconds": 1.7557e-05
       }
     },
     {
@@ -9769,19 +9769,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000442586,
-        "boundary_seconds": 0.000150292,
+        "arrangement_seconds": 0.000406922,
+        "boundary_seconds": 0.003421783,
         "boundary_segments": 12,
         "cell_candidates": 40,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000268584,
+        "labeling_seconds": 0.000266689,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.1347e-05
+        "triangulation_seconds": 2.2608e-05
       }
     },
     {
@@ -9822,19 +9822,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00030258,
-        "boundary_seconds": 0.000150875,
+        "arrangement_seconds": 0.000294884,
+        "boundary_seconds": 0.00013346,
         "boundary_segments": 4,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000217602,
+        "labeling_seconds": 0.000220224,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.3529e-05
+        "triangulation_seconds": 2.2093e-05
       }
     },
     {
@@ -9875,19 +9875,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000223432,
-        "boundary_seconds": 1.6981e-05,
+        "arrangement_seconds": 0.000216527,
+        "boundary_seconds": 1.6696e-05,
         "boundary_segments": 4,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000130311,
+        "labeling_seconds": 0.000127234,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9858e-05
+        "triangulation_seconds": 1.7657e-05
       }
     },
     {
@@ -9928,19 +9928,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000182356,
-        "boundary_seconds": 8.228e-06,
+        "arrangement_seconds": 0.000190545,
+        "boundary_seconds": 1.5591e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 4.7055e-05,
+        "labeling_seconds": 4.9156e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.2782e-05
+        "triangulation_seconds": 1.8161e-05
       }
     },
     {
@@ -9981,19 +9981,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000244916,
-        "boundary_seconds": 0.000113536,
+        "arrangement_seconds": 0.000251452,
+        "boundary_seconds": 0.000118246,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 7.2417e-05,
+        "labeling_seconds": 6.8802e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.2392e-05
+        "triangulation_seconds": 1.5965e-05
       }
     },
     {
@@ -10034,19 +10034,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000172692,
-        "boundary_seconds": 1.2392e-05,
+        "arrangement_seconds": 0.000171587,
+        "boundary_seconds": 1.1752e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 4.2643e-05,
+        "labeling_seconds": 4.5713e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.2659e-05
+        "triangulation_seconds": 1.1364e-05
       }
     },
     {
@@ -10087,19 +10087,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000246514,
-        "boundary_seconds": 0.000120538,
+        "arrangement_seconds": 0.000244802,
+        "boundary_seconds": 0.000112778,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 7.1232e-05,
+        "labeling_seconds": 7.0896e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.8991e-05
+        "triangulation_seconds": 1.627e-05
       }
     },
     {
@@ -10140,19 +10140,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000249376,
-        "boundary_seconds": 0.000120484,
+        "arrangement_seconds": 0.000240654,
+        "boundary_seconds": 0.000110848,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 6.8112e-05,
+        "labeling_seconds": 7.3237e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.6876e-05
+        "triangulation_seconds": 1.4921e-05
       }
     },
     {
@@ -10193,19 +10193,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000185849,
-        "boundary_seconds": 8.41e-06,
+        "arrangement_seconds": 0.000178944,
+        "boundary_seconds": 1.2598e-05,
         "boundary_segments": 3,
         "cell_candidates": 8,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 4.7016e-05,
+        "labeling_seconds": 4.3244e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 1,
-        "triangulation_seconds": 1.0303e-05
+        "triangulation_seconds": 1.2195e-05
       }
     },
     {
@@ -10246,19 +10246,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000482813,
-        "boundary_seconds": 1.737e-05,
+        "arrangement_seconds": 0.000500773,
+        "boundary_seconds": 1.6382e-05,
         "boundary_segments": 6,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000460344,
+        "labeling_seconds": 0.000459845,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 9.092099999999999e-05
+        "triangulation_seconds": 8.7457e-05
       }
     },
     {
@@ -10299,19 +10299,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000630223,
-        "boundary_seconds": 0.000135158,
+        "arrangement_seconds": 0.000626462,
+        "boundary_seconds": 0.000146432,
         "boundary_segments": 6,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000545722,
+        "labeling_seconds": 0.000548668,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 0.000153174
+        "triangulation_seconds": 0.000126006
       }
     },
     {
@@ -10352,19 +10352,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000487914,
-        "boundary_seconds": 1.7242e-05,
+        "arrangement_seconds": 0.000490308,
+        "boundary_seconds": 1.5732e-05,
         "boundary_segments": 6,
         "cell_candidates": 28,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00046058,
+        "labeling_seconds": 0.000455858,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 5,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 8.9198e-05
+        "triangulation_seconds": 8.9644e-05
       }
     },
     {
@@ -10405,19 +10405,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000641804,
-        "boundary_seconds": 0.000135837,
+        "arrangement_seconds": 0.000637823,
+        "boundary_seconds": 0.000127006,
         "boundary_segments": 6,
         "cell_candidates": 27,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000552062,
+        "labeling_seconds": 0.000550529,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 0.000141024
+        "triangulation_seconds": 0.000143567
       }
     },
     {
@@ -10458,19 +10458,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000633031,
-        "boundary_seconds": 0.000130561,
+        "arrangement_seconds": 0.000644204,
+        "boundary_seconds": 0.000145012,
         "boundary_segments": 6,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000545323,
+        "labeling_seconds": 0.000551794,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 6.9688e-05
+        "triangulation_seconds": 7.7134e-05
       }
     },
     {
@@ -10511,19 +10511,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000482151,
-        "boundary_seconds": 1.642e-05,
+        "arrangement_seconds": 0.000485458,
+        "boundary_seconds": 1.246e-05,
         "boundary_segments": 6,
         "cell_candidates": 27,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000459944,
+        "labeling_seconds": 0.000465273,
         "pair_candidates": 1,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 9.0709e-05
+        "triangulation_seconds": 9.0573e-05
       }
     },
     {
@@ -10564,19 +10564,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00028629,
-        "boundary_seconds": 1.7964e-05,
+        "arrangement_seconds": 0.000298815,
+        "boundary_seconds": 1.6898e-05,
         "boundary_segments": 12,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000149822,
+        "labeling_seconds": 0.000155247,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.8637e-05
+        "triangulation_seconds": 1.743e-05
       }
     },
     {
@@ -10617,19 +10617,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000368549,
-        "boundary_seconds": 0.000140761,
+        "arrangement_seconds": 0.000374118,
+        "boundary_seconds": 0.000156235,
         "boundary_segments": 12,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000255193,
+        "labeling_seconds": 0.00025717,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 7.5605e-05
+        "triangulation_seconds": 7.002999999999999e-05
       }
     },
     {
@@ -10670,19 +10670,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00031542,
-        "boundary_seconds": 2.0297e-05,
+        "arrangement_seconds": 0.000293565,
+        "boundary_seconds": 1.8954e-05,
         "boundary_segments": 12,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000161332,
+        "labeling_seconds": 0.000152645,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.1698999999999997e-05
+        "triangulation_seconds": 1.7678999999999998e-05
       }
     },
     {
@@ -10723,19 +10723,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000376148,
-        "boundary_seconds": 0.000147576,
+        "arrangement_seconds": 0.000363475,
+        "boundary_seconds": 0.000130644,
         "boundary_segments": 12,
         "cell_candidates": 32,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000252593,
+        "labeling_seconds": 0.000256261,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 4.9961000000000005e-05
+        "triangulation_seconds": 6.4013e-05
       }
     },
     {
@@ -10776,19 +10776,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000380845,
-        "boundary_seconds": 0.000140848,
+        "arrangement_seconds": 0.000368825,
+        "boundary_seconds": 0.000131829,
         "boundary_segments": 12,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000252696,
+        "labeling_seconds": 0.000249021,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.9955e-05
+        "triangulation_seconds": 1.5053e-05
       }
     },
     {
@@ -10829,19 +10829,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000291878,
-        "boundary_seconds": 1.9704e-05,
+        "arrangement_seconds": 0.000292249,
+        "boundary_seconds": 1.9026e-05,
         "boundary_segments": 12,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000152214,
+        "labeling_seconds": 0.000146756,
         "pair_candidates": 6,
         "pair_polygon_intersections": 0,
         "ray_candidates": 12,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.5019e-05
+        "triangulation_seconds": 1.4677e-05
       }
     },
     {
@@ -10912,19 +10912,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000173939,
-        "boundary_seconds": 1.0393e-05,
+        "arrangement_seconds": 0.00017321,
+        "boundary_seconds": 1.0903e-05,
         "boundary_segments": 6,
         "cell_candidates": 6,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 6.277e-05,
+        "labeling_seconds": 6.0341e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.8074e-05
+        "triangulation_seconds": 1.663e-05
       }
     },
     {
@@ -10965,19 +10965,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00023787,
-        "boundary_seconds": 0.000108769,
+        "arrangement_seconds": 0.000236499,
+        "boundary_seconds": 0.000111298,
         "boundary_segments": 6,
         "cell_candidates": 6,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 9.5946e-05,
+        "labeling_seconds": 0.000102614,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.323e-05
+        "triangulation_seconds": 2.194e-05
       }
     },
     {
@@ -11018,19 +11018,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000176637,
-        "boundary_seconds": 1.1384e-05,
+        "arrangement_seconds": 0.000172895,
+        "boundary_seconds": 1.1075e-05,
         "boundary_segments": 6,
         "cell_candidates": 6,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 6.3639e-05,
+        "labeling_seconds": 5.9404e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.5726e-05
+        "triangulation_seconds": 1.8053e-05
       }
     },
     {
@@ -11071,19 +11071,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000237455,
-        "boundary_seconds": 0.000110331,
+        "arrangement_seconds": 0.000232677,
+        "boundary_seconds": 0.000103715,
         "boundary_segments": 6,
         "cell_candidates": 6,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 9.5267e-05,
+        "labeling_seconds": 0.000100298,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.3176e-05
+        "triangulation_seconds": 2.2735e-05
       }
     },
     {
@@ -11124,19 +11124,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000237292,
-        "boundary_seconds": 0.000123006,
+        "arrangement_seconds": 0.000231508,
+        "boundary_seconds": 0.000118006,
         "boundary_segments": 6,
         "cell_candidates": 6,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 9.6136e-05,
+        "labeling_seconds": 9.6605e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 2.386e-05
+        "triangulation_seconds": 2.2475e-05
       }
     },
     {
@@ -11177,19 +11177,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000172631,
-        "boundary_seconds": 9.194e-06,
+        "arrangement_seconds": 0.000172906,
+        "boundary_seconds": 1.1398e-05,
         "boundary_segments": 6,
         "cell_candidates": 6,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 7.131e-05,
+        "labeling_seconds": 6.301e-05,
         "pair_candidates": 0,
         "pair_polygon_intersections": 0,
         "ray_candidates": 0,
         "source_cell_fragments": 4,
-        "triangulation_seconds": 1.8085e-05
+        "triangulation_seconds": 1.7752e-05
       }
     },
     {
@@ -11230,19 +11230,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000312824,
-        "boundary_seconds": 1.4656e-05,
+        "arrangement_seconds": 0.000278075,
+        "boundary_seconds": 1.53e-05,
         "boundary_segments": 7,
         "cell_candidates": 42,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 1,
-        "labeling_seconds": 0.000314352,
+        "labeling_seconds": 0.000259309,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 16,
         "source_cell_fragments": 10,
-        "triangulation_seconds": 0.000142476
+        "triangulation_seconds": 0.00013859999999999998
       }
     },
     {
@@ -11283,19 +11283,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000428721,
-        "boundary_seconds": 0.000142495,
+        "arrangement_seconds": 0.000427113,
+        "boundary_seconds": 0.000126868,
         "boundary_segments": 7,
         "cell_candidates": 42,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 1,
-        "labeling_seconds": 0.000402051,
+        "labeling_seconds": 0.000399595,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 16,
         "source_cell_fragments": 10,
-        "triangulation_seconds": 0.000176017
+        "triangulation_seconds": 0.000170036
       }
     },
     {
@@ -11336,19 +11336,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000289216,
-        "boundary_seconds": 1.6632e-05,
+        "arrangement_seconds": 0.000274538,
+        "boundary_seconds": 1.3873e-05,
         "boundary_segments": 7,
         "cell_candidates": 48,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 1,
-        "labeling_seconds": 0.000278727,
+        "labeling_seconds": 0.000272719,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 21,
         "source_cell_fragments": 10,
-        "triangulation_seconds": 0.00016926
+        "triangulation_seconds": 0.00015898599999999999
       }
     },
     {
@@ -11389,19 +11389,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000549012,
-        "boundary_seconds": 0.000132045,
+        "arrangement_seconds": 0.000544941,
+        "boundary_seconds": 0.000136858,
         "boundary_segments": 9,
         "cell_candidates": 48,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000431472,
+        "labeling_seconds": 0.000432272,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 17,
         "source_cell_fragments": 11,
-        "triangulation_seconds": 0.00023506200000000002
+        "triangulation_seconds": 0.000230332
       }
     },
     {
@@ -11442,19 +11442,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000425771,
-        "boundary_seconds": 0.000154901,
+        "arrangement_seconds": 0.000422826,
+        "boundary_seconds": 0.000126808,
         "boundary_segments": 7,
         "cell_candidates": 42,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 1,
-        "labeling_seconds": 0.000396694,
+        "labeling_seconds": 0.000403164,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 16,
         "source_cell_fragments": 10,
-        "triangulation_seconds": 0.000145912
+        "triangulation_seconds": 0.000140646
       }
     },
     {
@@ -11495,19 +11495,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000282619,
-        "boundary_seconds": 1.6566e-05,
+        "arrangement_seconds": 0.000271019,
+        "boundary_seconds": 1.1855e-05,
         "boundary_segments": 7,
         "cell_candidates": 42,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 1,
-        "labeling_seconds": 0.000255781,
+        "labeling_seconds": 0.000259068,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 16,
         "source_cell_fragments": 10,
-        "triangulation_seconds": 0.000138067
+        "triangulation_seconds": 0.00013268200000000001
       }
     },
     {
@@ -11548,19 +11548,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000289573,
-        "boundary_seconds": 1.6581e-05,
+        "arrangement_seconds": 0.000286776,
+        "boundary_seconds": 1.5546e-05,
         "boundary_segments": 7,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000210708,
+        "labeling_seconds": 0.00020883,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 3.1505e-05
+        "triangulation_seconds": 3.0976e-05
       }
     },
     {
@@ -11601,19 +11601,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000402941,
-        "boundary_seconds": 0.000119191,
+        "arrangement_seconds": 0.000394556,
+        "boundary_seconds": 0.000123184,
         "boundary_segments": 7,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00030598,
+        "labeling_seconds": 0.000303634,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 6.8073e-05
+        "triangulation_seconds": 7.396599999999999e-05
       }
     },
     {
@@ -11654,19 +11654,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000290458,
-        "boundary_seconds": 1.5361e-05,
+        "arrangement_seconds": 0.00031602,
+        "boundary_seconds": 1.6079e-05,
         "boundary_segments": 7,
         "cell_candidates": 36,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000223386,
+        "labeling_seconds": 0.000250464,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 10,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 3.2217e-05
+        "triangulation_seconds": 3.5564e-05
       }
     },
     {
@@ -11707,19 +11707,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000419883,
-        "boundary_seconds": 0.000122334,
+        "arrangement_seconds": 0.000423749,
+        "boundary_seconds": 0.000132655,
         "boundary_segments": 9,
         "cell_candidates": 32,
         "contour_reduction": false,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.00030886,
+        "labeling_seconds": 0.000301874,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 7.3238e-05
+        "triangulation_seconds": 5.688e-05
       }
     },
     {
@@ -11760,19 +11760,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000410802,
-        "boundary_seconds": 0.000129472,
+        "arrangement_seconds": 0.000409649,
+        "boundary_seconds": 0.000132097,
         "boundary_segments": 7,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000305399,
+        "labeling_seconds": 0.000302435,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 2.2852e-05
+        "triangulation_seconds": 2.6039e-05
       }
     },
     {
@@ -11813,19 +11813,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000297499,
-        "boundary_seconds": 1.2369e-05,
+        "arrangement_seconds": 0.000292916,
+        "boundary_seconds": 1.3987e-05,
         "boundary_segments": 7,
         "cell_candidates": 32,
         "contour_reduction": true,
         "depth_equality_segments": 0,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000219826,
+        "labeling_seconds": 0.000217965,
         "pair_candidates": 3,
         "pair_polygon_intersections": 0,
         "ray_candidates": 4,
         "source_cell_fragments": 5,
-        "triangulation_seconds": 2.8566e-05
+        "triangulation_seconds": 3.0798e-05
       }
     },
     {
@@ -11866,19 +11866,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000446905,
-        "boundary_seconds": 4.0083e-05,
+        "arrangement_seconds": 0.000444512,
+        "boundary_seconds": 4.0698e-05,
         "boundary_segments": 7,
         "cell_candidates": 52,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000404715,
+        "labeling_seconds": 0.00040156,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 18,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000355657
+        "triangulation_seconds": 0.000351036
       }
     },
     {
@@ -11919,19 +11919,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000635271,
-        "boundary_seconds": 0.000173822,
+        "arrangement_seconds": 0.000624076,
+        "boundary_seconds": 0.00016449,
         "boundary_segments": 7,
         "cell_candidates": 52,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000583881,
+        "labeling_seconds": 0.000582697,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 18,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000367604
+        "triangulation_seconds": 0.000369559
       }
     },
     {
@@ -11972,19 +11972,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000450105,
-        "boundary_seconds": 3.675e-05,
+        "arrangement_seconds": 0.000436785,
+        "boundary_seconds": 3.6285e-05,
         "boundary_segments": 7,
         "cell_candidates": 60,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000414134,
+        "labeling_seconds": 0.000415058,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 30,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.00035955199999999996
+        "triangulation_seconds": 0.000358559
       }
     },
     {
@@ -12025,19 +12025,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000701361,
-        "boundary_seconds": 0.000164019,
+        "arrangement_seconds": 0.000698614,
+        "boundary_seconds": 0.000164366,
         "boundary_segments": 9,
         "cell_candidates": 52,
         "contour_reduction": false,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000591401,
+        "labeling_seconds": 0.000582097,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 18,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.000362695
+        "triangulation_seconds": 0.000369723
       }
     },
     {
@@ -12078,19 +12078,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.00062974,
-        "boundary_seconds": 0.000167579,
+        "arrangement_seconds": 0.000646175,
+        "boundary_seconds": 0.000162063,
         "boundary_segments": 7,
         "cell_candidates": 52,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000582556,
+        "labeling_seconds": 0.000585224,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 18,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.00026712
+        "triangulation_seconds": 0.000264746
       }
     },
     {
@@ -12131,19 +12131,19 @@
           "validation_seconds": 0.0,
           "visibility_seconds": 0.0
         },
-        "arrangement_seconds": 0.000453732,
-        "boundary_seconds": 4.2138e-05,
+        "arrangement_seconds": 0.000446303,
+        "boundary_seconds": 4.082e-05,
         "boundary_segments": 7,
         "cell_candidates": 52,
         "contour_reduction": true,
         "depth_equality_segments": 2,
         "generic_sample_retries": 0,
-        "labeling_seconds": 0.000399775,
+        "labeling_seconds": 0.000414718,
         "pair_candidates": 3,
         "pair_polygon_intersections": 2,
         "ray_candidates": 18,
         "source_cell_fragments": 15,
-        "triangulation_seconds": 0.00034641
+        "triangulation_seconds": 0.000347411
       }
     },
     {

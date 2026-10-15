@@ -1,0 +1,49 @@
+{
+  "base_revision": "358cbb6c5af4769836f4c6f012502d7df06d2d0d",
+  "executable_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
+  "sources": {
+    "src/arrangement_oracle.cpp": "effb12dc2cf4cf5397bde6c9f848a4c920fec0dd29d460b2c8e3c6bdc5f0a981",
+    "src/bvh_peel.cpp": "87d439ce2fda213e905984caeaaa57e5aa9844516bc5cd3b4128720a5e30fa00",
+    "src/camera.cpp": "0a0f65c41af4abc12e63fa238cc6502f9b62687f9cde3e3cfedbaf0d897cb247",
+    "src/envelope_peel.cpp": "ddc460a8422974fb0eddf2d4549f029e0b7cc4693f36e8a7508f72f121b97f17",
+    "src/exact_geometry.cpp": "c7c6053dd9277128421910d101ba2961bbc304c5bab31ffd836709a64ab855de",
+    "src/fast_peel.cpp": "d6c12ea7302a2737a8db7da726c150f4f0a429e934d7fa22097e50268720699d",
+    "src/fast_peel.h": "186e6416e851609ebd0f3c01a93ecc1d1fd1db38ed08d0d9c793c452078112cf",
+    "src/fast_reference.cpp": "e850207e0b49229817c86a8cb88da680cb0f7cc9e67526db7afb153fd851447c",
+    "src/geometry.h": "a985be728e81dc4f57c17fb8686fe84fe38b9514b1bc73c2e8b88358aee7c6e4",
+    "src/global_arrangement.cpp": "f3e3565cb2e190116a27d7657ea4e6fd11c5cdd493e553c9cc6625959e7d24ae",
+    "src/main.cpp": "5c4df02e53a19e172400b4bbd9f3a926d850dd2fbdcb933fe57a78a5e9d20849",
+    "src/peel_common.h": "42d6764a7adfc550d56b052098e490482a1e1f252b89176520b07847f7699fc9",
+    "src/peel_options.h": "89a618c921d8a1d49b772d6b119c328aabf53b77b9bc8e26f15838d96534f60b",
+    "src/resolve_intersections.cpp": "f6effa2957e1f4e8f008946ccf028c1a74571e6b308e74cf729326bdfb1c349d",
+    "src/topology.h": "75ead7f0ae1863a97be63c557803035f70dfc3b9397122779b3887213176391e",
+    "src/triangulate_export.cpp": "679f730c943c720e71a734af1cdde7664de42496646384ff0227f331f7e86631",
+    "src/validation.cpp": "63eee43c389b0c0544abd517abcbc52e6ec6488a99c12ead72c67cbe82a4bdfb",
+    "src/visible_peel.cpp": "c4a822e9714b4542de838e617bd805a79161da3c52d05251364132b61bca2478"
+  },
+  "ctest_suites": 5,
+  "ctest_passed": 5,
+  "ctest_seconds": 187.41,
+  "dedicated_optimization_checks": 288,
+  "benchmarks": [
+    {
+      "directory": "performance",
+      "completed_processes": 60,
+      "measured_extractions": 180,
+      "default_and_control_gates": 10,
+      "all_default_and_control_gates_pass": true
+    },
+    {
+      "directory": "exact-performance",
+      "completed_processes": 16,
+      "measured_extractions": 32,
+      "default_and_control_gates": 4,
+      "all_default_and_control_gates_pass": true
+    }
+  ],
+  "background_load_controlled": false,
+  "large_fast_default_audit_identical_to_baseline": true,
+  "large_fast_zero_mismatch_criterion_passed": false,
+  "residual_merging_enabled_by_default": false,
+  "gpu_implementation_added": false
+}

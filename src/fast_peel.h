@@ -1,4 +1,5 @@
 #pragma once
+#include "peel_options.h"
 #include <array>
 #include <boost/container/small_vector.hpp>
 #include <cstdint>
@@ -52,5 +53,6 @@ Json validate_reference(const std::string &path, const Scene &, const Result &, 
                         int cap, bool complete);
 int run_cli(const std::string &path, const std::string &out, int layers, int threads, int repeat,
             int bits, const std::string &order, unsigned seed, bool accelerate, bool metrics_only,
-            bool verify, bool validate, int cap, bool resolved_mesh, bool mesh_only);
+            bool verify, bool validate, int cap, bool resolved_mesh, bool mesh_only,
+            PeelOptions options = {});
 } // namespace peel::fast

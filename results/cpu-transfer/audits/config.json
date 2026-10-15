@@ -1,0 +1,7 @@
+{
+  "executable_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
+  "threads": 4,
+  "timeout_seconds": 240,
+  "address_space_cap_gib": 24,
+  "baseline_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d"
+}

@@ -172,6 +172,7 @@ void write_result(const Scene &s, Result &r, const std::string &path, Json metad
     auto p = l.stats.json();
     p["layer_index"] = k + 1;
     p["input_residual"] = l.residual_complexity;
+    p["phases"] = l.phase_metrics;
     p["output"] = complexity(l.regions);
     p["exported_triangles"] = l.faces.size();
     passes.push_back(p);

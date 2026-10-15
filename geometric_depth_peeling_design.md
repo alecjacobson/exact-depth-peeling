@@ -20,6 +20,12 @@ open and non-manifold edges are retained as contours. Current measurements and
 explicit numerical limitations are in the README. The full dragon example and
 before/after performance regression supplement the earlier synthetic experiments.
 
+The shared scheduler also supports whole-subtree rank retirement and optional
+same-source convex residual coalescing. The latter is bounded to 32 vertices per
+union and only matches full shared edges; it is an experiment, not a claim that
+all artificial residual boundaries are dissolved. Per-stage timings and paired
+regressions are recorded in [the CPU experiment](results/cpu-transfer/README.md).
+
 ## Contour-aware global baseline update
 
 `global-arrangement` is an additional exact comparison and verification route.

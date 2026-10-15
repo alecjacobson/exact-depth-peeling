@@ -2,7 +2,7 @@
   "status": "passed",
   "failures": [],
   "expected_precision_loss_fixture": "slivers",
-  "executable_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
+  "executable_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
   "resolver_sha256": "ade5f99835318a23732f83f95bc31f5f7c8ae7c1d670819e65b30918f80bba2a",
   "records": [
     {
@@ -20,12 +20,12 @@
         "mismatch_examples": [],
         "oracle_layers": 1,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 1.862645149230957e-09,
+        "relative_source_area_l1_error": 1.8626447051417464e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.4901161193847656e-08,
-        "summed_reference_source_area": 8.0
+        "summed_patch_area_per_source_l1_error": 1.4901157641133977e-08,
+        "summed_reference_source_area": 8.000000000000004
       },
       "topology": {
         "boundary_edges": 0,
@@ -36,7 +36,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.02e-07
+      },
       "layers": 1
     },
     {
@@ -54,12 +58,12 @@
         "mismatch_examples": [],
         "oracle_layers": 1,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 1.862645149230957e-09,
+        "relative_source_area_l1_error": 1.8626447051417464e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.4901161193847656e-08,
-        "summed_reference_source_area": 8.0
+        "summed_patch_area_per_source_l1_error": 1.4901157641133977e-08,
+        "summed_reference_source_area": 8.000000000000004
       },
       "topology": {
         "boundary_edges": 3,
@@ -71,9 +75,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.9164e-05,
+        "classification_seconds": 0.000112668,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.05e-07,
         "sources_requiring_clipping": 1
       },
       "layers": 1
@@ -109,7 +116,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.61e-07
+      },
       "layers": 1
     },
     {
@@ -144,9 +155,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.266e-05,
+        "classification_seconds": 0.000112439,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.53e-07,
         "sources_requiring_clipping": 1
       },
       "layers": 1
@@ -182,7 +196,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.35e-07
+      },
       "layers": 1
     },
     {
@@ -217,9 +235,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000102426,
+        "classification_seconds": 0.00010229,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.88e-07,
         "sources_requiring_clipping": 3
       },
       "layers": 1
@@ -255,7 +276,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.1e-08
+      },
       "layers": 4
     },
     {
@@ -290,9 +315,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.5261e-05,
+        "classification_seconds": 9.6234e-05,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.48e-07,
         "sources_requiring_clipping": 4
       },
       "layers": 4
@@ -328,7 +356,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.1e-07
+      },
       "layers": 2
     },
     {
@@ -363,9 +395,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.8086e-05,
+        "classification_seconds": 9.9335e-05,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.52e-07,
         "sources_requiring_clipping": 2
       },
       "layers": 2
@@ -401,7 +436,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.5e-08
+      },
       "layers": 2
     },
     {
@@ -436,9 +475,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.6838e-05,
+        "classification_seconds": 0.000121327,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.86e-07,
         "sources_requiring_clipping": 3
       },
       "layers": 2
@@ -474,7 +516,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.2e-08
+      },
       "layers": 2
     },
     {
@@ -509,9 +555,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000120225,
+        "classification_seconds": 0.000114826,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.78e-07,
         "sources_requiring_clipping": 5
       },
       "layers": 2
@@ -531,12 +580,12 @@
         "mismatch_examples": [],
         "oracle_layers": 2,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 1.862645149230957e-09,
+        "relative_source_area_l1_error": 1.8626447051417464e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 2.9802322387695312e-08,
-        "summed_reference_source_area": 16.0
+        "summed_patch_area_per_source_l1_error": 2.9802315282267955e-08,
+        "summed_reference_source_area": 16.000000000000007
       },
       "topology": {
         "boundary_edges": 0,
@@ -547,7 +596,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.7e-08
+      },
       "layers": 2
     },
     {
@@ -581,7 +634,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.46e-07
+      },
       "layers": 1
     },
     {
@@ -616,9 +673,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000101319,
+        "classification_seconds": 0.000112051,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.06e-07,
         "sources_requiring_clipping": 2
       },
       "layers": 1
@@ -654,7 +714,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.5e-08
+      },
       "layers": 1
     },
     {
@@ -689,9 +753,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000100615,
+        "classification_seconds": 0.000113613,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.86e-07,
         "sources_requiring_clipping": 4
       },
       "layers": 1
@@ -708,7 +775,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.4e-08
+      },
       "layers": 2
     },
     {
@@ -723,7 +794,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9e-08
+      },
       "layers": 3
     },
     {
@@ -757,7 +832,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.5e-08
+      },
       "layers": 1
     },
     {
@@ -791,7 +870,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.4e-08
+      },
       "layers": 1
     },
     {
@@ -809,12 +892,12 @@
         "mismatch_examples": [],
         "oracle_layers": 1,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 1.862645149230957e-09,
+        "relative_source_area_l1_error": 1.8626447051417464e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.4901161193847656e-08,
-        "summed_reference_source_area": 8.0
+        "summed_patch_area_per_source_l1_error": 1.4901157641133977e-08,
+        "summed_reference_source_area": 8.000000000000004
       },
       "topology": {
         "boundary_edges": 3,
@@ -826,9 +909,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000103966,
+        "classification_seconds": 0.000109061,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.26e-07,
         "sources_requiring_clipping": 1
       },
       "layers": 1
@@ -864,7 +950,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.5e-08
+      },
       "layers": 2
     },
     {
@@ -899,9 +989,12 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.1033e-05,
+        "classification_seconds": 0.000103755,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.51e-07,
         "sources_requiring_clipping": 12
       },
       "layers": 2
@@ -937,7 +1030,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.1e-08
+      },
       "layers": 3
     },
     {
@@ -972,9 +1069,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.00011148,
+        "classification_seconds": 0.000110462,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.98e-07,
         "sources_requiring_clipping": 9
       },
       "layers": 3
@@ -1010,7 +1110,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.16e-07
+      },
       "layers": 0
     },
     {
@@ -1045,9 +1149,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.3352e-05,
+        "classification_seconds": 0.000104751,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 2.11e-07,
         "sources_requiring_clipping": 0
       },
       "layers": 0
@@ -1067,12 +1174,12 @@
         "mismatch_examples": [],
         "oracle_layers": 1,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 1.8626456858387534e-09,
+        "relative_source_area_l1_error": 1.862645069048183e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.3411048938039016e-09,
-        "summed_reference_source_area": 0.7199999999999995
+        "summed_patch_area_per_source_l1_error": 1.3411044497146918e-09,
+        "summed_reference_source_area": 0.72
       },
       "topology": {
         "boundary_edges": 0,
@@ -1083,7 +1190,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.05e-07
+      },
       "layers": 1
     },
     {
@@ -1118,9 +1229,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000118365,
+        "classification_seconds": 0.000101297,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.09e-07,
         "sources_requiring_clipping": 1
       },
       "layers": 1
@@ -1156,7 +1270,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 8.9e-08
+      },
       "layers": 2
     },
     {
@@ -1191,9 +1309,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.6366e-05,
+        "classification_seconds": 0.000107109,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.4e-07,
         "sources_requiring_clipping": 3
       },
       "layers": 2
@@ -1229,7 +1350,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.07e-07
+      },
       "layers": 2
     },
     {
@@ -1264,9 +1389,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000100697,
+        "classification_seconds": 9.5784e-05,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.89e-07,
         "sources_requiring_clipping": 2
       },
       "layers": 2
@@ -1302,7 +1430,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.1e-08
+      },
       "layers": 2
     },
     {
@@ -1320,12 +1452,12 @@
         "mismatch_examples": [],
         "oracle_layers": 2,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 2.7847716490223935e-09,
+        "relative_source_area_l1_error": 2.7847718665723897e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.2790374093185619e-08,
-        "summed_reference_source_area": 4.59297052154195
+        "summed_patch_area_per_source_l1_error": 1.2790375092386341e-08,
+        "summed_reference_source_area": 4.592970521541951
       },
       "topology": {
         "boundary_edges": 0,
@@ -1336,7 +1468,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 8.8e-08
+      },
       "layers": 2
     },
     {
@@ -1354,12 +1490,12 @@
         "mismatch_examples": [],
         "oracle_layers": 2,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 2.7847716490223935e-09,
+        "relative_source_area_l1_error": 2.784772059950164e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 1.2790374093185619e-08,
-        "summed_reference_source_area": 4.59297052154195
+        "summed_patch_area_per_source_l1_error": 1.2790375980564761e-08,
+        "summed_reference_source_area": 4.592970521541952
       },
       "topology": {
         "boundary_edges": 3,
@@ -1371,9 +1507,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000100679,
+        "classification_seconds": 0.000117845,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.86e-07,
         "sources_requiring_clipping": 2
       },
       "layers": 2
@@ -1393,12 +1532,12 @@
         "mismatch_examples": [],
         "oracle_layers": 1,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 3.311369154188368e-09,
+        "relative_source_area_l1_error": 3.311369548934331e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 7.450580596923828e-09,
-        "summed_reference_source_area": 2.25
+        "summed_patch_area_per_source_l1_error": 7.450581485102248e-09,
+        "summed_reference_source_area": 2.250000000000001
       },
       "topology": {
         "boundary_edges": 0,
@@ -1409,7 +1548,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.04e-07
+      },
       "layers": 1
     },
     {
@@ -1444,9 +1587,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.967e-05,
+        "classification_seconds": 0.000113187,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 5.77e-07,
         "sources_requiring_clipping": 1
       },
       "layers": 1
@@ -1482,7 +1628,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.15e-07
+      },
       "layers": 1
     },
     {
@@ -1517,9 +1667,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.0001073,
+        "classification_seconds": 0.000108457,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.93e-07,
         "sources_requiring_clipping": 1
       },
       "layers": 1
@@ -1555,7 +1708,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.9e-08
+      },
       "layers": 4
     },
     {
@@ -1590,9 +1747,12 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 0.00011311,
+        "classification_seconds": 0.000119426,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 5.5e-07,
         "sources_requiring_clipping": 32
       },
       "layers": 4
@@ -1628,7 +1788,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 8.4e-08
+      },
       "layers": 2
     },
     {
@@ -1662,7 +1826,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.3e-08
+      },
       "layers": 4
     },
     {
@@ -1696,7 +1864,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.48e-07
+      },
       "layers": 2
     },
     {
@@ -1730,7 +1902,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.09e-07
+      },
       "layers": 2
     },
     {
@@ -1764,7 +1940,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.43e-07
+      },
       "layers": 3
     },
     {
@@ -1782,12 +1962,12 @@
         "mismatch_examples": [],
         "oracle_layers": 3,
         "rank_mismatches_away_from_boundaries": 0,
-        "relative_source_area_l1_error": 2.9716476923624667e-09,
+        "relative_source_area_l1_error": 2.971647479199646e-09,
         "remaining_patches": 0,
         "source_area_check_is_region_certificate": false,
         "status": "passed",
-        "summed_patch_area_per_source_l1_error": 7.429119230906167e-08,
-        "summed_reference_source_area": 25.0
+        "summed_patch_area_per_source_l1_error": 7.429118697999115e-08,
+        "summed_reference_source_area": 25.000000000000004
       },
       "topology": {
         "boundary_edges": 0,
@@ -1798,7 +1978,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9e-08
+      },
       "layers": 3
     },
     {
@@ -1832,7 +2016,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 9.7e-08
+      },
       "layers": 3
     },
     {
@@ -1866,7 +2054,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 8.6e-08
+      },
       "layers": 3
     },
     {
@@ -1900,7 +2092,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 8.2e-08
+      },
       "layers": 3
     },
     {
@@ -1934,7 +2130,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 8e-08
+      },
       "layers": 3
     },
     {
@@ -1968,7 +2168,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.22e-07
+      },
       "layers": 4
     },
     {
@@ -2002,7 +2206,11 @@
         "same_facing_internal_edges_ignored": 0,
         "silhouette_edges": 0
       },
-      "classification": null,
+      "classification": {
+        "merge_residuals": false,
+        "rank_subtree_pruning": false,
+        "rank_summary_seconds": 1.09e-07
+      },
       "layers": 3
     },
     {
@@ -2037,9 +2245,12 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.793e-06,
+        "classification_seconds": 8.249e-06,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.12e-07,
         "sources_requiring_clipping": 12
       },
       "layers": 1
@@ -2076,9 +2287,12 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 8.099e-06,
+        "classification_seconds": 9.068e-06,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.23e-07,
         "sources_requiring_clipping": 12
       },
       "layers": 2
@@ -2115,9 +2329,12 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.571e-06,
+        "classification_seconds": 6.773e-06,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.35e-07,
         "sources_requiring_clipping": 12
       },
       "layers": 2
@@ -2154,9 +2371,12 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.2719e-05,
+        "classification_seconds": 1.4776e-05,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.03e-07,
         "sources_requiring_clipping": 32
       },
       "layers": 1
@@ -2193,9 +2413,12 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.4853e-05,
+        "classification_seconds": 1.4729e-05,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.64e-07,
         "sources_requiring_clipping": 32
       },
       "layers": 2
@@ -2232,9 +2455,12 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.5335e-05,
+        "classification_seconds": 1.5456e-05,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.82e-07,
         "sources_requiring_clipping": 32
       },
       "layers": 4
@@ -2271,9 +2497,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000103627,
+        "classification_seconds": 0.000115158,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 3.18e-07,
         "sources_requiring_clipping": 3
       },
       "layers": 2
@@ -2310,9 +2539,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000104687,
+        "classification_seconds": 0.00010822,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 2.94e-07,
         "sources_requiring_clipping": 4
       },
       "layers": 2
@@ -2322,13 +2554,13 @@
       "status": "passed",
       "details": {
         "arithmetic": "exact rational constructions",
-        "import_seconds": 0.000135305,
+        "import_seconds": 0.000120625,
         "input_triangles": 2,
         "marked_intersection_edges": 2,
         "method": "CGAL PMP experimental::autorefine",
         "output_triangles": 4,
         "positive_area_coincident_surfaces_supported": false,
-        "refinement_seconds": 6.8453e-05
+        "refinement_seconds": 8.2156e-05
       }
     },
     {
@@ -2363,9 +2595,12 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000101448,
+        "classification_seconds": 0.000114685,
         "constant_rank_sources": 0,
+        "merge_residuals": false,
         "point_query_candidates": 0,
+        "rank_subtree_pruning": true,
+        "rank_summary_seconds": 4.39e-07,
         "sources_requiring_clipping": 4
       },
       "layers": 2
@@ -2375,13 +2610,13 @@
       "status": "passed",
       "details": {
         "arithmetic": "exact rational constructions",
-        "import_seconds": 0.000142424,
+        "import_seconds": 0.000132538,
         "input_triangles": 2,
         "marked_intersection_edges": 2,
         "method": "CGAL PMP experimental::autorefine",
         "output_triangles": 4,
         "positive_area_coincident_surfaces_supported": false,
-        "refinement_seconds": 0.00013751
+        "refinement_seconds": 0.000140792
       }
     }
   ]

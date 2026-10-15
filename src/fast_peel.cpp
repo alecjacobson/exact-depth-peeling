@@ -388,6 +388,7 @@ bool separated(const Ring &a, const Ring &b) {
 }
 using Rings = boost::container::small_vector<Ring, 2>;
 struct Work {
+  uint64_t retired_subtrees = 0;
   Rings visible, hidden;
   Counts counts;
 };
@@ -453,7 +454,7 @@ void cut(Work &w, const Patch &candidate, const Source &target, const Source &ot
   }
   w.visible = std::move(next);
 }
-std::vector<Face> mesh(const std::vector<Patch> &patches, int threads) {
+std::vector<Face> mesh(const std::vector<Patch> &patches, int threads, Json *phases = nullptr) {
   return common::mesh<Point, Box, Ring, Face, boost::container::small_vector<Face, 4>>(
       patches, threads, [] { return common::NoRoundingGuard{}; },
       [](Point a, Point b, Point v) { return side(a, b, v) == 0; },
@@ -472,7 +473,8 @@ std::vector<Face> mesh(const std::vector<Patch> &patches, int threads) {
           for (size_t i = 0; i < ring.size(); ++i)
             out.push_back({source, {center, point(ring[i]), point(ring[(i + 1) % ring.size()])}});
         }
-      });
+      },
+      phases);
 }
 
 struct FastPolicy {
@@ -483,6 +485,10 @@ struct FastPolicy {
   using ResultType = Result;
   const Scene &s;
   common::NoRoundingGuard guard() const { return {}; }
+  int turn(const Point &a, const Point &b, const Point &c) const {
+    auto d = side(a, b, c);
+    return (d > 0) - (d < 0);
+  }
   bool resolved() const { return s.topology.value("resolved_mesh_contract", false); }
   void initialize(Result &) const {}
   void residual(Result &r, std::vector<Patch> p) const { r.residual = std::move(p); }
@@ -591,14 +597,16 @@ struct FastPolicy {
     fast::cut(w, candidate, s.sources[target.source], s.sources[candidate.source]);
   }
   void finish(Layer &l, int k, const std::vector<Patch> &input, const std::vector<Work> &work,
-              double visibility, int threads) const {
+              double visibility, int threads, const Json &phases) const {
     auto t = Clock::now();
     size_t initial_count = input.size();
     Counts counts;
     for (auto &w : work)
       counts.add(w.counts);
-    l.faces = mesh(l.patches, threads);
-    l.metrics = {{"layer_index", k + 1},
+    Json details = phases;
+    l.faces = mesh(l.patches, threads, &details["meshing"]);
+    l.metrics = {{"phases", details},
+                 {"layer_index", k + 1},
                  {"visibility_seconds", visibility},
                  {"triangulation_seconds", elapsed(t)},
                  {"candidate_tests", counts.candidates},
@@ -614,9 +622,9 @@ struct FastPolicy {
   }
 };
 Result extract(const Scene &s, int layers, int threads, const std::string &order, unsigned seed,
-               bool accelerate) {
+               bool accelerate, PeelOptions options) {
   FastPolicy policy{s};
-  return common::extract(policy, layers, threads, order, seed, accelerate);
+  return common::extract(policy, layers, threads, order, seed, accelerate, options);
 }
 V2 uv(const Scene &s, V2 p) {
   double g = double(int64_t(1) << s.bits);
@@ -633,7 +641,8 @@ V3 lift(const Scene &s, const Source &src, V2 p) {
 } // namespace
 int run_cli(const std::string &path, const std::string &out, int layers, int threads, int repeat,
             int bits, const std::string &order, unsigned seed, bool accelerate, bool metrics_only,
-            bool verify, bool validate, int cap, bool resolved_mesh, bool mesh_only) {
+            bool verify, bool validate, int cap, bool resolved_mesh, bool mesh_only,
+            PeelOptions options) {
   if (bits < 12 || bits > 30)
     throw std::runtime_error("Fast grid bits must be between 12 and 30");
 #ifndef _OPENMP
@@ -650,7 +659,7 @@ int run_cli(const std::string &path, const std::string &out, int layers, int thr
   for (int i = 0; i < repeat; ++i) {
     r = Result();
     t = Clock::now();
-    r = extract(s, layers, threads, order, seed, accelerate);
+    r = extract(s, layers, threads, order, seed, accelerate, options);
     times.push_back(elapsed(t));
   }
   double validation = 0;
@@ -715,7 +724,8 @@ int run_cli(const std::string &path, const std::string &out, int layers, int thr
       corner += 3;
     }
     obj.flush();
-    if (!obj) throw std::runtime_error("Failed to write layer mesh (check available disk space)");
+    if (!obj)
+      throw std::runtime_error("Failed to write layer mesh (check available disk space)");
     Json patches = Json::array();
     for (auto &p : l.patches) {
       if (mesh_only)

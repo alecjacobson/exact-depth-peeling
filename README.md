@@ -344,6 +344,16 @@ are not yet assembled into clipping masks. Complexity depends on contour overlap
 ray candidates, generated fragments and output size. This is not a universal
 linear-time bound, and intersection preprocessing can itself have large output.
 
+### CPU work shared with a future GPU route
+
+The shared exact/fast scheduler now retires entire static BVH subtrees using
+maximum-rank summaries. `--no-rank-pruning` provides a comparison control.
+`--merge-residuals` enables experimental same-source convex coalescing; it is
+not enabled by default. Neither change replaces the BVH builder. New per-layer
+phase metrics separate indexing, query/clipping, collection, merging and meshing.
+See the [paired CPU experiments and correctness checks](results/cpu-transfer/README.md)
+for measured benefits, regressions and the remaining priorities.
+
 ### Numerical contract and measured error
 
 The default is a **30-bit grid per image-window axis** (`--fast-grid-bits 12..30`).

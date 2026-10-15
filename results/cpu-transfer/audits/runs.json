@@ -1,0 +1,703 @@
+[
+  {
+    "target": 128,
+    "method": "bvh-peel",
+    "variant": "pruned",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/128/resolved.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--verify",
+      "--out",
+      "results/cpu-transfer/audits/128-bvh-peel-pruned"
+    ],
+    "scene_sha256": "183294a7633982501919affb86b376bbb85b463c8e44f9b03b0979c939d868bb",
+    "check": "--verify",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 136,
+    "fast_validation": null,
+    "convex_audit": null,
+    "exact_invariants_validated": true,
+    "validated_against_oracle": true,
+    "validated_against_global": false,
+    "status": "passed"
+  },
+  {
+    "target": 128,
+    "method": "bvh-peel",
+    "variant": "merged",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/128/resolved.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--verify",
+      "--out",
+      "results/cpu-transfer/audits/128-bvh-peel-merged",
+      "--merge-residuals"
+    ],
+    "scene_sha256": "183294a7633982501919affb86b376bbb85b463c8e44f9b03b0979c939d868bb",
+    "check": "--verify",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 136,
+    "fast_validation": null,
+    "convex_audit": null,
+    "exact_invariants_validated": true,
+    "validated_against_oracle": true,
+    "validated_against_global": false,
+    "status": "passed"
+  },
+  {
+    "target": 512,
+    "method": "bvh-peel",
+    "variant": "pruned",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/512/resolved.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--verify-global",
+      "--out",
+      "results/cpu-transfer/audits/512-bvh-peel-pruned"
+    ],
+    "scene_sha256": "75ab3b8bfdd5be2f3e1695e4fda9bd2eed52aefa8dff4b9733632bc8ab5508f7",
+    "check": "--verify-global",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 528,
+    "fast_validation": null,
+    "convex_audit": null,
+    "exact_invariants_validated": true,
+    "validated_against_oracle": false,
+    "validated_against_global": true,
+    "status": "passed"
+  },
+  {
+    "target": 512,
+    "method": "bvh-peel",
+    "variant": "merged",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/512/resolved.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--verify-global",
+      "--out",
+      "results/cpu-transfer/audits/512-bvh-peel-merged",
+      "--merge-residuals"
+    ],
+    "scene_sha256": "75ab3b8bfdd5be2f3e1695e4fda9bd2eed52aefa8dff4b9733632bc8ab5508f7",
+    "check": "--verify-global",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 528,
+    "fast_validation": null,
+    "convex_audit": null,
+    "exact_invariants_validated": true,
+    "validated_against_oracle": false,
+    "validated_against_global": true,
+    "status": "passed"
+  },
+  {
+    "target": 4096,
+    "method": "bvh-peel",
+    "variant": "pruned",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/4096/resolved.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--validate",
+      "--out",
+      "results/cpu-transfer/audits/4096-bvh-peel-pruned"
+    ],
+    "scene_sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+    "check": "--validate",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 4108,
+    "fast_validation": null,
+    "convex_audit": {
+      "all_layers_complete": true,
+      "boundary_ray_samples_skipped": 0,
+      "full_region_rank_certificate": false,
+      "independent_exact_ray_ranks_checked": 768,
+      "layer_patch_disjointness": true,
+      "patches_checked": 23745,
+      "positive_triangle_and_patch_area_agreement": true,
+      "source_containment_disjointness_conservation": true,
+      "status": "passed"
+    },
+    "exact_invariants_validated": true,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "passed"
+  },
+  {
+    "target": 4096,
+    "method": "bvh-peel",
+    "variant": "merged",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/4096/resolved.json",
+      "--method",
+      "bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--validate",
+      "--out",
+      "results/cpu-transfer/audits/4096-bvh-peel-merged",
+      "--merge-residuals"
+    ],
+    "scene_sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+    "check": "--validate",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 4108,
+    "fast_validation": null,
+    "convex_audit": {
+      "all_layers_complete": true,
+      "boundary_ray_samples_skipped": 0,
+      "full_region_rank_certificate": false,
+      "independent_exact_ray_ranks_checked": 701,
+      "layer_patch_disjointness": true,
+      "patches_checked": 14055,
+      "positive_triangle_and_patch_area_agreement": true,
+      "source_containment_disjointness_conservation": true,
+      "status": "passed"
+    },
+    "exact_invariants_validated": true,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "passed"
+  },
+  {
+    "target": 128,
+    "method": "fast-bvh-peel",
+    "variant": "pruned",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/128/resolved.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--verify",
+      "--out",
+      "results/cpu-transfer/audits/128-fast-bvh-peel-pruned"
+    ],
+    "scene_sha256": "183294a7633982501919affb86b376bbb85b463c8e44f9b03b0979c939d868bb",
+    "check": "--verify",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 136,
+    "fast_validation": {
+      "area_acceptance_budget": 2.251213752568151e-07,
+      "area_budget_is_proven_bound": false,
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 6,
+      "exact_reference": true,
+      "fast_layers": 8,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 700,
+      "labelled_region_symmetric_difference_area": 2.5998532766689036e-09,
+      "mismatch_examples": [],
+      "oracle_layers": 8,
+      "rank_mismatches_away_from_boundaries": 0,
+      "relative_source_area_l1_error": 7.188061321259511e-09,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "passed",
+      "summed_patch_area_per_source_l1_error": 7.857610352792377e-10,
+      "summed_reference_source_area": 0.10931473733470523
+    },
+    "convex_audit": null,
+    "exact_invariants_validated": false,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "passed"
+  },
+  {
+    "target": 128,
+    "method": "fast-bvh-peel",
+    "variant": "merged",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/128/resolved.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--verify",
+      "--out",
+      "results/cpu-transfer/audits/128-fast-bvh-peel-merged",
+      "--merge-residuals"
+    ],
+    "scene_sha256": "183294a7633982501919affb86b376bbb85b463c8e44f9b03b0979c939d868bb",
+    "check": "--verify",
+    "returncode": 0,
+    "stderr": "",
+    "input_sources": 136,
+    "fast_validation": {
+      "area_acceptance_budget": 2.249221556298962e-07,
+      "area_budget_is_proven_bound": false,
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 14,
+      "exact_reference": true,
+      "fast_layers": 8,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 676,
+      "labelled_region_symmetric_difference_area": 2.5892797529592716e-09,
+      "mismatch_examples": [],
+      "oracle_layers": 8,
+      "rank_mismatches_away_from_boundaries": 0,
+      "relative_source_area_l1_error": 6.977042423641002e-09,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "passed",
+      "summed_patch_area_per_source_l1_error": 7.626935599134113e-10,
+      "summed_reference_source_area": 0.10931473733470523
+    },
+    "convex_audit": null,
+    "exact_invariants_validated": false,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "passed"
+  },
+  {
+    "target": 65536,
+    "method": "fast-bvh-peel",
+    "variant": "pruned",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/65536/resolved.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--validate",
+      "--out",
+      "results/cpu-transfer/audits/65536-fast-bvh-peel-pruned"
+    ],
+    "scene_sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+    "check": "--validate",
+    "returncode": 3,
+    "stderr": "",
+    "input_sources": 65544,
+    "fast_validation": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 135,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 1913,
+      "mismatch_examples": [
+        {
+          "actual_source": 44013,
+          "expected_source": 35235,
+          "layer": 5,
+          "uv": [
+            0.22917974329984656,
+            -0.0031579257769597108
+          ]
+        },
+        {
+          "actual_source": 13733,
+          "expected_source": 28540,
+          "layer": 7,
+          "uv": [
+            0.1273830229612137,
+            0.04300503547715408
+          ]
+        },
+        {
+          "actual_source": 49274,
+          "expected_source": 38454,
+          "layer": 7,
+          "uv": [
+            -0.07971163078503334,
+            -0.07044057739112104
+          ]
+        },
+        {
+          "actual_source": 46110,
+          "expected_source": 37194,
+          "layer": 8,
+          "uv": [
+            -0.08224367141999471,
+            -0.0699215237197758
+          ]
+        },
+        {
+          "actual_source": 11024,
+          "expected_source": 60034,
+          "layer": 9,
+          "uv": [
+            0.07310964921795718,
+            -0.09583911654043667
+          ]
+        },
+        {
+          "actual_source": 44798,
+          "expected_source": 23218,
+          "layer": 9,
+          "uv": [
+            0.03878244278703111,
+            -0.07086483912329296
+          ]
+        },
+        {
+          "actual_source": 28962,
+          "expected_source": 19458,
+          "layer": 10,
+          "uv": [
+            -0.08114289857056732,
+            -0.07009793204799282
+          ]
+        },
+        {
+          "actual_source": 47702,
+          "expected_source": 61251,
+          "layer": 11,
+          "uv": [
+            -0.08460692869657725,
+            -0.07032853206090912
+          ]
+        }
+      ],
+      "rank_mismatches_away_from_boundaries": 19,
+      "relative_source_area_l1_error": 1.3863147979731755e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "numerical_mismatch",
+      "summed_patch_area_per_source_l1_error": 2.2371463665809157e-08,
+      "summed_reference_source_area": 0.16137361945870274
+    },
+    "convex_audit": null,
+    "exact_invariants_validated": false,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "numerical_mismatch"
+  },
+  {
+    "target": 65536,
+    "method": "fast-bvh-peel",
+    "variant": "merged",
+    "command": [
+      "build/geometric_peel",
+      "--scene",
+      "results/global/dragon-cache/65536/resolved.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--validate",
+      "--out",
+      "results/cpu-transfer/audits/65536-fast-bvh-peel-merged",
+      "--merge-residuals"
+    ],
+    "scene_sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+    "check": "--validate",
+    "returncode": 3,
+    "stderr": "",
+    "input_sources": 65544,
+    "fast_validation": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 144,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 1904,
+      "mismatch_examples": [
+        {
+          "actual_source": 47702,
+          "expected_source": 49813,
+          "layer": 10,
+          "uv": [
+            -0.0846600078861905,
+            -0.07033998686330219
+          ]
+        },
+        {
+          "actual_source": 28962,
+          "expected_source": 61251,
+          "layer": 13,
+          "uv": [
+            -0.08242333396544342,
+            -0.07022192789946864
+          ]
+        },
+        {
+          "actual_source": 28962,
+          "expected_source": 61251,
+          "layer": 13,
+          "uv": [
+            -0.08220359089076575,
+            -0.07024007878589876
+          ]
+        },
+        {
+          "actual_source": 38920,
+          "expected_source": 52005,
+          "layer": 13,
+          "uv": [
+            -0.08144215791800442,
+            -0.07012691266254915
+          ]
+        },
+        {
+          "actual_source": 47702,
+          "expected_source": 61251,
+          "layer": 13,
+          "uv": [
+            -0.08122289336124734,
+            -0.07003589600699826
+          ]
+        },
+        {
+          "actual_source": 61251,
+          "expected_source": 1095,
+          "layer": 14,
+          "uv": [
+            -0.08128061035039101,
+            -0.07004076028783153
+          ]
+        },
+        {
+          "actual_source": 9550,
+          "expected_source": 55313,
+          "layer": 15,
+          "uv": [
+            -0.0826113986778388,
+            -0.07057193646186362
+          ]
+        },
+        {
+          "actual_source": 9550,
+          "expected_source": 55313,
+          "layer": 15,
+          "uv": [
+            -0.08256596311983454,
+            -0.07053249645758973
+          ]
+        }
+      ],
+      "rank_mismatches_away_from_boundaries": 11,
+      "relative_source_area_l1_error": 1.389313163375484e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "numerical_mismatch",
+      "summed_patch_area_per_source_l1_error": 2.2419849373552184e-08,
+      "summed_reference_source_area": 0.16137361945870274
+    },
+    "convex_audit": null,
+    "exact_invariants_validated": false,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "numerical_mismatch"
+  },
+  {
+    "target": 65536,
+    "method": "fast-bvh-peel",
+    "variant": "before",
+    "command": [
+      "/opt/depth-peeling-work/cpu-transfer/before",
+      "--scene",
+      "results/global/dragon-cache/65536/resolved.json",
+      "--method",
+      "fast-bvh-peel",
+      "--resolved-mesh",
+      "--layers",
+      "all",
+      "--threads",
+      "4",
+      "--metrics-only",
+      "--oracle-cap",
+      "256",
+      "--validate",
+      "--out",
+      "results/cpu-transfer/audits/65536-fast-bvh-peel-before"
+    ],
+    "scene_sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+    "check": "--validate",
+    "returncode": 3,
+    "stderr": "",
+    "input_sources": 65544,
+    "fast_validation": {
+      "boundary_exclusion_cells": 2,
+      "boundary_samples_skipped": 135,
+      "exact_reference": true,
+      "full_exact_geometry_certificate": false,
+      "independent_exact_ray_ranks_checked": 1913,
+      "mismatch_examples": [
+        {
+          "actual_source": 44013,
+          "expected_source": 35235,
+          "layer": 5,
+          "uv": [
+            0.22917974329984656,
+            -0.0031579257769597108
+          ]
+        },
+        {
+          "actual_source": 13733,
+          "expected_source": 28540,
+          "layer": 7,
+          "uv": [
+            0.1273830229612137,
+            0.04300503547715408
+          ]
+        },
+        {
+          "actual_source": 49274,
+          "expected_source": 38454,
+          "layer": 7,
+          "uv": [
+            -0.07971163078503334,
+            -0.07044057739112104
+          ]
+        },
+        {
+          "actual_source": 46110,
+          "expected_source": 37194,
+          "layer": 8,
+          "uv": [
+            -0.08224367141999471,
+            -0.0699215237197758
+          ]
+        },
+        {
+          "actual_source": 11024,
+          "expected_source": 60034,
+          "layer": 9,
+          "uv": [
+            0.07310964921795718,
+            -0.09583911654043667
+          ]
+        },
+        {
+          "actual_source": 44798,
+          "expected_source": 23218,
+          "layer": 9,
+          "uv": [
+            0.03878244278703111,
+            -0.07086483912329296
+          ]
+        },
+        {
+          "actual_source": 28962,
+          "expected_source": 19458,
+          "layer": 10,
+          "uv": [
+            -0.08114289857056732,
+            -0.07009793204799282
+          ]
+        },
+        {
+          "actual_source": 47702,
+          "expected_source": 61251,
+          "layer": 11,
+          "uv": [
+            -0.08460692869657725,
+            -0.07032853206090912
+          ]
+        }
+      ],
+      "rank_mismatches_away_from_boundaries": 19,
+      "relative_source_area_l1_error": 1.3863147979731755e-07,
+      "remaining_patches": 0,
+      "source_area_check_is_region_certificate": false,
+      "status": "numerical_mismatch",
+      "summed_patch_area_per_source_l1_error": 2.2371463665809157e-08,
+      "summed_reference_source_area": 0.16137361945870274
+    },
+    "convex_audit": null,
+    "exact_invariants_validated": false,
+    "validated_against_oracle": false,
+    "validated_against_global": false,
+    "status": "numerical_mismatch",
+    "matches_pruned_audit_exactly": true,
+    "address_space_cap_gib": null,
+    "timeout_seconds": null
+  }
+]

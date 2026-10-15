@@ -1,4 +1,5 @@
 #pragma once
+#include "peel_options.h"
 #include <CGAL/Cartesian.h>
 #include <CGAL/Exact_rational.h>
 #include <CGAL/Lazy_exact_nt.h>
@@ -86,6 +87,7 @@ struct Layer {
   std::vector<Face> faces;
   Stats stats;
   Json residual_complexity;
+  Json phase_metrics;
 };
 struct Result {
   std::vector<Layer> layers;
@@ -142,7 +144,7 @@ void compare(const Result &a, const Result &b);
 void compare_files(const std::string &a, const std::string &b);
 void write_result(const Scene &s, Result &r, const std::string &path, Json metadata);
 Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned seed,
-                bool accelerate, int threads, bool incremental = false);
+                bool accelerate, int threads, bool incremental = false, PeelOptions options = {});
 void materialize_regions(Result &r);
 Json audit_convex(const Scene &s, const Result &r, bool complete);
 void write_convex_result(const Scene &s, Result &r, const std::string &path, Json metadata,

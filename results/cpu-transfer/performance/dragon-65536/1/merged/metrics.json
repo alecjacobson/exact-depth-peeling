@@ -1,0 +1,663 @@
+{
+  "accelerated": true,
+  "active_sources": 65544,
+  "algorithm_repetitions_seconds": [
+    2.805606763,
+    2.72793832,
+    3.174249301,
+    3.22630584
+  ],
+  "algorithm_seconds": 3.174249301,
+  "arithmetic": "finite-precision: fixed-point projected geometry, binary64 depth/constructions",
+  "collapsed_initial_sources": 0,
+  "depth_tie_policy": "binary64 uncertainty band; lower source ID wins",
+  "exact_geometry": false,
+  "exact_invariants_validated": false,
+  "fast_validation": null,
+  "grid_bits": 30,
+  "grid_cells_per_axis": 1073741824,
+  "input_sources": 65544,
+  "mesh_topology": {
+    "boundary_edges": 0,
+    "camera_clipping_boundary_edges": 0,
+    "contour_segments": 8977,
+    "nonmanifold_or_inconsistent_edges": 3,
+    "resolved_mesh_contract": true,
+    "same_facing_internal_edges_ignored": 89336,
+    "silhouette_edges": 8974
+  },
+  "method": "fast-bvh-peel",
+  "minimum_polygon_area_grid_cells": 1,
+  "minimum_polygon_width_l1_grid_cells": 2,
+  "order": "near-first",
+  "output_mode": "metrics-only",
+  "passes": [
+    {
+      "candidate_tests": 890187,
+      "collapsed_polygons": 174579,
+      "complete_occlusion_rejections": 27113,
+      "convexity_repairs": 48760,
+      "depth_tie_breaks": 7,
+      "exported_triangles": 40531,
+      "index_box_tests": 5604807,
+      "input_residual": {
+        "convex_patches": 39380
+      },
+      "layer_index": 1,
+      "output": {
+        "convex_patches": 27144
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.005904067,
+        "hidden_patches_after_merge": 49211,
+        "hidden_patches_before_merge": 54103,
+        "merge_attempts": 20467,
+        "merged_patches": 4892,
+        "meshing": {
+          "boundary_index_seconds": 0.010065203,
+          "boundary_node_and_emit_seconds": 0.008996498,
+          "face_collection_seconds": 0.000834242,
+          "unique_boundary_vertices": 22319
+        },
+        "query_and_clip_seconds": 0.287346736,
+        "residual_bounds_seconds": 0.044989158,
+        "residual_bvh_seconds": 0.009399095,
+        "residual_merge_seconds": 0.005435813,
+        "retired_subtrees": 303984,
+        "work_setup_seconds": 0.005371038
+      },
+      "polygon_differences": 284779,
+      "triangulation_seconds": 0.02061228,
+      "visibility_seconds": 0.358459814
+    },
+    {
+      "candidate_tests": 811236,
+      "collapsed_polygons": 190167,
+      "complete_occlusion_rejections": 32989,
+      "convexity_repairs": 51984,
+      "depth_tie_breaks": 11,
+      "exported_triangles": 83704,
+      "index_box_tests": 6127182,
+      "input_residual": {
+        "convex_patches": 49211
+      },
+      "layer_index": 2,
+      "output": {
+        "convex_patches": 41930
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.007918441,
+        "hidden_patches_after_merge": 91140,
+        "hidden_patches_before_merge": 102233,
+        "merge_attempts": 61291,
+        "merged_patches": 11093,
+        "meshing": {
+          "boundary_index_seconds": 0.020244733,
+          "boundary_node_and_emit_seconds": 0.015642175,
+          "face_collection_seconds": 0.049673953,
+          "unique_boundary_vertices": 49262
+        },
+        "query_and_clip_seconds": 0.223441,
+        "residual_bounds_seconds": 0.001578906,
+        "residual_bvh_seconds": 0.066804662,
+        "residual_merge_seconds": 0.072592258,
+        "retired_subtrees": 366928,
+        "work_setup_seconds": 0.002886493
+      },
+      "polygon_differences": 216300,
+      "triangulation_seconds": 0.086726448,
+      "visibility_seconds": 0.375233765
+    },
+    {
+      "candidate_tests": 910178,
+      "collapsed_polygons": 279215,
+      "complete_occlusion_rejections": 65554,
+      "convexity_repairs": 71623,
+      "depth_tie_breaks": 14,
+      "exported_triangles": 103776,
+      "index_box_tests": 9330379,
+      "input_residual": {
+        "convex_patches": 91140
+      },
+      "layer_index": 3,
+      "output": {
+        "convex_patches": 33768
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.007266537,
+        "hidden_patches_after_merge": 97981,
+        "hidden_patches_before_merge": 103519,
+        "merge_attempts": 58178,
+        "merged_patches": 5538,
+        "meshing": {
+          "boundary_index_seconds": 0.020837537,
+          "boundary_node_and_emit_seconds": 0.012091616,
+          "face_collection_seconds": 0.001081063,
+          "unique_boundary_vertices": 61898
+        },
+        "query_and_clip_seconds": 0.286930982,
+        "residual_bounds_seconds": 0.002997853,
+        "residual_bvh_seconds": 0.01970506,
+        "residual_merge_seconds": 0.06949868,
+        "retired_subtrees": 555909,
+        "work_setup_seconds": 0.012513966
+      },
+      "polygon_differences": 219011,
+      "triangulation_seconds": 0.035889152,
+      "visibility_seconds": 0.398926418
+    },
+    {
+      "candidate_tests": 891737,
+      "collapsed_polygons": 263400,
+      "complete_occlusion_rejections": 43086,
+      "convexity_repairs": 61840,
+      "depth_tie_breaks": 6,
+      "exported_triangles": 227249,
+      "index_box_tests": 10023259,
+      "input_residual": {
+        "convex_patches": 97981
+      },
+      "layer_index": 4,
+      "output": {
+        "convex_patches": 66014
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.010402472,
+        "hidden_patches_after_merge": 89625,
+        "hidden_patches_before_merge": 96989,
+        "merge_attempts": 57486,
+        "merged_patches": 7364,
+        "meshing": {
+          "boundary_index_seconds": 0.098123684,
+          "boundary_node_and_emit_seconds": 0.07292273,
+          "face_collection_seconds": 0.004400519,
+          "unique_boundary_vertices": 136349
+        },
+        "query_and_clip_seconds": 0.286551256,
+        "residual_bounds_seconds": 0.003241862,
+        "residual_bvh_seconds": 0.064222603,
+        "residual_merge_seconds": 0.020166126,
+        "retired_subtrees": 581204,
+        "work_setup_seconds": 0.005607959
+      },
+      "polygon_differences": 155821,
+      "triangulation_seconds": 0.178720682,
+      "visibility_seconds": 0.390208181
+    },
+    {
+      "candidate_tests": 727782,
+      "collapsed_polygons": 253784,
+      "complete_occlusion_rejections": 59494,
+      "convexity_repairs": 57964,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 120558,
+      "index_box_tests": 8206933,
+      "input_residual": {
+        "convex_patches": 89625
+      },
+      "layer_index": 5,
+      "output": {
+        "convex_patches": 33085
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.006070793,
+        "hidden_patches_after_merge": 76931,
+        "hidden_patches_before_merge": 79563,
+        "merge_attempts": 42360,
+        "merged_patches": 2632,
+        "meshing": {
+          "boundary_index_seconds": 0.075921877,
+          "boundary_node_and_emit_seconds": 0.012263562,
+          "face_collection_seconds": 0.00126569,
+          "unique_boundary_vertices": 78049
+        },
+        "query_and_clip_seconds": 0.263398908,
+        "residual_bounds_seconds": 0.003042164,
+        "residual_bvh_seconds": 0.017581156,
+        "residual_merge_seconds": 0.01490037,
+        "retired_subtrees": 501030,
+        "work_setup_seconds": 0.005087138
+      },
+      "polygon_differences": 141264,
+      "triangulation_seconds": 0.091228489,
+      "visibility_seconds": 0.310090834
+    },
+    {
+      "candidate_tests": 545006,
+      "collapsed_polygons": 171197,
+      "complete_occlusion_rejections": 27862,
+      "convexity_repairs": 36779,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 198988,
+      "index_box_tests": 6731088,
+      "input_residual": {
+        "convex_patches": 76931
+      },
+      "layer_index": 6,
+      "output": {
+        "convex_patches": 52859
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.004972104,
+        "hidden_patches_after_merge": 47095,
+        "hidden_patches_before_merge": 49824,
+        "merge_attempts": 26679,
+        "merged_patches": 2729,
+        "meshing": {
+          "boundary_index_seconds": 0.087608568,
+          "boundary_node_and_emit_seconds": 0.020189519,
+          "face_collection_seconds": 0.003234822,
+          "unique_boundary_vertices": 132037
+        },
+        "query_and_clip_seconds": 0.171866889,
+        "residual_bounds_seconds": 0.002500677,
+        "residual_bvh_seconds": 0.01434232,
+        "residual_merge_seconds": 0.009708848,
+        "retired_subtrees": 407273,
+        "work_setup_seconds": 0.003921929
+      },
+      "polygon_differences": 79554,
+      "triangulation_seconds": 0.113047942,
+      "visibility_seconds": 0.207320879
+    },
+    {
+      "candidate_tests": 360560,
+      "collapsed_polygons": 133215,
+      "complete_occlusion_rejections": 29607,
+      "convexity_repairs": 28554,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 71330,
+      "index_box_tests": 3313462,
+      "input_residual": {
+        "convex_patches": 47095
+      },
+      "layer_index": 7,
+      "output": {
+        "convex_patches": 18689
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.00819274,
+        "hidden_patches_after_merge": 38283,
+        "hidden_patches_before_merge": 39514,
+        "merge_attempts": 19850,
+        "merged_patches": 1231,
+        "meshing": {
+          "boundary_index_seconds": 0.013623788,
+          "boundary_node_and_emit_seconds": 0.007616924,
+          "face_collection_seconds": 0.001266648,
+          "unique_boundary_vertices": 49805
+        },
+        "query_and_clip_seconds": 0.099424667,
+        "residual_bounds_seconds": 0.001586657,
+        "residual_bvh_seconds": 0.056242093,
+        "residual_merge_seconds": 0.00778143,
+        "retired_subtrees": 139825,
+        "work_setup_seconds": 0.002448389
+      },
+      "polygon_differences": 66273,
+      "triangulation_seconds": 0.023254613,
+      "visibility_seconds": 0.175686364
+    },
+    {
+      "candidate_tests": 251774,
+      "collapsed_polygons": 81469,
+      "complete_occlusion_rejections": 13466,
+      "convexity_repairs": 16917,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 101054,
+      "index_box_tests": 2697526,
+      "input_residual": {
+        "convex_patches": 38283
+      },
+      "layer_index": 8,
+      "output": {
+        "convex_patches": 26039
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.001708898,
+        "hidden_patches_after_merge": 21104,
+        "hidden_patches_before_merge": 22099,
+        "merge_attempts": 10922,
+        "merged_patches": 995,
+        "meshing": {
+          "boundary_index_seconds": 0.066761202,
+          "boundary_node_and_emit_seconds": 0.010674971,
+          "face_collection_seconds": 0.001848414,
+          "unique_boundary_vertices": 71266
+        },
+        "query_and_clip_seconds": 0.03101788,
+        "residual_bounds_seconds": 0.001977635,
+        "residual_bvh_seconds": 0.050521419,
+        "residual_merge_seconds": 0.004664036,
+        "retired_subtrees": 115859,
+        "work_setup_seconds": 0.001963221
+      },
+      "polygon_differences": 34618,
+      "triangulation_seconds": 0.080032713,
+      "visibility_seconds": 0.091860057
+    },
+    {
+      "candidate_tests": 155374,
+      "collapsed_polygons": 60894,
+      "complete_occlusion_rejections": 12725,
+      "convexity_repairs": 12430,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 34621,
+      "index_box_tests": 1376646,
+      "input_residual": {
+        "convex_patches": 21104
+      },
+      "layer_index": 9,
+      "output": {
+        "convex_patches": 8870
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.001081433,
+        "hidden_patches_after_merge": 17765,
+        "hidden_patches_before_merge": 18430,
+        "merge_attempts": 8894,
+        "merged_patches": 665,
+        "meshing": {
+          "boundary_index_seconds": 0.006353958,
+          "boundary_node_and_emit_seconds": 0.003212647,
+          "face_collection_seconds": 0.000307923,
+          "unique_boundary_vertices": 25419
+        },
+        "query_and_clip_seconds": 0.072893315,
+        "residual_bounds_seconds": 0.000717756,
+        "residual_bvh_seconds": 0.003496805,
+        "residual_merge_seconds": 0.004006208,
+        "retired_subtrees": 21104,
+        "work_setup_seconds": 0.000852887
+      },
+      "polygon_differences": 27910,
+      "triangulation_seconds": 0.01019292,
+      "visibility_seconds": 0.083054906
+    },
+    {
+      "candidate_tests": 109538,
+      "collapsed_polygons": 35363,
+      "complete_occlusion_rejections": 7087,
+      "convexity_repairs": 7436,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 43653,
+      "index_box_tests": 986163,
+      "input_residual": {
+        "convex_patches": 17765
+      },
+      "layer_index": 10,
+      "output": {
+        "convex_patches": 11137
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.000722836,
+        "hidden_patches_after_merge": 9547,
+        "hidden_patches_before_merge": 9791,
+        "merge_attempts": 4456,
+        "merged_patches": 244,
+        "meshing": {
+          "boundary_index_seconds": 0.007482501,
+          "boundary_node_and_emit_seconds": 0.004279984,
+          "face_collection_seconds": 0.00050941,
+          "unique_boundary_vertices": 32491
+        },
+        "query_and_clip_seconds": 0.011821231,
+        "residual_bounds_seconds": 0.000539165,
+        "residual_bvh_seconds": 0.002725923,
+        "residual_merge_seconds": 0.002169204,
+        "retired_subtrees": 17765,
+        "work_setup_seconds": 0.000646158
+      },
+      "polygon_differences": 14152,
+      "triangulation_seconds": 0.012575671,
+      "visibility_seconds": 0.018628824
+    },
+    {
+      "candidate_tests": 63099,
+      "collapsed_polygons": 22946,
+      "complete_occlusion_rejections": 5875,
+      "convexity_repairs": 4854,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 14831,
+      "index_box_tests": 518865,
+      "input_residual": {
+        "convex_patches": 9547
+      },
+      "layer_index": 11,
+      "output": {
+        "convex_patches": 3771
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.00054434,
+        "hidden_patches_after_merge": 6947,
+        "hidden_patches_before_merge": 7066,
+        "merge_attempts": 3047,
+        "merged_patches": 119,
+        "meshing": {
+          "boundary_index_seconds": 0.002493703,
+          "boundary_node_and_emit_seconds": 0.00131647,
+          "face_collection_seconds": 0.000259622,
+          "unique_boundary_vertices": 11166
+        },
+        "query_and_clip_seconds": 0.00700419,
+        "residual_bounds_seconds": 0.052291247,
+        "residual_bvh_seconds": 0.001453728,
+        "residual_merge_seconds": 0.001889086,
+        "retired_subtrees": 9547,
+        "work_setup_seconds": 0.001288008
+      },
+      "polygon_differences": 10133,
+      "triangulation_seconds": 0.004200355,
+      "visibility_seconds": 0.064474882
+    },
+    {
+      "candidate_tests": 35198,
+      "collapsed_polygons": 10728,
+      "complete_occlusion_rejections": 2214,
+      "convexity_repairs": 2276,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 19294,
+      "index_box_tests": 343281,
+      "input_residual": {
+        "convex_patches": 6947
+      },
+      "layer_index": 12,
+      "output": {
+        "convex_patches": 4832
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.000283264,
+        "hidden_patches_after_merge": 2707,
+        "hidden_patches_before_merge": 2754,
+        "merge_attempts": 1109,
+        "merged_patches": 47,
+        "meshing": {
+          "boundary_index_seconds": 0.003184904,
+          "boundary_node_and_emit_seconds": 0.001754063,
+          "face_collection_seconds": 0.000143141,
+          "unique_boundary_vertices": 14382
+        },
+        "query_and_clip_seconds": 0.003674896,
+        "residual_bounds_seconds": 0.000212401,
+        "residual_bvh_seconds": 0.000994312,
+        "residual_merge_seconds": 0.000995318,
+        "retired_subtrees": 6947,
+        "work_setup_seconds": 0.00032544
+      },
+      "polygon_differences": 3993,
+      "triangulation_seconds": 0.005223385,
+      "visibility_seconds": 0.006489294
+    },
+    {
+      "candidate_tests": 13143,
+      "collapsed_polygons": 5867,
+      "complete_occlusion_rejections": 1592,
+      "convexity_repairs": 1202,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 4508,
+      "index_box_tests": 118774,
+      "input_residual": {
+        "convex_patches": 2707
+      },
+      "layer_index": 13,
+      "output": {
+        "convex_patches": 1127
+      },
+      "phases": {
+        "fragment_collection_seconds": 0.000144985,
+        "hidden_patches_after_merge": 1779,
+        "hidden_patches_before_merge": 1799,
+        "merge_attempts": 736,
+        "merged_patches": 20,
+        "meshing": {
+          "boundary_index_seconds": 0.000745089,
+          "boundary_node_and_emit_seconds": 0.000368464,
+          "face_collection_seconds": 7.8306e-05,
+          "unique_boundary_vertices": 3509
+        },
+        "query_and_clip_seconds": 0.001694176,
+        "residual_bounds_seconds": 8.5659e-05,
+        "residual_bvh_seconds": 0.000363773,
+        "residual_merge_seconds": 0.000857729,
+        "retired_subtrees": 2707,
+        "work_setup_seconds": 0.000128262
+      },
+      "polygon_differences": 2517,
+      "triangulation_seconds": 0.001232816,
+      "visibility_seconds": 0.003277188
+    },
+    {
+      "candidate_tests": 5284,
+      "collapsed_polygons": 2007,
+      "complete_occlusion_rejections": 412,
+      "convexity_repairs": 338,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 5548,
+      "index_box_tests": 64206,
+      "input_residual": {
+        "convex_patches": 1779
+      },
+      "layer_index": 14,
+      "output": {
+        "convex_patches": 1379
+      },
+      "phases": {
+        "fragment_collection_seconds": 6.0374e-05,
+        "hidden_patches_after_merge": 529,
+        "hidden_patches_before_merge": 540,
+        "merge_attempts": 216,
+        "merged_patches": 11,
+        "meshing": {
+          "boundary_index_seconds": 0.000858522,
+          "boundary_node_and_emit_seconds": 0.000542203,
+          "face_collection_seconds": 3.9293e-05,
+          "unique_boundary_vertices": 4262
+        },
+        "query_and_clip_seconds": 0.000681231,
+        "residual_bounds_seconds": 5.333e-05,
+        "residual_bvh_seconds": 0.000215309,
+        "residual_merge_seconds": 0.000409366,
+        "retired_subtrees": 1779,
+        "work_setup_seconds": 7.6318e-05
+      },
+      "polygon_differences": 753,
+      "triangulation_seconds": 0.001478069,
+      "visibility_seconds": 0.001498687
+    },
+    {
+      "candidate_tests": 1487,
+      "collapsed_polygons": 853,
+      "complete_occlusion_rejections": 300,
+      "convexity_repairs": 154,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 876,
+      "index_box_tests": 15135,
+      "input_residual": {
+        "convex_patches": 529
+      },
+      "layer_index": 15,
+      "output": {
+        "convex_patches": 231
+      },
+      "phases": {
+        "fragment_collection_seconds": 2.3847e-05,
+        "hidden_patches_after_merge": 322,
+        "hidden_patches_before_merge": 324,
+        "merge_attempts": 126,
+        "merged_patches": 2,
+        "meshing": {
+          "boundary_index_seconds": 0.000150989,
+          "boundary_node_and_emit_seconds": 8.3179e-05,
+          "face_collection_seconds": 1.5419e-05,
+          "unique_boundary_vertices": 723
+        },
+        "query_and_clip_seconds": 0.000272672,
+        "residual_bounds_seconds": 1.8938e-05,
+        "residual_bvh_seconds": 5.8204e-05,
+        "residual_merge_seconds": 0.000243148,
+        "retired_subtrees": 529,
+        "work_setup_seconds": 1.5581e-05
+      },
+      "polygon_differences": 396,
+      "triangulation_seconds": 0.000261464,
+      "visibility_seconds": 0.000634656
+    },
+    {
+      "candidate_tests": 235,
+      "collapsed_polygons": 98,
+      "complete_occlusion_rejections": 0,
+      "convexity_repairs": 15,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 1272,
+      "index_box_tests": 9980,
+      "input_residual": {
+        "convex_patches": 322
+      },
+      "layer_index": 16,
+      "output": {
+        "convex_patches": 322
+      },
+      "phases": {
+        "fragment_collection_seconds": 1.6906e-05,
+        "hidden_patches_after_merge": 0,
+        "hidden_patches_before_merge": 0,
+        "merge_attempts": 0,
+        "merged_patches": 0,
+        "meshing": {
+          "boundary_index_seconds": 0.000176632,
+          "boundary_node_and_emit_seconds": 0.000117306,
+          "face_collection_seconds": 1.0049e-05,
+          "unique_boundary_vertices": 979
+        },
+        "query_and_clip_seconds": 6.7804e-05,
+        "residual_bounds_seconds": 1.0712e-05,
+        "residual_bvh_seconds": 3.9494e-05,
+        "residual_merge_seconds": 1.0362e-05,
+        "retired_subtrees": 322,
+        "work_setup_seconds": 5.2757e-05
+      },
+      "polygon_differences": 0,
+      "triangulation_seconds": 0.000316329,
+      "visibility_seconds": 0.00019987
+    }
+  ],
+  "peak_rss_kib": 226764,
+  "projection_preflight_seconds": 1.042516277,
+  "rank_classification": {
+    "classification_seconds": 0.018765661,
+    "constant_rank_sources": 26164,
+    "merge_residuals": true,
+    "point_query_candidates": 149136,
+    "rank_subtree_pruning": true,
+    "rank_summary_seconds": 0.000143013,
+    "sources_requiring_clipping": 39380
+  },
+  "remaining_patches": 0,
+  "requested_layers": "all",
+  "scene": "results/global/dragon-cache/65536/resolved.json",
+  "seed": 1729,
+  "serialization_seconds": 0.000239303,
+  "threads": 4,
+  "validated_against_oracle": false,
+  "validation_seconds": 0.0
+}

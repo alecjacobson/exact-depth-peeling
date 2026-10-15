@@ -31,3 +31,5 @@ add_test(NAME exact_contours COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/s
 set_tests_properties(exact_contours PROPERTIES TIMEOUT 600)
 add_test(NAME global_oracle COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/scripts/validate_global.py --exe $<TARGET_FILE:geometric_peel> --threads ${PEEL_TEST_THREADS})
 set_tests_properties(global_oracle PROPERTIES TIMEOUT 600)
+add_test(NAME peel_optimizations COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/scripts/validate_peel_optimizations.py --exe $<TARGET_FILE:geometric_peel> --threads ${PEEL_TEST_THREADS})
+set_tests_properties(peel_optimizations PROPERTIES TIMEOUT 600)
