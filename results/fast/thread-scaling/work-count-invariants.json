@@ -1,0 +1,17 @@
+{
+  "dragon-4k": {
+    "layers": true,
+    "output_triangles": true,
+    "candidate_tests": true
+  },
+  "dragon-64k": {
+    "layers": true,
+    "output_triangles": true,
+    "candidate_tests": true
+  },
+  "torus-100k": {
+    "layers": true,
+    "output_triangles": true,
+    "candidate_tests": true
+  }
+}

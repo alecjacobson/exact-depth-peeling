@@ -283,6 +283,30 @@ quota on an Intel Xeon Platinum 8362 host.
 
 ![Measured exact and finite-precision complete-extraction times](results/fast/comparison.png)
 
+### Fast BVH thread scaling under concurrent load
+
+The host exposes **64 physical cores / 128 hardware threads**, but this session
+and its parent pod are limited to **four cores of CPU time** (`cpu.max = 400000
+100000`), shared with other jobs. More worker threads can be launched; they do
+not increase that quota. These measurements include concurrent rendering and
+simulation load, estimated at 1.49–3.02 competing CPU cores.
+
+| Scene | Input triangles | 1 thread | 2 threads | 4 threads | 8 threads | Observed 1→4 speedup |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| dragon-4k | 4,108 | 246.7 ms | 173.1 ms | 118.9 ms | 106.2 ms | 2.07× |
+| dragon-64k | 65,544 | 4819.1 ms | 2834.8 ms | 2205.1 ms | 1984.8 ms | 2.19× |
+| torus-100k | 102,400 | 493.9 ms | 390.2 ms | 290.8 ms | 267.5 ms | 1.70× |
+
+These are complete all-layer extraction and triangulation medians after one
+warm-up and nine measured runs, using the 30-bit fast policy and mesh contours.
+Setup, preprocessing, validation and export are excluded. Eight workers were
+8–11% faster than four here, but observed speedups include background contention;
+this is not an isolated comparison with the earlier exact timings. Layer, output
+triangle and clipping-candidate counts match across thread counts. No new
+accuracy certificate is claimed for the approximate geometry.
+
+See [plots, raw timings, CPU allocation and reproduction](results/fast/thread-scaling/README.md).
+
 ### Connectivity and intersection preprocessing
 
 The `--resolved-mesh` contract is that surface intersections have already been

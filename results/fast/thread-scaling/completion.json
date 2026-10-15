@@ -1,0 +1,14 @@
+{
+  "completed_timing_processes": 12,
+  "measured_extractions": 108,
+  "warmup_extractions": 12,
+  "all_work_count_checks_passed": true,
+  "solver_code_changed": false,
+  "new_accuracy_audits": false,
+  "background_load_accepted_by_user": true,
+  "estimated_other_cpu_equivalents_range": [
+    1.4902336568993253,
+    3.023331189137929
+  ],
+  "initial_paused_batch": "../thread-scaling-loaded"
+}

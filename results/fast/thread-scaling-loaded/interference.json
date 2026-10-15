@@ -1,0 +1,7 @@
+{
+  "reason": "Two unrelated CPU-intensive jobs shared this cgroup; the batch is not an isolated thread-scaling comparison.",
+  "observed_competing_cpu_equivalents_approx": 2,
+  "completed_jobs": 5,
+  "interrupted_jobs": 1,
+  "original_output_directory": "results/fast/thread-scaling"
+}

@@ -1,0 +1,362 @@
+{
+  "accelerated": true,
+  "active_sources": 65544,
+  "algorithm_repetitions_seconds": [
+    3.163708331,
+    2.884084521,
+    2.787173728,
+    2.928227355,
+    2.782778884,
+    2.855638686,
+    2.74523169,
+    2.834825748,
+    2.790228063,
+    2.851824264
+  ],
+  "algorithm_seconds": 2.851824264,
+  "arithmetic": "finite-precision: fixed-point projected geometry, binary64 depth/constructions",
+  "collapsed_initial_sources": 0,
+  "depth_tie_policy": "binary64 uncertainty band; lower source ID wins",
+  "exact_geometry": false,
+  "exact_invariants_validated": false,
+  "fast_validation": null,
+  "grid_bits": 30,
+  "grid_cells_per_axis": 1073741824,
+  "input_sources": 65544,
+  "mesh_topology": {
+    "boundary_edges": 0,
+    "camera_clipping_boundary_edges": 0,
+    "contour_segments": 8977,
+    "nonmanifold_or_inconsistent_edges": 3,
+    "resolved_mesh_contract": true,
+    "same_facing_internal_edges_ignored": 89336,
+    "silhouette_edges": 8974
+  },
+  "method": "fast-bvh-peel",
+  "minimum_polygon_area_grid_cells": 1,
+  "minimum_polygon_width_l1_grid_cells": 2,
+  "order": "near-first",
+  "output_mode": "metrics-only",
+  "passes": [
+    {
+      "candidate_tests": 890187,
+      "collapsed_polygons": 174579,
+      "complete_occlusion_rejections": 27113,
+      "convexity_repairs": 48760,
+      "depth_tie_breaks": 7,
+      "exported_triangles": 40531,
+      "index_box_tests": 6336321,
+      "input_residual": {
+        "convex_patches": 39380
+      },
+      "layer_index": 1,
+      "output": {
+        "convex_patches": 27144
+      },
+      "polygon_differences": 284779,
+      "triangulation_seconds": 0.026588494,
+      "visibility_seconds": 0.271936214
+    },
+    {
+      "candidate_tests": 858126,
+      "collapsed_polygons": 195749,
+      "complete_occlusion_rejections": 37879,
+      "convexity_repairs": 52286,
+      "depth_tie_breaks": 4,
+      "exported_triangles": 84570,
+      "index_box_tests": 7716312,
+      "input_residual": {
+        "convex_patches": 54103
+      },
+      "layer_index": 2,
+      "output": {
+        "convex_patches": 42155
+      },
+      "polygon_differences": 223029,
+      "triangulation_seconds": 0.050191789,
+      "visibility_seconds": 0.321605109
+    },
+    {
+      "candidate_tests": 1045126,
+      "collapsed_polygons": 303137,
+      "complete_occlusion_rejections": 79034,
+      "convexity_repairs": 70138,
+      "depth_tie_breaks": 13,
+      "exported_triangles": 105496,
+      "index_box_tests": 14775031,
+      "input_residual": {
+        "convex_patches": 108828
+      },
+      "layer_index": 3,
+      "output": {
+        "convex_patches": 37708
+      },
+      "polygon_differences": 232355,
+      "triangulation_seconds": 0.049959621,
+      "visibility_seconds": 0.353721742
+    },
+    {
+      "candidate_tests": 1042947,
+      "collapsed_polygons": 288987,
+      "complete_occlusion_rejections": 51971,
+      "convexity_repairs": 59722,
+      "depth_tie_breaks": 4,
+      "exported_triangles": 237337,
+      "index_box_tests": 16679141,
+      "input_residual": {
+        "convex_patches": 117945
+      },
+      "layer_index": 4,
+      "output": {
+        "convex_patches": 76738
+      },
+      "polygon_differences": 166571,
+      "triangulation_seconds": 0.114559439,
+      "visibility_seconds": 0.396554399
+    },
+    {
+      "candidate_tests": 863302,
+      "collapsed_polygons": 280634,
+      "complete_occlusion_rejections": 72848,
+      "convexity_repairs": 55283,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 128083,
+      "index_box_tests": 15876292,
+      "input_residual": {
+        "convex_patches": 108727
+      },
+      "layer_index": 5,
+      "output": {
+        "convex_patches": 38911
+      },
+      "polygon_differences": 152319,
+      "triangulation_seconds": 0.053776133,
+      "visibility_seconds": 0.295085684
+    },
+    {
+      "candidate_tests": 655068,
+      "collapsed_polygons": 193985,
+      "complete_occlusion_rejections": 35061,
+      "convexity_repairs": 36520,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 212021,
+      "index_box_tests": 14154200,
+      "input_residual": {
+        "convex_patches": 93432
+      },
+      "layer_index": 6,
+      "output": {
+        "convex_patches": 62432
+      },
+      "polygon_differences": 88380,
+      "triangulation_seconds": 0.092602519,
+      "visibility_seconds": 0.227362224
+    },
+    {
+      "candidate_tests": 432694,
+      "collapsed_polygons": 150133,
+      "complete_occlusion_rejections": 37247,
+      "convexity_repairs": 27944,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 78406,
+      "index_box_tests": 8904333,
+      "input_residual": {
+        "convex_patches": 58571
+      },
+      "layer_index": 7,
+      "output": {
+        "convex_patches": 22504
+      },
+      "polygon_differences": 73602,
+      "triangulation_seconds": 0.030427749,
+      "visibility_seconds": 0.142382941
+    },
+    {
+      "candidate_tests": 298920,
+      "collapsed_polygons": 93059,
+      "complete_occlusion_rejections": 16915,
+      "convexity_repairs": 16783,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 111948,
+      "index_box_tests": 7625022,
+      "input_residual": {
+        "convex_patches": 47479
+      },
+      "layer_index": 8,
+      "output": {
+        "convex_patches": 31840
+      },
+      "polygon_differences": 38922,
+      "triangulation_seconds": 0.04424214,
+      "visibility_seconds": 0.098753963
+    },
+    {
+      "candidate_tests": 177718,
+      "collapsed_polygons": 63658,
+      "complete_occlusion_rejections": 15417,
+      "convexity_repairs": 11347,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 35521,
+      "index_box_tests": 4132309,
+      "input_residual": {
+        "convex_patches": 24885
+      },
+      "layer_index": 9,
+      "output": {
+        "convex_patches": 9983
+      },
+      "polygon_differences": 29039,
+      "triangulation_seconds": 0.0128262,
+      "visibility_seconds": 0.05706311
+    },
+    {
+      "candidate_tests": 116924,
+      "collapsed_polygons": 36863,
+      "complete_occlusion_rejections": 7169,
+      "convexity_repairs": 6414,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 46695,
+      "index_box_tests": 3302724,
+      "input_residual": {
+        "convex_patches": 19693
+      },
+      "layer_index": 10,
+      "output": {
+        "convex_patches": 13030
+      },
+      "polygon_differences": 14701,
+      "triangulation_seconds": 0.017060263,
+      "visibility_seconds": 0.039174702
+    },
+    {
+      "candidate_tests": 70521,
+      "collapsed_polygons": 24756,
+      "complete_occlusion_rejections": 6285,
+      "convexity_repairs": 4219,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 14962,
+      "index_box_tests": 1785205,
+      "input_residual": {
+        "convex_patches": 10285
+      },
+      "layer_index": 11,
+      "output": {
+        "convex_patches": 4116
+      },
+      "polygon_differences": 10798,
+      "triangulation_seconds": 0.005117392,
+      "visibility_seconds": 0.022172922
+    },
+    {
+      "candidate_tests": 41111,
+      "collapsed_polygons": 12220,
+      "complete_occlusion_rejections": 2784,
+      "convexity_repairs": 2153,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 18680,
+      "index_box_tests": 1252619,
+      "input_residual": {
+        "convex_patches": 7782
+      },
+      "layer_index": 12,
+      "output": {
+        "convex_patches": 5106
+      },
+      "polygon_differences": 4864,
+      "triangulation_seconds": 0.006667972,
+      "visibility_seconds": 0.012651352
+    },
+    {
+      "candidate_tests": 18524,
+      "collapsed_polygons": 7257,
+      "complete_occlusion_rejections": 2139,
+      "convexity_repairs": 1229,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 5192,
+      "index_box_tests": 566187,
+      "input_residual": {
+        "convex_patches": 3517
+      },
+      "layer_index": 13,
+      "output": {
+        "convex_patches": 1402
+      },
+      "polygon_differences": 3199,
+      "triangulation_seconds": 0.001606845,
+      "visibility_seconds": 0.006117758
+    },
+    {
+      "candidate_tests": 7626,
+      "collapsed_polygons": 2765,
+      "complete_occlusion_rejections": 631,
+      "convexity_repairs": 419,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 6374,
+      "index_box_tests": 374240,
+      "input_residual": {
+        "convex_patches": 2336
+      },
+      "layer_index": 14,
+      "output": {
+        "convex_patches": 1718
+      },
+      "polygon_differences": 1125,
+      "triangulation_seconds": 0.002004819,
+      "visibility_seconds": 0.003356384
+    },
+    {
+      "candidate_tests": 2253,
+      "collapsed_polygons": 1177,
+      "complete_occlusion_rejections": 379,
+      "convexity_repairs": 174,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 1300,
+      "index_box_tests": 114039,
+      "input_residual": {
+        "convex_patches": 729
+      },
+      "layer_index": 15,
+      "output": {
+        "convex_patches": 357
+      },
+      "polygon_differences": 582,
+      "triangulation_seconds": 0.000388008,
+      "visibility_seconds": 0.001097159
+    },
+    {
+      "candidate_tests": 315,
+      "collapsed_polygons": 102,
+      "complete_occlusion_rejections": 0,
+      "convexity_repairs": 24,
+      "depth_tie_breaks": 0,
+      "exported_triangles": 1569,
+      "index_box_tests": 65414,
+      "input_residual": {
+        "convex_patches": 433
+      },
+      "layer_index": 16,
+      "output": {
+        "convex_patches": 433
+      },
+      "polygon_differences": 0,
+      "triangulation_seconds": 0.000452171,
+      "visibility_seconds": 0.000377645
+    }
+  ],
+  "peak_rss_kib": 278196,
+  "projection_preflight_seconds": 0.839498159,
+  "rank_classification": {
+    "classification_seconds": 0.032108527,
+    "constant_rank_sources": 26164,
+    "point_query_candidates": 149136,
+    "sources_requiring_clipping": 39380
+  },
+  "remaining_patches": 0,
+  "requested_layers": "all",
+  "scene": "results/global/dragon-cache/65536/resolved.json",
+  "seed": 1729,
+  "serialization_seconds": 0.000181444,
+  "threads": 2,
+  "validated_against_oracle": false,
+  "validation_seconds": 0.0
+}
