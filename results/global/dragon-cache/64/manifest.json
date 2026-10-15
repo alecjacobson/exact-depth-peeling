@@ -1,0 +1,16 @@
+{
+  "cache_key": {
+    "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+    "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+    "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+    "blender": "4.5.3 LTS",
+    "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+    "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+  },
+  "target_faces": 64,
+  "actual_faces": 64,
+  "vertices": 34,
+  "scene_sha256": "42e40b441a30f7d7f7ceebf52eb6420d3f5442d4a19ae52f7bde18dd2c977598",
+  "mesh_sha256": "4aab93995f1aa20c9e644b3f086431ad2e63e74e80d21e98dfdc23532fc9325d",
+  "decimation_seconds": 4.498246230185032
+}

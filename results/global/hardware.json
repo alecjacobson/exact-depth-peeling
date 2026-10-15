@@ -1,0 +1,5 @@
+{
+  "cpu_model": "Intel(R) Xeon(R) Platinum 8362 CPU @ 2.80GHz",
+  "cgroup_cpu_max": "400000 100000",
+  "cgroup_memory_max": "34359738368"
+}

@@ -23,6 +23,76 @@ hidden portions for subsequent layers and triangulate the completed layers with
 original source labels. They preserve exact geometry; neither uses R3's fixed-point
 rounding or convex-hull repair. See the [algorithm description](#algorithm-description).
 
+<!-- GLOBAL_BASELINE_BEGIN -->
+## Exact global baseline and cached dragon scaling
+
+`global-arrangement` adds an exact, contour-aware alternative to iterative
+peeling. It builds one arrangement of mesh contours and depth-equality segments,
+then intersects source triangles with its cells and assigns all depth ranks.
+Conservative BVHs prune source pairs, source/cell intersections, and rank queries.
+It detects unresolved crossings itself and retains original source labels.
+The original small-scene `arrangement` oracle remains unchanged.
+
+The two algorithms are compared on cached independent decimations of the full
+dragon, using the same fixed camera, exact intersection-resolved inputs, exact
+arithmetic, and conforming output meshing. All-layer timings include one warm-up
+and three measured repetitions on four CPU threads. Setup, preprocessing,
+validation, and export are excluded and recorded separately.
+
+| Decimation target → resolved faces | Global exact | Peeling exact | Global / peeling |
+| --- | ---: | ---: | ---: |
+| 64 → 72 | 0.102 s | 0.049 s | 2.07× |
+| 128 → 136 | 0.256 s | 0.075 s | 3.43× |
+| 512 → 528 | 1.247 s | 0.395 s | 3.16× |
+| 2,048 → 2,088 | 4.117 s | 1.718 s | 2.40× |
+| 8,192 → 8,200 | 15.229 s | 8.569 s | 1.78× |
+| 32,768 → 32,792 | 52.151 s | 37.043 s | 1.41× |
+
+![Exact global versus peeling trends on cached dragon meshes](results/global/dragon/trends.png)
+
+Peeling wins total time on this sequence, but **the global visibility/subdivision
+phases are faster at the larger sizes**. At 32,792 triangles, the last measured
+repetition spends **9.65 s global versus 33.97 s peeling** before output meshing;
+meshing then costs **42.56 s versus 2.91 s**. These are phase sums from one
+repetition, whereas the table reports three-repetition medians. The global route
+emits fewer triangles (519,252 versus 618,945), so output count alone does not
+explain its meshing cost. Profiling exact constructions and boundary noding is
+needed before attributing that gap. These results do not establish a universal
+asymptotic advantage for iterative peeling.
+
+The original 180-second process caps timed out the 32K global repeated timing
+and peeling audit. Those attempts remain recorded; a 360-second retry cap is
+used only for timed-out jobs. Caps cover whole processes, not one extraction.
+
+
+All four test suites pass, including 243 new global checks. Both methods pass
+exact geometry audits through 32,792 triangles; full labelled-region comparisons
+cover the smallest levels through 528 triangles, with the original eager oracle
+also used through 136. Larger rank checks are sampled, not full certificates.
+
+The regression suite checks the new baseline against the original eager oracle,
+including controls that disable contour reduction and BVH pruning, exact slivers,
+non-manifold edges, prefixes, and crossings along omitted internal mesh edges.
+`--verify-global` compares another exact solver's complete labelled regions with
+the new baseline. Larger sampled audits are explicitly distinguished from full
+region comparisons.
+
+```sh
+# Run directly from a cached small dragon; no full-model load or decimation.
+build/geometric_peel --scene results/global/dragon-cache/512/resolved.json \
+  --method global-arrangement --layers all --threads 4 --validate \
+  --metrics-only --out out/global-dragon
+build/geometric_peel --scene results/global/dragon-cache/512/resolved.json \
+  --method bvh-peel --resolved-mesh --layers all --threads 4 --verify-global \
+  --metrics-only --out out/peel-dragon
+```
+
+See [algorithm, correctness argument, caches and reproduction](results/global/README.md),
+[raw attempts](results/global/dragon/runs.json), and
+[fixture regressions](results/global/validation.json).
+
+<!-- GLOBAL_BASELINE_END -->
+
 <!-- DRAGON_RESULTS_BEGIN -->
 ## Full dragon example
 

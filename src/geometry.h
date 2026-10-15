@@ -92,6 +92,7 @@ struct Result {
   Domains residual;
   Stats eager_stats;
   Json classification;
+  Json global_statistics;
   Json oracle_cells = Json::array();
   std::vector<Patch> residual_patches;
   bool convex_representation = false;
@@ -130,6 +131,10 @@ Domains visible(const Scene &s, const Domains &r, const std::string &order, unsi
                 bool accelerate, Stats &stats);
 Domains envelope(const Scene &s, const Domains &r, Stats &stats);
 Result arrangement(const Scene &s, int layers, int cap = 64);
+// Scene must have contours extracted (read_scene third argument true), even on unresolved input.
+Result global_arrangement(const Scene &s, int layers, int threads, bool accelerate = true,
+                          bool use_contours = true);
+std::vector<Face> triangulate_patches(const std::vector<Patch> &patches, int threads);
 Result run(const Scene &s, const std::string &method, int layers, const std::string &order,
            unsigned seed, bool accelerate, int cap = 64);
 void validate(const Scene &s, Result &r, bool complete);

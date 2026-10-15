@@ -61,5 +61,14 @@
     "Pillow": "12.3.0",
     "optional": true,
     "used_for": "lossless export packing, display-resolution outlines, Blender rendering and GIF encoding; excluded from solver timings"
+  },
+  "dragon_decimation": {
+    "blender": "4.5.3 LTS",
+    "modifier": "Decimate COLLAPSE with triangulation",
+    "input_coordinate_storage": "float32",
+    "independent_levels": true,
+    "camera": "fixed full-dragon camera",
+    "intersection_preprocessing": "exact CGAL autorefinement per cached level",
+    "used_for": "cached benchmark inputs, outside extraction timings"
   }
 }

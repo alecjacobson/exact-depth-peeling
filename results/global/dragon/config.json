@@ -1,0 +1,33 @@
+{
+  "executable_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
+  "resolver_sha256": "ade5f99835318a23732f83f95bc31f5f7c8ae7c1d670819e65b30918f80bba2a",
+  "threads": 4,
+  "sizes": [
+    64,
+    128,
+    512,
+    2048,
+    8192,
+    32768
+  ],
+  "process_timeout_seconds": 180,
+  "validation_timeout_seconds": 180,
+  "warmups": 1,
+  "measured_repetitions": 3,
+  "address_space_cap_gib": 24,
+  "compare_max": 512,
+  "oracle_max": 128,
+  "arithmetic": "exact predicates and constructions, both methods",
+  "algorithm_includes": [
+    "all layers",
+    "BVH construction",
+    "labelled conforming triangulation"
+  ],
+  "algorithm_excludes": [
+    "import/projection/topology",
+    "intersection preprocessing",
+    "validation",
+    "serialization"
+  ],
+  "host": "ajacobson-dgxc"
+}

@@ -1,5 +1,17 @@
 # Findings: exact geometric depth peeling
 
+The new [contour-aware global baseline](global/README.md) and
+[matched cached-dragon sweep](global/dragon/summary.csv) now test iterative peeling
+against a global exact construction. They supersede any inference based solely
+on the old eager oracle or on comparisons between peeling implementations.
+On the six cached dragon levels, peeling wins total time, but global
+visibility/subdivision becomes faster on the larger levels. At 32,792 triangles,
+median total time is 52.15 s global versus 37.04 s peeling; the last repetition's
+pre-meshing phase sums are 9.65 s versus 33.97 s, while meshing costs 42.56 s versus
+2.91 s. This points to representation/meshing costs, not a demonstrated universal
+advantage of iterative visibility. The original measurements below remain
+historical evidence with their original scope and implementation limitations.
+
 The shared exact/fast contour implementation and full dragon example supersede
 the synthetic demonstration below. See the [current README](../README.md#shared-exact-and-fast-contour-algorithm) and [paired performance comparison](contours/performance/comparison.json).
 Exact contour acceleration is now implemented; on the 100K torus it reduces

@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "input_sha256": "d22286146fa7bf92caf08754669cca6581e6111b70e455bc747ebd4f6f3e051f",
+    "resolver_sha256": "ade5f99835318a23732f83f95bc31f5f7c8ae7c1d670819e65b30918f80bba2a"
+  },
+  "output_sha256": "75ab3b8bfdd5be2f3e1695e4fda9bd2eed52aefa8dff4b9733632bc8ab5508f7",
+  "preprocessing": {
+    "arithmetic": "exact rational constructions",
+    "import_seconds": 0.002838497,
+    "input_triangles": 512,
+    "marked_intersection_edges": 14,
+    "method": "CGAL PMP experimental::autorefine",
+    "output_triangles": 528,
+    "positive_area_coincident_surfaces_supported": false,
+    "refinement_seconds": 0.058120853
+  }
+}

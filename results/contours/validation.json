@@ -8,7 +8,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.3647e-05,
+        "classification_seconds": 1.1321e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -22,7 +22,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000117766,
+        "classification_seconds": 0.000110173,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -36,7 +36,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.9352e-05,
+        "classification_seconds": 9.9664e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -50,7 +50,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.594e-06,
+        "classification_seconds": 6.401e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -64,7 +64,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000104194,
+        "classification_seconds": 0.000102272,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -78,7 +78,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000104973,
+        "classification_seconds": 0.00010932,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -92,7 +92,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 6.089e-06,
+        "classification_seconds": 7.75e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -106,7 +106,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 7.728e-06,
+        "classification_seconds": 9.732e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -120,7 +120,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.3929e-05,
+        "classification_seconds": 0.000102936,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -134,7 +134,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000101364,
+        "classification_seconds": 0.00010349,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -148,7 +148,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.675e-06,
+        "classification_seconds": 1.0108e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -162,7 +162,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000110556,
+        "classification_seconds": 0.000118249,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -176,7 +176,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000101601,
+        "classification_seconds": 0.00010469,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -190,7 +190,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.586e-06,
+        "classification_seconds": 1.0518e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -204,7 +204,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.651e-06,
+        "classification_seconds": 1.0858e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -218,7 +218,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.00010184,
+        "classification_seconds": 0.000107429,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -232,7 +232,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000104892,
+        "classification_seconds": 0.00013394,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -246,7 +246,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.0827e-05,
+        "classification_seconds": 1.1059e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -260,7 +260,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.00010098,
+        "classification_seconds": 0.000108775,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -274,7 +274,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000102159,
+        "classification_seconds": 0.000103852,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -288,7 +288,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.0993e-05,
+        "classification_seconds": 9.273e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -302,7 +302,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.2573e-05,
+        "classification_seconds": 1.1036e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -316,7 +316,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.8413e-05,
+        "classification_seconds": 0.000119983,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -330,7 +330,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000101531,
+        "classification_seconds": 0.000106004,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -344,7 +344,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.1718e-05,
+        "classification_seconds": 1.0607e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -358,7 +358,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.9981e-05,
+        "classification_seconds": 9.1442e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -372,7 +372,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000109223,
+        "classification_seconds": 0.000102096,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -386,7 +386,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.3139e-05,
+        "classification_seconds": 1.059e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -400,7 +400,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 8.221e-06,
+        "classification_seconds": 9.15e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -414,7 +414,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.9127e-05,
+        "classification_seconds": 9.5257e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -428,7 +428,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.7797e-05,
+        "classification_seconds": 9.4051e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -442,7 +442,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.391e-06,
+        "classification_seconds": 7.919e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -456,7 +456,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000103981,
+        "classification_seconds": 0.000103359,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -470,7 +470,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000103933,
+        "classification_seconds": 9.7543e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -484,7 +484,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.1606e-05,
+        "classification_seconds": 8.014e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -498,7 +498,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.3774e-05,
+        "classification_seconds": 1.2339e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -512,7 +512,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000126023,
+        "classification_seconds": 0.000103865,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -526,7 +526,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000125756,
+        "classification_seconds": 0.000130137,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -540,7 +540,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.2918e-05,
+        "classification_seconds": 1.1364e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -554,7 +554,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.5676e-05,
+        "classification_seconds": 0.000119099,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -568,7 +568,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000119028,
+        "classification_seconds": 0.000133153,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -582,7 +582,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.2297e-05,
+        "classification_seconds": 1.3514e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -596,7 +596,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.1388e-05,
+        "classification_seconds": 1.3584e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -610,7 +610,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000115082,
+        "classification_seconds": 0.000107845,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -624,7 +624,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000116107,
+        "classification_seconds": 0.000105633,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -638,7 +638,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.178e-05,
+        "classification_seconds": 1.2553e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -652,7 +652,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000107415,
+        "classification_seconds": 0.00011315,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -666,7 +666,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000105681,
+        "classification_seconds": 0.000106844,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -680,7 +680,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.3445e-05,
+        "classification_seconds": 1.2203e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -694,7 +694,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 7.136e-06,
+        "classification_seconds": 8.615e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -708,7 +708,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.2092e-05,
+        "classification_seconds": 0.000101802,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -722,7 +722,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000100945,
+        "classification_seconds": 9.3886e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -736,7 +736,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.248e-06,
+        "classification_seconds": 8.534e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -750,7 +750,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.7953e-05,
+        "classification_seconds": 0.000130032,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -764,7 +764,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000101939,
+        "classification_seconds": 0.000117815,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -778,7 +778,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.202e-06,
+        "classification_seconds": 5.626e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -792,7 +792,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.0566e-05,
+        "classification_seconds": 1.0769e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -804,249 +804,249 @@
       "order": "reverse",
       "threads": 4,
       "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000115907,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 4
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "shared_vertex",
-      "order": "random",
-      "threads": 4,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000114057,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 4
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "shared_vertex",
-      "order": "near-first",
-      "threads": 1,
-      "layers": "all",
-      "accelerated": false,
-      "classification": {
-        "classification_seconds": 1.2727e-05,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 4
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "shared_vertex",
-      "order": "input",
-      "threads": 4,
-      "layers": "1",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000117623,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 4
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "shared_vertex",
-      "order": "input",
-      "threads": 4,
-      "layers": "2",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000106441,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 4
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "shared_vertex",
-      "order": "input",
-      "threads": 1,
-      "layers": "4",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 1.2822e-05,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 4
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "input",
-      "threads": 1,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 9.087e-06,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "reverse",
-      "threads": 4,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000113837,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "random",
-      "threads": 4,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 9.6859e-05,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "near-first",
-      "threads": 1,
-      "layers": "all",
-      "accelerated": false,
-      "classification": {
-        "classification_seconds": 6.337e-06,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "input",
-      "threads": 4,
-      "layers": "1",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000101304,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "input",
-      "threads": 4,
-      "layers": "2",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 9.9533e-05,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "edge_on",
-      "order": "input",
-      "threads": 1,
-      "layers": "4",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 8.383e-06,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 1
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "closed_object",
-      "order": "input",
-      "threads": 1,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 2.3742e-05,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 12
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "closed_object",
-      "order": "reverse",
-      "threads": 4,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000115549,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 12
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "closed_object",
-      "order": "random",
-      "threads": 4,
-      "layers": "all",
-      "accelerated": true,
-      "classification": {
-        "classification_seconds": 0.000110693,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 12
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "closed_object",
-      "order": "near-first",
-      "threads": 1,
-      "layers": "all",
-      "accelerated": false,
-      "classification": {
-        "classification_seconds": 2.3849e-05,
-        "constant_rank_sources": 0,
-        "point_query_candidates": 0,
-        "sources_requiring_clipping": 12
-      },
-      "status": "passed"
-    },
-    {
-      "scene": "closed_object",
-      "order": "input",
-      "threads": 4,
-      "layers": "1",
       "accelerated": true,
       "classification": {
         "classification_seconds": 0.000117207,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
+        "sources_requiring_clipping": 4
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "shared_vertex",
+      "order": "random",
+      "threads": 4,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000130064,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 4
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "shared_vertex",
+      "order": "near-first",
+      "threads": 1,
+      "layers": "all",
+      "accelerated": false,
+      "classification": {
+        "classification_seconds": 1.3261e-05,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 4
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "shared_vertex",
+      "order": "input",
+      "threads": 4,
+      "layers": "1",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000132326,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 4
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "shared_vertex",
+      "order": "input",
+      "threads": 4,
+      "layers": "2",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000118246,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 4
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "shared_vertex",
+      "order": "input",
+      "threads": 1,
+      "layers": "4",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 1.0452e-05,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 4
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "input",
+      "threads": 1,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 8.33e-06,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "reverse",
+      "threads": 4,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000107326,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "random",
+      "threads": 4,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 9.5327e-05,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "near-first",
+      "threads": 1,
+      "layers": "all",
+      "accelerated": false,
+      "classification": {
+        "classification_seconds": 9.939e-06,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "input",
+      "threads": 4,
+      "layers": "1",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000105537,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "input",
+      "threads": 4,
+      "layers": "2",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000107185,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "edge_on",
+      "order": "input",
+      "threads": 1,
+      "layers": "4",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 8.827e-06,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 1
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "closed_object",
+      "order": "input",
+      "threads": 1,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 2.4018e-05,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 12
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "closed_object",
+      "order": "reverse",
+      "threads": 4,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000134175,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 12
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "closed_object",
+      "order": "random",
+      "threads": 4,
+      "layers": "all",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000125656,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 12
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "closed_object",
+      "order": "near-first",
+      "threads": 1,
+      "layers": "all",
+      "accelerated": false,
+      "classification": {
+        "classification_seconds": 2.2292e-05,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
+        "sources_requiring_clipping": 12
+      },
+      "status": "passed"
+    },
+    {
+      "scene": "closed_object",
+      "order": "input",
+      "threads": 4,
+      "layers": "1",
+      "accelerated": true,
+      "classification": {
+        "classification_seconds": 0.000126313,
+        "constant_rank_sources": 0,
+        "point_query_candidates": 0,
         "sources_requiring_clipping": 12
       },
       "status": "passed"
@@ -1058,7 +1058,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000114706,
+        "classification_seconds": 0.000115378,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -1072,7 +1072,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 2.2753e-05,
+        "classification_seconds": 2.233e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -1086,7 +1086,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.8817e-05,
+        "classification_seconds": 1.9583e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1100,7 +1100,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000118876,
+        "classification_seconds": 0.000137209,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1114,7 +1114,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.00011094,
+        "classification_seconds": 0.000120468,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1128,7 +1128,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 2.2228e-05,
+        "classification_seconds": 1.9245e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1142,7 +1142,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000135557,
+        "classification_seconds": 0.000127986,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1156,7 +1156,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000135871,
+        "classification_seconds": 0.000140644,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1170,7 +1170,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 2.0164e-05,
+        "classification_seconds": 2.1171e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1184,7 +1184,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 7.282e-06,
+        "classification_seconds": 5.714e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1198,7 +1198,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000100401,
+        "classification_seconds": 0.000105067,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1212,7 +1212,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.5048e-05,
+        "classification_seconds": 9.1418e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1226,7 +1226,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 5.748e-06,
+        "classification_seconds": 6.426e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1240,7 +1240,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.295e-05,
+        "classification_seconds": 0.000109941,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1254,7 +1254,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.9482e-05,
+        "classification_seconds": 0.000104696,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1268,7 +1268,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 7.77e-06,
+        "classification_seconds": 7.487e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1282,7 +1282,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 8.829e-06,
+        "classification_seconds": 6.843e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1296,7 +1296,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.1862e-05,
+        "classification_seconds": 0.000109429,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1310,7 +1310,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.599e-05,
+        "classification_seconds": 9.9459e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1324,7 +1324,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.425e-06,
+        "classification_seconds": 6.934e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1338,7 +1338,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000101712,
+        "classification_seconds": 0.000103041,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1352,7 +1352,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000102085,
+        "classification_seconds": 0.000101464,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1366,7 +1366,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 6.063e-06,
+        "classification_seconds": 7.191e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1380,7 +1380,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.1714e-05,
+        "classification_seconds": 9.976e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1394,7 +1394,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.7337e-05,
+        "classification_seconds": 0.0001094,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1408,7 +1408,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000111166,
+        "classification_seconds": 0.000107367,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1422,7 +1422,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.0669e-05,
+        "classification_seconds": 1.2902e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1436,7 +1436,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000112612,
+        "classification_seconds": 0.000110227,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1450,7 +1450,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000116903,
+        "classification_seconds": 0.000107929,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1464,7 +1464,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 8.408e-06,
+        "classification_seconds": 1.2109e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1478,7 +1478,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.1101e-05,
+        "classification_seconds": 1.1368e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1492,7 +1492,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000110623,
+        "classification_seconds": 0.000112689,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1506,7 +1506,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000110404,
+        "classification_seconds": 0.000120325,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1520,7 +1520,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.128e-05,
+        "classification_seconds": 1.0463e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1534,7 +1534,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000106953,
+        "classification_seconds": 0.000104003,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1548,7 +1548,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.8144e-05,
+        "classification_seconds": 0.00010376,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1562,7 +1562,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.1104e-05,
+        "classification_seconds": 1.5103e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1576,7 +1576,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 8.982e-06,
+        "classification_seconds": 8.004e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1590,7 +1590,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000106246,
+        "classification_seconds": 9.5332e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1604,7 +1604,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000102614,
+        "classification_seconds": 0.000109533,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1618,7 +1618,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.566e-06,
+        "classification_seconds": 9.336e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1632,7 +1632,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.00010435,
+        "classification_seconds": 0.000105046,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1646,7 +1646,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000106101,
+        "classification_seconds": 9.7861e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1660,7 +1660,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.875e-06,
+        "classification_seconds": 9.924e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1674,7 +1674,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 6.469e-06,
+        "classification_seconds": 6.482e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1688,7 +1688,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000109408,
+        "classification_seconds": 9.9308e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1702,7 +1702,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.2634e-05,
+        "classification_seconds": 9.1947e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1716,7 +1716,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 7.472e-06,
+        "classification_seconds": 1.0528e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1730,7 +1730,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.9049e-05,
+        "classification_seconds": 0.000109952,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1744,7 +1744,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000100449,
+        "classification_seconds": 0.000100559,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1758,7 +1758,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 8.406e-06,
+        "classification_seconds": 9.713e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1772,7 +1772,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 8.975e-06,
+        "classification_seconds": 7.68e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1786,7 +1786,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.00010276,
+        "classification_seconds": 9.3657e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1800,7 +1800,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000108705,
+        "classification_seconds": 9.7664e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1814,7 +1814,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 9.187e-06,
+        "classification_seconds": 7.865e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1828,7 +1828,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.1476e-05,
+        "classification_seconds": 0.000100552,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1842,7 +1842,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000100015,
+        "classification_seconds": 0.00011184,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1856,7 +1856,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 7.388e-06,
+        "classification_seconds": 9.354e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1870,7 +1870,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 2.9778e-05,
+        "classification_seconds": 2.5779e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1884,7 +1884,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000138173,
+        "classification_seconds": 0.000157404,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1898,7 +1898,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000150656,
+        "classification_seconds": 0.000132348,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1912,7 +1912,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 2.9845e-05,
+        "classification_seconds": 2.871e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1926,7 +1926,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000178462,
+        "classification_seconds": 0.00016359,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1940,7 +1940,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000167199,
+        "classification_seconds": 0.000128794,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1954,7 +1954,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 2.7943e-05,
+        "classification_seconds": 2.5992e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -1968,7 +1968,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.3453e-05,
+        "classification_seconds": 1.2153e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1982,7 +1982,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000112781,
+        "classification_seconds": 0.000112842,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1996,7 +1996,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000102242,
+        "classification_seconds": 0.000112433,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -2010,7 +2010,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.0221e-05,
+        "classification_seconds": 1.0575e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -2024,7 +2024,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000170788,
+        "classification_seconds": 9.9884e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -2038,7 +2038,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000114852,
+        "classification_seconds": 9.9361e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -2052,7 +2052,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.2716e-05,
+        "classification_seconds": 1.0875e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -2066,7 +2066,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.2761e-05,
+        "classification_seconds": 1.062e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2080,7 +2080,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.00010587,
+        "classification_seconds": 9.8515e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2094,7 +2094,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.6653e-05,
+        "classification_seconds": 0.000102894,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2108,7 +2108,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.1225e-05,
+        "classification_seconds": 1.1993e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2122,7 +2122,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000122699,
+        "classification_seconds": 0.000105623,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2136,7 +2136,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000105862,
+        "classification_seconds": 0.000104207,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2150,7 +2150,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.1446e-05,
+        "classification_seconds": 1.136e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2164,7 +2164,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.3572e-05,
+        "classification_seconds": 1.6025e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2178,7 +2178,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000113243,
+        "classification_seconds": 0.00010645,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2192,7 +2192,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000101652,
+        "classification_seconds": 0.000106942,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2206,7 +2206,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 1.6563e-05,
+        "classification_seconds": 1.7443e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2220,7 +2220,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000104775,
+        "classification_seconds": 0.000116123,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2234,7 +2234,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000113413,
+        "classification_seconds": 0.000113415,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2248,7 +2248,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 1.5442e-05,
+        "classification_seconds": 1.5423e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2262,7 +2262,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.815e-06,
+        "classification_seconds": 9.107e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2276,7 +2276,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000100232,
+        "classification_seconds": 0.000100296,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2290,7 +2290,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.5555e-05,
+        "classification_seconds": 0.000100451,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2304,7 +2304,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 8.159e-06,
+        "classification_seconds": 9.711e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2318,7 +2318,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.6147e-05,
+        "classification_seconds": 9.9493e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2332,7 +2332,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.5806e-05,
+        "classification_seconds": 0.00010253,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2346,7 +2346,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 9.841e-06,
+        "classification_seconds": 9.996e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2360,7 +2360,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 4.5931e-05,
+        "classification_seconds": 4.9536e-05,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48
@@ -2374,7 +2374,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000152202,
+        "classification_seconds": 0.000181628,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48
@@ -2388,7 +2388,7 @@
       "layers": "all",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000157505,
+        "classification_seconds": 0.000151532,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48
@@ -2402,7 +2402,7 @@
       "layers": "all",
       "accelerated": false,
       "classification": {
-        "classification_seconds": 5.1258e-05,
+        "classification_seconds": 4.8178e-05,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48
@@ -2416,7 +2416,7 @@
       "layers": "1",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000164332,
+        "classification_seconds": 0.000186228,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48
@@ -2430,7 +2430,7 @@
       "layers": "2",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 0.000177452,
+        "classification_seconds": 0.000151149,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48
@@ -2444,7 +2444,7 @@
       "layers": "4",
       "accelerated": true,
       "classification": {
-        "classification_seconds": 4.6729e-05,
+        "classification_seconds": 4.6303e-05,
         "constant_rank_sources": 6,
         "point_query_candidates": 30,
         "sources_requiring_clipping": 48

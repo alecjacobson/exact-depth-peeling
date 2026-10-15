@@ -20,6 +20,23 @@ open and non-manifold edges are retained as contours. Current measurements and
 explicit numerical limitations are in the README. The full dragon example and
 before/after performance regression supplement the earlier synthetic experiments.
 
+## Contour-aware global baseline update
+
+`global-arrangement` is an additional exact comparison and verification route.
+It builds one contour/equality-segment subdivision, uses BVHs for source-pair,
+source/cell and point/source queries, and assigns all ranks without peeling.
+It detects crossings even without a resolved-mesh assertion. The original eager
+`arrangement` oracle remains independent and unchanged. The new baseline shares
+geometry import, conservative BVH infrastructure and exact output meshing with
+peeling; it has independent clipping and rank assignment. See
+[the algorithm and correctness argument](results/global/README.md).
+
+Cached independent decimations of the full dragon, with a fixed camera and exact
+intersection preprocessing, provide matched exact global/peeling trends. Report
+actual post-preprocessing triangle counts, timing boundaries, failures and
+validation scope. These experiments compare implementations; neither outcome
+establishes a universal asymptotic advantage.
+
 # 1 Research question and success criteria
 
 A foreground triangle may cover a complicated mesh while remaining entirely visible. Its layer should contain the original triangle, even if the projections of hidden edges have thousands of intersections. A global arrangement of projected edges can unnecessarily cut that foreground triangle at every background event.

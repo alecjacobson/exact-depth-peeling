@@ -1,0 +1,27 @@
+{
+  "executable_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
+  "sources": {
+    "src/arrangement_oracle.cpp": "effb12dc2cf4cf5397bde6c9f848a4c920fec0dd29d460b2c8e3c6bdc5f0a981",
+    "src/bvh_peel.cpp": "e9f87ee3aaf8e1f838af9c185e3710403e1037afa91a013d2cb09b3e15d52e03",
+    "src/camera.cpp": "0a0f65c41af4abc12e63fa238cc6502f9b62687f9cde3e3cfedbaf0d897cb247",
+    "src/envelope_peel.cpp": "ddc460a8422974fb0eddf2d4549f029e0b7cc4693f36e8a7508f72f121b97f17",
+    "src/exact_geometry.cpp": "c7c6053dd9277128421910d101ba2961bbc304c5bab31ffd836709a64ab855de",
+    "src/fast_peel.cpp": "011b8a302625406f348d82edc92f801fd17df953561a7d48cc95eb8c93823cdf",
+    "src/fast_peel.h": "994144fa06eb00d7e78c2f8cc62a2dc1189014e7a700eb9c34a497ff905ab52b",
+    "src/fast_reference.cpp": "e850207e0b49229817c86a8cb88da680cb0f7cc9e67526db7afb153fd851447c",
+    "src/geometry.h": "c78133826952edc353cc507fb204030622d03d42897180a1f511f224f8dc1740",
+    "src/global_arrangement.cpp": "f3e3565cb2e190116a27d7657ea4e6fd11c5cdd493e553c9cc6625959e7d24ae",
+    "src/main.cpp": "1014e01ccafbecf18a38e1121341421f4cfffc2723d81deb25f39fd71df8ff05",
+    "src/peel_common.h": "2e2b1fa4696bdc1690ce8fbc5b60bcaa41226b84c95ac79a675e94cde7c4c112",
+    "src/resolve_intersections.cpp": "f6effa2957e1f4e8f008946ccf028c1a74571e6b308e74cf729326bdfb1c349d",
+    "src/topology.h": "75ead7f0ae1863a97be63c557803035f70dfc3b9397122779b3887213176391e",
+    "src/triangulate_export.cpp": "396344389c222eab95c7780726985485154dfda25f3761e7791a58ee69e12e6d",
+    "src/validation.cpp": "63eee43c389b0c0544abd517abcbc52e6ec6488a99c12ead72c67cbe82a4bdfb",
+    "src/visible_peel.cpp": "c4a822e9714b4542de838e617bd805a79161da3c52d05251364132b61bca2478"
+  },
+  "ctest": {
+    "suites": 4,
+    "failures": 0,
+    "total_seconds": 158.01
+  }
+}

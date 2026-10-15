@@ -2,7 +2,7 @@
   "status": "passed",
   "failures": [],
   "expected_precision_loss_fixture": "slivers",
-  "executable_sha256": "a77a53be8930d4f442aad12fee496a554b6269b7f673d09a3e1c5f3897d43349",
+  "executable_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
   "resolver_sha256": "ade5f99835318a23732f83f95bc31f5f7c8ae7c1d670819e65b30918f80bba2a",
   "records": [
     {
@@ -71,7 +71,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000114357,
+        "classification_seconds": 9.9164e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -144,7 +144,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000101922,
+        "classification_seconds": 9.266e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -217,7 +217,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000101612,
+        "classification_seconds": 0.000102426,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -290,7 +290,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000102967,
+        "classification_seconds": 9.5261e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -363,7 +363,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.00010557,
+        "classification_seconds": 9.8086e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -436,7 +436,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000102451,
+        "classification_seconds": 9.6838e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -509,7 +509,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000111225,
+        "classification_seconds": 0.000120225,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 5
@@ -616,7 +616,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000105446,
+        "classification_seconds": 0.000101319,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -689,7 +689,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.9267e-05,
+        "classification_seconds": 0.000100615,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -826,7 +826,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.2425e-05,
+        "classification_seconds": 0.000103966,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -899,7 +899,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 0.000102939,
+        "classification_seconds": 9.1033e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -972,7 +972,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000104795,
+        "classification_seconds": 0.00011148,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 9
@@ -1045,7 +1045,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.4823e-05,
+        "classification_seconds": 9.3352e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 0
@@ -1118,7 +1118,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000105473,
+        "classification_seconds": 0.000118365,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1191,7 +1191,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.5096e-05,
+        "classification_seconds": 9.6366e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -1264,7 +1264,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.5255e-05,
+        "classification_seconds": 0.000100697,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1371,7 +1371,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000110349,
+        "classification_seconds": 0.000100679,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 2
@@ -1444,7 +1444,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 9.4437e-05,
+        "classification_seconds": 9.967e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1517,7 +1517,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000100432,
+        "classification_seconds": 0.0001073,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 1
@@ -1590,7 +1590,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 0.000110672,
+        "classification_seconds": 0.00011311,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2037,7 +2037,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.527e-06,
+        "classification_seconds": 9.793e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -2076,7 +2076,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 9.533e-06,
+        "classification_seconds": 8.099e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -2115,7 +2115,7 @@
         "silhouette_edges": 4
       },
       "classification": {
-        "classification_seconds": 1.0178e-05,
+        "classification_seconds": 9.571e-06,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 12
@@ -2154,7 +2154,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.2918e-05,
+        "classification_seconds": 1.2719e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2193,7 +2193,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.4772e-05,
+        "classification_seconds": 1.4853e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2232,7 +2232,7 @@
         "silhouette_edges": 16
       },
       "classification": {
-        "classification_seconds": 1.5506e-05,
+        "classification_seconds": 1.5335e-05,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 32
@@ -2271,7 +2271,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000105457,
+        "classification_seconds": 0.000103627,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 3
@@ -2310,7 +2310,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000101706,
+        "classification_seconds": 0.000104687,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2322,13 +2322,13 @@
       "status": "passed",
       "details": {
         "arithmetic": "exact rational constructions",
-        "import_seconds": 0.000127395,
+        "import_seconds": 0.000135305,
         "input_triangles": 2,
         "marked_intersection_edges": 2,
         "method": "CGAL PMP experimental::autorefine",
         "output_triangles": 4,
         "positive_area_coincident_surfaces_supported": false,
-        "refinement_seconds": 8.7795e-05
+        "refinement_seconds": 6.8453e-05
       }
     },
     {
@@ -2363,7 +2363,7 @@
         "silhouette_edges": 0
       },
       "classification": {
-        "classification_seconds": 0.000104902,
+        "classification_seconds": 0.000101448,
         "constant_rank_sources": 0,
         "point_query_candidates": 0,
         "sources_requiring_clipping": 4
@@ -2375,13 +2375,13 @@
       "status": "passed",
       "details": {
         "arithmetic": "exact rational constructions",
-        "import_seconds": 0.000131225,
+        "import_seconds": 0.000142424,
         "input_triangles": 2,
         "marked_intersection_edges": 2,
         "method": "CGAL PMP experimental::autorefine",
         "output_triangles": 4,
         "positive_area_coincident_surfaces_supported": false,
-        "refinement_seconds": 0.000141283
+        "refinement_seconds": 0.00013751
       }
     }
   ]

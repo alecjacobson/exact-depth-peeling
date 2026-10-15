@@ -22,3 +22,6 @@ results/dragon/dragon-layers.blend filter=lfs diff=lfs merge=lfs -text
 results/dragon/layers.gif filter=lfs diff=lfs merge=lfs -text
 results/dragon/outlines.npz filter=lfs diff=lfs merge=lfs -text
 results/dragon/*.png filter=lfs diff=lfs merge=lfs -text
+results/global/dragon-cache/*/raw.json filter=lfs diff=lfs merge=lfs -text
+results/global/dragon-cache/*/resolved.json filter=lfs diff=lfs merge=lfs -text
+results/global/dragon-cache/*/mesh.npz filter=lfs diff=lfs merge=lfs -text

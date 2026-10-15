@@ -1,0 +1,98 @@
+[
+  {
+    "cache_key": {
+      "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+      "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+      "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+      "blender": "4.5.3 LTS",
+      "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+      "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+    },
+    "target_faces": 64,
+    "actual_faces": 64,
+    "vertices": 34,
+    "scene_sha256": "42e40b441a30f7d7f7ceebf52eb6420d3f5442d4a19ae52f7bde18dd2c977598",
+    "mesh_sha256": "4aab93995f1aa20c9e644b3f086431ad2e63e74e80d21e98dfdc23532fc9325d",
+    "decimation_seconds": 4.498246230185032
+  },
+  {
+    "cache_key": {
+      "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+      "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+      "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+      "blender": "4.5.3 LTS",
+      "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+      "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+    },
+    "target_faces": 128,
+    "actual_faces": 128,
+    "vertices": 66,
+    "scene_sha256": "68d5b09a5988775a55431dd3d30eff28f2a159fd0a436ad7caea7480c029556f",
+    "mesh_sha256": "26ffe483a7ce7f660f5cbceed5c59e6cf69a31a311067e778ab93a6949d4e120",
+    "decimation_seconds": 4.933445606380701
+  },
+  {
+    "cache_key": {
+      "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+      "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+      "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+      "blender": "4.5.3 LTS",
+      "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+      "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+    },
+    "target_faces": 512,
+    "actual_faces": 512,
+    "vertices": 258,
+    "scene_sha256": "d22286146fa7bf92caf08754669cca6581e6111b70e455bc747ebd4f6f3e051f",
+    "mesh_sha256": "bc3dad2d114e6fee22419e461bc5eafcf5a46e1eb572180feb1db5c0f90d7a8c",
+    "decimation_seconds": 4.6091673374176025
+  },
+  {
+    "cache_key": {
+      "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+      "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+      "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+      "blender": "4.5.3 LTS",
+      "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+      "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+    },
+    "target_faces": 2048,
+    "actual_faces": 2048,
+    "vertices": 1026,
+    "scene_sha256": "2f6638c38ada061e261a42bd25bb4d66e92eac8875b2d6b52f0c9794bbeb252b",
+    "mesh_sha256": "fb96863d9a9550f607aa73b392186f96bc866e2c88ef2967de720e4c1afada90",
+    "decimation_seconds": 4.468543577939272
+  },
+  {
+    "cache_key": {
+      "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+      "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+      "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+      "blender": "4.5.3 LTS",
+      "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+      "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+    },
+    "target_faces": 8192,
+    "actual_faces": 8192,
+    "vertices": 4098,
+    "scene_sha256": "8df31daa20112ee16928f3e514a89c98fe2d386f2d2d4bfdb88bc86d108378a1",
+    "mesh_sha256": "dec8536ad58764d2689fbb7bddb992a170ca763a2473110c0bd442986b76e341",
+    "decimation_seconds": 4.70482262596488
+  },
+  {
+    "cache_key": {
+      "input_sha256": "36de4549989dd359bfb9d703cd7431da30b24b223db3c1027c5ac4551b4e51d0",
+      "camera_sha256": "a662fa038d31d7ef0a5b084278afa5ecf63a8b11ed62ec2582604c6cb38be96d",
+      "generator_sha256": "45627b4a488f49c46f20c3b793bf27443efec140ac7deb77c7589a8d8625208e",
+      "blender": "4.5.3 LTS",
+      "method": "Decimate COLLAPSE, triangulate, independent full-input ratios",
+      "coordinate_storage": "Blender float32, exported as exactly represented binary64"
+    },
+    "target_faces": 32768,
+    "actual_faces": 32768,
+    "vertices": 16386,
+    "scene_sha256": "9c69590a1e66a8610a62060bb82aff2279d3e3e0273caec036abfebf7b5ea0b1",
+    "mesh_sha256": "0eb86cd51404f79ac5ae325704587c2597c0781c114e0f37310b64f35507dfe1",
+    "decimation_seconds": 4.8146577179431915
+  }
+]

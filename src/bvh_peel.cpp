@@ -616,6 +616,10 @@ struct ExactPolicy {
 };
 } // namespace
 
+std::vector<Face> triangulate_patches(const std::vector<Patch> &patches, int threads) {
+  return mesh(patches, threads);
+}
+
 Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned seed,
                 bool accelerate, int threads, bool incremental) {
   if (threads < 1)

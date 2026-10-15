@@ -8,11 +8,13 @@ namespace {
 void help() {
   std::cout
       << "geometric_peel --scene FILE --method "
-         "fast-bvh-peel|vbvh-peel|bvh-peel|visible-peel|envelope-peel|arrangement\n  --layers "
+         "global-arrangement|fast-bvh-peel|vbvh-peel|bvh-peel|visible-peel|envelope-peel|"
+         "arrangement\n  --layers "
          "all|N --order input|random|near-first|reverse --seed N\n  --out DIR "
-         "[--verify|--validate] "
+         "[--verify|--verify-global|--validate] "
          "[--no-accelerate] [--oracle-cap N] [--threads N] [--repeat N]\n"
-         "  [--metrics-only|--mesh-only] (BVH methods) [--fast-grid-bits 12..30]\n"
+         "  [--metrics-only|--mesh-only] (BVH/global methods) [--fast-grid-bits 12..30]\n"
+         "  [--global-all-edges] (global-arrangement control: disable contour reduction)\n"
          "  [--resolved-mesh] (bvh-peel/fast-bvh-peel: all intersections must already be split "
          "into edges)\n  "
          "--compare "
@@ -28,7 +30,8 @@ int main(int argc, char **argv) {
     int layers = 0, cap = 64, threads = 1, repeat = 1, fast_bits = 30;
     bool metrics_only = false, mesh_only = false, resolved_mesh = false;
     unsigned seed = 1729;
-    bool verify = false, validate_only = false, accelerate = true;
+    bool verify = false, verify_global = false, global_all_edges = false;
+    bool validate_only = false, accelerate = true;
     for (int i = 1; i < argc; ++i) {
       std::string a = argv[i];
       auto value = [&]() {
@@ -73,7 +76,11 @@ int main(int argc, char **argv) {
         layers = v == "all" ? 0 : std::stoi(v);
         if (v != "all" && layers <= 0)
           throw std::runtime_error("Layer count must be positive or all");
-      } else if (a == "--verify")
+      } else if (a == "--global-all-edges")
+        global_all_edges = true;
+      else if (a == "--verify-global")
+        verify_global = true;
+      else if (a == "--verify")
         verify = true;
       else if (a == "--validate")
         validate_only = true;
@@ -90,22 +97,32 @@ int main(int argc, char **argv) {
       throw std::runtime_error("repeat and threads must be positive");
     if (metrics_only && mesh_only)
       throw std::runtime_error("Choose only one compact output mode");
+    if ((global_all_edges && method != "global-arrangement") ||
+        (verify_global && (method == "fast-bvh-peel" || method == "global-arrangement")))
+      throw std::runtime_error("Global controls require the corresponding exact solver");
     if (method == "fast-bvh-peel")
       return fast::run_cli(scene, out, layers, threads, repeat, fast_bits, order, seed, accelerate,
                            metrics_only, verify, validate_only, cap, resolved_mesh, mesh_only);
-    if (resolved_mesh && method != "bvh-peel")
-      throw std::runtime_error("--resolved-mesh requires bvh-peel or fast-bvh-peel");
-    if ((metrics_only || mesh_only) && method != "bvh-peel" && method != "vbvh-peel")
-      throw std::runtime_error("Compact output requires bvh-peel");
+    if (resolved_mesh && method != "bvh-peel" && method != "global-arrangement")
+      throw std::runtime_error(
+          "--resolved-mesh requires a BVH peeling or global-arrangement method");
+    if ((metrics_only || mesh_only) && method != "bvh-peel" && method != "vbvh-peel" &&
+        method != "global-arrangement")
+      throw std::runtime_error("Compact output requires a BVH or global-arrangement method");
     auto t = Clock::now();
-    auto s = read_scene(scene, method == "bvh-peel" || method == "vbvh-peel", resolved_mesh);
+    auto s = read_scene(
+        scene, method == "bvh-peel" || method == "vbvh-peel" || method == "global-arrangement",
+        resolved_mesh || method == "global-arrangement" || verify_global);
+    s.topology["resolved_mesh_contract"] = resolved_mesh;
     double setup = seconds(t);
     Result r;
     std::vector<double> timings;
     for (int i = 0; i < repeat; ++i) {
       r = Result();
       t = Clock::now();
-      r = (method == "bvh-peel" || method == "vbvh-peel")
+      r = method == "global-arrangement"
+              ? global_arrangement(s, layers, threads, accelerate, !global_all_edges)
+          : (method == "bvh-peel" || method == "vbvh-peel")
               ? bvh_peel(s, layers, order, seed, accelerate, threads, method == "vbvh-peel")
               : run(s, method, layers, order, seed, accelerate, cap);
       timings.push_back(seconds(t));
@@ -114,9 +131,9 @@ int main(int argc, char **argv) {
     std::sort(sorted_timings.begin(), sorted_timings.end());
     double algorithm = sorted_timings[sorted_timings.size() / 2], validation = 0;
     Json audit;
-    if (verify || validate_only) {
+    if (verify || verify_global || validate_only) {
       t = Clock::now();
-      if (r.convex_representation && !verify)
+      if (r.convex_representation && !verify && !verify_global)
         audit = audit_convex(s, r, layers == 0);
       else {
         materialize_scene(s);
@@ -125,6 +142,11 @@ int main(int argc, char **argv) {
       }
       if (verify && method != "arrangement")
         compare(r, arrangement(s, layers, cap));
+      if (verify_global) {
+        auto reference = global_arrangement(s, layers, threads);
+        materialize_regions(reference);
+        compare(r, reference);
+      }
       validation = seconds(t);
     }
     struct utsname sys {};
@@ -133,6 +155,7 @@ int main(int argc, char **argv) {
                  {"order", order},
                  {"mesh_topology", s.topology},
                  {"rank_classification", r.classification},
+                 {"global_arrangement", r.global_statistics},
                  {"seed", seed},
                  {"requested_layers", layers ? Json(layers) : Json("all")},
                  {"accelerated", accelerate},
@@ -163,7 +186,8 @@ int main(int argc, char **argv) {
                  {"threads", threads},
                  {"validation_seconds", validation},
                  {"validated_against_oracle", verify},
-                 {"exact_invariants_validated", verify || validate_only},
+                 {"validated_against_global", verify_global},
+                 {"exact_invariants_validated", verify || verify_global || validate_only},
                  {"convex_audit", audit},
                  {"scene", scene},
                  {"oracle_cap", cap}};
