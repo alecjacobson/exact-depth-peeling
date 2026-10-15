@@ -1,0 +1,22 @@
+{
+  "latest_timings_completed": 14,
+  "latest_audits_completed": 14,
+  "fresh_timings": 8,
+  "fresh_audits": 8,
+  "reused_timings": 6,
+  "reused_audits": 6,
+  "new_preprocessing_jobs": 4,
+  "latest_attempts_all_completed": true,
+  "cache_resume_launched_jobs": false,
+  "rank_audits_are_sampled": true,
+  "full_region_rank_certificate": false,
+  "all_geometry_cache_hashes_verified": true,
+  "new_geometry_lfs_files": 12,
+  "reuse_contract_and_scene_mismatch_checks": "passed",
+  "scripts_ruff_check": "passed",
+  "solver_code_changed": false,
+  "thread_scaling_timings_completed": 6,
+  "thread_scaling_fresh_timings": 4,
+  "thread_scaling_reused_timings": 2,
+  "thread_scaling_output_counts_unchanged": true
+}

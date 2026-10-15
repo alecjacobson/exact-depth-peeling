@@ -1,0 +1,28 @@
+{
+  "executable_sha256": "f705c8a0351c95e5750002c89891d987946a3de5516357b32f2a748b5535f51d",
+  "scene_sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+  "target_faces": 4096,
+  "threads": [
+    1,
+    2,
+    4
+  ],
+  "host": "ajacobson-dgxc",
+  "warmups": 1,
+  "measured_repetitions": 3,
+  "process_timeout_seconds": 300,
+  "address_space_cap_gib": 24,
+  "four_thread_source": "results/global/dragon-doubling",
+  "source_runs_sha256": "a44039735bac0e0f81f377f2850464e4cd57cffeab8b07b8b09aeaefc9f24dca",
+  "algorithm_includes": [
+    "all layers",
+    "BVH construction",
+    "labelled conforming triangulation"
+  ],
+  "algorithm_excludes": [
+    "import/projection/topology",
+    "intersection preprocessing",
+    "validation",
+    "serialization"
+  ]
+}

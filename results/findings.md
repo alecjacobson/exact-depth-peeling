@@ -1,16 +1,17 @@
 # Findings: exact geometric depth peeling
 
-The new [contour-aware global baseline](global/README.md) and
-[matched cached-dragon sweep](global/dragon/summary.csv) now test iterative peeling
-against a global exact construction. They supersede any inference based solely
-on the old eager oracle or on comparisons between peeling implementations.
-On the six cached dragon levels, peeling wins total time, but global
-visibility/subdivision becomes faster on the larger levels. At 32,792 triangles,
-median total time is 52.15 s global versus 37.04 s peeling; the last repetition's
-pre-meshing phase sums are 9.65 s versus 33.97 s, while meshing costs 42.56 s versus
-2.91 s. This points to representation/meshing costs, not a demonstrated universal
-advantage of iterative visibility. The original measurements below remain
-historical evidence with their original scope and implementation limitations.
+The [contour-aware global baseline](global/README.md) and
+[1K–64K doubling sweep](global/dragon-doubling/summary.csv) compare iterative
+peeling against a global exact construction with identical resolved inputs.
+Peeling wins total time throughout, but global's penalty narrows from 2.67× to
+1.15×. At 65,544 triangles the medians are 99.71 s global and 86.56 s peeling.
+Global's visibility/subdivision phases are faster (20.29 s versus 78.95 s in the
+last repetition), while output meshing reverses the result (79.36 s versus
+6.10 s). This does not establish a universal advantage for iterative peeling;
+profiling the exact fragment/meshing costs remains necessary. On the 4K mesh,
+one-to-four-thread speedup is 1.41× global versus 3.77× peeling; global wins
+on one thread and peeling wins on four. See the
+[CPU scaling and GPU discussion](global/README.md#parallelism-and-a-possible-gpu-implementation).
 
 The shared exact/fast contour implementation and full dragon example supersede
 the synthetic demonstration below. See the [current README](../README.md#shared-exact-and-fast-contour-algorithm) and [paired performance comparison](contours/performance/comparison.json).

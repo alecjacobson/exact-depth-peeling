@@ -13,6 +13,7 @@ import hashlib
 import json
 import os
 import resource
+import shutil
 import statistics
 import subprocess
 import time
@@ -42,6 +43,11 @@ def main():
     p.add_argument("--compare-max", type=int, default=512)
     p.add_argument("--oracle-max", type=int, default=128)
     p.add_argument("--resume", action="store_true")
+    p.add_argument(
+        "--reuse-from",
+        type=Path,
+        help="Reuse completed jobs from a matching binary, host and benchmark contract",
+    )
     p.add_argument(
         "--retry-timeouts",
         type=float,
@@ -78,6 +84,36 @@ def main():
         ],
         "host": os.uname().nodename,
     }
+    reusable = {}
+    if a.reuse_from:
+        if a.reuse_from.resolve() == a.output.resolve():
+            p.error("--reuse-from must differ from --output")
+        old_config_path = a.reuse_from / "config.json"
+        old_runs_path = a.reuse_from / "runs.json"
+        old_config = json.loads(old_config_path.read_text())
+        allowed = {
+            "sizes",
+            "process_timeout_seconds",
+            "validation_timeout_seconds",
+            "reuse",
+        }
+        if {k: v for k, v in old_config.items() if k not in allowed} != {
+            k: v for k, v in config.items() if k not in allowed
+        }:
+            raise RuntimeError(
+                "Cannot reuse jobs with a changed binary/host/benchmark contract"
+            )
+        config["reuse"] = {
+            "directory": str(a.reuse_from),
+            "config_sha256": digest(old_config_path),
+            "runs_sha256": digest(old_runs_path),
+        }
+        for index, record in enumerate(json.loads(old_runs_path.read_text())):
+            if record.get("phase") in ("timing", "audit", "comparison"):
+                reusable[record["target_faces"], record["method"], record["phase"]] = (
+                    index,
+                    record,
+                )
     config_path = a.output / "config.json"
     if (
         a.resume
@@ -224,6 +260,50 @@ def main():
                 out = a.output / str(target) / f"{method}-{phase}"
                 out.mkdir(parents=True, exist_ok=True)
                 metrics = out / "metrics.json"
+                cached = reusable.get((target, method, phase))
+                if not previous and cached and cached[1]["status"] == "completed":
+                    index, record = cached
+                    if (
+                        record["scene_sha256"] != source_hash
+                        or record["input_faces"] != count
+                    ):
+                        raise RuntimeError(f"Reused scene identity changed: {target}")
+                    source_metrics = (
+                        a.reuse_from
+                        / str(target)
+                        / f"{method}-{phase}"
+                        / "metrics.json"
+                    )
+                    m = json.loads(source_metrics.read_text())
+                    if (
+                        phase == "timing"
+                        and statistics.median(m["algorithm_repetitions_seconds"][1:])
+                        != record["median_seconds"]
+                    ):
+                        raise RuntimeError(
+                            f"Reused timing/metrics disagree: {source_metrics}"
+                        )
+                    shutil.copyfile(source_metrics, metrics)
+                    record = dict(record)
+                    record.setdefault(
+                        "process_timeout_seconds",
+                        old_config[
+                            "process_timeout_seconds"
+                            if phase == "timing"
+                            else "validation_timeout_seconds"
+                        ],
+                    )
+                    record["reused_from"] = {
+                        "directory": str(a.reuse_from),
+                        "record_index": index,
+                        "metrics_sha256": digest(source_metrics),
+                    }
+                    if "retry_of_record" in record:
+                        record["reused_from"]["retry_of_record"] = record.pop(
+                            "retry_of_record"
+                        )
+                    save(record)
+                    continue
                 metrics.unlink(missing_ok=True)  # Never accept a stale successful run.
                 cmd = [
                     a.exe,

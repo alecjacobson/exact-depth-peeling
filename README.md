@@ -41,32 +41,45 @@ validation, and export are excluded and recorded separately.
 
 | Decimation target → resolved faces | Global exact | Peeling exact | Global / peeling |
 | --- | ---: | ---: | ---: |
-| 64 → 72 | 0.102 s | 0.049 s | 2.07× |
-| 128 → 136 | 0.256 s | 0.075 s | 3.43× |
-| 512 → 528 | 1.247 s | 0.395 s | 3.16× |
+| 1,024 → 1,068 | 1.885 s | 0.706 s | 2.67× |
 | 2,048 → 2,088 | 4.117 s | 1.718 s | 2.40× |
+| 4,096 → 4,108 | 8.118 s | 4.167 s | 1.95× |
 | 8,192 → 8,200 | 15.229 s | 8.569 s | 1.78× |
+| 16,384 → 16,400 | 28.048 s | 18.457 s | 1.52× |
 | 32,768 → 32,792 | 52.151 s | 37.043 s | 1.41× |
+| 65,536 → 65,544 | 99.712 s | 86.560 s | 1.15× |
 
-![Exact global versus peeling trends on cached dragon meshes](results/global/dragon/trends.png)
+![Exact global versus peeling trends on cached dragon meshes](results/global/dragon-doubling/trends.png)
 
-Peeling wins total time on this sequence, but **the global visibility/subdivision
-phases are faster at the larger sizes**. At 32,792 triangles, the last measured
-repetition spends **9.65 s global versus 33.97 s peeling** before output meshing;
-meshing then costs **42.56 s versus 2.91 s**. These are phase sums from one
-repetition, whereas the table reports three-repetition medians. The global route
-emits fewer triangles (519,252 versus 618,945), so output count alone does not
-explain its meshing cost. Profiling exact constructions and boundary noding is
-needed before attributing that gap. These results do not establish a universal
-asymptotic advantage for iterative peeling.
+Peeling wins total time at every level, but global's penalty narrows from **2.67×
+at 1K to 1.15× at 64K**. From 8K to 64K, global time grows **6.55×** and peeling
+**10.10×** for roughly eight times as many input triangles. These are empirical
+trends on different decimated geometries, not asymptotic bounds or evidence of a
+future crossover.
 
-The original 180-second process caps timed out the 32K global repeated timing
-and peeling audit. Those attempts remain recorded; a 360-second retry cap is
-used only for timed-out jobs. Caps cover whole processes, not one extraction.
+**The global visibility/subdivision phases are faster.** At 65,544 triangles,
+the last measured repetition spends **20.29 s global versus 78.95 s peeling**
+before output meshing; meshing then costs **79.36 s versus 6.10 s**. These are
+phase sums from one repetition, whereas the table reports three-repetition
+medians. Global emits fewer triangles (977,721 versus 1,139,680), so output count
+alone does not explain its meshing cost. Profiling exact constructions and
+boundary noding is needed before attributing that gap. Neither route meets the
+near-real-time target here.
 
+The 1K, 4K, 16K and 64K levels are newly measured. The report explicitly reuses
+the earlier 2K, 8K and 32K timings/audits after checking executable, input, host
+and benchmark settings. New jobs have a 900-second process cap. The earlier
+180-second timeouts and 360-second retries remain in the original run log;
+process caps are not bounds on one extraction.
+
+A separate 4K CPU thread comparison shows **3.77× speedup for peeling** from
+one to four threads, versus **1.41× for global**. Global wins on one thread
+(11.42 s versus 15.69 s), while peeling wins on four (4.17 s versus 8.12 s).
+The [parallelism/GPU discussion](results/global/README.md#parallelism-and-a-possible-gpu-implementation)
+separates these measurements from possible GPU architectures.
 
 All four test suites pass, including 243 new global checks. Both methods pass
-exact geometry audits through 32,792 triangles; full labelled-region comparisons
+exact geometry audits through 65,544 triangles; full labelled-region comparisons
 cover the smallest levels through 528 triangles, with the original eager oracle
 also used through 136. Larger rank checks are sampled, not full certificates.
 
@@ -88,8 +101,9 @@ build/geometric_peel --scene results/global/dragon-cache/512/resolved.json \
 ```
 
 See [algorithm, correctness argument, caches and reproduction](results/global/README.md),
-[raw attempts](results/global/dragon/runs.json), and
-[fixture regressions](results/global/validation.json).
+[raw attempts](results/global/dragon-doubling/runs.json), and
+[fixture regressions](results/global/validation.json). See also the
+[CPU parallelism and GPU assessment](results/global/README.md#parallelism-and-a-possible-gpu-implementation).
 
 <!-- GLOBAL_BASELINE_END -->
 
