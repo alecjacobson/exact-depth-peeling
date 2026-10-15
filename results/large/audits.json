@@ -1,0 +1,118 @@
+{
+  "executable_sha256": "26bb2bc6fc73ae5e9d7dd3ecb891b6b76292c37eaacee5a4fb90606e777f3da3",
+  "scope": "Exact containment, conservation and disjointness; sampled independent exact ray ranks. Full arrangement rank certification is restricted to small fixtures.",
+  "records": [
+    {
+      "input_triangles": 10240,
+      "scene_sha256": "6d27b63516a6ef430202dff4cb4b8ef2f2c48c45cc51b501c71f9be2d28ef8d8",
+      "command": [
+        "/home/horde/projects/exact-depth-peeling/build/geometric_peel",
+        "--scene",
+        "/home/horde/projects/exact-depth-peeling/results/large/scenes/sculpted-10240.json",
+        "--method",
+        "bvh-peel",
+        "--order",
+        "near-first",
+        "--layers",
+        "all",
+        "--threads",
+        "4",
+        "--validate",
+        "--mesh-only",
+        "--out",
+        "/home/horde/projects/exact-depth-peeling/results/large/demo"
+      ],
+      "layers": 8,
+      "audit": {
+        "all_layers_complete": true,
+        "boundary_ray_samples_skipped": 0,
+        "full_region_rank_certificate": false,
+        "independent_exact_ray_ranks_checked": 503,
+        "layer_patch_disjointness": true,
+        "patches_checked": 14233,
+        "positive_triangle_and_patch_area_agreement": true,
+        "source_containment_disjointness_conservation": true,
+        "status": "passed"
+      },
+      "audited_output_triangles": [
+        5422,
+        7039,
+        4190,
+        8504,
+        488,
+        663,
+        55,
+        72
+      ],
+      "timed_output_triangles": [
+        5422,
+        7033,
+        4206,
+        8471,
+        490,
+        665,
+        55,
+        72
+      ],
+      "metrics": "demo/metrics.json"
+    },
+    {
+      "input_triangles": 102400,
+      "scene_sha256": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e",
+      "command": [
+        "/home/horde/projects/exact-depth-peeling/build/geometric_peel",
+        "--scene",
+        "/home/horde/projects/exact-depth-peeling/results/large/scenes/sculpted-102400.json",
+        "--method",
+        "bvh-peel",
+        "--order",
+        "near-first",
+        "--layers",
+        "all",
+        "--threads",
+        "4",
+        "--validate",
+        "--metrics-only",
+        "--out",
+        "/home/horde/projects/exact-depth-peeling/results/large/audit-102400"
+      ],
+      "layers": 10,
+      "audit": {
+        "all_layers_complete": true,
+        "boundary_ray_samples_skipped": 0,
+        "full_region_rank_certificate": false,
+        "independent_exact_ray_ranks_checked": 569,
+        "layer_patch_disjointness": true,
+        "patches_checked": 127291,
+        "positive_triangle_and_patch_area_agreement": true,
+        "source_containment_disjointness_conservation": true,
+        "status": "passed"
+      },
+      "audited_output_triangles": [
+        49851,
+        58499,
+        30041,
+        55923,
+        2346,
+        3458,
+        594,
+        697,
+        27,
+        30
+      ],
+      "timed_output_triangles": [
+        49851,
+        58499,
+        30047,
+        55903,
+        2337,
+        3454,
+        576,
+        699,
+        27,
+        25
+      ],
+      "metrics": "audit-102400/metrics.json"
+    }
+  ]
+}

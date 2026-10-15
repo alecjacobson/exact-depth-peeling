@@ -27,5 +27,22 @@
   "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
   "cmake": "cmake version 4.4.0",
   "python": "3.10.12",
-  "matplotlib": "3.10.9"
+  "matplotlib": "3.10.9",
+  "openmp": {
+    "optional": true,
+    "implementation": "GCC libgomp",
+    "compiler_flag": "-fopenmp",
+    "benchmark_threads": 4
+  },
+  "large_mesh_render": {
+    "blender": "4.5.3",
+    "Pillow": "12.3.0",
+    "optional": true,
+    "used_for": "Rendering actual exported geometry only; outside extraction timings"
+  },
+  "arithmetic": {
+    "default": "CGAL::Lazy_exact_nt<CGAL::Exact_rational>",
+    "eager_build_option": "-DPEEL_LAZY_EXACT=OFF",
+    "construction_semantics": "exact in both configurations"
+  }
 }

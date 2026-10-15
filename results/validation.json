@@ -1,6 +1,14 @@
 {
   "status": "passed",
-  "subprocess_checks": 2281,
+  "executable_sha256": "26bb2bc6fc73ae5e9d7dd3ecb891b6b76292c37eaacee5a4fb90606e777f3da3",
+  "methods": [
+    "arrangement",
+    "envelope-peel",
+    "visible-peel",
+    "bvh-peel",
+    "vbvh-peel"
+  ],
+  "subprocess_checks": 5190,
   "fixtures": [
     {
       "fixture": "single",

@@ -39,7 +39,7 @@ Q rational(const Json &j) {
 }
 std::string str(const Q &q) {
   std::ostringstream o;
-  o << q;
+  o << CGAL::exact(q);
   auto s = o.str();
   return s.find('/') == std::string::npos ? s + "/1" : s;
 }
@@ -270,6 +270,8 @@ Set read_set(const Json &j) {
   return s;
 }
 const Source &Scene::source(int id) const {
+  if (id >= 0 && static_cast<size_t>(id) < sources.size() && sources[id].id == id)
+    return sources[id];
   auto it = source_lookup.find(id);
   if (it == source_lookup.end())
     throw std::runtime_error("Unknown source ID");

@@ -1,5 +1,13 @@
 # Findings: exact geometric depth peeling
 
+The discussion below records the original polygon-set experiments. The new
+convex-fragment solvers and complete-layer measurements on 10K/100K connected
+meshes are documented in the [current README](../README.md#large-connected-mesh-example)
+and [large-mesh results](large/README.md). The faster new method, `bvh-peel`, uses
+independent BVH visibility queries; `vbvh-peel` uses an R3-inspired dynamic visible
+map. Exact all-layer extraction now scales to 102,400 triangles, but the measured
+seconds-per-extraction costs still miss the near-real-time goal.
+
 The prototype supports output selectivity, and demonstrates computational
 selectivity for the foreground-cover workload with a favorable insertion order.
 Practical usefulness is assessed with connected geometry, camera/depth complexity,

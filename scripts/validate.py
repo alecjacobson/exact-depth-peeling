@@ -2,6 +2,7 @@
 """Full labelled-set oracle agreement, all orders, prefixes, and export invariants."""
 
 import argparse
+import hashlib
 import json
 import subprocess
 import tempfile
@@ -16,6 +17,7 @@ def main():
     p.add_argument("--exe", type=Path, default=ROOT / "build/geometric_peel")
     p.add_argument("--report", type=Path, default=ROOT / "results/validation.json")
     p.add_argument("--quick", action="store_true")
+    p.add_argument("--threads", type=int, default=1)
     a = p.parse_args()
     exe = str(a.exe.resolve())
     manifest = json.loads((ROOT / "tests/fixtures/manifest.json").read_text())
@@ -44,7 +46,13 @@ def main():
             name = fixture["name"]
             path = ROOT / "tests/fixtures" / f"{name}.json"
             if fixture["expected"].startswith("reject"):
-                for method in ("arrangement", "envelope-peel", "visible-peel"):
+                for method in (
+                    "arrangement",
+                    "envelope-peel",
+                    "visible-peel",
+                    "bvh-peel",
+                    "vbvh-peel",
+                ):
                     invoke(
                         ["--scene", path, "--method", method, "--out", tmp / "reject"],
                         False,
@@ -76,6 +84,16 @@ def main():
                     ("visible-peel", o, False)
                     for o in ("input", "random", "near-first")
                 ]
+                + [
+                    ("bvh-peel", o, True)
+                    for o in ("input", "random", "near-first", "reverse")
+                ]
+                + [("bvh-peel", "input", False)]
+                + [
+                    ("vbvh-peel", o, True)
+                    for o in ("input", "random", "near-first", "reverse")
+                ]
+                + [("vbvh-peel", "input", False)]
             )
             for method, order, accel in variants:
                 dest = tmp / "candidate"
@@ -92,6 +110,13 @@ def main():
                 ] + ([] if accel else ["--no-accelerate"])
                 invoke(base + ["--layers", "all"])
                 invoke(["--compare", dest / "exact.json", oracle / "exact.json"])
+                if method == "bvh-peel" and order == "near-first":
+                    invoke(base + ["--layers", "all", "--threads", str(a.threads)])
+                    invoke(["--compare", dest / "exact.json", oracle / "exact.json"])
+                    invoke(
+                        [x for x in base if x != "--verify"]
+                        + ["--layers", "all", "--validate", "--metrics-only"]
+                    )
                 all_json = json.loads((dest / "exact.json").read_text())
                 for k in [1] if a.quick else [1, 2, 4]:
                     invoke(base + ["--layers", k])
@@ -155,6 +180,14 @@ def main():
             print(f"PASS {name}", flush=True)
     report = {
         "status": "passed",
+        "executable_sha256": hashlib.sha256(a.exe.read_bytes()).hexdigest(),
+        "methods": [
+            "arrangement",
+            "envelope-peel",
+            "visible-peel",
+            "bvh-peel",
+            "vbvh-peel",
+        ],
         "subprocess_checks": runs,
         "fixtures": cases,
         "requested_prefixes": [1] if a.quick else [1, 2, 4],

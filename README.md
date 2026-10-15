@@ -1,19 +1,100 @@
 # Exact geometric depth peeling
 
-A CPU research prototype implementing the three methods in
+A CPU research prototype implementing the three reference methods in
 [the design](geometric_depth_peeling_design.md): a global arrangement oracle,
-CGAL triangle-envelope peeling, and incremental visible-map peeling. All core
-geometry uses `CGAL::Cartesian<CGAL::Exact_rational>`. Orthographic and normalized
+CGAL triangle-envelope peeling, and incremental visible-map peeling. Two accelerated convex-fragment solvers, `bvh-peel` and `vbvh-peel`, now supplement
+those references. The default kernel is
+`CGAL::Cartesian<CGAL::Lazy_exact_nt<CGAL::Exact_rational>>`: interval filtering
+with exact rational fallback and exact constructions. Orthographic and normalized
 pinhole cameras, intersecting triangles, holes, disconnected residuals, and
 original-source reconstruction are implemented.
 
-The main method, `visible-peel`, computes one layer by inserting the remaining
-source polygons into an initially empty visibility map. It subtracts that completed
-layer from the source polygons, then rebuilds visibility for the next layer.
-**Only the residual polygons and immutable source/camera data carry over between
-passes; the visibility map and its spatial index are rebuilt.** See the
-[algorithm description](#algorithm-description) for the exact operations and
-current limitations.
+The current performance implementation is `bvh-peel`: parallel, target-relative
+occlusion queries over a BVH of surviving convex patches. `vbvh-peel` implements
+an [R3-inspired](https://cseweb.ucsd.edu/~ravir/lifan_vectorizer.pdf) incremental
+visibility map with a balanced dynamic BVH. Both retain
+hidden portions for subsequent layers and triangulate the completed layers with
+original source labels. They preserve exact geometry; neither uses R3's fixed-point
+rounding or convex-hull repair. See the [algorithm description](#algorithm-description).
+
+<!-- LARGE_RESULTS_BEGIN -->
+## Large connected-mesh example
+
+![Exploded view of the input mesh, perspective camera, and every extracted layer](results/large/demo/exploded.png)
+
+The example is a connected, closed sculpted torus with **10,240 triangles**,
+viewed through an oblique perspective camera. Each coloured layer is lifted onto
+its original 3D source surfaces, then translated for this exploded view. All layers
+are shown at the same scale; later ranks contain tiny silhouette fragments. The
+renderer consumes the actual exported layer meshes. No backface culling or mesh
+simplification is used. A **102,400-triangle** version tests the same shape at a
+higher tessellation density.
+
+| Input triangles | Solver | Layers | Extraction median (range) | Input setup | Output triangles |
+| ---: | --- | ---: | ---: | ---: | ---: |
+| 10,240 | `bvh-peel` | 8 | 1.121 s (1.007–1.142) | 0.357 s | 26,414 |
+| 10,240 | `vbvh-peel` | 8 | 5.767 s (5.766–5.771) | 0.385 s | 34,768 |
+| 102,400 | `bvh-peel` | 10 | 11.597 s (9.905–11.850) | 4.241 s | 201,418 |
+| 102,400 | `vbvh-peel` | 10 | 73.207 s (72.907–73.295) | 4.040 s | 224,101 |
+
+**The near-real-time target has not been reached.** These are measured complete
+extractions, including conforming labelled triangulation, not extrapolated timings
+or first-layer results. The plot's 100 ms line is a performance reference, not an
+achieved guarantee. Different tessellations can have different maximum depth
+complexity, including small extra layers near silhouettes.
+
+Measurements use one warm-up and three subsequent extractions of the same
+projected input. The table reports their median and range. Input parsing,
+projection, and positive-area tie preflight are listed separately; validation and
+file export are excluded. Thus these are not end-to-end animation-frame timings.
+The environment has a four-core CPU quota on an Intel Xeon Platinum 8362 host.
+Both methods use four threads for meshing; `vbvh-peel` updates its visibility map
+sequentially. Interval filtering falls back to exact rational arithmetic, and all
+constructed geometry remains exact.
+
+Output triangle counts in the table come from the final timed repetition. Internal
+convex subdivisions are not canonical: conservative interval bounds, lazy exact
+evaluation and candidate traversal can change the triangulation while preserving
+the source regions. The independently validated demonstration can therefore have
+different face counts; both sets of counts are retained in `audits.json`.
+
+![Measured scaling of complete extraction and candidate work](results/large/scaling.png)
+
+The candidate-work plot measures this family, not a universal complexity bound.
+The two solvers avoid the old per-insertion full-index rebuild and exhaustive
+output-face label search. Fragmentation, repeated passes, and exact constructions
+still contribute substantial cost. R3's finite-precision single-visibility results
+are not directly comparable to these exact all-layer timings.
+
+The current measurements point to visibility/clipping as the next optimization
+target: it accounts for about 90% of the instrumented extraction stages in the
+100K `bvh-peel` run. The next steps are stronger collective-coverage certificates,
+less allocation and rational-expression work in clipping, and measured reuse
+between layers with explicit invalidation. The exact solver remains the correctness
+reference for any future finite-precision or GPU implementation. Neither the BVH
+nor this mesh family establishes an output-independent subquadratic bound: the
+number of fragments and depth layers can itself grow with the input.
+
+[Raw measurements](results/large/summary.csv), [configuration and source hashes](results/large/config.json),
+[attempts and timeouts](results/large/status.jsonl), and
+[large-mesh validation](results/large/audits.json) are retained.
+The [Blender scene](results/large/demo/exploded.blend) and layer OBJs in
+`results/large/demo/` can be inspected separately (Git LFS is required for large files).
+
+Reproduce the measurement and the exploded view:
+
+```sh
+python scripts/large_benchmark.py --threads 4 --timeout 360 --output results/large
+python scripts/audit_large_results.py --threads 4 --directory results/large
+python scripts/render_exploded.py \
+  --scene results/large/scenes/sculpted-10240.json --layers results/large/demo \
+  --output results/large/demo/exploded.png
+python scripts/report_large_results.py results/large
+```
+
+Rendering requires Blender (the recorded figure uses 4.5.3) and Pillow; plotting
+requires matplotlib. They are not part of the extraction timer.
+<!-- LARGE_RESULTS_END -->
 
 ## Build and validate
 
@@ -30,6 +111,13 @@ cmake --build build -j 2
 python scripts/generate_fixtures.py
 ctest --test-dir build --output-on-failure
 ```
+
+OpenMP is enabled when available; `--threads 4` parallelizes the independent
+queries and triangulation in `bvh-peel`. `vbvh-peel` has a sequential visibility
+map update; its triangulation can run in parallel. Set `-DPEEL_LAZY_EXACT=OFF`
+to build with eager exact rationals instead. Both builds have the same geometric
+contract. The historical benchmark folders used the eager kernel; the new large
+mesh benchmark records its own executable/source hashes and arithmetic mode.
 
 The tested dependency versions and external reference revisions are recorded in
 [dependencies.json](dependencies.json). CGAL 5.4 is installed in this environment;
@@ -48,8 +136,9 @@ build/geometric_peel --compare out/selective/exact.json out/oracle/exact.json
 ```
 
 `--verify` checks exact invariants and labelled symmetric differences against the
-independent arrangement method. `--validate` performs the invariant checks without
-constructing the oracle, useful above the default 64-source oracle cap.
+independent arrangement method. `--validate` performs checks without constructing
+the oracle, useful above the default 64-source oracle cap. For the accelerated
+solvers it uses the scalable audit described below; rank checks are sampled.
 `--oracle-cap N` explicitly changes that cap. `--no-accelerate` exercises the
 unaccelerated insertion algorithm. Orders are `input`, `random`, `near-first`, and
 `reverse`; the default seed is 1729. No backface culling is performed.
@@ -80,7 +169,7 @@ matrix; the default is identity. Image coordinates are normalized: orthographic
 coordinate convention. Perspective clipping precedes division, and score is
 `-1/z`; world positions and barycentrics are reconstructed on original triangles.
 
-Each output directory contains:
+With the default export mode, each output directory contains:
 
 - `exact.json`: authoritative rational source domains, scores, both camera
   transforms, labelled layers, residuals, and face-corner UV/world/barycentric data.
@@ -95,7 +184,7 @@ Each output directory contains:
 Floating-point previews never participate in exact validation. JSON boundaries
 can be weakly simple at touching vertices; the exact reader splits signed cycles
 without dropping their positive-area components. Exported faces form one conforming
-2D constrained triangulation for each layer, with source boundaries preserved.
+2D triangulation for each layer, with source boundaries preserved.
 
 Positive-area coincident surface overlaps are explicitly rejected, including
 fully hidden duplicates. Coplanar adjacent faces pass. Zero projected-area faces
@@ -113,15 +202,16 @@ orthographic camera and `s=-1/z` for a perspective camera. Perspective projectio
 is clipped against the positive near plane before division. The original triangle,
 source ID, and plane mapping remain fixed throughout the computation.
 
-`R[i]` is the part of `D[i]` that has not yet appeared in an output layer. It is a
-CGAL polygon set and may have holes or disconnected components. It stores an area
+`R[i]` is the part of `D[i]` that has not yet appeared in an output layer. The reference
+methods store it as a CGAL polygon set; the accelerated methods use convex patches.
+Either representation can describe holes or disconnected components. It stores an area
 of the original triangle's projection, rather than a collection of newly lifted
 3D triangles. At each image point, layer `k` contains the kth nearest surface hit
 in the original input, found as the nearest hit still remaining. Different parts
 of one source triangle can therefore appear in different layers. Background outside another triangle's
 footprint can already appear in layer 1.
 
-The two peeling methods share this loop, implemented in
+The original two peeling methods share this loop, implemented in
 [`run()`](src/visible_peel.cpp):
 
 ```text
@@ -139,6 +229,100 @@ produces depth ranks without requiring a global front-to-back triangle order.
 The final output is reconstructed on the original source planes. All set
 operations below are regularized: boundaries and isolated line/point remnants do
 not define extra layers. Positive-area depth ties are rejected during setup.
+
+### `bvh-peel`: independent convex-fragment visibility queries
+
+[`bvh_peel()`](src/bvh_peel.cpp) stores surviving geometry as source-labelled,
+interior-disjoint convex patches per source. The initial patches are projected,
+clipped input triangles. Later patches may have additional vertices. These convex
+partitions are kept between layers as an acceleration representation; they are
+not repeatedly converted to general polygons with holes. Standard exact JSON
+export unions patches by source when materializing region boundaries.
+
+For each layer:
+
+1. Build a balanced spatial BVH over all surviving patches. Each node stores
+   outward-rounded projected bounds and a conservative minimum ordering score.
+2. Query it independently for each target patch. Reject disjoint boxes and nodes
+   certified to be behind the whole target. Visit the nearer child first.
+3. Start with the whole target as its visible remainder. At a candidate leaf,
+   reject disjoint convex polygons with separating-axis tests. Compare the two
+   affine scores; if their order changes, clip against the exact depth half-plane.
+4. Subtract the candidate's occluding footprint from the current visible fragments
+   using convex half-plane splits. Save the removed portions for the next layer.
+   Candidates are compared only with the target's uncovered portions; their
+   relative depth order is not constructed.
+5. Stop querying when the target is completely covered. In that case, discard the
+   temporary hidden subdivision and carry the original target patch unchanged.
+6. Collect visible patches as the layer and hidden patches as the next residual.
+   The candidate geometry is frozen for the entire pass, permitting parallel queries.
+
+All broad-phase bounds enclose exact values using `CGAL::to_interval`. Fast
+orientation and depth tests use directed-rounding intervals, falling back to exact
+rational predicates when uncertain. Constructed intersections remain exact. No
+positive-area slivers are discarded.
+
+The hierarchy is rebuilt **once per layer**, never after each target query. With
+`m` surviving patches, its median-split construction takes `O(m log m)` comparisons.
+Query work depends on nodes visited and candidates surviving rejection; clipping
+also depends on the generated fragment complexity. There is no explicit all-pairs
+occluder loop, but dense overlaps and repeated clipping can still be expensive.
+There is no unconditional linear-time or near-real-time guarantee.
+
+`--order` changes target scheduling (or candidate order in the unaccelerated
+control); the accelerated BVH itself is spatially built and traversed near-first.
+`--no-accelerate` tests all other surviving patches and is a correctness control.
+
+### `vbvh-peel`: R3-inspired dynamic visible map
+
+The alternative in [`incremental_pass()`](src/bvh_peel.cpp) maintains a partition
+of the image window into convex visible cells, including uncovered background.
+A balanced dynamic AABB tree indexes the cells. Inserting a surviving patch visits
+only potentially overlapping cells and compares their exact affine depths.
+
+If every overlapped cell is nearer, the incoming patch is completely hidden and
+survives unchanged, without intersection construction. If the incoming patch wins
+every overlap, it is inserted whole after locally clipping the overwritten cells.
+Otherwise, intersections and depth half-planes split the affected cells into convex
+pieces. Only changed leaves and their ancestor bounds are updated; tree rotations
+keep the hierarchy balanced. This replaces the old full-index rebuild per insertion.
+
+Overwritten portions of old cells and hidden portions of incoming patches are
+collected for the next pass. This is safe by transitivity: a portion already beaten
+by another source cannot become the nearest hit later in the same insertion pass.
+Temporarily visible portions are **not** prematurely removed from later layers.
+
+The tree and visible map are rebuilt for each layer. This adapts R3's convex
+representation and local hierarchy maintenance, but adds exact constructions,
+depth-crossing handling, residual propagation, and conforming layer meshing. It
+is not a reproduction of R3's finite-precision implementation or its benchmarks.
+
+### Meshing and large-output modes for the accelerated solvers
+
+Both solvers preserve source labels during clipping. To produce a conforming
+layer mesh, they build a BVH over patch vertices, find vertices lying exactly on
+other patch edges, and split those edges. Triangular patches remain triangles;
+other convex boundaries are triangulated around an interior point. This avoids
+a global arrangement and the old all-source search to label every output triangle.
+Internal convex partition edges can remain as triangulation edges.
+
+The default output still includes normalized exact JSON, SVG, OBJ and metrics.
+For large experiments, `--mesh-only` writes all lifted OBJ layer meshes and metrics;
+`--metrics-only` writes only metrics. **Both still compute every layer's conforming
+triangulation.** These modes avoid expensive normalized JSON construction and
+serialization; the reported extraction time excludes those export costs.
+
+`--repeat N` reuses the parsed/projected input for N complete extractions, and
+records every extraction time. The large benchmark discards the first as warm-up
+and reports the median and range of the next three. Input setup, validation, and
+export are measured separately. These timings do not represent full animation
+frame latency when the camera or geometry changes.
+
+For accelerated solvers, `--validate` uses scalable exact containment, per-source
+conservation/disjointness, layer patch disjointness, and mesh area checks, plus up
+to 64 independent exact camera-space ray/triangle rank checks per layer. Sampling
+is not a full region-rank certificate. `--verify` retains the exhaustive small-scene
+invariants, T-junction checks, and exact arrangement-oracle region comparison.
 
 ### `visible-peel`: incremental visibility within each pass
 
@@ -262,7 +446,8 @@ is not used inside either peeling algorithm unless requested by `--verify`.
 
 ### Triangulation, reconstruction, and scope of the prototype
 
-[`triangulate()`](src/triangulate_export.cpp) collects the completed layer's outer
+The three reference methods use [`triangulate()`](src/triangulate_export.cpp),
+which collects the completed layer's outer
 and hole boundaries, splits them at intersections and shared endpoints with a
 CGAL arrangement, and constructs one constrained Delaunay triangulation. It labels
 each triangle by testing an interior point against the source regions and discards
@@ -276,7 +461,8 @@ plane: `(u,v,s)` in orthographic camera coordinates, or `(u/q,v/q,1/q)` with
 opposite sides of a depth jump retain separate 3D positions and source barycentrics.
 Exported triangles are derived output and never become next-pass residuals.
 
-This implements the repeated-pass polygon-set prototype in sections 5–6 of the
+The original `visible-peel` implementation follows the repeated-pass polygon-set
+prototype in sections 5–6 of the
 [design](geometric_depth_peeling_design.md). Its performance scope is specific:
 
 - All nonempty residual sources are enumerated each pass. Only residual polygon
@@ -296,7 +482,7 @@ measure a persistent depth-aware hierarchy or establish a lower bound for peelin
 
 ## Validation
 
-The fixture driver compares all methods and insertion orders, unaccelerated
+The fixture driver compares all five methods and insertion orders, unaccelerated
 variants, and independent K=1,2,4 prefixes against all-layer results. Exact checks
 cover source containment, per-source conservation and disjointness, layer
 uniqueness, rank regions, positive triangulation area, triangle overlap, T-junctions,

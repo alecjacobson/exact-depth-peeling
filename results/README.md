@@ -9,8 +9,11 @@
 - `large-first/`: the separately budgeted g=64 first-layer rerun.
 - `connected/`, `nested/`: focused connected-mesh runs with a longer process cap.
 - `examples/`: retained exact JSON, SVG, OBJ, and metrics for small validated scenes.
+- `large/`: accelerated complete-layer measurements up to 102,400 triangles,
+  scalable exact audits, and the exploded 10,240-triangle Blender demonstration.
+  Its separate README describes the compact metrics format and timing boundaries.
 
-Each benchmark directory has configuration, exact scene/camera manifests,
+The original benchmark directories have configuration, exact scene/camera manifests,
 `runs.jsonl` (individual successful measured repetitions), `summary.csv` (median
 and range for configurations completing all three repetitions), `status.jsonl`
 (all attempted or explicitly skipped configurations), and `completion.json`.

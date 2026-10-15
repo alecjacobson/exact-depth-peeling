@@ -5,19 +5,22 @@
 #include <sys/utsname.h>
 namespace {
 void help() {
-  std::cout
-      << "geometric_peel --scene FILE --method visible-peel|envelope-peel|arrangement\n  --layers "
-         "all|N --order input|random|near-first|reverse --seed N\n  --out DIR "
-         "[--verify|--validate] "
-         "[--no-accelerate] [--oracle-cap N]\n  --compare EXACT_JSON EXACT_JSON\nVerification runs "
-         "exact geometry checks and an independent arrangement oracle.\n";
+  std::cout << "geometric_peel --scene FILE --method "
+               "vbvh-peel|bvh-peel|visible-peel|envelope-peel|arrangement\n  --layers "
+               "all|N --order input|random|near-first|reverse --seed N\n  --out DIR "
+               "[--verify|--validate] "
+               "[--no-accelerate] [--oracle-cap N] [--threads N] [--repeat N]\n"
+               "  [--metrics-only|--mesh-only] (bvh-peel only)\n  --compare EXACT_JSON "
+               "EXACT_JSON\nVerification runs "
+               "exact geometry checks and an independent arrangement oracle.\n";
 }
 } // namespace
 int main(int argc, char **argv) {
   using namespace peel;
   try {
     std::string scene, method = "visible-peel", order = "near-first", out = "out/peel";
-    int layers = 0, cap = 64;
+    int layers = 0, cap = 64, threads = 1, repeat = 1;
+    bool metrics_only = false, mesh_only = false;
     unsigned seed = 1729;
     bool verify = false, validate_only = false, accelerate = true;
     for (int i = 1; i < argc; ++i) {
@@ -47,6 +50,14 @@ int main(int argc, char **argv) {
         seed = std::stoul(value());
       else if (a == "--oracle-cap")
         cap = std::stoi(value());
+      else if (a == "--threads")
+        threads = std::stoi(value());
+      else if (a == "--repeat")
+        repeat = std::stoi(value());
+      else if (a == "--metrics-only")
+        metrics_only = true;
+      else if (a == "--mesh-only")
+        mesh_only = true;
       else if (a == "--layers") {
         auto v = value();
         layers = v == "all" ? 0 : std::stoi(v);
@@ -65,15 +76,38 @@ int main(int argc, char **argv) {
       help();
       return 2;
     }
+    if (repeat < 1 || threads < 1)
+      throw std::runtime_error("repeat and threads must be positive");
+    if (metrics_only && mesh_only)
+      throw std::runtime_error("Choose only one compact output mode");
+    if ((metrics_only || mesh_only) && method != "bvh-peel" && method != "vbvh-peel")
+      throw std::runtime_error("Compact output requires bvh-peel");
     auto t = Clock::now();
-    auto s = read_scene(scene);
+    auto s = read_scene(scene, method == "bvh-peel" || method == "vbvh-peel");
     double setup = seconds(t);
-    t = Clock::now();
-    auto r = run(s, method, layers, order, seed, accelerate, cap);
-    double algorithm = seconds(t), validation = 0;
+    Result r;
+    std::vector<double> timings;
+    for (int i = 0; i < repeat; ++i) {
+      r = Result();
+      t = Clock::now();
+      r = (method == "bvh-peel" || method == "vbvh-peel")
+              ? bvh_peel(s, layers, order, seed, accelerate, threads, method == "vbvh-peel")
+              : run(s, method, layers, order, seed, accelerate, cap);
+      timings.push_back(seconds(t));
+    }
+    auto sorted_timings = timings;
+    std::sort(sorted_timings.begin(), sorted_timings.end());
+    double algorithm = sorted_timings[sorted_timings.size() / 2], validation = 0;
+    Json audit;
     if (verify || validate_only) {
       t = Clock::now();
-      validate(s, r, layers == 0);
+      if (r.convex_representation && !verify)
+        audit = audit_convex(s, r, layers == 0);
+      else {
+        materialize_scene(s);
+        materialize_regions(r);
+        validate(s, r, layers == 0);
+      }
       if (verify && method != "arrangement")
         compare(r, arrangement(s, layers, cap));
       validation = seconds(t);
@@ -86,8 +120,14 @@ int main(int argc, char **argv) {
                  {"requested_layers", layers ? Json(layers) : Json("all")},
                  {"accelerated", accelerate},
                  {"camera", s.camera.perspective ? "perspective" : "orthographic"},
-                 {"exact_number_type", "CGAL::Exact_rational (GMP rational)"},
-                 {"kernel", "CGAL::Cartesian"},
+                 {"exact_number_type",
+#ifdef PEEL_LAZY_EXACT
+                  "CGAL::Lazy_exact_nt<CGAL::Exact_rational>"
+#else
+                  "CGAL::Exact_rational (GMP rational)"
+#endif
+                 },
+                 {"kernel", "CGAL::Cartesian (exact constructions)"},
                  {"cgal_version", CGAL_VERSION_STR},
                  {"cgal_upstream_release", std::string("v") + CGAL_VERSION_STR},
                  {"dependency_lock", "dependencies.json"},
@@ -102,12 +142,23 @@ int main(int argc, char **argv) {
                  {"platform", std::string(sys.sysname) + " " + sys.release + " " + sys.machine},
                  {"projection_preflight_seconds", setup},
                  {"algorithm_seconds", algorithm},
+                 {"algorithm_repetitions_seconds", timings},
+                 {"threads", threads},
                  {"validation_seconds", validation},
                  {"validated_against_oracle", verify},
                  {"exact_invariants_validated", verify || validate_only},
+                 {"convex_audit", audit},
                  {"scene", scene},
                  {"oracle_cap", cap}};
-    write_result(s, r, out, meta);
+    if (metrics_only || mesh_only)
+      write_convex_result(s, r, out, meta, mesh_only);
+    else {
+      t = Clock::now();
+      materialize_scene(s);
+      materialize_regions(r);
+      meta["region_materialization_seconds"] = seconds(t);
+      write_result(s, r, out, meta);
+    }
     std::cout << Json({{"layers", r.layers.size()},
                        {"algorithm_seconds", algorithm},
                        {"validation_seconds", validation},

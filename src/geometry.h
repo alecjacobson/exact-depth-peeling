@@ -1,6 +1,7 @@
 #pragma once
 #include <CGAL/Cartesian.h>
 #include <CGAL/Exact_rational.h>
+#include <CGAL/Lazy_exact_nt.h>
 #include <CGAL/Polygon_set_2.h>
 #include <array>
 #include <chrono>
@@ -9,7 +10,11 @@
 #include <string>
 #include <vector>
 namespace peel {
+#ifdef PEEL_LAZY_EXACT
+using Q = CGAL::Lazy_exact_nt<CGAL::Exact_rational>;
+#else
 using Q = CGAL::Exact_rational;
+#endif
 using K = CGAL::Cartesian<Q>;
 using P = K::Point_2;
 using P3 = K::Point_3;
@@ -42,6 +47,7 @@ struct Source {
   std::array<P3, 3> world, cam;
   Score score;
   Set initial;
+  Poly initial_polygon;
 };
 struct Scene {
   Camera camera;
@@ -55,6 +61,10 @@ struct Scene {
 struct Face {
   int source;
   std::array<P, 3> points;
+};
+struct Patch {
+  int source;
+  std::vector<P> points;
 };
 struct Stats {
   long candidate_tests = 0, box_rejections = 0, depth_separated = 0, occlusion_rejections = 0,
@@ -71,6 +81,7 @@ struct Stats {
 };
 struct Layer {
   Domains regions;
+  std::vector<Patch> patches;
   std::vector<Face> faces;
   Stats stats;
   Json residual_complexity;
@@ -80,6 +91,8 @@ struct Result {
   Domains residual;
   Stats eager_stats;
   Json oracle_cells = Json::array();
+  std::vector<Patch> residual_patches;
+  bool convex_representation = false;
 };
 Q rational(const Json &j);
 std::string str(const Q &q);
@@ -104,7 +117,8 @@ Set halfplane(const Score &s, const Box &w);
 Score difference(const Score &a, const Score &b);
 Json set_json(const Set &s);
 Set read_set(const Json &j);
-Scene read_scene(const std::string &path);
+Scene read_scene(const std::string &path, bool convex_only = false);
+void materialize_scene(Scene &s);
 P3 lift(const Scene &s, const Source &src, const P &p);
 std::array<Q, 3> barycentric(const Source &s, const P3 &p);
 P project(const Scene &s, const P3 &p);
@@ -120,4 +134,10 @@ void validate(const Scene &s, Result &r, bool complete);
 void compare(const Result &a, const Result &b);
 void compare_files(const std::string &a, const std::string &b);
 void write_result(const Scene &s, Result &r, const std::string &path, Json metadata);
+Result bvh_peel(const Scene &s, int layers, const std::string &order, unsigned seed,
+                bool accelerate, int threads, bool incremental = false);
+void materialize_regions(Result &r);
+Json audit_convex(const Scene &s, const Result &r, bool complete);
+void write_convex_result(const Scene &s, Result &r, const std::string &path, Json metadata,
+                         bool meshes);
 } // namespace peel

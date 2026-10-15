@@ -70,14 +70,13 @@ static Score fit(const std::array<P, 3> &p, const std::array<Q, 3> &z) {
   s.c = z[0] - s.a * p[0].x() - s.b * p[0].y();
   return s;
 }
-Scene read_scene(const std::string &path) {
+Scene read_scene(const std::string &path, bool convex_only) {
   std::ifstream f(path);
   if (!f)
     throw std::runtime_error("Cannot open scene: " + path);
   Json j;
   f >> j;
   Scene s;
-  s.manifest = j;
   s.camera = camera(j.value("camera", Json::object()));
   auto w = j.at("window");
   if (w.size() != 4)
@@ -137,11 +136,22 @@ Scene read_scene(const std::string &path) {
       continue;
     }
     src.score = fit({projected[0], projected[1], projected[k]}, {scores[0], scores[1], scores[k]});
-    src.initial = intersect(domain(polygon(projected)), win);
-    if (src.initial.is_empty()) {
+    bool in_window = true;
+    for (auto &p : projected)
+      in_window &= p.x() >= s.window.xmin && p.x() <= s.window.xmax && p.y() >= s.window.ymin &&
+                   p.y() <= s.window.ymax;
+    src.initial_polygon = polygon(projected);
+    if (!in_window) {
+      Set clipped = intersect(domain(src.initial_polygon), win);
+      auto components = pieces(clipped);
+      src.initial_polygon = components.empty() ? Poly() : components[0].outer_boundary();
+    }
+    if (src.initial_polygon.is_empty()) {
       ++s.clipped_empty;
       continue;
     }
+    if (!convex_only)
+      src.initial = domain(src.initial_polygon);
     s.source_lookup[src.id] = s.sources.size();
     s.sources.push_back(src);
   }
@@ -149,15 +159,55 @@ Scene read_scene(const std::string &path) {
   std::map<std::array<Q, 3>, std::vector<const Source *>> groups;
   for (auto &src : s.sources)
     groups[{src.score.a, src.score.b, src.score.c}].push_back(&src);
-  for (auto &group : groups)
-    for (size_t i = 0; i < group.second.size(); ++i)
-      for (size_t k = 0; k < i; ++k)
-        if (overlaps(bounds(group.second[i]->initial), bounds(group.second[k]->initial)) &&
-            !intersect(group.second[i]->initial, group.second[k]->initial).is_empty())
+  auto separated = [](const Poly &a, const Poly &b) {
+    for (auto e = a.edges_begin(); e != a.edges_end(); ++e) {
+      bool positive = false;
+      for (auto &p : b)
+        if (CGAL::orientation(e->source(), e->target(), p) == CGAL::LEFT_TURN) {
+          positive = true;
+          break;
+        }
+      if (!positive)
+        return true;
+    }
+    return false;
+  };
+  for (auto &group : groups) {
+    struct Entry {
+      const Source *source;
+      Box box;
+    };
+    std::vector<Entry> entries;
+    for (auto src : group.second) {
+      auto &p = src->initial_polygon;
+      Box b{p[0].x(), p[0].y(), p[0].x(), p[0].y()};
+      for (auto &v : p) {
+        b.xmin = std::min(b.xmin, v.x());
+        b.xmax = std::max(b.xmax, v.x());
+        b.ymin = std::min(b.ymin, v.y());
+        b.ymax = std::max(b.ymax, v.y());
+      }
+      entries.push_back({src, b});
+    }
+    std::sort(entries.begin(), entries.end(),
+              [](const Entry &a, const Entry &b) { return a.box.xmin < b.box.xmin; });
+    for (size_t i = 0; i < entries.size(); ++i)
+      for (size_t j = i + 1; j < entries.size() && entries[j].box.xmin < entries[i].box.xmax; ++j) {
+        auto &a = entries[i], &b = entries[j];
+        if (overlaps(a.box, b.box) &&
+            !separated(a.source->initial_polygon, b.source->initial_polygon) &&
+            !separated(b.source->initial_polygon, a.source->initial_polygon))
           throw std::runtime_error("Unsupported positive-area depth tie between sources " +
-                                   std::to_string(group.second[k]->id) + " and " +
-                                   std::to_string(group.second[i]->id));
+                                   std::to_string(a.source->id) + " and " +
+                                   std::to_string(b.source->id));
+      }
+  }
   return s;
+}
+void materialize_scene(Scene &s) {
+  for (auto &src : s.sources)
+    if (src.initial.is_empty())
+      src.initial = domain(src.initial_polygon);
 }
 P3 lift(const Scene &s, const Source &src, const P &p) {
   Q score = src.score.at(p);

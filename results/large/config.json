@@ -1,0 +1,48 @@
+{
+  "command": [
+    "scripts/large_benchmark.py",
+    "--threads",
+    "4",
+    "--timeout",
+    "360",
+    "--output",
+    "results/large"
+  ],
+  "executable_sha256": "26bb2bc6fc73ae5e9d7dd3ecb891b6b76292c37eaacee5a4fb90606e777f3da3",
+  "git_revision": "7004ac85ea16974f9444001b8893625b5dfe6326",
+  "source_sha256": {
+    "src/arrangement_oracle.cpp": "effb12dc2cf4cf5397bde6c9f848a4c920fec0dd29d460b2c8e3c6bdc5f0a981",
+    "src/bvh_peel.cpp": "513e2fe5170d429224597462f034efb920079ac987061155b4de5f7573b04f19",
+    "src/camera.cpp": "0c4603ec2c6e001647ad122fb6fb71fe9391f88a14c13624fdf5cf2b8af61e92",
+    "src/envelope_peel.cpp": "ddc460a8422974fb0eddf2d4549f029e0b7cc4693f36e8a7508f72f121b97f17",
+    "src/exact_geometry.cpp": "c7c6053dd9277128421910d101ba2961bbc304c5bab31ffd836709a64ab855de",
+    "src/geometry.h": "109d1d714b09ed2d2ec18a802a994c57d9a25075ff1f699d5a6f8dea9038d1d5",
+    "src/main.cpp": "021b03f28b0125a91ef81cbe25ea1a7b11006c5d36f135d1eb7bc10bcbc435c7",
+    "src/topology.h": "75ead7f0ae1863a97be63c557803035f70dfc3b9397122779b3887213176391e",
+    "src/triangulate_export.cpp": "396344389c222eab95c7780726985485154dfda25f3761e7791a58ee69e12e6d",
+    "src/validation.cpp": "63eee43c389b0c0544abd517abcbc52e6ec6488a99c12ead72c67cbe82a4bdfb",
+    "src/visible_peel.cpp": "c4a822e9714b4542de838e617bd805a79161da3c52d05251364132b61bca2478"
+  },
+  "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.35",
+  "cpu": "Intel(R) Xeon(R) Platinum 8362 CPU @ 2.80GHz",
+  "cpu_quota": "400000 100000",
+  "threads": 4,
+  "omp_wait_policy": "PASSIVE",
+  "warmup_repetitions": 1,
+  "measured_repetitions": 3,
+  "layers": "all",
+  "arithmetic": "interval filters with exact rational fallback and exact constructions",
+  "timing_includes": [
+    "residual preparation",
+    "visibility",
+    "residual partition",
+    "conforming labelled triangulation"
+  ],
+  "timing_excludes": [
+    "input parsing/projection/tie preflight",
+    "validation",
+    "file serialization"
+  ],
+  "timeout_seconds": 360.0,
+  "memory_cap_mib": 4096
+}
