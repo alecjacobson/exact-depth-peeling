@@ -1,0 +1,63 @@
+{
+  "maximum_ratio": 1.15,
+  "scope": "Timing and output-count regression gate, not a geometric certificate; use comparable hardware/load and separate full-region validation",
+  "cases": [
+    {
+      "sources": 1068,
+      "scene": "results/global/dragon-cache/1024/resolved.json",
+      "baseline_ms": 8.149439811706543,
+      "candidate_ms": 3.155359983444214,
+      "candidate_over_baseline": 0.3871873473943066
+    },
+    {
+      "sources": 2088,
+      "scene": "results/global/dragon-cache/2048/resolved.json",
+      "baseline_ms": 9.215776443481445,
+      "candidate_ms": 3.559231996536255,
+      "candidate_over_baseline": 0.3862107569952818
+    },
+    {
+      "sources": 4108,
+      "scene": "results/global/dragon-cache/4096/resolved.json",
+      "baseline_ms": 12.035327911376953,
+      "candidate_ms": 4.846240043640137,
+      "candidate_over_baseline": 0.4026678856883495
+    },
+    {
+      "sources": 8200,
+      "scene": "results/global/dragon-cache/8192/resolved.json",
+      "baseline_ms": 15.591551780700684,
+      "candidate_ms": 6.13040018081665,
+      "candidate_over_baseline": 0.3931873021391557
+    },
+    {
+      "sources": 16400,
+      "scene": "results/global/dragon-cache/16384/resolved.json",
+      "baseline_ms": 29.624000549316406,
+      "candidate_ms": 9.616703987121582,
+      "candidate_over_baseline": 0.3246254323791354
+    },
+    {
+      "sources": 32792,
+      "scene": "results/global/dragon-cache/32768/resolved.json",
+      "baseline_ms": 49.75120162963867,
+      "candidate_ms": 15.041376113891602,
+      "candidate_over_baseline": 0.3023319160382025
+    },
+    {
+      "sources": 65544,
+      "scene": "results/global/dragon-cache/65536/resolved.json",
+      "baseline_ms": 86.76799774169922,
+      "candidate_ms": 27.33612823486328,
+      "candidate_over_baseline": 0.3150485080483309
+    },
+    {
+      "sources": 102400,
+      "scene": "results/large/scenes/sculpted-102400.json",
+      "baseline_ms": 53.866912841796875,
+      "candidate_ms": 21.217695236206055,
+      "candidate_over_baseline": 0.3938910569930163
+    }
+  ],
+  "failures": []
+}

@@ -1008,8 +1008,10 @@ def lift(
 
 # One traversal per edge followed by a bounded heapsort: O(K log K),
 # including duplicate endpoints. Capacity exhaustion is an explicit failure.
-@wp.kernel
-def mesh_edges(
+@wp.func
+def mesh_one_edge(
+    i: int,
+    edge: int,
     output: wp.array(dtype=Polygon),
     sources: wp.array(dtype=int),
     layers: wp.array(dtype=int),
@@ -1025,7 +1027,6 @@ def mesh_edges(
     triangle_layers: wp.array(dtype=int),
     edge_capacity: int,
 ):
-    i, edge = wp.tid()
     if i < status[2] and status[9] == 0:
         p = output[i]
         if edge < p.n:
@@ -1122,6 +1123,85 @@ def mesh_edges(
                         wp.atomic_or(status, 9, 32)
                 cursor = next_point
                 previous = following
+
+
+@wp.kernel
+def mesh_edges(
+    output: wp.array(dtype=Polygon),
+    sources: wp.array(dtype=int),
+    layers: wp.array(dtype=int),
+    scores: wp.array(dtype=wp.vec3d),
+    vertices: wp.array(dtype=wp.vec2d),
+    bvh: Tree,
+    camera: wp.array(dtype=wp.mat44d),
+    settings: wp.array(dtype=wp.float64),
+    status: wp.array(dtype=int),
+    triangles_uv: wp.array2d(dtype=wp.vec2d),
+    triangles_world: wp.array2d(dtype=wp.vec3d),
+    triangle_sources: wp.array(dtype=int),
+    triangle_layers: wp.array(dtype=int),
+    edge_capacity: int,
+):
+    i, edge = wp.tid()
+    mesh_one_edge(
+        i,
+        edge,
+        output,
+        sources,
+        layers,
+        scores,
+        vertices,
+        bvh,
+        camera,
+        settings,
+        status,
+        triangles_uv,
+        triangles_world,
+        triangle_sources,
+        triangle_layers,
+        edge_capacity,
+    )
+
+
+@wp.kernel
+def mesh_edge_tasks(
+    tasks: wp.array(dtype=wp.vec2i),
+    output: wp.array(dtype=Polygon),
+    sources: wp.array(dtype=int),
+    layers: wp.array(dtype=int),
+    scores: wp.array(dtype=wp.vec3d),
+    vertices: wp.array(dtype=wp.vec2d),
+    bvh: Tree,
+    camera: wp.array(dtype=wp.mat44d),
+    settings: wp.array(dtype=wp.float64),
+    status: wp.array(dtype=int),
+    triangles_uv: wp.array2d(dtype=wp.vec2d),
+    triangles_world: wp.array2d(dtype=wp.vec3d),
+    triangle_sources: wp.array(dtype=int),
+    triangle_layers: wp.array(dtype=int),
+    edge_capacity: int,
+):
+    j = wp.tid()
+    if j < status[6] and status[9] == 0:
+        task = tasks[j]
+        mesh_one_edge(
+            task[0],
+            task[1],
+            output,
+            sources,
+            layers,
+            scores,
+            vertices,
+            bvh,
+            camera,
+            settings,
+            status,
+            triangles_uv,
+            triangles_world,
+            triangle_sources,
+            triangle_layers,
+            edge_capacity,
+        )
 
 
 @wp.kernel

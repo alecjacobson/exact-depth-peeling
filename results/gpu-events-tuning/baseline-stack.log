@@ -1,0 +1,10 @@
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA L40" (47 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/horde/.cache/warp/1.15.0
+Module warp_peel.kernels e25c332 load on device 'cuda:0' took 2.29 ms  (cached)
+Module warp_peel.event_kernels 4856171 load on device 'cuda:0' took 0.49 ms  (cached)
+{"n": 65536, "milliseconds": [471.1407775878906, 471.129150390625, 471.2171325683594, 471.1884765625, 471.1933288574219], "median_ms": 471.1884765625, "output": {"residual_patches": 0, "polygons": 65536, "triangles": 196608, "layers": 65536, "boundary_vertices": 196608, "depth_ties": 0, "error": 0, "peak_residual_patches": 0, "target_visits": 65536, "contour_tests": 196608, "splits": 0, "ray_groups": 1, "ray_candidate_tests": 131072, "ray_hits": 65536, "rounds": 1, "unique_contours": 3}, "load": "100 %, 2420 MiB"}

@@ -1,0 +1,58 @@
+{
+  "scene": "results/global/dragon-cache/65536/resolved.json",
+  "scope": "Four separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median.",
+  "milliseconds": {
+    "prepare": [
+      7.255104064941406,
+      7.268191814422607,
+      7.273375988006592,
+      7.253920078277588,
+      7.2903361320495605
+    ],
+    "subdivide": [
+      39.180030822753906,
+      39.74208068847656,
+      39.61945724487305,
+      39.34473419189453,
+      39.16582489013672
+    ],
+    "rank": [
+      19.07695960998535,
+      18.85424041748047,
+      18.970016479492188,
+      18.799583435058594,
+      18.857471466064453
+    ],
+    "mesh": [
+      20.944320678710938,
+      20.92211151123047,
+      20.92790412902832,
+      20.931360244750977,
+      20.91321563720703
+    ]
+  },
+  "median_ms": {
+    "prepare": 7.268191814422607,
+    "subdivide": 39.34473419189453,
+    "rank": 18.857471466064453,
+    "mesh": 20.92790412902832
+  },
+  "output": {
+    "residual_patches": 0,
+    "polygons": 129909,
+    "triangles": 517417,
+    "layers": 16,
+    "boundary_vertices": 447519,
+    "depth_ties": 0,
+    "error": 0,
+    "peak_residual_patches": 36602,
+    "target_visits": 194274,
+    "contour_tests": 308956,
+    "splits": 64365,
+    "ray_groups": 126917,
+    "ray_candidate_tests": 3664880,
+    "ray_hits": 560564,
+    "rounds": 20,
+    "unique_contours": 8977
+  }
+}

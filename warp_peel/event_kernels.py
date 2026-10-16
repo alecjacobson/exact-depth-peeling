@@ -10,181 +10,6 @@ wp.set_module_options({"enable_backward": False, "block_dim": 128})
 
 
 @wp.kernel
-def initialize(
-    original: wp.array(dtype=g.Polygon),
-    residual: wp.array(dtype=g.Polygon),
-    sources: wp.array(dtype=int),
-    cursors: wp.array(dtype=wp.vec3i),
-    status: wp.array(dtype=int),
-    condition: wp.array(dtype=int),
-    metrics: wp.array(dtype=wp.int64),
-    n: int,
-):
-    i = wp.tid()
-    if i < 8:
-        metrics[i] = wp.int64(0)
-    if i < n and original[i].n > 0 and status[9] == 0:
-        slot = wp.atomic_add(status, 0, 1)
-        if slot < residual.shape[0]:
-            residual[slot] = original[i]
-            sources[slot] = i
-            cursors[slot] = wp.vec3i(1, -1, 0)
-        else:
-            wp.atomic_or(status, 9, 4)
-    if i == 0:
-        condition[0] = int(n > 0)
-
-
-@wp.func
-def front_segment(
-    p: g.Polygon, a: wp.vec2d, b: wp.vec2d, za: wp.float64, zb: wp.float64
-):
-    low = wp.float64(0.0)
-    high = wp.float64(1.0)
-    # Clip the finite contour to this source patch, then to its front halfspace.
-    for j in range(p.n + 1):
-        da = wp.float64(0.0)
-        db = wp.float64(0.0)
-        if j < p.n:
-            u = g.point(p, j)
-            v = g.point(p, (j + 1) % p.n)
-            da = g.cross(u, v, a)
-            db = g.cross(u, v, b)
-        else:
-            da = za
-            db = zb
-        if da <= wp.float64(0.0) and db <= wp.float64(0.0):
-            return False
-        if da < wp.float64(0.0):
-            low = wp.max(low, da / (da - db))
-        if db < wp.float64(0.0):
-            high = wp.min(high, da / (da - db))
-    return high > low
-
-
-@wp.func
-def put(
-    p: g.Polygon,
-    source: int,
-    cursor: wp.vec3i,
-    out: wp.array(dtype=g.Polygon),
-    ids: wp.array(dtype=int),
-    cursors: wp.array(dtype=wp.vec3i),
-    status: wp.array(dtype=int),
-):
-    slot = wp.atomic_add(status, 1, 1)
-    if slot < out.shape[0]:
-        out[slot] = p
-        ids[slot] = source
-        cursors[slot] = cursor
-    else:
-        wp.atomic_or(status, 9, 4)
-
-
-@wp.kernel
-def subdivide(
-    residual: wp.array(dtype=g.Polygon),
-    sources: wp.array(dtype=int),
-    cursors: wp.array(dtype=wp.vec3i),
-    scores: wp.array(dtype=wp.vec3d),
-    edges: wp.array2d(dtype=wp.vec2d),
-    edge_depths: wp.array2d(dtype=wp.float64),
-    tree: g.Tree,
-    next_polys: wp.array(dtype=g.Polygon),
-    next_sources: wp.array(dtype=int),
-    next_cursors: wp.array(dtype=wp.vec3i),
-    output: wp.array(dtype=g.Polygon),
-    output_sources: wp.array(dtype=int),
-    output_layers: wp.array(dtype=int),
-    status: wp.array(dtype=int),
-    metrics: wp.array(dtype=wp.int64),
-):
-    i = wp.tid()
-    if i >= status[0] or status[9] != 0:
-        return
-    wp.atomic_add(metrics, 0, wp.int64(1))
-    p = residual[i]
-    source = sources[i]
-    node = cursors[i][0]
-    lo, hi = g.bounds(p, scores[source])
-    lo[2] = -1.0e30
-    done = bool(False)
-    for task in range(32):
-        candidate = int(-1)
-        node, candidate = g.query_next(tree, lo, hi, node)
-        if candidate < 0:
-            done = True
-            break
-        wp.atomic_add(metrics, 1, wp.int64(1))
-        a, b = edges[candidate, 0], edges[candidate, 1]
-        positive = bool(False)
-        negative = bool(False)
-        for j in range(p.n):
-            side = g.cross(a, b, g.point(p, j))
-            positive = positive or side > wp.float64(0.0)
-            negative = negative or side < wp.float64(0.0)
-        if positive and negative:
-            za = g.value(scores[source], a) - edge_depths[candidate, 0]
-            zb = g.value(scores[source], b) - edge_depths[candidate, 1]
-            if front_segment(p, a, b, za, zb):
-                left, right = g.split_edge(p, a, b)
-                if left.n > g.MAX_VERTICES or right.n > g.MAX_VERTICES:
-                    wp.atomic_or(status, 9, 1)
-                    return
-                if left.n > 0 and right.n > 0:
-                    wp.atomic_add(metrics, 2, wp.int64(1))
-                    cursor = wp.vec3i(node, -1, 0)
-                    put(
-                        left,
-                        source,
-                        cursor,
-                        next_polys,
-                        next_sources,
-                        next_cursors,
-                        status,
-                    )
-                    put(
-                        right,
-                        source,
-                        cursor,
-                        next_polys,
-                        next_sources,
-                        next_cursors,
-                        status,
-                    )
-                    return
-    if done:
-        g.save_polygon(p, source, 0, output, output_sources, output_layers, status)
-    else:
-        put(
-            p,
-            source,
-            wp.vec3i(node, -1, 0),
-            next_polys,
-            next_sources,
-            next_cursors,
-            status,
-        )
-
-
-@wp.kernel
-def copy_frontier(
-    next_polys: wp.array(dtype=g.Polygon),
-    next_sources: wp.array(dtype=int),
-    next_cursors: wp.array(dtype=wp.vec3i),
-    polygons: wp.array(dtype=g.Polygon),
-    sources: wp.array(dtype=int),
-    cursors: wp.array(dtype=wp.vec3i),
-    status: wp.array(dtype=int),
-):
-    i = wp.tid()
-    if i < status[1] and status[9] == 0:
-        polygons[i] = next_polys[i]
-        sources[i] = next_sources[i]
-        cursors[i] = next_cursors[i]
-
-
-@wp.kernel
 def advance(
     status: wp.array(dtype=int),
     condition: wp.array(dtype=int),
@@ -281,6 +106,51 @@ def contains(p: g.Polygon, x: wp.vec2d):
     return inside and p.n > 0
 
 
+@wp.func
+def store_hit(
+    source: int,
+    group: int,
+    x: wp.vec2d,
+    scores: wp.array(dtype=wp.vec3d),
+    depths: wp.array(dtype=wp.float64),
+    sources: wp.array(dtype=int),
+    hit_groups: wp.array(dtype=int),
+    status: wp.array(dtype=int),
+    metrics: wp.array(dtype=wp.int64),
+):
+    slot = wp.atomic_add(metrics, 5, wp.int64(1))
+    if slot < wp.int64(depths.shape[0]):
+        depths[int(slot)] = g.value(scores[source], x)
+        sources[int(slot)] = source
+        hit_groups[int(slot)] = group
+    else:
+        wp.atomic_or(status, 9, 1024)
+
+
+@wp.func
+def query_subtree(tree: g.Tree, lo: wp.vec3, hi: wp.vec3, node: int, end: int):
+    found = int(-1)
+    while node > 0 and node != end:
+        a, b = tree.lower[node], tree.upper[node]
+        if (
+            a[0] <= hi[0]
+            and a[1] <= hi[1]
+            and a[2] <= hi[2]
+            and b[0] >= lo[0]
+            and b[1] >= lo[1]
+            and b[2] >= lo[2]
+        ):
+            if node < tree.leaves:
+                node *= 2
+            else:
+                found = tree.ids[node - tree.leaves]
+                node = g.successor(node)
+                break
+        else:
+            node = g.successor(node)
+    return node, found
+
+
 @wp.kernel
 def ray_hits(
     points: wp.array(dtype=wp.vec2d),
@@ -290,13 +160,12 @@ def ray_hits(
     scores: wp.array(dtype=wp.vec3d),
     tree: g.Tree,
     counts: wp.array(dtype=int),
-    offsets: wp.array(dtype=int),
+    heavy: wp.array(dtype=wp.vec2i),
     depths: wp.array(dtype=wp.float64),
     sources: wp.array(dtype=int),
     hit_groups: wp.array(dtype=int),
     status: wp.array(dtype=int),
     metrics: wp.array(dtype=wp.int64),
-    write: int,
 ):
     i = wp.tid()
     if i >= status[2] or status[9] != 0:
@@ -308,28 +177,81 @@ def ray_hits(
     lo = wp.vec3(float(x[0]) - 2.0e-7, float(x[1]) - 2.0e-7, -1.0e30)
     hi = wp.vec3(float(x[0]) + 2.0e-7, float(x[1]) + 2.0e-7, 1.0e30)
     node = int(1)
-    source = int(-1)
-    count = int(0)
-    visits = int(0)
-    while node > 0:
+    count, visits = int(0), int(0)
+    for step in range(32):
         node, source = g.query_next(tree, lo, hi, node)
         if source < 0:
             break
         visits += 1
         if contains(original[source], x):
-            if write != 0:
-                slot = offsets[i] + count
-                if slot < depths.shape[0]:
-                    depths[slot] = g.value(scores[source], x)
-                    sources[slot] = source
-                    hit_groups[slot] = i
-                else:
-                    wp.atomic_or(status, 9, 1024)
+            store_hit(
+                source, i, x, scores, depths, sources, hit_groups, status, metrics
+            )
             count += 1
-    if write == 0:
-        counts[i] = count
-        wp.atomic_add(metrics, 3, wp.int64(1))
+        if node == 0:
+            break
+    counts[i] = count
+    wp.atomic_add(metrics, 3, wp.int64(1))
     wp.atomic_add(metrics, 4, wp.int64(visits))
+    if node > 0:
+        # The cursor denotes the unvisited DFS suffix. Store its first leaf;
+        # disjoint subtrees can now finish that suffix without revisiting hits.
+        while node < tree.leaves:
+            node *= 2
+        slot = int(wp.atomic_add(metrics, 8, wp.int64(1)))
+        heavy[slot] = wp.vec2i(i, node)
+
+
+@wp.kernel
+def heavy_ray_hits(
+    points: wp.array(dtype=wp.vec2d),
+    query_ids: wp.array(dtype=int),
+    original: wp.array(dtype=g.Polygon),
+    scores: wp.array(dtype=wp.vec3d),
+    tree: g.Tree,
+    counts: wp.array(dtype=int),
+    heavy: wp.array(dtype=wp.vec2i),
+    depths: wp.array(dtype=wp.float64),
+    sources: wp.array(dtype=int),
+    hit_groups: wp.array(dtype=int),
+    status: wp.array(dtype=int),
+    metrics: wp.array(dtype=wp.int64),
+    workers: int,
+):
+    if status[9] != 0:
+        return
+    parts = wp.min(8192, tree.leaves)
+    while parts > 16 and wp.int64(parts) * metrics[8] > wp.int64(65536):
+        parts //= 2
+    width = tree.leaves // parts
+    for task in range(wp.tid(), int(metrics[8]) * parts, workers):
+        job = heavy[task // parts]
+        part = task % parts
+        first = tree.leaves + part * width
+        if job[1] >= first + width:
+            continue
+        root = parts + part
+        node = root
+        if job[1] > first:
+            node = job[1]
+        end = g.successor(root)
+        i = job[0]
+        x = points[query_ids[i]]
+        lo = wp.vec3(float(x[0]) - 2.0e-7, float(x[1]) - 2.0e-7, -1.0e30)
+        hi = wp.vec3(float(x[0]) + 2.0e-7, float(x[1]) + 2.0e-7, 1.0e30)
+        count, visits = int(0), int(0)
+        while node > 0 and node != end:
+            node, source = query_subtree(tree, lo, hi, node, end)
+            if source < 0:
+                break
+            visits += 1
+            if contains(original[source], x):
+                store_hit(
+                    source, i, x, scores, depths, sources, hit_groups, status, metrics
+                )
+                count += 1
+        wp.atomic_add(counts, i, count)
+        wp.atomic_add(metrics, 4, wp.int64(visits))
 
 
 @wp.kernel
@@ -401,7 +323,8 @@ def assign_ranks(
     while low < high:
         mid = (low + high) // 2
         h = hit_ids[offsets[group] + mid]
-        if depths[h] < z or (depths[h] == z and hit_sources[h] < source):
+        hz = g.value(scores[hit_sources[h]], points[i])
+        if hz < z or (hz == z and hit_sources[h] < source):
             low = mid + 1
         else:
             high = mid
@@ -531,3 +454,27 @@ def edge_bounds(
         )
         lower[i] = wp.vec3(wp.min(a, b) - pad)
         upper[i] = wp.vec3(wp.max(a, b) + pad)
+
+
+@wp.kernel
+def mesh_tasks(
+    counts: wp.array(dtype=int),
+    offsets: wp.array(dtype=int),
+    tasks: wp.array(dtype=wp.vec2i),
+    status: wp.array(dtype=int),
+):
+    i = wp.tid()
+    if i < status[2] and status[9] == 0:
+        for edge in range(counts[i]):
+            j = offsets[i] + edge
+            if j < tasks.shape[0]:
+                tasks[j] = wp.vec2i(i, edge)
+
+
+@wp.kernel
+def hit_bucket(
+    metrics: wp.array(dtype=wp.int64),
+    condition: wp.array(dtype=int),
+    maximum: int,
+):
+    condition[0] = int(metrics[5] <= wp.int64(maximum))

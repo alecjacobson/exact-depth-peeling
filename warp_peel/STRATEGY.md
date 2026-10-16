@@ -167,3 +167,16 @@ threads, old/new GPU, warmups, repetitions, memory and concurrent load. Disclose
 numerical-policy differences. Preserve graph replay, changed-input and explicit
 capacity-failure checks. Beating CPU fast mode is the first performance gate;
 near-real-time all-layer extraction remains a separate, unachieved target.
+
+
+## Frontier and shared-rank follow-up
+
+The follow-up [implementation](EVENTS.md) moves frontier vertices into flat device
+arrays, splits long ray queries over disjoint BVH subtrees, gathers hits in one
+pass, chooses hit-sort capacity on device and schedules only actual output edges.
+It also certifies shared depth order for distinct samples whose whole bounding
+rectangle lies inside every source candidate. Failed certificates retain separate
+queries; buckets do not approximate coverage. This is a useful special case of
+shared ordering, not a general active-order sweep. Supporting-line subdivision
+and the general QK query bound remain. See the [new measurements](../results/gpu-events-tuning/README.md)
+for regression gates and remaining bottlenecks.

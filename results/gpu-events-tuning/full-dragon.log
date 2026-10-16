@@ -1,0 +1,14 @@
+results/dragon/scene.json
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA L40" (47 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/horde/.cache/warp/1.15.0
+Module warp_peel.kernels 33f8f21 load on device 'cuda:0' took 2.43 ms  (cached)
+Module warp_peel.event_kernels 7d4359b load on device 'cuda:0' took 0.39 ms  (cached)
+Module warp_peel.frontier 1129c42 load on device 'cuda:0' took 0.33 ms  (cached)
+Module warp_peel.beams f96e302 load on device 'cuda:0' took 0.32 ms  (cached)
+Module warp_peel.beams 6e9508c load on device 'cuda:0' took 63.65 ms  (cached)
+{"scene": "results/dragon/scene.json", "sources": 721510, "sha256": "a4fed8f250f6cf0e2e64b91101a259cd34b2d56e8ad9bd0b6002fd87e66f1afd", "capacities": {"frontier": 2886040, "regions": 5772080, "hits": 23088320, "vertices": 23088320, "triangles": 23088320, "rounds": 4096, "layers": 721510, "edge_vertices": 128}, "load_before": "NVIDIA L40, 570.158.01, 8 %, 16434 MiB", "processes_before": "15664, python3, 16424 MiB", "milliseconds": [323.3680419921875, 324.3632507324219, 323.6456604003906, 323.32073974609375, 323.8257141113281], "median_ms": 323.6456604003906, "output": {"residual_patches": 0, "polygons": 1383441, "triangles": 5440541, "layers": 26, "boundary_vertices": 4740856, "depth_ties": 0, "error": 0, "peak_residual_patches": 294963, "target_visits": 2098617, "contour_tests": 3885525, "splits": 661931, "ray_groups": 1344867, "ray_candidate_tests": 27037577, "ray_hits": 6867146, "rounds": 35, "unique_contours": 63591, "heavy_ray_groups": 257174, "beam_attempts": 446, "certified_beams": 0, "beam_candidate_tests": 446, "heavy_beams": 0}, "audit": {"scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.", "checked_rays": 834, "skipped_boundary_rays": 0, "rank_mismatches": 0, "maximum_hits": 20, "examples": [], "output": {"residual_patches": 0, "polygons": 1383441, "triangles": 5440541, "layers": 26, "boundary_vertices": 4740856, "depth_ties": 0, "error": 0, "peak_residual_patches": 294963, "target_visits": 2098617, "contour_tests": 3885525, "splits": 661931, "ray_groups": 1344867, "ray_candidate_tests": 27037577, "ray_hits": 6867146, "rounds": 35, "unique_contours": 63591, "heavy_ray_groups": 257174, "beam_attempts": 446, "certified_beams": 0, "beam_candidate_tests": 446, "heavy_beams": 0}}}

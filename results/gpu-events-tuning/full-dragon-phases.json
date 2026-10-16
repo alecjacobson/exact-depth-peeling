@@ -1,0 +1,63 @@
+{
+  "scene": "results/dragon/scene.json",
+  "scope": "Four separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median.",
+  "milliseconds": {
+    "prepare": [
+      57.605342864990234,
+      56.913150787353516,
+      57.99126434326172,
+      56.9986572265625,
+      57.274017333984375
+    ],
+    "subdivide": [
+      39.658302307128906,
+      39.59059143066406,
+      39.63715362548828,
+      39.57788848876953,
+      39.521278381347656
+    ],
+    "rank": [
+      134.1360626220703,
+      135.1146240234375,
+      135.0106201171875,
+      134.9390411376953,
+      134.431640625
+    ],
+    "mesh": [
+      92.32707214355469,
+      92.35772705078125,
+      92.48729705810547,
+      92.36627197265625,
+      92.73916625976562
+    ]
+  },
+  "median_ms": {
+    "prepare": 57.274017333984375,
+    "subdivide": 39.59059143066406,
+    "rank": 134.9390411376953,
+    "mesh": 92.36627197265625
+  },
+  "output": {
+    "residual_patches": 0,
+    "polygons": 1383441,
+    "triangles": 5440541,
+    "layers": 26,
+    "boundary_vertices": 4740856,
+    "depth_ties": 0,
+    "error": 0,
+    "peak_residual_patches": 294963,
+    "target_visits": 2098617,
+    "contour_tests": 3885525,
+    "splits": 661931,
+    "ray_groups": 1344867,
+    "ray_candidate_tests": 27037577,
+    "ray_hits": 6867146,
+    "rounds": 35,
+    "unique_contours": 63591,
+    "heavy_ray_groups": 257174,
+    "beam_attempts": 446,
+    "certified_beams": 0,
+    "beam_candidate_tests": 446,
+    "heavy_beams": 0
+  }
+}

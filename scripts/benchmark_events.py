@@ -26,9 +26,11 @@ def main():
     )
     ap.add_argument("--repetitions", type=int, default=5)
     ap.add_argument("--audit", action="store_true")
+    ap.add_argument("--no-share-regions", action="store_true")
     args = ap.parse_args()
     report = {
         "warp": wp.__version__,
+        "share_regions": not args.no_share_regions,
         "scope": "Full graph replay, including projection/topology, contour subdivision, shared rank queries and conforming world mesh; excludes upload/allocation/JIT/capture/readback/audit",
         "source_sha256": {
             str(p): hashlib.sha256(p.read_bytes()).hexdigest()
@@ -39,7 +41,7 @@ def main():
     for path in args.scenes:
         print(path, flush=True)
         arrays, labels, data = load_scene(path)
-        p = EventPeeler(*arrays)
+        p = EventPeeler(*arrays, share_regions=not args.no_share_regions)
         case = {
             "scene": str(path),
             "sources": len(labels),
@@ -100,7 +102,10 @@ def main():
         print(json.dumps(case), flush=True)
         del p, arrays, data
         gc.collect()
-    if any("error" in c for c in report["cases"]):
+    if any(
+        "error" in c or c.get("audit", {}).get("rank_mismatches", 0)
+        for c in report["cases"]
+    ):
         raise SystemExit(1)
 
 

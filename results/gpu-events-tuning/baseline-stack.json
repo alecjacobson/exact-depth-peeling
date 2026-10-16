@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "n": 65536,
+      "milliseconds": [
+        471.1407775878906,
+        471.129150390625,
+        471.2171325683594,
+        471.1884765625,
+        471.1933288574219
+      ],
+      "median_ms": 471.1884765625,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 65536,
+        "triangles": 196608,
+        "layers": 65536,
+        "boundary_vertices": 196608,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 65536,
+        "contour_tests": 196608,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 131072,
+        "ray_hits": 65536,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "100 %, 2420 MiB"
+    }
+  ],
+  "scope": "Complete captured pipeline; two warmups then five event timings; upload/JIT/capture/readback excluded",
+  "source_sha256": {
+    "warp_peel/__init__.py": "6102d3db78afab4e20d13db52c54e4078e6759f564dfce01619ddbf42a67b956",
+    "warp_peel/__main__.py": "f2956b12b8aaacc144d0da8ef7abef7ab1521352d4b3f72c4660900d62b8424e",
+    "warp_peel/event_kernels.py": "7341a46d334dbaa78e63322c22de4b2a297b41354e650dd5231b682d1d0b8896",
+    "warp_peel/events.py": "2cf5b3cf34d91851c0fe011822b2b6eb3e8589e2d3ae61e7b85bd974aa851258",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/kernels.py": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+    "warp_peel/solver.py": "94fab10c7aca2ec38d0ab5c3544b903a41b0561aa49dc9f6b92451d11b94533b"
+  }
+}

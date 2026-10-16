@@ -8,7 +8,9 @@ from dataclasses import dataclass
 
 import warp as wp
 
+from . import beams as b
 from . import event_kernels as e
+from . import frontier as f
 from . import kernels as g
 from .solver import Capacities, DeviceBVH, DevicePeeler
 
@@ -37,11 +39,22 @@ class EventPeeler(DevicePeeler):
     intersections. No layer-by-layer peeling and no private fragment collections.
     """
 
-    def __init__(self, vertices, faces, camera, settings, *, capacities=None, layers=0):
+    def __init__(
+        self,
+        vertices,
+        faces,
+        camera,
+        settings,
+        *,
+        capacities=None,
+        layers=0,
+        share_regions=True,
+    ):
         ec = capacities or EventCapacities.for_mesh(faces.size)
         if min(vars(ec).values()) < 1:
             raise ValueError("Event capacities must be positive")
         self.event_cap = ec
+        self.share_regions = share_regions
         super().__init__(
             vertices,
             faces,
@@ -58,6 +71,7 @@ class EventPeeler(DevicePeeler):
                 edge_vertices=ec.edge_vertices,
             ),
             layers=layers,
+            _iterative_storage=False,
         )
 
         def zeros(n, dtype):
@@ -75,9 +89,18 @@ class EventPeeler(DevicePeeler):
             zeros(self.edge_count, wp.vec3),
         )
         self.edge_bvh = DeviceBVH(self.edge_lower, self.edge_upper)
+        self.frontier_vertices = zeros((ec.frontier, 32), wp.vec2d)
+        self.frontier_sizes = zeros(ec.frontier, int)
+        self.next_vertices = zeros((ec.frontier, 32), wp.vec2d)
+        self.next_sizes = zeros(ec.frontier, int)
         self.cursors = zeros(ec.frontier, wp.vec3i)
         self.next_cursors = zeros(ec.frontier, wp.vec3i)
-        self.metrics = zeros(8, wp.int64)
+        self.metrics = zeros(13, wp.int64)
+        self.beam_roots = zeros(ec.regions, int)
+        self.beam_bounds = zeros((ec.regions, 4), wp.float64)
+        self.beam_valid = zeros(ec.regions, int)
+        self.heavy_beams = zeros(ec.regions, wp.vec2i)
+        self.heavy_queries = zeros(ec.regions, wp.vec2i)
         self.samples = zeros(ec.regions, wp.vec2d)
         self.query_keys = zeros(2 * ec.regions, wp.float64)
         self.query_ids = zeros(2 * ec.regions, int)
@@ -88,6 +111,8 @@ class EventPeeler(DevicePeeler):
         self.sort_depths = zeros(2 * ec.hits, wp.float64)
         self.sort_keys = zeros(2 * ec.hits, int)
         self.hit_ids = zeros(2 * ec.hits, int)
+        self.sort_condition = zeros(1, int)
+        self.mesh_tasks = zeros(ec.vertices, wp.vec2i)
 
     def _launch(self, kernel, dim, *args):
         block = 128 if kernel.module.name == e.__name__ else 32
@@ -98,10 +123,11 @@ class EventPeeler(DevicePeeler):
     def _prepare(self):
         super()._prepare(classify=False)
         self._launch(
-            e.initialize,
-            max(self.n, 8),
+            f.seed,
+            max(self.n, 13),
             self.original,
-            self.residual,
+            self.frontier_vertices,
+            self.frontier_sizes,
             self.residual_sources,
             self.cursors,
             self.status,
@@ -162,16 +188,18 @@ class EventPeeler(DevicePeeler):
 
     def _step(self):
         self._launch(
-            e.subdivide,
+            f.subdivide,
             self.cap.residual,
-            self.residual,
+            self.frontier_vertices,
+            self.frontier_sizes,
             self.residual_sources,
             self.cursors,
             self.scores,
             self.merged_edges,
             self.near_depths,
             self.edge_bvh.tree,
-            self.next,
+            self.next_vertices,
+            self.next_sizes,
             self.next_sources,
             self.next_cursors,
             self.output,
@@ -181,12 +209,14 @@ class EventPeeler(DevicePeeler):
             self.metrics,
         )
         self._launch(
-            e.copy_frontier,
+            f.copy_frontier,
             self.cap.residual,
-            self.next,
+            self.next_vertices,
+            self.next_sizes,
             self.next_sources,
             self.next_cursors,
-            self.residual,
+            self.frontier_vertices,
+            self.frontier_sizes,
             self.residual_sources,
             self.cursors,
             self.status,
@@ -241,15 +271,75 @@ class EventPeeler(DevicePeeler):
             wp.utils.radix_sort_pairs(
                 self.query_keys, self.query_ids, count=self.cap.polygons
             )
-        self._launch(
-            e.group_queries,
-            self.cap.polygons,
-            self.samples,
-            self.query_ids,
-            self.groups,
-            self.counts,
-            self.status,
-        )
+        if self.share_regions:
+            self._launch(
+                b.keys,
+                self.cap.polygons,
+                self.samples,
+                self.query_keys,
+                self.query_ids,
+                self.status,
+            )
+            wp.utils.radix_sort_pairs(
+                self.query_keys, self.query_ids, count=self.cap.polygons
+            )
+            self._launch(b.reset, self.cap.polygons, self.beam_bounds, self.beam_valid)
+            self._launch(
+                b.group,
+                self.cap.polygons,
+                self.samples,
+                self.query_ids,
+                self.groups,
+                self.beam_roots,
+                self.counts,
+                self.beam_bounds,
+                self.status,
+            )
+            self._launch(
+                b.certify,
+                self.cap.polygons,
+                self.query_ids,
+                self.beam_roots,
+                self.beam_bounds,
+                self.beam_valid,
+                self.original,
+                self.source_bvh.tree,
+                self.heavy_beams,
+                self.status,
+                self.metrics,
+            )
+            self._launch(
+                b.certify_heavy,
+                8192,
+                self.beam_bounds,
+                self.beam_valid,
+                self.original,
+                self.source_bvh.tree,
+                self.heavy_beams,
+                self.status,
+                self.metrics,
+                8192,
+            )
+            self._launch(
+                b.apply,
+                self.cap.polygons,
+                self.query_ids,
+                self.beam_roots,
+                self.groups,
+                self.beam_valid,
+                self.status,
+                self.metrics,
+            )
+        else:
+            self._launch(
+                e.group_queries,
+                self.cap.polygons,
+                self.samples,
+                self.query_ids,
+                self.groups,
+                self.counts,
+                self.status,
+            )
         self._launch(
             e.ray_hits,
             self.cap.polygons,
@@ -260,13 +350,29 @@ class EventPeeler(DevicePeeler):
             self.scores,
             self.source_bvh.tree,
             self.counts,
-            self.offsets,
+            self.heavy_queries,
             self.hit_depths,
             self.hit_sources,
             self.hit_groups,
             self.status,
             self.metrics,
-            0,
+        )
+        self._launch(
+            e.heavy_ray_hits,
+            8192,
+            self.samples,
+            self.query_ids,
+            self.original,
+            self.scores,
+            self.source_bvh.tree,
+            self.counts,
+            self.heavy_queries,
+            self.hit_depths,
+            self.hit_sources,
+            self.hit_groups,
+            self.status,
+            self.metrics,
+            8192,
         )
         self._scan()
         self._launch(
@@ -277,41 +383,11 @@ class EventPeeler(DevicePeeler):
             self.metrics,
             self.event_cap.hits,
         )
-        self._launch(
-            e.ray_hits,
-            self.cap.polygons,
-            self.samples,
-            self.query_ids,
-            self.groups,
-            self.original,
-            self.scores,
-            self.source_bvh.tree,
-            self.counts,
-            self.offsets,
-            self.hit_depths,
-            self.hit_sources,
-            self.hit_groups,
-            self.status,
-            self.metrics,
-            1,
-        )
-        # Stable source -> depth -> group sorting gives lexicographic
-        # (group, depth, source), including deterministic equal-depth ties.
-        for stage in range(3):
-            self._launch(
-                e.hit_keys,
-                self.event_cap.hits,
-                self.hit_depths,
-                self.hit_sources,
-                self.hit_groups,
-                self.sort_depths,
-                self.sort_keys,
-                self.hit_ids,
-                self.metrics,
-                stage,
-            )
-            keys = self.sort_depths if stage == 1 else self.sort_keys
-            wp.utils.radix_sort_pairs(keys, self.hit_ids, count=self.event_cap.hits)
+        if self.device.is_capturing:
+            self._sort_bucket(0, len(self._hit_buckets()) - 1)
+        else:
+            # Prime the largest native scratch allocation before capture.
+            self._sort_hits(self.event_cap.hits)
         self._launch(
             e.assign_ranks,
             self.cap.polygons,
@@ -331,11 +407,106 @@ class EventPeeler(DevicePeeler):
             self.all_layers,
         )
 
+    def _hit_buckets(self):
+        sizes = []
+        size = 256
+        while size < self.event_cap.hits:
+            sizes.append(size)
+            size *= 2
+        return [*sizes, self.event_cap.hits]
+
+    def _sort_bucket(self, low, high):
+        sizes = self._hit_buckets()
+        if low == high:
+            self._sort_hits(sizes[low])
+            return
+        mid = (low + high) // 2
+        self._launch(e.hit_bucket, 1, self.metrics, self.sort_condition, sizes[mid])
+        wp.capture_if(
+            self.sort_condition,
+            lambda: self._sort_bucket(low, mid),
+            lambda: self._sort_bucket(mid + 1, high),
+        )
+
+    def _sort_hits(self, size):
+        # Stable source -> depth -> group sorting gives lexicographic
+        # (group, depth, source), including deterministic equal-depth ties.
+        for stage in range(3):
+            self._launch(
+                e.hit_keys,
+                size,
+                self.hit_depths,
+                self.hit_sources,
+                self.hit_groups,
+                self.sort_depths,
+                self.sort_keys,
+                self.hit_ids,
+                self.metrics,
+                stage,
+            )
+            keys = self.sort_depths if stage == 1 else self.sort_keys
+            wp.utils.radix_sort_pairs(keys, self.hit_ids, count=size)
+
+    def _mesh(self):
+        self._launch(
+            g.vertex_counts, self.cap.polygons, self.output, self.status, self.counts
+        )
+        self._scan()
+        self._launch(
+            g.scatter_vertices,
+            self.cap.polygons,
+            self.output,
+            self.output_layers,
+            self.offsets,
+            self.status,
+            self.boundary_vertices,
+            self.boundary_layers,
+        )
+        self._launch(
+            e.mesh_tasks,
+            self.cap.polygons,
+            self.counts,
+            self.offsets,
+            self.mesh_tasks,
+            self.status,
+        )
+        self._launch(
+            g.point_bounds,
+            self.cap.vertices,
+            self.boundary_vertices,
+            self.boundary_layers,
+            self.status,
+            self.point_lower,
+            self.point_upper,
+        )
+        self.point_bvh.rebuild()
+        self._launch(
+            g.mesh_edge_tasks,
+            self.cap.vertices,
+            self.mesh_tasks,
+            self.output,
+            self.output_sources,
+            self.output_layers,
+            self.scores,
+            self.boundary_vertices,
+            self.point_bvh.tree,
+            self.camera,
+            self.settings,
+            self.status,
+            self.triangles_uv,
+            self.triangles_world,
+            self.triangle_sources,
+            self.triangle_layers,
+            self.cap.edge_vertices,
+        )
+
     def warmup(self):
         if self.device.is_capturing:
             raise RuntimeError("Warm-up must run before graph capture")
         wp.load_module(module=g, device=self.device)
         wp.load_module(module=e, device=self.device)
+        wp.load_module(module=f, device=self.device)
+        wp.load_module(module=b, device=self.device)
         with wp.ScopedStream(self.stream):
             self._prepare()
             self._step()
@@ -376,6 +547,11 @@ class EventPeeler(DevicePeeler):
                     "ray_hits",
                     "rounds",
                     "unique_contours",
+                    "heavy_ray_groups",
+                    "beam_attempts",
+                    "certified_beams",
+                    "beam_candidate_tests",
+                    "heavy_beams",
                 ),
                 map(int, m),
             )

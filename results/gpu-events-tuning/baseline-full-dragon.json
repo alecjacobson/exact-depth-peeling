@@ -1,0 +1,58 @@
+{
+  "warp": "1.15.0",
+  "scope": "Full graph replay, including projection/topology, contour subdivision, shared rank queries and conforming world mesh; excludes upload/allocation/JIT/capture/readback/audit",
+  "source_sha256": {
+    "warp_peel/__init__.py": "6102d3db78afab4e20d13db52c54e4078e6759f564dfce01619ddbf42a67b956",
+    "warp_peel/__main__.py": "f2956b12b8aaacc144d0da8ef7abef7ab1521352d4b3f72c4660900d62b8424e",
+    "warp_peel/event_kernels.py": "7341a46d334dbaa78e63322c22de4b2a297b41354e650dd5231b682d1d0b8896",
+    "warp_peel/events.py": "2cf5b3cf34d91851c0fe011822b2b6eb3e8589e2d3ae61e7b85bd974aa851258",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/kernels.py": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+    "warp_peel/solver.py": "94fab10c7aca2ec38d0ab5c3544b903a41b0561aa49dc9f6b92451d11b94533b"
+  },
+  "cases": [
+    {
+      "scene": "results/dragon/scene.json",
+      "sources": 721510,
+      "sha256": "a4fed8f250f6cf0e2e64b91101a259cd34b2d56e8ad9bd0b6002fd87e66f1afd",
+      "capacities": {
+        "frontier": 2886040,
+        "regions": 5772080,
+        "hits": 23088320,
+        "vertices": 23088320,
+        "triangles": 23088320,
+        "rounds": 4096,
+        "layers": 721510,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 20 %, 16338 MiB",
+      "processes_before": "16622, python3, 16328 MiB",
+      "milliseconds": [
+        896.8572998046875,
+        896.1663208007812,
+        896.568359375,
+        896.927490234375,
+        896.3136596679688
+      ],
+      "median_ms": 896.568359375,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 1383441,
+        "triangles": 5440541,
+        "layers": 26,
+        "boundary_vertices": 4740856,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 279562,
+        "target_visits": 2045675,
+        "contour_tests": 3885525,
+        "splits": 661931,
+        "ray_groups": 1344867,
+        "ray_candidate_tests": 54075154,
+        "ray_hits": 6867146,
+        "rounds": 35,
+        "unique_contours": 63591
+      }
+    }
+  ]
+}

@@ -12,7 +12,8 @@ for performance. The near-real-time goal is not yet achieved.
 
 The experimental **`EventPeeler`** now implements contour subdivision and shared
 ray sorting without repeated layer passes. Use `--method events`; read its
-[algorithm and limitations](EVENTS.md) and [new measurements](../results/gpu-events/README.md).
+[algorithm and limitations](EVENTS.md), [latest measurements](../results/gpu-events-tuning/README.md),
+and [initial CPU/GPU comparison](../results/gpu-events/README.md).
 The [strategy review](STRATEGY.md) records the motivation and remaining goals.
 
 ## Run

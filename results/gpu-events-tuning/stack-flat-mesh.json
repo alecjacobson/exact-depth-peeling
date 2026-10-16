@@ -1,0 +1,59 @@
+{
+  "scene": "stack:65536",
+  "scope": "Four separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median.",
+  "milliseconds": {
+    "prepare": [
+      6.748479843139648,
+      6.730400085449219,
+      6.72819185256958,
+      6.736544132232666,
+      6.703648090362549
+    ],
+    "subdivide": [
+      1.177024006843567,
+      1.1840319633483887,
+      1.1762239933013916,
+      1.1831680536270142,
+      1.1939200162887573
+    ],
+    "rank": [
+      4.2106242179870605,
+      4.215648174285889,
+      4.220448017120361,
+      4.195040225982666,
+      4.2106242179870605
+    ],
+    "mesh": [
+      1.5249279737472534,
+      1.5175360441207886,
+      1.5183680057525635,
+      1.529695987701416,
+      1.5099200010299683
+    ]
+  },
+  "median_ms": {
+    "prepare": 6.730400085449219,
+    "subdivide": 1.1831680536270142,
+    "rank": 4.2106242179870605,
+    "mesh": 1.5183680057525635
+  },
+  "output": {
+    "residual_patches": 0,
+    "polygons": 65536,
+    "triangles": 196608,
+    "layers": 65536,
+    "boundary_vertices": 196608,
+    "depth_ties": 0,
+    "error": 0,
+    "peak_residual_patches": 0,
+    "target_visits": 65536,
+    "contour_tests": 196608,
+    "splits": 0,
+    "ray_groups": 1,
+    "ray_candidate_tests": 65536,
+    "ray_hits": 65536,
+    "rounds": 1,
+    "unique_contours": 3,
+    "heavy_ray_groups": 1
+  }
+}

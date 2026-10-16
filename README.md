@@ -45,22 +45,26 @@ preallocated pools report failures explicitly, and realistic cases require
 substantial memory. The existing Blender images below show the recorded CPU
 outputs; they are not relabelled as GPU results.
 
-The experimental **`EventPeeler`** now takes **87 ms for the 65,544-face dragon**
-and **54 ms for the 102,400-face sculpted mesh**, including all layers and conforming
-world-space mesh output on an L40. Fresh four-thread CPU fast timings are 1,630 ms
-and 192 ms respectively; CPU timings exclude projection/topology, unlike GPU.
-These are shared-host measurements, not a reserved-hardware comparison.
+The experimental **`EventPeeler`** now takes **27.3 ms for the 65,544-face dragon**
+and **21.2 ms for the 102,400-face sculpted mesh**, including all layers and
+conforming world-space output on an L40. Fresh timings of the previous event
+implementation are 86.8 ms and 53.9 ms: **3.17× and 2.54× faster** respectively.
+These are shared-host device timings, excluding upload/readback/rendering.
+The [latest report](results/gpu-events-tuning/README.md) records the algorithm
+changes, regression checks and remaining gaps. The [earlier CPU comparison](results/gpu-events/README.md)
+retains four-thread fast-mode timings of 1,630 ms and 192 ms, measured separately.
 
 ```bash
 python3 -m warp_peel results/global/dragon-cache/65536/resolved.json --method events --out layers.npz
 ```
 
 This route uses finite mesh contours to guide parallel convex subdivision, groups
-coincident contours, then groups identical interior query locations and sorts
-their source hits to assign all ranks together. It retains analytic polygons and
+coincident contours, then shares interior rank queries at identical locations
+or across conservatively certified rectangles. Long ray queries split into
+parallel subtree tasks, and shared hit orders assign all ranks together. It retains analytic polygons and
 original source planes without layer-by-layer subtraction. The exact CPU routes
 remain the oracles. It still extends contour supporting lines, and sharing depth
-order across different query locations remains unfinished. Read the
+order across general changing footprints remains unfinished. Read the
 [implemented algorithm](warp_peel/EVENTS.md), [full CPU/GPU comparison](results/gpu-events/README.md),
 and [strategy review](warp_peel/STRATEGY.md). The original GPU route remains the
 default baseline; select the new experimental route explicitly with `--method events`.
@@ -179,6 +183,13 @@ though they may be invisible at GIF resolution.
 | Whole-source ranks / sources needing clipping | 429,544 / 291,965 |
 | Retained contour segments | 63,593 |
 | Exact benchmark attempt | 180 s process timeout; no complete timing record |
+
+The current experimental GPU event route extracts this same full scene in
+**323.6 ms**, including projection/topology and conforming 3D output: **26 layers,
+5,440,541 triangles**, with zero mismatches across 834 independently audited rays.
+It remains finite precision and the sampled audit is not a full certificate.
+See the [GPU follow-up report](results/gpu-events-tuning/README.md); the Blender
+images above retain the recorded CPU output described here.
 
 This example **does not meet the real-time target**. The surface has many projected
 silhouettes, and clipping/triangulation substantially expands the output. CPU

@@ -100,7 +100,17 @@ class DevicePeeler:
     Readback is an explicit, optional consumer operation, never used by extraction.
     """
 
-    def __init__(self, vertices, faces, camera, settings, *, capacities=None, layers=0):
+    def __init__(
+        self,
+        vertices,
+        faces,
+        camera,
+        settings,
+        *,
+        capacities=None,
+        layers=0,
+        _iterative_storage=True,
+    ):
         self.device = vertices.device
         if not self.device.is_cuda:
             raise ValueError(
@@ -155,9 +165,10 @@ class DevicePeeler:
         self.facing = zeros(max(1, self.n), int)
         self.clipped = zeros(max(1, self.n), int)
         self.ranks = zeros(max(1, self.n), int)
-        self.residual = zeros(self.cap.residual, k.Polygon)
+        residual_storage = self.cap.residual if _iterative_storage else 1
+        self.residual = zeros(residual_storage, k.Polygon)
         self.residual_sources = zeros(self.cap.residual, int)
-        self.next = zeros(self.cap.residual, k.Polygon)
+        self.next = zeros(residual_storage, k.Polygon)
         self.next_sources = zeros(self.cap.residual, int)
         self.output = zeros(self.cap.polygons, k.Polygon)
         self.output_sources = zeros(self.cap.polygons, int)
@@ -187,8 +198,8 @@ class DevicePeeler:
             zeros(max(1, self.n), wp.vec3),
         )
         self.residual_lower, self.residual_upper = (
-            zeros(self.cap.residual, wp.vec3),
-            zeros(self.cap.residual, wp.vec3),
+            zeros(residual_storage, wp.vec3),
+            zeros(residual_storage, wp.vec3),
         )
         self.point_lower, self.point_upper = (
             zeros(self.cap.vertices, wp.vec3),
@@ -271,18 +282,20 @@ class DevicePeeler:
                 self.masks,
                 3 * self.n,
             )
-            self._launch(
-                k.contour_bounds,
-                self.n,
-                self.original,
-                self.masks,
-                self.facing,
-                self.clipped,
-                self.contour_lower,
-                self.contour_upper,
-            )
+            if classify:
+                self._launch(
+                    k.contour_bounds,
+                    self.n,
+                    self.original,
+                    self.masks,
+                    self.facing,
+                    self.clipped,
+                    self.contour_lower,
+                    self.contour_upper,
+                )
         self.source_bvh.rebuild()
-        self.contour_bvh.rebuild()
+        if classify:
+            self.contour_bvh.rebuild()
         if self.n and classify:
             self._launch(
                 k.classify,

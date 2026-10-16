@@ -1,0 +1,14 @@
+Warp 1.15.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA L40" (47 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/horde/.cache/warp/1.15.0
+Module warp_peel.kernels 33f8f21 load on device 'cuda:0' took 2.35 ms  (cached)
+Module warp_peel.event_kernels 7d4359b load on device 'cuda:0' took 0.39 ms  (cached)
+Module warp_peel.frontier 1129c42 load on device 'cuda:0' took 0.32 ms  (cached)
+Module warp_peel.beams f96e302 load on device 'cuda:0' took 0.32 ms  (cached)
+{"n": 64, "milliseconds": [1.2854080200195312, 1.2836159467697144, 1.2828799486160278, 1.2828480005264282, 1.2827199697494507], "median_ms": 1.2828799486160278, "output": {"residual_patches": 0, "polygons": 64, "triangles": 192, "layers": 64, "boundary_vertices": 192, "depth_ties": 0, "error": 0, "peak_residual_patches": 49, "target_visits": 164, "contour_tests": 4224, "splits": 0, "ray_groups": 64, "ray_candidate_tests": 4096, "ray_hits": 4096, "rounds": 5, "unique_contours": 192, "heavy_ray_groups": 64, "beam_attempts": 0, "certified_beams": 0, "beam_candidate_tests": 0, "heavy_beams": 0}, "load": "6 %, 18061 MiB"}
+{"n": 256, "milliseconds": [3.343008041381836, 3.3383359909057617, 3.3475840091705322, 3.341599941253662, 3.3455679416656494], "median_ms": 3.343008041381836, "output": {"residual_patches": 0, "polygons": 256, "triangles": 768, "layers": 256, "boundary_vertices": 768, "depth_ties": 0, "error": 0, "peak_residual_patches": 241, "target_visits": 2192, "contour_tests": 66048, "splits": 0, "ray_groups": 256, "ray_candidate_tests": 65536, "ray_hits": 65536, "rounds": 17, "unique_contours": 768, "heavy_ray_groups": 256, "beam_attempts": 0, "certified_beams": 0, "beam_candidate_tests": 0, "heavy_beams": 0}, "load": "6 %, 18065 MiB"}
+{"n": 1024, "milliseconds": [13.724063873291016, 13.694432258605957, 13.68115234375, 13.707327842712402, 13.717375755310059], "median_ms": 13.707327842712402, "output": {"residual_patches": 0, "polygons": 1024, "triangles": 3072, "layers": 1024, "boundary_vertices": 3072, "depth_ties": 0, "error": 0, "peak_residual_patches": 1009, "target_visits": 33344, "contour_tests": 1050624, "splits": 0, "ray_groups": 1024, "ray_candidate_tests": 1048576, "ray_hits": 1048576, "rounds": 65, "unique_contours": 3072, "heavy_ray_groups": 1024, "beam_attempts": 0, "certified_beams": 0, "beam_candidate_tests": 0, "heavy_beams": 0}, "load": "25 %, 18135 MiB"}

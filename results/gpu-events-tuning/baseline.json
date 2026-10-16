@@ -1,0 +1,359 @@
+{
+  "warp": "1.15.0",
+  "scope": "Full graph replay, including projection/topology, contour subdivision, shared rank queries and conforming world mesh; excludes upload/allocation/JIT/capture/readback/audit",
+  "source_sha256": {
+    "warp_peel/__init__.py": "6102d3db78afab4e20d13db52c54e4078e6759f564dfce01619ddbf42a67b956",
+    "warp_peel/__main__.py": "f2956b12b8aaacc144d0da8ef7abef7ab1521352d4b3f72c4660900d62b8424e",
+    "warp_peel/event_kernels.py": "7341a46d334dbaa78e63322c22de4b2a297b41354e650dd5231b682d1d0b8896",
+    "warp_peel/events.py": "2cf5b3cf34d91851c0fe011822b2b6eb3e8589e2d3ae61e7b85bd974aa851258",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/kernels.py": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+    "warp_peel/solver.py": "94fab10c7aca2ec38d0ab5c3544b903a41b0561aa49dc9f6b92451d11b94533b"
+  },
+  "cases": [
+    {
+      "scene": "results/global/dragon-cache/1024/resolved.json",
+      "sources": 1068,
+      "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+      "capacities": {
+        "frontier": 4272,
+        "regions": 8544,
+        "hits": 34176,
+        "vertices": 34176,
+        "triangles": 34176,
+        "rounds": 4096,
+        "layers": 1068,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 5 %, 466 MiB",
+      "processes_before": "15368, python3, 456 MiB",
+      "milliseconds": [
+        8.14419174194336,
+        8.1080961227417,
+        8.149439811706543,
+        8.237631797790527,
+        8.193504333496094
+      ],
+      "median_ms": 8.149439811706543,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 2563,
+        "triangles": 10298,
+        "layers": 8,
+        "boundary_vertices": 8846,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 880,
+        "target_visits": 4058,
+        "contour_tests": 8762,
+        "splits": 1495,
+        "ray_groups": 2447,
+        "ray_candidate_tests": 47596,
+        "ray_hits": 8870,
+        "rounds": 11,
+        "unique_contours": 363
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/2048/resolved.json",
+      "sources": 2088,
+      "sha256": "873781e473323d2d4164631efbb0959f9aa0791c90ac9fd35133de9fab7b985e",
+      "capacities": {
+        "frontier": 8352,
+        "regions": 16704,
+        "hits": 66816,
+        "vertices": 66816,
+        "triangles": 66816,
+        "rounds": 4096,
+        "layers": 2088,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 57 %, 1062 MiB",
+      "processes_before": "15368, python3, 1052 MiB",
+      "milliseconds": [
+        9.320575714111328,
+        9.215776443481445,
+        9.149727821350098,
+        9.247712135314941,
+        9.19660758972168
+      ],
+      "median_ms": 9.215776443481445,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 5263,
+        "triangles": 21519,
+        "layers": 12,
+        "boundary_vertices": 18385,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 1792,
+        "target_visits": 8438,
+        "contour_tests": 17109,
+        "splits": 3175,
+        "ray_groups": 4980,
+        "ray_candidate_tests": 103770,
+        "ray_hits": 18964,
+        "rounds": 11,
+        "unique_contours": 646
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/4096/resolved.json",
+      "sources": 4108,
+      "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+      "capacities": {
+        "frontier": 16432,
+        "regions": 32864,
+        "hits": 131456,
+        "vertices": 131456,
+        "triangles": 131456,
+        "rounds": 4096,
+        "layers": 4108,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 35 %, 1126 MiB",
+      "processes_before": "15368, python3, 1116 MiB",
+      "milliseconds": [
+        12.030143737792969,
+        12.011584281921387,
+        12.072928428649902,
+        12.050432205200195,
+        12.035327911376953
+      ],
+      "median_ms": 12.035327911376953,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 10719,
+        "triangles": 44724,
+        "layers": 12,
+        "boundary_vertices": 37847,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 3756,
+        "target_visits": 17330,
+        "contour_tests": 32976,
+        "splits": 6611,
+        "ray_groups": 10364,
+        "ray_candidate_tests": 239956,
+        "ray_hits": 41394,
+        "rounds": 14,
+        "unique_contours": 1157
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/8192/resolved.json",
+      "sources": 8200,
+      "sha256": "38e654603de2e3807e7d1e6554472ec31c471454df6703a442c5bc6c9c6e2f2e",
+      "capacities": {
+        "frontier": 32800,
+        "regions": 65600,
+        "hits": 262400,
+        "vertices": 262400,
+        "triangles": 262400,
+        "rounds": 4096,
+        "layers": 8200,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 0 %, 1222 MiB",
+      "processes_before": "15368, python3, 1212 MiB",
+      "milliseconds": [
+        15.557632446289062,
+        15.591551780700684,
+        15.588768005371094,
+        15.631936073303223,
+        15.683232307434082
+      ],
+      "median_ms": 15.591551780700684,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 19969,
+        "triangles": 82578,
+        "layers": 12,
+        "boundary_vertices": 70131,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 6958,
+        "target_visits": 31738,
+        "contour_tests": 56668,
+        "splits": 11769,
+        "ray_groups": 19360,
+        "ray_candidate_tests": 464768,
+        "ray_hits": 79522,
+        "rounds": 14,
+        "unique_contours": 1973
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/16384/resolved.json",
+      "sources": 16400,
+      "sha256": "9eb9167c677f6c122da1612e6bc5bdc9ce0b9deebcda6ddd98d0e053839af116",
+      "capacities": {
+        "frontier": 65600,
+        "regions": 131200,
+        "hits": 524800,
+        "vertices": 524800,
+        "triangles": 524800,
+        "rounds": 4096,
+        "layers": 16400,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 0 %, 1414 MiB",
+      "processes_before": "15368, python3, 1404 MiB",
+      "milliseconds": [
+        29.624000549316406,
+        29.69024085998535,
+        29.755136489868164,
+        29.523296356201172,
+        29.4769287109375
+      ],
+      "median_ms": 29.624000549316406,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 37316,
+        "triangles": 152832,
+        "layers": 14,
+        "boundary_vertices": 130444,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 12374,
+        "target_visits": 58232,
+        "contour_tests": 99792,
+        "splits": 20916,
+        "ray_groups": 36278,
+        "ray_candidate_tests": 932818,
+        "ray_hits": 154214,
+        "rounds": 15,
+        "unique_contours": 3293
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/32768/resolved.json",
+      "sources": 32792,
+      "sha256": "e1e4c3757a1e29d5d37abc53581d80248775fe07f8221dfeb44242bda3fa92b3",
+      "capacities": {
+        "frontier": 131168,
+        "regions": 262336,
+        "hits": 1049344,
+        "vertices": 1049344,
+        "triangles": 1049344,
+        "rounds": 4096,
+        "layers": 32792,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 0 %, 1798 MiB",
+      "processes_before": "15368, python3, 1788 MiB",
+      "milliseconds": [
+        49.75120162963867,
+        49.92377471923828,
+        49.81625747680664,
+        49.382240295410156,
+        49.59811019897461
+      ],
+      "median_ms": 49.75120162963867,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 70357,
+        "triangles": 285128,
+        "layers": 16,
+        "boundary_vertices": 244637,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 21534,
+        "target_visits": 107922,
+        "contour_tests": 178211,
+        "splits": 37565,
+        "ray_groups": 68618,
+        "ray_candidate_tests": 1882192,
+        "ray_hits": 299786,
+        "rounds": 16,
+        "unique_contours": 5442
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/65536/resolved.json",
+      "sources": 65544,
+      "sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+      "capacities": {
+        "frontier": 262176,
+        "regions": 524352,
+        "hits": 2097408,
+        "vertices": 2097408,
+        "triangles": 2097408,
+        "rounds": 4096,
+        "layers": 65544,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 0 %, 2566 MiB",
+      "processes_before": "15368, python3, 2556 MiB",
+      "milliseconds": [
+        86.56166076660156,
+        86.90620422363281,
+        87.11849975585938,
+        86.76799774169922,
+        86.75017547607422
+      ],
+      "median_ms": 86.76799774169922,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 129909,
+        "triangles": 517417,
+        "layers": 16,
+        "boundary_vertices": 447519,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 36602,
+        "target_visits": 194274,
+        "contour_tests": 308956,
+        "splits": 64365,
+        "ray_groups": 126917,
+        "ray_candidate_tests": 3664880,
+        "ray_hits": 560564,
+        "rounds": 20,
+        "unique_contours": 8977
+      }
+    },
+    {
+      "scene": "results/large/scenes/sculpted-102400.json",
+      "sources": 102400,
+      "sha256": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e",
+      "capacities": {
+        "frontier": 409600,
+        "regions": 819200,
+        "hits": 3276800,
+        "vertices": 3276800,
+        "triangles": 3276800,
+        "rounds": 4096,
+        "layers": 102400,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 1 %, 3206 MiB",
+      "processes_before": "15368, python3, 3196 MiB",
+      "milliseconds": [
+        53.866912841796875,
+        54.003360748291016,
+        53.7400016784668,
+        53.60771179199219,
+        53.965599060058594
+      ],
+      "median_ms": 53.866912841796875,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 105195,
+        "triangles": 320895,
+        "layers": 10,
+        "boundary_vertices": 317968,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 2194,
+        "target_visits": 107990,
+        "contour_tests": 32662,
+        "splits": 2795,
+        "ray_groups": 105105,
+        "ray_candidate_tests": 1734842,
+        "ray_hits": 231426,
+        "rounds": 10,
+        "unique_contours": 1099
+      }
+    }
+  ]
+}
