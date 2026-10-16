@@ -28,13 +28,14 @@ def advance(
 @wp.kernel
 def samples(
     polygons: wp.array(dtype=g.Polygon),
+    representatives: wp.array(dtype=int),
     points: wp.array(dtype=wp.vec2d),
     status: wp.array(dtype=int),
 ):
     i = wp.tid()
     x = wp.vec2d(1.0e30)
     if i < status[2] and status[9] == 0:
-        p = polygons[i]
+        p = polygons[representatives[i]]
         anchor = int(0)
         for j in range(1, p.n):
             a, b = g.point(p, j), g.point(p, anchor)
@@ -298,6 +299,7 @@ def hit_keys(
 @wp.kernel
 def assign_ranks(
     points: wp.array(dtype=wp.vec2d),
+    representatives: wp.array(dtype=int),
     groups: wp.array(dtype=int),
     counts: wp.array(dtype=int),
     offsets: wp.array(dtype=int),
@@ -315,7 +317,7 @@ def assign_ranks(
     i = wp.tid()
     if i >= status[2] or status[9] != 0:
         return
-    source = sources[i]
+    source = sources[representatives[i]]
     z = g.value(scores[source], points[i])
     group = groups[i]
     low = int(0)
@@ -478,3 +480,10 @@ def hit_bucket(
     maximum: int,
 ):
     condition[0] = int(metrics[5] <= wp.int64(maximum))
+
+
+@wp.kernel
+def query_bucket(
+    status: wp.array(dtype=int), condition: wp.array(dtype=int), size: int
+):
+    condition[0] = int(status[2] <= size)

@@ -9,7 +9,11 @@ the fixture and identical-stack gates and has [measured results](../results/gpu-
 It implements contour-guided supporting-line subdivision and exactly shared ray
 locations, rather than the full finite-segment event arrangement or general
 shared ordering proposed below. The original review is retained to distinguish
-those remaining requirements from the completed prototype.
+those remaining requirements from the completed prototype. The
+[connectivity follow-up](../results/gpu-events-components/README.md) now propagates
+ranks across certified patch adjacencies, including internal mesh edges. It
+reduces ray work but has mixed total-time results; finite-boundary construction
+and general shared ordering remain incomplete.
 
 ## Diagnosis
 

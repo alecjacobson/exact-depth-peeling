@@ -1,0 +1,19 @@
+{
+  "scope": "Fresh coincident-footprint stack runs; scripts check every output rank. Timing guard 15%, counts must match. Not a geometric certificate.",
+  "maximum_ratio": 1.15,
+  "cases": [
+    {
+      "n": 1024,
+      "baseline_ms": 1.4363839626312256,
+      "candidate_ms": 1.3138879537582397,
+      "ratio": 0.9147191753320659
+    },
+    {
+      "n": 65536,
+      "baseline_ms": 9.058048248291016,
+      "candidate_ms": 10.0829439163208,
+      "ratio": 1.1131475169855882
+    }
+  ],
+  "failures": []
+}

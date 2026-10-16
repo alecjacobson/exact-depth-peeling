@@ -2,8 +2,10 @@
 
 `EventPeeler` is a separate pure-Warp GPU route. It computes all ranks without
 iterative depth peeling and keeps the existing exact CPU solvers as references.
-The [latest measurements](../results/gpu-events-tuning/README.md) compare this
-implementation with the first event prototype. The [original comparison](../results/gpu-events/README.md)
+The [latest measurements](../results/gpu-events-components/README.md) compare
+certified patch connectivity with the previous event solver. The
+[earlier tuning report](../results/gpu-events-tuning/README.md) compares that
+solver with the first event prototype. The [original comparison](../results/gpu-events/README.md)
 also includes iterative GPU and CPU fast mode. It remains finite precision.
 
 ```bash
@@ -50,8 +52,30 @@ shapes, capacities and addresses must stay fixed.
    A captured device conditional loop processes the frontier until empty. There
    are no private growing fragment collections or by-value polygon matrices in
    the splitting loop. Finished patches convert to the common output format.
-4. Choose a canonical interior sample per completed patch and group identical
-   coordinates. Also propose groups using 32-by-32 image-space buckets. The grid
+4. Build patch-edge adjacencies and propagate ranks through certified connected
+   regions, including across internal source mesh edges. A device conditional
+   skips this pass (and optional coalescing) when there were no subdivisions and
+   the source topology contains no internal manifold edges. Such input has no
+   possible patch adjacencies, as in disconnected unsplit triangle stacks. A bounded hash table
+   proposes reversed endpoint matches; full endpoint equality and a topological
+   owner key establish the match. Source-local cuts use their source ID, while
+   shared manifold edges use their canonical welded vertex pair. This prevents
+   deep projected stacks from forming one hash collision chain. Open, silhouette,
+   non-manifold and clipped-source boundaries do not connect across sources.
+   A contour-BVH query at the shared edge midpoint rejects connections touched
+   by any nearer or equal-depth contour, using conservative depth padding and
+   the geometric cleanup tolerance. On resolved input, a clear local crossing
+   connects two constant-rank patches. Monotone device union-find selects one
+   representative patch per connected component. Hash probing is capped at 64;
+   a missed match loses only the optimization. Endpoint arithmetic can also miss
+   valid matches, and unmatched partial edges are not noded for this pass.
+5. Choose a canonical interior sample of each component's representative and
+   share it among that component's patches. Group identical coordinates. Device
+   graph branches select a sufficient power-of-two query-sort length instead of
+   sorting the entire reserved pool. The bucket is based on completed patch
+   count: samples still occupy one slot per patch, including duplicates; components
+   are not compacted before sorting. Also propose groups using 32-by-32
+   image-space buckets. The grid
    only proposes sharing; it never clips geometry or approximates coverage.
    For each bucket with distinct samples, query the source BVH over their actual
    bounding rectangle. Accept sharing only if **every candidate polygon strictly
@@ -61,7 +85,7 @@ shapes, capacities and addresses must stay fixed.
    tessellation boundaries can prevent certification even on a continuous sheet.
    This is deliberately conservative. Use `share_regions=False` in the device
    constructor to disable this optimization for comparison.
-5. Gather hits once per accepted group. Each thread handles up to 32 candidates;
+6. Gather hits once per accepted group. Each thread handles up to 32 candidates;
    longer queries enqueue their unvisited DFS suffix. A persistent worker grid
    partitions those suffixes into disjoint BVH subtrees. Partition count adapts
    to the number of heavy queries. Hits append to a bounded global pool while
@@ -69,13 +93,23 @@ shapes, capacities and addresses must stay fixed.
    Half-open edge ownership counts a tessellated sheet once on a shared edge.
    This visits each candidate once, without separate count/fill traversals.
    Certification of heavy rectangles uses the same subtree scheduling principle.
-6. Stable source/depth/group sorts order hits. Device conditional graph branches
+7. Stable source/depth/group sorts order hits. Device conditional graph branches
    select a sufficient power-of-two sort length (or the final pool capacity),
    starting at 256 entries. Scratch is warmed at full capacity before capture;
    no counts are read on the host. Each polygon binary-searches its group's
-   shared order, evaluating candidate depth planes at **that polygon's sample**.
-   Using depths evaluated at a different sample would be wrong for tilted planes.
-7. Reuse boundary noding, conforming triangulation and original-plane lifting.
+   shared order using its **representative source and sample**. It retains its
+   own source label and geometry. Rectangle sharing still evaluates candidate
+   planes at that representative's sample, since the rectangle can combine
+   different samples. A source plane extrapolated to a distant component sample
+   would give incorrect ranks; the representative source is essential.
+8. Optionally merge a disjoint set of adjacent convex patches having the same
+   source and rank. Two local turn checks certify a convex union; source IDs,
+   rank boundaries, holes and the 32-vertex bound are preserved. A scan compacts
+   the live polygons. This is one conservative pass, not a minimal subdivision.
+   `merge_regions=True` enables it; the default is **off**, because measured
+   fragment savings did not repay its cost. `propagate_ranks=False` independently
+   disables connectivity-based rank sharing.
+9. Reuse boundary noding, conforming triangulation and original-plane lifting.
    A compact list assigns one task per actual polygon edge instead of reserving
    32 lanes for every polygon. The geometric meshing function is shared with the
    original GPU route. Holes and disconnected regions remain unions of convex
@@ -109,7 +143,11 @@ K certification tests plus K ray candidates instead of K independent K-hit queri
 However, that control still has quadratic contour broad-phase work. On the 64K
 dragon almost all proposed rectangles fail certification. Q unshared samples can
 still inspect QK overlapping sources. General shared ordering across changing
-footprints, including across source tessellation boundaries, remains unfinished.
+footprints remains unfinished. Certified patch connectivity now shares ranks
+across internal tessellation edges, but only along matched edges with a clear
+contour certificate. Its extra adjacency/union work can outweigh saved queries.
+It does not establish a general subquadratic bound or eliminate supporting-line
+fragments.
 
 The code avoids a common subdivision imposed on every source. In particular,
 farther contours do not cut a foreground source, and the foreground-cover test
@@ -124,7 +162,11 @@ suppressed polygons.
 
 Numerics are binary64 with the existing padded binary32 bounds and approximately
 `1e-10` normalized-domain cleanup. No rational or adaptive-exact fallback runs on
-the GPU. Source index resolves exact depth ties. Very thin regions and nearly
+the GPU. Inputs must have resolved surface intersections and no positive-area
+coincident overlap, matching the CPU exact solver's accepted-input contract.
+The source-index tie break orders coincident ray hits; it does not make
+coincident overlapping sheets supported by contour subdivision or propagation.
+No device preflight certifies this input contract. Very thin regions and nearly
 coincident surfaces remain numerical risks; passing sampled rays is not a full
 region certificate. Unresolved crossings are outside this route's contract;
 fixture tests preprocess them with the exact intersection resolver.
@@ -141,8 +183,12 @@ Use `dataclasses.replace` to customize the capacities, or CLI `--pool-scale` to
 scale the five pools. No worker-private fragment collections participate in extraction.
 A collapsed-child cut carries its parent plus an empty reserved sibling slot to
 the next round. Thus peak frontier occupancy and task visits can differ from the
-original prototype despite identical output geometry. Other padded BVH builds,
-query sorts and scans still process allocated capacity.
+original prototype despite identical output geometry. Query and hit sorts select
+a device-dependent capacity bucket; padded BVH builds, resets, scans and many
+launch grids still process allocated capacity. Connectivity adds O(V)
+edge storage plus a power-of-two hash table with at least 2V slots, where V is
+the reserved boundary-vertex capacity. Optional merging additionally reserves
+one polygon/source/layer compaction pool. No new allocation occurs during replay.
 
 Overflow invalidates **all** output via sticky `status[9]`, with inherited error
 bits plus 1024 for shared-hit capacity and 2048 for subdivision rounds. Check
@@ -153,7 +199,11 @@ warmup occur before capture; the graph has no host transfers or allocation nodes
 `read_status()` reports frontier task visits, unique contours, contour tests,
 splits, shared ray groups, ray candidate tests, stored ray hits and subdivision rounds. Additional counters
 report heavy ray groups, attempted/certified rectangles, certificate candidate
-tests and heavy certificate groups. These are not peeling passes or pixel
+tests and heavy certificate groups. Connectivity counters report `rank_components`,
+`rank_connections` (certified edges, including redundant links),
+`connection_contour_tests`, `matched_patch_edges`, and `edge_hash_misses`.
+`merged_polygons` counts eliminated patches when merging is enabled.
+These are not peeling passes or pixel
 samples. Counts exclude BVH internal-node tests. The inherited `depth_ties`
 counter is not instrumented in this experimental rank sorter and must not be
 interpreted as proving that no ties occurred.
@@ -179,3 +229,10 @@ and stage timings, controls with certification enabled/disabled, fresh old/new
 comparisons, full-dragon results and validation. The old serial heavy-ray
 bottleneck is removed; finite supporting-line cuts, conservative sharing,
 capacity-dependent work and finite-precision robustness remain open issues.
+
+
+The [connectivity report](../results/gpu-events-components/README.md) measures
+this follow-up against commit `a8082fd`, including the 1K–64K dragon sequence,
+102K sculpted mesh, full dragon, ablations and the optional merge pass. Its
+complete-region comparisons are numerical comparisons to an exact oracle, not
+exact-arithmetic certificates for GPU geometry.

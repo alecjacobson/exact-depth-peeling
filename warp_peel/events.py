@@ -9,6 +9,7 @@ from dataclasses import dataclass
 import warp as wp
 
 from . import beams as b
+from . import components as c
 from . import event_kernels as e
 from . import frontier as f
 from . import kernels as g
@@ -49,12 +50,16 @@ class EventPeeler(DevicePeeler):
         capacities=None,
         layers=0,
         share_regions=True,
+        propagate_ranks=True,
+        merge_regions=False,
     ):
         ec = capacities or EventCapacities.for_mesh(faces.size)
         if min(vars(ec).values()) < 1:
             raise ValueError("Event capacities must be positive")
         self.event_cap = ec
         self.share_regions = share_regions
+        self.propagate_ranks = propagate_ranks
+        self.merge_regions = merge_regions
         super().__init__(
             vertices,
             faces,
@@ -95,7 +100,7 @@ class EventPeeler(DevicePeeler):
         self.next_sizes = zeros(ec.frontier, int)
         self.cursors = zeros(ec.frontier, wp.vec3i)
         self.next_cursors = zeros(ec.frontier, wp.vec3i)
-        self.metrics = zeros(13, wp.int64)
+        self.metrics = zeros(19, wp.int64)
         self.beam_roots = zeros(ec.regions, int)
         self.beam_bounds = zeros((ec.regions, 4), wp.float64)
         self.beam_valid = zeros(ec.regions, int)
@@ -113,9 +118,27 @@ class EventPeeler(DevicePeeler):
         self.hit_ids = zeros(2 * ec.hits, int)
         self.sort_condition = zeros(1, int)
         self.mesh_tasks = zeros(ec.vertices, wp.vec2i)
+        self.representatives = zeros(ec.regions, int)
+        self.connection_condition = zeros(1, int)
+        if propagate_ranks or merge_regions:
+            self.parents = zeros(ec.regions, int)
+            self.merge_choices = zeros(ec.regions, int)
+            self.partners = zeros(ec.vertices, int)
+            self.patch_owners = zeros(ec.vertices, wp.uint64)
+            self.patch_starts = zeros(ec.vertices, wp.vec2d)
+            self.patch_ends = zeros(ec.vertices, wp.vec2d)
+            self.topology_owners = zeros(3 * max(1, self.n), wp.uint64)
+            self.patch_edge_count = zeros(1, int)
+            self.edge_slots = zeros(1 << (2 * ec.vertices - 1).bit_length(), int)
+        if merge_regions:
+            self.compact_output = zeros(ec.regions, g.Polygon)
+            self.compact_sources = zeros(ec.regions, int)
+            self.compact_layers = zeros(ec.regions, int)
 
     def _launch(self, kernel, dim, *args):
-        block = 128 if kernel.module.name == e.__name__ else 32
+        block = 128 if kernel.module.name in (e.__name__, c.__name__) else 32
+        if kernel in (c.edge_owners, c.propose, c.merge, c.compact, c.restore):
+            block = 32
         wp.launch(
             kernel, dim=dim, inputs=list(args), device=self.device, block_dim=block
         )
@@ -124,7 +147,7 @@ class EventPeeler(DevicePeeler):
         super()._prepare(classify=False)
         self._launch(
             f.seed,
-            max(self.n, 13),
+            max(self.n, self.metrics.size),
             self.original,
             self.frontier_vertices,
             self.frontier_sizes,
@@ -255,34 +278,195 @@ class EventPeeler(DevicePeeler):
             self.scan_size,
         )
 
-    def _rank(self):
+    def _connections(self):
+        if not (self.propagate_ranks or self.merge_regions):
+            self._identity_components()
+            return
+        self._launch(c.connection_condition, 1, self.metrics, self.connection_condition)
+        if self.n:
+            self._launch(
+                c.topology_keys,
+                3 * self.n,
+                self.edge_keys,
+                self.edge_ids,
+                self.topology_owners,
+                self.masks,
+                self.connection_condition,
+            )
+        if self.device.is_capturing:
+            wp.capture_if(
+                self.connection_condition,
+                self._connect_patches,
+                self._identity_components,
+            )
+        else:
+            self._connect_patches()
+
+    def _identity_components(self):
         self._launch(
-            e.samples, self.cap.polygons, self.output, self.samples, self.status
+            c.identity,
+            self.cap.polygons,
+            self.representatives,
+            self.status,
+            self.metrics,
+            int(self.propagate_ranks),
         )
-        for axis in (1, 0):
+
+    def _connect_patches(self):
+        self._launch(
+            c.reset,
+            max(self.edge_slots.size, self.cap.polygons, self.cap.vertices),
+            self.edge_slots,
+            self.parents,
+            self.partners,
+            self.merge_choices,
+        )
+        self._launch(
+            g.vertex_counts, self.cap.polygons, self.output, self.status, self.counts
+        )
+        self._scan()
+        self._launch(
+            c.check_edges,
+            1,
+            self.scan_sums,
+            self.patch_edge_count,
+            self.status,
+            self.cap.vertices,
+        )
+        self._launch(
+            e.mesh_tasks,
+            self.cap.polygons,
+            self.counts,
+            self.offsets,
+            self.mesh_tasks,
+            self.status,
+        )
+        self._launch(
+            c.edge_owners,
+            self.cap.polygons,
+            self.offsets,
+            self.output,
+            self.output_sources,
+            self.original,
+            self.masks,
+            self.facing,
+            self.clipped,
+            self.topology_owners,
+            self.patch_owners,
+            self.patch_starts,
+            self.patch_ends,
+            self.status,
+        )
+        self._launch(
+            c.match_edges,
+            self.cap.vertices,
+            self.mesh_tasks,
+            self.patch_starts,
+            self.patch_ends,
+            self.patch_owners,
+            self.edge_slots,
+            self.partners,
+            self.patch_edge_count,
+            self.status,
+            self.metrics,
+        )
+        if self.propagate_ranks:
             self._launch(
-                e.query_keys,
-                self.cap.polygons,
-                self.samples,
-                self.query_keys,
-                self.query_ids,
-                axis,
-            )
-            wp.utils.radix_sort_pairs(
-                self.query_keys, self.query_ids, count=self.cap.polygons
-            )
-        if self.share_regions:
-            self._launch(
-                b.keys,
-                self.cap.polygons,
-                self.samples,
-                self.query_keys,
-                self.query_ids,
+                c.connect,
+                self.cap.vertices,
+                self.mesh_tasks,
+                self.patch_starts,
+                self.patch_ends,
+                self.output_sources,
+                self.scores,
+                self.partners,
+                self.parents,
+                self.merged_edges,
+                self.near_depths,
+                self.edge_bvh.tree,
+                self.patch_edge_count,
                 self.status,
+                self.metrics,
             )
-            wp.utils.radix_sort_pairs(
-                self.query_keys, self.query_ids, count=self.cap.polygons
+            self._launch(
+                c.roots,
+                self.cap.polygons,
+                self.parents,
+                self.representatives,
+                self.status,
+                self.metrics,
             )
+        else:
+            self._identity_components()
+
+    def _coalesce(self):
+        self._launch(
+            c.propose,
+            self.cap.vertices,
+            self.mesh_tasks,
+            self.output,
+            self.output_sources,
+            self.output_layers,
+            self.partners,
+            self.merge_choices,
+            self.patch_edge_count,
+            self.status,
+        )
+        self._launch(
+            c.merge,
+            self.cap.vertices,
+            self.mesh_tasks,
+            self.output,
+            self.partners,
+            self.merge_choices,
+            self.patch_edge_count,
+            self.status,
+            self.metrics,
+        )
+        self._launch(
+            c.live_counts, self.cap.polygons, self.output, self.counts, self.status
+        )
+        self._scan()
+        self._launch(
+            c.compact,
+            self.cap.polygons,
+            self.output,
+            self.output_sources,
+            self.output_layers,
+            self.offsets,
+            self.compact_output,
+            self.compact_sources,
+            self.compact_layers,
+            self.status,
+        )
+        self._launch(
+            c.restore,
+            self.cap.polygons,
+            self.output,
+            self.output_sources,
+            self.output_layers,
+            self.compact_output,
+            self.compact_sources,
+            self.compact_layers,
+            self.scan_sums,
+            self.status,
+        )
+
+    def _rank(self):
+        self._connections()
+        self._launch(
+            e.samples,
+            self.cap.polygons,
+            self.output,
+            self.representatives,
+            self.samples,
+            self.status,
+        )
+        if self.device.is_capturing:
+            self._query_sort_bucket(0, len(self._query_buckets()) - 1)
+        else:
+            self._sort_queries(self.cap.polygons)
+        if self.share_regions:
             self._launch(b.reset, self.cap.polygons, self.beam_bounds, self.beam_valid)
             self._launch(
                 b.group,
@@ -392,6 +576,7 @@ class EventPeeler(DevicePeeler):
             e.assign_ranks,
             self.cap.polygons,
             self.samples,
+            self.representatives,
             self.groups,
             self.counts,
             self.offsets,
@@ -406,6 +591,55 @@ class EventPeeler(DevicePeeler):
             self.limit,
             self.all_layers,
         )
+
+        if self.merge_regions:
+            if self.device.is_capturing:
+                wp.capture_if(self.connection_condition, self._coalesce)
+            else:
+                self._coalesce()
+
+    def _query_buckets(self):
+        sizes = []
+        size = 256
+        while size < self.cap.polygons:
+            sizes.append(size)
+            size *= 2
+        return [*sizes, self.cap.polygons]
+
+    def _query_sort_bucket(self, low, high):
+        sizes = self._query_buckets()
+        if low == high:
+            self._sort_queries(sizes[low])
+            return
+        mid = (low + high) // 2
+        self._launch(e.query_bucket, 1, self.status, self.sort_condition, sizes[mid])
+        wp.capture_if(
+            self.sort_condition,
+            lambda: self._query_sort_bucket(low, mid),
+            lambda: self._query_sort_bucket(mid + 1, high),
+        )
+
+    def _sort_queries(self, size):
+        for axis in (1, 0):
+            self._launch(
+                e.query_keys,
+                size,
+                self.samples,
+                self.query_keys,
+                self.query_ids,
+                axis,
+            )
+            wp.utils.radix_sort_pairs(self.query_keys, self.query_ids, count=size)
+        if self.share_regions:
+            self._launch(
+                b.keys,
+                size,
+                self.samples,
+                self.query_keys,
+                self.query_ids,
+                self.status,
+            )
+            wp.utils.radix_sort_pairs(self.query_keys, self.query_ids, count=size)
 
     def _hit_buckets(self):
         sizes = []
@@ -507,6 +741,7 @@ class EventPeeler(DevicePeeler):
         wp.load_module(module=e, device=self.device)
         wp.load_module(module=f, device=self.device)
         wp.load_module(module=b, device=self.device)
+        wp.load_module(module=c, device=self.device)
         with wp.ScopedStream(self.stream):
             self._prepare()
             self._step()
@@ -552,6 +787,12 @@ class EventPeeler(DevicePeeler):
                     "certified_beams",
                     "beam_candidate_tests",
                     "heavy_beams",
+                    "rank_components",
+                    "rank_connections",
+                    "connection_contour_tests",
+                    "merged_polygons",
+                    "matched_patch_edges",
+                    "edge_hash_misses",
                 ),
                 map(int, m),
             )

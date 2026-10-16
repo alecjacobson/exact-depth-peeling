@@ -26,6 +26,7 @@ def main():
     ap.add_argument(
         "--out", type=Path, default=Path("results/gpu-events/full-region-audit.json")
     )
+    ap.add_argument("--merge-regions", action="store_true")
     args = ap.parse_args()
     subprocess.run(
         [
@@ -79,7 +80,7 @@ def main():
                 ]
             )
     arrays, labels, _ = load_scene(args.scene)
-    p = EventPeeler(*arrays)
+    p = EventPeeler(*arrays, merge_regions=args.merge_regions)
     p.run()
     info = p.read_status()
     n = info["polygons"]
@@ -108,6 +109,11 @@ def main():
     ]
     report = {
         "scene": str(args.scene),
+        "merge_regions": args.merge_regions,
+        "source_sha256": {
+            str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in Path("warp_peel").glob("*.py")
+        },
         "scene_sha256": hashlib.sha256(args.scene.read_bytes()).hexdigest(),
         "oracle_binary_sha256": hashlib.sha256(
             Path("build/geometric_peel").read_bytes()

@@ -45,13 +45,19 @@ preallocated pools report failures explicitly, and realistic cases require
 substantial memory. The existing Blender images below show the recorded CPU
 outputs; they are not relabelled as GPU results.
 
-The experimental **`EventPeeler`** now takes **27.3 ms for the 65,544-face dragon**
-and **21.2 ms for the 102,400-face sculpted mesh**, including all layers and
-conforming world-space output on an L40. Fresh timings of the previous event
-implementation are 86.8 ms and 53.9 ms: **3.17× and 2.54× faster** respectively.
+The experimental **`EventPeeler`** takes **27.9 ms for the 65,544-face dragon**
+and **19.2 ms for the 102,400-face sculpted mesh**, including all layers and
+conforming world-space output on an L40. A fresh comparison with the previous
+commit gives **27.3 ms and 21.2 ms**: the connectivity change is 2% slower on
+this dragon and 9% faster on the sculpted mesh. It reduces rank-ray candidates
+by 41% and 92%, respectively, but adjacency construction also costs time.
+The full **721,510-face dragon takes 313 ms**, versus 324 ms previously, for
+all 26 layers and 5.44 million output triangles; it remains far from real time.
 These are shared-host device timings, excluding upload/readback/rendering.
-The [latest report](results/gpu-events-tuning/README.md) records the algorithm
-changes, regression checks and remaining gaps. The [earlier CPU comparison](results/gpu-events/README.md)
+The [latest report](results/gpu-events-components/README.md) includes the full
+dragon, 1K–64K scaling, correctness checks and optional merging measurements.
+The [previous tuning report](results/gpu-events-tuning/README.md) records the
+larger improvement from the first event prototype. The [earlier CPU comparison](results/gpu-events/README.md)
 retains four-thread fast-mode timings of 1,630 ms and 192 ms, measured separately.
 
 ```bash
@@ -60,8 +66,12 @@ python3 -m warp_peel results/global/dragon-cache/65536/resolved.json --method ev
 
 This route uses finite mesh contours to guide parallel convex subdivision, groups
 coincident contours, then shares interior rank queries at identical locations
-or across conservatively certified rectangles. Long ray queries split into
-parallel subtree tasks, and shared hit orders assign all ranks together. It retains analytic polygons and
+or across conservatively certified rectangles. It also propagates ranks across
+matched patch edges when no nearer contour blocks the crossing, including
+across internal mesh tessellation. Long ray queries split into parallel subtree
+tasks, and shared hit orders assign all ranks together. Optional convex merging
+preserves source/rank labels, but stays disabled by default because its measured
+cost exceeds the fragment savings. It retains analytic polygons and
 original source planes without layer-by-layer subtraction. The exact CPU routes
 remain the oracles. It still extends contour supporting lines, and sharing depth
 order across general changing footprints remains unfinished. Read the

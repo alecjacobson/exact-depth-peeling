@@ -1,0 +1,14 @@
+{
+  "maximum_ratio": 1.15,
+  "scope": "Timing and output-count regression gate, not a geometric certificate; use comparable hardware/load and separate full-region validation",
+  "cases": [
+    {
+      "sources": 721510,
+      "scene": "results/dragon/scene.json",
+      "baseline_ms": 323.8672790527344,
+      "candidate_ms": 313.21539306640625,
+      "candidate_over_baseline": 0.9671103360071343
+    }
+  ],
+  "failures": []
+}

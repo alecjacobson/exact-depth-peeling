@@ -27,10 +27,14 @@ def main():
     ap.add_argument("--repetitions", type=int, default=5)
     ap.add_argument("--audit", action="store_true")
     ap.add_argument("--no-share-regions", action="store_true")
+    ap.add_argument("--no-propagate-ranks", action="store_true")
+    ap.add_argument("--merge-regions", action="store_true")
     args = ap.parse_args()
     report = {
         "warp": wp.__version__,
         "share_regions": not args.no_share_regions,
+        "propagate_ranks": not args.no_propagate_ranks,
+        "merge_regions": args.merge_regions,
         "scope": "Full graph replay, including projection/topology, contour subdivision, shared rank queries and conforming world mesh; excludes upload/allocation/JIT/capture/readback/audit",
         "source_sha256": {
             str(p): hashlib.sha256(p.read_bytes()).hexdigest()
@@ -41,7 +45,12 @@ def main():
     for path in args.scenes:
         print(path, flush=True)
         arrays, labels, data = load_scene(path)
-        p = EventPeeler(*arrays, share_regions=not args.no_share_regions)
+        p = EventPeeler(
+            *arrays,
+            share_regions=not args.no_share_regions,
+            propagate_ranks=not args.no_propagate_ranks,
+            merge_regions=args.merge_regions,
+        )
         case = {
             "scene": str(path),
             "sources": len(labels),
