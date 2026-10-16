@@ -10,6 +10,10 @@ priority is a complete, replayable device pipeline. See the
 [measured results and limitations](../results/gpu/README.md) before choosing it
 for performance. The near-real-time goal is not yet achieved.
 
+The [GPU strategy review](STRATEGY.md) diagnoses per-target clipping and specifies
+a proposed boundary-event/shared-rank experiment. That redesign is not implemented
+in the timings below.
+
 ## Run
 
 Requires Python 3.10+, an NVIDIA CUDA GPU, CUDA conditional graph support

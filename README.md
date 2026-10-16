@@ -45,6 +45,11 @@ preallocated pools report failures explicitly, and realistic cases require
 substantial memory. The existing Blender images below show the recorded CPU
 outputs; they are not relabelled as GPU results.
 
+The [GPU strategy review](warp_peel/STRATEGY.md) records the current clipping
+bottleneck and the proposed move to analytic boundary events with shared depth
+ordering. It distinguishes the redesign from implemented work and sets
+correctness and scaling tests before replacing the baseline.
+
 <!-- GLOBAL_BASELINE_BEGIN -->
 ## Exact global baseline and cached dragon scaling
 
