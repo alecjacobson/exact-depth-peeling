@@ -1,5 +1,7 @@
 # Recorded artifacts
 
+- `gpu/`: Warp graph-replay timings, exact-fixture integration checks, rational-ray audits, and current GPU limitations.
+
 - `global/`: contour-aware exact global baseline, independent oracle regressions, cached dragon decimations through 64K, matched global/peeling trends, and CPU thread-scaling measurements.
 - `contours/`: exact contour correctness checks and before/after performance regressions, including the first failed timing attempt.
 - `dragon/`: full 721,510-face input, all-layer measurements and audits, lossless mesh archive, Blender rendering, and layer-stack animation.

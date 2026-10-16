@@ -33,3 +33,9 @@ add_test(NAME global_oracle COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/sc
 set_tests_properties(global_oracle PROPERTIES TIMEOUT 600)
 add_test(NAME peel_optimizations COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/scripts/validate_peel_optimizations.py --exe $<TARGET_FILE:geometric_peel> --threads ${PEEL_TEST_THREADS})
 set_tests_properties(peel_optimizations PROPERTIES TIMEOUT 600)
+
+option(PEEL_WARP_TESTS "Enable CUDA Warp integration tests (requires requirements-gpu-test.txt)" OFF)
+if(PEEL_WARP_TESTS)
+  add_test(NAME warp_gpu COMMAND ${Python3_EXECUTABLE} -m pytest ${CMAKE_SOURCE_DIR}/tests/gpu -q)
+  set_tests_properties(warp_gpu PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} TIMEOUT 600 ENVIRONMENT "PEEL_EXE=$<TARGET_FILE:geometric_peel>")
+endif()

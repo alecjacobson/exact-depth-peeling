@@ -1,0 +1,257 @@
+[
+  {
+    "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+    "checked_rays": 828,
+    "skipped_boundary_rays": 0,
+    "rank_mismatches": 2,
+    "maximum_hits": 8,
+    "examples": [
+      {
+        "uv_normalized": [
+          0.67494002284422,
+          0.7112963009889393
+        ],
+        "expected": [
+          [
+            0,
+            387
+          ],
+          [
+            1,
+            394
+          ],
+          [
+            2,
+            99
+          ],
+          [
+            3,
+            911
+          ],
+          [
+            4,
+            617
+          ],
+          [
+            5,
+            526
+          ]
+        ],
+        "actual": [
+          [
+            0,
+            387
+          ],
+          [
+            1,
+            394
+          ],
+          [
+            2,
+            99
+          ],
+          [
+            3,
+            911
+          ],
+          [
+            4,
+            526
+          ],
+          [
+            4,
+            617
+          ]
+        ]
+      },
+      {
+        "uv_normalized": [
+          0.67494002284422,
+          0.7112963009889393
+        ],
+        "expected": [
+          [
+            0,
+            387
+          ],
+          [
+            1,
+            394
+          ],
+          [
+            2,
+            99
+          ],
+          [
+            3,
+            911
+          ],
+          [
+            4,
+            617
+          ],
+          [
+            5,
+            526
+          ]
+        ],
+        "actual": [
+          [
+            0,
+            387
+          ],
+          [
+            1,
+            394
+          ],
+          [
+            2,
+            99
+          ],
+          [
+            3,
+            911
+          ],
+          [
+            4,
+            526
+          ],
+          [
+            4,
+            617
+          ]
+        ]
+      }
+    ],
+    "output": {
+      "residual_patches": 0,
+      "polygons": 4887,
+      "triangles": 21570,
+      "layers": 8,
+      "peeling_passes": 8,
+      "boundary_vertices": 18487,
+      "depth_ties": 0,
+      "error": 0,
+      "max_hidden_pieces": 91,
+      "peak_residual_patches": 2434
+    },
+    "regression_rays": [
+      [
+        0.330728952727451,
+        0.3918028327026883
+      ],
+      [
+        0.67494002284422,
+        0.7112963009889393
+      ]
+    ],
+    "scene": "results/global/dragon-cache/1024/resolved.json",
+    "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+    "kernel_sha256": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672"
+  },
+  {
+    "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+    "checked_rays": 834,
+    "skipped_boundary_rays": 0,
+    "rank_mismatches": 0,
+    "maximum_hits": 12,
+    "examples": [],
+    "output": {
+      "residual_patches": 0,
+      "polygons": 25367,
+      "triangles": 116058,
+      "layers": 12,
+      "peeling_passes": 12,
+      "boundary_vertices": 98921,
+      "depth_ties": 0,
+      "error": 0,
+      "max_hidden_pieces": 138,
+      "peak_residual_patches": 11224
+    },
+    "regression_rays": [],
+    "scene": "results/global/dragon-cache/4096/resolved.json",
+    "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+    "kernel_sha256": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672"
+  },
+  {
+    "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+    "checked_rays": 833,
+    "skipped_boundary_rays": 0,
+    "rank_mismatches": 0,
+    "maximum_hits": 14,
+    "examples": [],
+    "output": {
+      "residual_patches": 0,
+      "polygons": 97915,
+      "triangles": 453836,
+      "layers": 14,
+      "peeling_passes": 14,
+      "boundary_vertices": 384398,
+      "depth_ties": 0,
+      "error": 0,
+      "max_hidden_pieces": 232,
+      "peak_residual_patches": 37046
+    },
+    "regression_rays": [],
+    "scene": "results/global/dragon-cache/16384/resolved.json",
+    "sha256": "9eb9167c677f6c122da1612e6bc5bdc9ce0b9deebcda6ddd98d0e053839af116",
+    "kernel_sha256": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672"
+  },
+  {
+    "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+    "checked_rays": 837,
+    "skipped_boundary_rays": 0,
+    "rank_mismatches": 0,
+    "maximum_hits": 16,
+    "examples": [],
+    "output": {
+      "residual_patches": 0,
+      "polygons": 354403,
+      "triangles": 1653933,
+      "layers": 16,
+      "peeling_passes": 16,
+      "boundary_vertices": 1393603,
+      "depth_ties": 0,
+      "error": 0,
+      "max_hidden_pieces": 518,
+      "peak_residual_patches": 121533
+    },
+    "regression_rays": [
+      [
+        0.33920095649317183,
+        0.5983228993983456
+      ],
+      [
+        0.30497956299393303,
+        0.3661200192062892
+      ]
+    ],
+    "scene": "results/global/dragon-cache/65536/resolved.json",
+    "sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+    "kernel_sha256": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672"
+  },
+  {
+    "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+    "checked_rays": 557,
+    "skipped_boundary_rays": 0,
+    "rank_mismatches": 0,
+    "maximum_hits": 10,
+    "examples": [],
+    "output": {
+      "residual_patches": 0,
+      "polygons": 126031,
+      "triangles": 427254,
+      "layers": 10,
+      "peeling_passes": 10,
+      "boundary_vertices": 406027,
+      "depth_ties": 0,
+      "error": 0,
+      "max_hidden_pieces": 371,
+      "peak_residual_patches": 20106
+    },
+    "regression_rays": [],
+    "scene": "results/large/scenes/sculpted-102400.json",
+    "sha256": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e",
+    "kernel_sha256": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672"
+  }
+]

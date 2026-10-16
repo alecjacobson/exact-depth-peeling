@@ -1,6 +1,7 @@
 # Exact geometric depth peeling
 
-A CPU research prototype implementing the three reference methods in
+A geometric depth-peeling research prototype with CPU reference solvers and a
+[pure Warp GPU implementation](warp_peel/README.md). The CPU solvers implement the three reference methods in
 [the design](geometric_depth_peeling_design.md): a global arrangement oracle,
 CGAL triangle-envelope peeling, and incremental visible-map peeling. Two accelerated convex-fragment solvers, `bvh-peel` and `vbvh-peel`, now supplement
 those references. The default kernel is
@@ -22,6 +23,27 @@ visibility map with a balanced dynamic BVH. Both retain
 hidden portions for subsequent layers and triangulate the completed layers with
 original source labels. They preserve exact geometry; neither uses R3's fixed-point
 rounding or convex-hull repair. See the [algorithm description](#algorithm-description).
+
+## Warp GPU route
+
+The new `warp_peel.DevicePeeler` runs projection, mesh topology/contours, BVH
+construction, conditional all-layer peeling, boundary noding and 3D mesh output
+on the GPU. It accepts device arrays and captures the complete extraction in a
+CUDA graph; graph replay performs no host geometry work, readbacks or allocations.
+There is no custom CUDA/C++ extension. The GPU arithmetic is approximate binary64;
+the CPU exact routes remain the references.
+
+```bash
+python3 -m pip install -r requirements-gpu.txt
+python3 -m warp_peel tests/fixtures/partial.json --out /tmp/layers.npz
+```
+
+Read the [algorithm and device API](warp_peel/README.md) and
+[GPU measurements and validation](results/gpu/README.md). This is an initial
+complete GPU implementation, **not yet a near-real-time solution**. Bounded
+preallocated pools report failures explicitly, and realistic cases require
+substantial memory. The existing Blender images below show the recorded CPU
+outputs; they are not relabelled as GPU results.
 
 <!-- GLOBAL_BASELINE_BEGIN -->
 ## Exact global baseline and cached dragon scaling

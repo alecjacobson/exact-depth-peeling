@@ -1,0 +1,795 @@
+{
+  "source_sha256": {
+    "warp_peel/__init__.py": "3fb98513bde9bffdd4ac2fb275bc48dcf93b7e15348b7a165f86385a2920715d",
+    "warp_peel/__main__.py": "af5479bcd0e5b6dd020796214dceb272cb02a075e0c614cbb1a485bc366f0f2c",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/kernels.py": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+    "warp_peel/solver.py": "3041b0759c8a7b84a971c034d242d59ccfaae10814628ae58ad92ef0cfb2ee6a"
+  },
+  "load_at_start": "# gpu         pid   type     sm    mem    enc    dec    jpg    ofa    command \n# Idx           #    C/G      %      %      %      %      %      %    name \n    0          -     -      -      -      -      -      -      -    -              \n",
+  "warp": "1.15.0",
+  "gpu": "NVIDIA L40, 570.158.01",
+  "timing": "CUDA events around full graph replay; includes device input validation, welding, projection, contours, classification, all peeling, boundary noding and world-space mesh generation; excludes upload, allocation, warmup, capture, download and audits",
+  "cases": [
+    {
+      "scene": "results/global/dragon-cache/1024/resolved.json",
+      "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+      "upload_seconds": 0.46457964926958084,
+      "sources": 1068,
+      "capacities": {
+        "residual": 4272,
+        "polygons": 17088,
+        "vertices": 102528,
+        "triangles": 68352,
+        "workers": 1068,
+        "pieces_per_worker": 512,
+        "layers": 128,
+        "edge_vertices": 128
+      },
+      "gpu_processes_before": "2763204, python3, 1288 MiB",
+      "warmup_capture_seconds": 0.09457499161362648,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 4886,
+        "triangles": 21568,
+        "layers": 8,
+        "peeling_passes": 8,
+        "boundary_vertices": 18485,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 91,
+        "peak_residual_patches": 2434
+      },
+      "milliseconds": [
+        217.80551147460938,
+        250.67794799804688,
+        221.36224365234375
+      ],
+      "median_ms": 221.36224365234375,
+      "per_layer_counts": [
+        [
+          958,
+          18574,
+          551
+        ],
+        [
+          1284,
+          16050,
+          807
+        ],
+        [
+          2434,
+          17889,
+          1732
+        ],
+        [
+          2040,
+          11780,
+          592
+        ],
+        [
+          960,
+          3551,
+          559
+        ],
+        [
+          583,
+          1219,
+          31
+        ],
+        [
+          63,
+          91,
+          39
+        ],
+        [
+          39,
+          22,
+          0
+        ]
+      ],
+      "uncaptured_diagnostic_stages": [
+        {
+          "phase": "prepare",
+          "milliseconds": 2.251904010772705
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 41.655391693115234
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 109.36758422851562
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 38.239166259765625
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 32.091678619384766
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 12.282303810119629
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 5.007775783538818
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 3.28873610496521
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1.6391680240631104
+        },
+        {
+          "phase": "mesh",
+          "milliseconds": 2.0199999809265137
+        }
+      ]
+    },
+    {
+      "scene": "results/global/dragon-cache/4096/resolved.json",
+      "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+      "upload_seconds": 0.12438101321458817,
+      "sources": 4108,
+      "capacities": {
+        "residual": 16432,
+        "polygons": 65728,
+        "vertices": 394368,
+        "triangles": 262912,
+        "workers": 4096,
+        "pieces_per_worker": 512,
+        "layers": 128,
+        "edge_vertices": 128
+      },
+      "gpu_processes_before": "2763204, python3, 5400 MiB",
+      "warmup_capture_seconds": 0.08961810544133186,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 25382,
+        "triangles": 116123,
+        "layers": 12,
+        "peeling_passes": 12,
+        "boundary_vertices": 98983,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 138,
+        "peak_residual_patches": 11245
+      },
+      "milliseconds": [
+        742.3657836914062,
+        723.8495483398438,
+        690.2694702148438
+      ],
+      "median_ms": 723.8495483398438,
+      "per_layer_counts": [
+        [
+          3621,
+          74972,
+          2207
+        ],
+        [
+          5254,
+          73746,
+          3490
+        ],
+        [
+          11245,
+          92325,
+          8361
+        ],
+        [
+          10693,
+          79882,
+          4056
+        ],
+        [
+          6948,
+          42832,
+          4462
+        ],
+        [
+          4961,
+          25441,
+          1317
+        ],
+        [
+          1964,
+          10031,
+          1201
+        ],
+        [
+          1358,
+          5118,
+          339
+        ],
+        [
+          533,
+          1866,
+          300
+        ],
+        [
+          317,
+          531,
+          32
+        ],
+        [
+          61,
+          138,
+          35
+        ],
+        [
+          35,
+          24,
+          0
+        ]
+      ],
+      "uncaptured_diagnostic_stages": [
+        {
+          "phase": "prepare",
+          "milliseconds": 2.6319680213928223
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 61.893375396728516
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 246.4632568359375
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 168.55686950683594
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 111.37881469726562
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 46.96908950805664
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 70.39584350585938
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 31.88105583190918
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 46.69968032836914
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 15.81708812713623
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 17.387840270996094
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 6.07260799407959
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1.2320640087127686
+        },
+        {
+          "phase": "mesh",
+          "milliseconds": 4.217599868774414
+        }
+      ]
+    },
+    {
+      "scene": "results/global/dragon-cache/16384/resolved.json",
+      "sha256": "9eb9167c677f6c122da1612e6bc5bdc9ce0b9deebcda6ddd98d0e053839af116",
+      "upload_seconds": 0.6174356229603291,
+      "sources": 16400,
+      "capacities": {
+        "residual": 65600,
+        "polygons": 262400,
+        "vertices": 1574400,
+        "triangles": 1049600,
+        "workers": 4096,
+        "pieces_per_worker": 2048,
+        "layers": 128,
+        "edge_vertices": 128
+      },
+      "gpu_processes_before": "2763204, python3, 17208 MiB",
+      "warmup_capture_seconds": 0.26398998498916626,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 97872,
+        "triangles": 453651,
+        "layers": 14,
+        "peeling_passes": 14,
+        "boundary_vertices": 384233,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 230,
+        "peak_residual_patches": 37024
+      },
+      "milliseconds": [
+        2971.39013671875,
+        2924.51318359375,
+        2841.32568359375
+      ],
+      "median_ms": 2924.51318359375,
+      "per_layer_counts": [
+        [
+          12539,
+          275853,
+          8173
+        ],
+        [
+          17442,
+          265286,
+          11868
+        ],
+        [
+          36086,
+          330329,
+          26558
+        ],
+        [
+          37024,
+          315334,
+          15704
+        ],
+        [
+          29936,
+          219342,
+          19816
+        ],
+        [
+          23209,
+          147592,
+          7914
+        ],
+        [
+          11822,
+          72629,
+          7146
+        ],
+        [
+          8294,
+          39517,
+          2401
+        ],
+        [
+          3934,
+          19391,
+          2440
+        ],
+        [
+          2647,
+          9586,
+          597
+        ],
+        [
+          777,
+          2969,
+          440
+        ],
+        [
+          474,
+          1105,
+          60
+        ],
+        [
+          78,
+          103,
+          32
+        ],
+        [
+          33,
+          2,
+          0
+        ]
+      ],
+      "uncaptured_diagnostic_stages": [
+        {
+          "phase": "prepare",
+          "milliseconds": 4.616352081298828
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 194.93930053710938
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 295.5865173339844
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 373.4046325683594
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 495.29010009765625
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 230.98236083984375
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 257.2923889160156
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 277.4632873535156
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 368.2792663574219
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 41.822017669677734
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 41.54841613769531
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 15.233375549316406
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 12.50102424621582
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 6.41648006439209
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1.1419520378112793
+        },
+        {
+          "phase": "mesh",
+          "milliseconds": 13.376543998718262
+        }
+      ]
+    },
+    {
+      "scene": "results/global/dragon-cache/65536/resolved.json",
+      "sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+      "upload_seconds": 2.4833940863609314,
+      "sources": 65544,
+      "capacities": {
+        "residual": 262176,
+        "polygons": 1048704,
+        "vertices": 6292224,
+        "triangles": 4194816,
+        "workers": 4096,
+        "pieces_per_worker": 2048,
+        "layers": 128,
+        "edge_vertices": 128
+      },
+      "gpu_processes_before": "2763204, python3, 18714 MiB",
+      "warmup_capture_seconds": 0.7092176675796509,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 354632,
+        "triangles": 1654986,
+        "layers": 16,
+        "peeling_passes": 16,
+        "boundary_vertices": 1394682,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 533,
+        "peak_residual_patches": 121492
+      },
+      "milliseconds": [
+        9767.4921875,
+        9214.92578125,
+        10051.681640625
+      ],
+      "median_ms": 9767.4921875,
+      "per_layer_counts": [
+        [
+          39381,
+          947880,
+          27114
+        ],
+        [
+          54957,
+          919088,
+          38737
+        ],
+        [
+          114199,
+          1148980,
+          84027
+        ],
+        [
+          121492,
+          1133519,
+          52836
+        ],
+        [
+          105217,
+          884971,
+          69901
+        ],
+        [
+          85511,
+          643576,
+          31570
+        ],
+        [
+          52433,
+          412257,
+          33215
+        ],
+        [
+          39081,
+          264672,
+          13225
+        ],
+        [
+          20020,
+          137822,
+          12064
+        ],
+        [
+          14418,
+          83002,
+          4698
+        ],
+        [
+          7346,
+          44603,
+          4479
+        ],
+        [
+          4787,
+          21172,
+          1369
+        ],
+        [
+          1778,
+          7468,
+          1086
+        ],
+        [
+          1209,
+          3946,
+          303
+        ],
+        [
+          369,
+          1336,
+          182
+        ],
+        [
+          187,
+          162,
+          0
+        ]
+      ],
+      "uncaptured_diagnostic_stages": [
+        {
+          "phase": "prepare",
+          "milliseconds": 15.832544326782227
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 626.6005859375
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 722.2052001953125
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1207.7095947265625
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1087.252685546875
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 884.389892578125
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1618.5118408203125
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 470.2446594238281
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 715.5472412109375
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 676.808837890625
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 883.4801635742188
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 146.7716522216797
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 168.1518096923828
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 75.69123077392578
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 15.618464469909668
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 15.11622428894043
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 1.9650239944458008
+        },
+        {
+          "phase": "mesh",
+          "milliseconds": 53.1288948059082
+        }
+      ]
+    },
+    {
+      "scene": "results/large/scenes/sculpted-102400.json",
+      "sha256": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e",
+      "upload_seconds": 3.157141011208296,
+      "sources": 102400,
+      "capacities": {
+        "residual": 409600,
+        "polygons": 1638400,
+        "vertices": 9830400,
+        "triangles": 6553600,
+        "workers": 4096,
+        "pieces_per_worker": 2048,
+        "layers": 128,
+        "edge_vertices": 128
+      },
+      "gpu_processes_before": "2763204, python3, 20442 MiB",
+      "warmup_capture_seconds": 0.4946066215634346,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 125961,
+        "triangles": 427042,
+        "layers": 10,
+        "peeling_passes": 10,
+        "boundary_vertices": 405803,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 373,
+        "peak_residual_patches": 20073
+      },
+      "milliseconds": [
+        1430.3966064453125,
+        1164.4935302734375,
+        1562.25830078125
+      ],
+      "median_ms": 1430.3966064453125,
+      "per_layer_counts": [
+        [
+          5110,
+          165794,
+          2933
+        ],
+        [
+          9431,
+          155546,
+          6969
+        ],
+        [
+          20073,
+          213836,
+          13319
+        ],
+        [
+          13891,
+          82861,
+          786
+        ],
+        [
+          1581,
+          10084,
+          946
+        ],
+        [
+          1069,
+          5179,
+          177
+        ],
+        [
+          307,
+          1071,
+          165
+        ],
+        [
+          170,
+          240,
+          16
+        ],
+        [
+          19,
+          22,
+          10
+        ],
+        [
+          10,
+          0,
+          0
+        ]
+      ],
+      "uncaptured_diagnostic_stages": [
+        {
+          "phase": "prepare",
+          "milliseconds": 13.397439956665039
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 356.61029052734375
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 809.4739379882812
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 117.2237777709961
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 54.781856536865234
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 29.784000396728516
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 28.880672454833984
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 10.311871528625488
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 3.402751922607422
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 2.8613440990448
+        },
+        {
+          "phase": "layer",
+          "milliseconds": 0.9302399754524231
+        },
+        {
+          "phase": "mesh",
+          "milliseconds": 42.51753616333008
+        }
+      ]
+    }
+  ]
+}

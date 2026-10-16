@@ -70,5 +70,18 @@
     "camera": "fixed full-dragon camera",
     "intersection_preprocessing": "exact CGAL autorefinement per cached level",
     "used_for": "cached benchmark inputs, outside extraction timings"
+  },
+  "warp_gpu": {
+    "optional": true,
+    "warp-lang": "1.15.0",
+    "numpy": "2.2.6",
+    "test_pytest": "9.1.1",
+    "test_shapely": "2.1.2",
+    "gpu": "NVIDIA L40",
+    "driver": "570.158.01",
+    "cuda_driver": "12.8",
+    "minimum_conditional_graph_cuda_driver": "12.4",
+    "arithmetic": "binary64 geometry, padded binary32 BVHs; approximate, not the CPU exact kernel",
+    "implementation": "Warp kernels and Warp GPU radix primitives; no custom native extension"
   }
 }

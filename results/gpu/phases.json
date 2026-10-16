@@ -1,0 +1,101 @@
+{
+  "scene": "results/global/dragon-cache/65536/resolved.json",
+  "kernel_sha256": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+  "scope": "Uncaptured diagnostic CUDA events; includes launch gaps and current GPU contention. Not the graph-replay timing.",
+  "prepare_ms": 15.78217601776123,
+  "mesh_ms": 53.61423873901367,
+  "layers": [
+    {
+      "hierarchies_ms": 0.9620159864425659,
+      "clip_ms": 594.2236328125,
+      "compact_ms": 0.6968960165977478
+    },
+    {
+      "hierarchies_ms": 1.4150400161743164,
+      "clip_ms": 750.3025512695312,
+      "compact_ms": 1.4085760116577148
+    },
+    {
+      "hierarchies_ms": 1.2219200134277344,
+      "clip_ms": 1129.8487548828125,
+      "compact_ms": 1.4407999515533447
+    },
+    {
+      "hierarchies_ms": 1.2737280130386353,
+      "clip_ms": 1373.337890625,
+      "compact_ms": 1.2658560276031494
+    },
+    {
+      "hierarchies_ms": 1.197152018547058,
+      "clip_ms": 919.232666015625,
+      "compact_ms": 1.0382720232009888
+    },
+    {
+      "hierarchies_ms": 1.291551947593689,
+      "clip_ms": 1851.3951416015625,
+      "compact_ms": 0.6489279866218567
+    },
+    {
+      "hierarchies_ms": 1.2743359804153442,
+      "clip_ms": 560.4655151367188,
+      "compact_ms": 0.47788798809051514
+    },
+    {
+      "hierarchies_ms": 1.085279941558838,
+      "clip_ms": 709.0569458007812,
+      "compact_ms": 0.24851199984550476
+    },
+    {
+      "hierarchies_ms": 1.0137280225753784,
+      "clip_ms": 714.311279296875,
+      "compact_ms": 0.2078080028295517
+    },
+    {
+      "hierarchies_ms": 1.0165760517120361,
+      "clip_ms": 1016.4181518554688,
+      "compact_ms": 0.12617599964141846
+    },
+    {
+      "hierarchies_ms": 1.249343991279602,
+      "clip_ms": 138.74777221679688,
+      "compact_ms": 0.06752000004053116
+    },
+    {
+      "hierarchies_ms": 0.9775360226631165,
+      "clip_ms": 234.39071655273438,
+      "compact_ms": 0.04649600014090538
+    },
+    {
+      "hierarchies_ms": 1.0196479558944702,
+      "clip_ms": 73.9444808959961,
+      "compact_ms": 0.04649600014090538
+    },
+    {
+      "hierarchies_ms": 0.9419519901275635,
+      "clip_ms": 14.03660774230957,
+      "compact_ms": 0.04649600014090538
+    },
+    {
+      "hierarchies_ms": 0.9210879802703857,
+      "clip_ms": 17.432191848754883,
+      "compact_ms": 0.04649600014090538
+    },
+    {
+      "hierarchies_ms": 0.887935996055603,
+      "clip_ms": 1.1017279624938965,
+      "compact_ms": 0.009920000098645687
+    }
+  ],
+  "output": {
+    "residual_patches": 0,
+    "polygons": 354296,
+    "triangles": 1653516,
+    "layers": 16,
+    "peeling_passes": 16,
+    "boundary_vertices": 1393249,
+    "depth_ties": 0,
+    "error": 0,
+    "max_hidden_pieces": 519,
+    "peak_residual_patches": 121453
+  }
+}
