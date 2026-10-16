@@ -1,0 +1,157 @@
+{
+  "warp": "1.15.0",
+  "scope": "Full graph replay, including projection/topology, contour subdivision, shared rank queries and conforming world mesh; excludes upload/allocation/JIT/capture/readback/audit",
+  "source_sha256": {
+    "warp_peel/kernels.py": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+    "warp_peel/solver.py": "94fab10c7aca2ec38d0ab5c3544b903a41b0561aa49dc9f6b92451d11b94533b",
+    "warp_peel/__init__.py": "3fb98513bde9bffdd4ac2fb275bc48dcf93b7e15348b7a165f86385a2920715d",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/__main__.py": "af5479bcd0e5b6dd020796214dceb272cb02a075e0c614cbb1a485bc366f0f2c",
+    "warp_peel/events.py": "5aee654650cc3a43a7c08438ad1b52f22cc55315f0692efc08cc7fd76c82e24e",
+    "warp_peel/event_kernels.py": "d8984d5dead613d82525d5f09f4d2bf11dfb7c1ca30d24e08309c8f9c2560ada"
+  },
+  "cases": [
+    {
+      "scene": "results/global/dragon-cache/1024/resolved.json",
+      "sources": 1068,
+      "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+      "capacities": {
+        "frontier": 8544,
+        "regions": 17088,
+        "hits": 136704,
+        "vertices": 136704,
+        "triangles": 136704,
+        "rounds": 4096,
+        "layers": 4096,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 5 %, 530 MiB",
+      "processes_before": "8681, python3, 520 MiB",
+      "milliseconds": [
+        8.306303977966309,
+        8.399776458740234,
+        8.284000396728516,
+        8.380640029907227,
+        8.353856086730957
+      ],
+      "median_ms": 8.353856086730957,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 2563,
+        "triangles": 10298,
+        "layers": 8,
+        "boundary_vertices": 8846,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 0,
+        "peak_residual_patches": 880,
+        "target_visits": 4058,
+        "contour_tests": 8762,
+        "splits": 1495,
+        "ray_groups": 2447,
+        "ray_candidate_tests": 23798,
+        "ray_hits": 8870,
+        "rounds": 11,
+        "unique_contours": 363
+      },
+      "audit": {
+        "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+        "checked_rays": 570,
+        "skipped_boundary_rays": 0,
+        "rank_mismatches": 0,
+        "maximum_hits": 8,
+        "examples": [],
+        "output": {
+          "residual_patches": 0,
+          "polygons": 2563,
+          "triangles": 10298,
+          "layers": 8,
+          "boundary_vertices": 8846,
+          "depth_ties": 0,
+          "error": 0,
+          "max_hidden_pieces": 0,
+          "peak_residual_patches": 880,
+          "target_visits": 4058,
+          "contour_tests": 8762,
+          "splits": 1495,
+          "ray_groups": 2447,
+          "ray_candidate_tests": 23798,
+          "ray_hits": 8870,
+          "rounds": 11,
+          "unique_contours": 363
+        }
+      }
+    },
+    {
+      "scene": "results/global/dragon-cache/4096/resolved.json",
+      "sources": 4108,
+      "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+      "capacities": {
+        "frontier": 32864,
+        "regions": 65728,
+        "hits": 525824,
+        "vertices": 525824,
+        "triangles": 525824,
+        "rounds": 4096,
+        "layers": 4096,
+        "edge_vertices": 128
+      },
+      "load_before": "NVIDIA L40, 570.158.01, 0 %, 1286 MiB",
+      "processes_before": "8681, python3, 1276 MiB",
+      "milliseconds": [
+        12.87337589263916,
+        13.050623893737793,
+        13.084959983825684,
+        12.827296257019043,
+        13.02723217010498
+      ],
+      "median_ms": 13.02723217010498,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 10719,
+        "triangles": 44724,
+        "layers": 12,
+        "boundary_vertices": 37847,
+        "depth_ties": 0,
+        "error": 0,
+        "max_hidden_pieces": 0,
+        "peak_residual_patches": 3756,
+        "target_visits": 17330,
+        "contour_tests": 32976,
+        "splits": 6611,
+        "ray_groups": 10364,
+        "ray_candidate_tests": 119978,
+        "ray_hits": 41394,
+        "rounds": 14,
+        "unique_contours": 1157
+      },
+      "audit": {
+        "scope": "Sampled source-labelled ranks using independent rational ray/triangle tests, padded floating input bounds, and downloaded GPU polygons; not a region certificate. Grid plus output interior samples; boundary-near samples skipped.",
+        "checked_rays": 578,
+        "skipped_boundary_rays": 0,
+        "rank_mismatches": 0,
+        "maximum_hits": 12,
+        "examples": [],
+        "output": {
+          "residual_patches": 0,
+          "polygons": 10719,
+          "triangles": 44724,
+          "layers": 12,
+          "boundary_vertices": 37847,
+          "depth_ties": 0,
+          "error": 0,
+          "max_hidden_pieces": 0,
+          "peak_residual_patches": 3756,
+          "target_visits": 17330,
+          "contour_tests": 32976,
+          "splits": 6611,
+          "ray_groups": 10364,
+          "ray_candidate_tests": 119978,
+          "ray_hits": 41394,
+          "rounds": 14,
+          "unique_contours": 1157
+        }
+      }
+    }
+  ]
+}

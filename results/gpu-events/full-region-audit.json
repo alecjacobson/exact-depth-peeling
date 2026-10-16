@@ -1,0 +1,36 @@
+{
+  "scene": "results/global/dragon-cache/1024/resolved.json",
+  "oracle": "global-arrangement exact regions, independently validated against arrangement on repository fixtures",
+  "scope": "Complete source-labelled polygon unions converted to binary64, made valid when needed, and snapped to the stated comparison grid on both sides; not an exact arithmetic certificate",
+  "comparison_grid": 1e-12,
+  "invalid_polygons_after_float_conversion": {
+    "oracle": 120,
+    "gpu": 0
+  },
+  "tolerance_normalized_area": 1e-09,
+  "compared_regions": 1626,
+  "maximum_symmetric_difference_area": 6.787982448266255e-14,
+  "sum_symmetric_difference_area": 4.374467616027641e-12,
+  "failures": [],
+  "output": {
+    "residual_patches": 0,
+    "polygons": 2563,
+    "triangles": 10298,
+    "layers": 8,
+    "boundary_vertices": 8846,
+    "depth_ties": 0,
+    "error": 0,
+    "peak_residual_patches": 880,
+    "target_visits": 4058,
+    "contour_tests": 8762,
+    "splits": 1495,
+    "ray_groups": 2447,
+    "ray_candidate_tests": 47596,
+    "ray_hits": 8870,
+    "rounds": 11,
+    "unique_contours": 363
+  },
+  "scene_sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+  "oracle_binary_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
+  "oracle_output_sha256": "469496e074e1da46ebb486ff4a357a42519a9b6c0b223d2aa7ee08048289bcee"
+}

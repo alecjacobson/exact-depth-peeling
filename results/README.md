@@ -1,5 +1,7 @@
 # Recorded artifacts
 
+- `gpu-events/`: experimental contour/shared-rank GPU route, fresh CPU/GPU comparisons, stack work scaling, exact-fixture checks and rational-ray audits.
+
 - `gpu/`: Warp graph-replay timings, exact-fixture integration checks, rational-ray audits, and current GPU limitations.
 
 - `global/`: contour-aware exact global baseline, independent oracle regressions, cached dragon decimations through 64K, matched global/peeling trends, and CPU thread-scaling measurements.

@@ -5,14 +5,15 @@ meshes using Warp kernels. It ports the CPU contour-aware BVH peeling algorithm;
 it does not call the C++ solvers, rasterize a depth buffer, or construct a global
 arrangement. The CPU exact routes remain the correctness references.
 
-This is a finite-precision GPU implementation, not an exact solver. Its first
-priority is a complete, replayable device pipeline. See the
+This is a finite-precision GPU implementation, not an exact solver. The original
+`DevicePeeler` described below is retained as the iterative baseline. See the
 [measured results and limitations](../results/gpu/README.md) before choosing it
 for performance. The near-real-time goal is not yet achieved.
 
-The [GPU strategy review](STRATEGY.md) diagnoses per-target clipping and specifies
-a proposed boundary-event/shared-rank experiment. That redesign is not implemented
-in the timings below.
+The experimental **`EventPeeler`** now implements contour subdivision and shared
+ray sorting without repeated layer passes. Use `--method events`; read its
+[algorithm and limitations](EVENTS.md) and [new measurements](../results/gpu-events/README.md).
+The [strategy review](STRATEGY.md) records the motivation and remaining goals.
 
 ## Run
 

@@ -45,10 +45,25 @@ preallocated pools report failures explicitly, and realistic cases require
 substantial memory. The existing Blender images below show the recorded CPU
 outputs; they are not relabelled as GPU results.
 
-The [GPU strategy review](warp_peel/STRATEGY.md) records the current clipping
-bottleneck and the proposed move to analytic boundary events with shared depth
-ordering. It distinguishes the redesign from implemented work and sets
-correctness and scaling tests before replacing the baseline.
+The experimental **`EventPeeler`** now takes **87 ms for the 65,544-face dragon**
+and **54 ms for the 102,400-face sculpted mesh**, including all layers and conforming
+world-space mesh output on an L40. Fresh four-thread CPU fast timings are 1,630 ms
+and 192 ms respectively; CPU timings exclude projection/topology, unlike GPU.
+These are shared-host measurements, not a reserved-hardware comparison.
+
+```bash
+python3 -m warp_peel results/global/dragon-cache/65536/resolved.json --method events --out layers.npz
+```
+
+This route uses finite mesh contours to guide parallel convex subdivision, groups
+coincident contours, then groups identical interior query locations and sorts
+their source hits to assign all ranks together. It retains analytic polygons and
+original source planes without layer-by-layer subtraction. The exact CPU routes
+remain the oracles. It still extends contour supporting lines, and sharing depth
+order across different query locations remains unfinished. Read the
+[implemented algorithm](warp_peel/EVENTS.md), [full CPU/GPU comparison](results/gpu-events/README.md),
+and [strategy review](warp_peel/STRATEGY.md). The original GPU route remains the
+default baseline; select the new experimental route explicitly with `--method events`.
 
 <!-- GLOBAL_BASELINE_BEGIN -->
 ## Exact global baseline and cached dragon scaling

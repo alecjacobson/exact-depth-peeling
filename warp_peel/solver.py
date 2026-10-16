@@ -203,7 +203,7 @@ class DevicePeeler:
     def _launch(self, kernel, dim, *args):
         wp.launch(kernel, dim=dim, inputs=list(args), device=self.device, block_dim=32)
 
-    def _prepare(self):
+    def _prepare(self, classify=True):
         self._launch(
             k.reset, max(16, self.cap.layers), self.status, self.condition, self.stats
         )
@@ -283,7 +283,7 @@ class DevicePeeler:
             )
         self.source_bvh.rebuild()
         self.contour_bvh.rebuild()
-        if self.n:
+        if self.n and classify:
             self._launch(
                 k.classify,
                 self.n,
@@ -304,7 +304,8 @@ class DevicePeeler:
                 self.limit,
                 self.all_layers,
             )
-        self._launch(k.start_loop, 1, self.status, self.condition)
+        if classify:
+            self._launch(k.start_loop, 1, self.status, self.condition)
 
     def _layer(self):
         self._launch(

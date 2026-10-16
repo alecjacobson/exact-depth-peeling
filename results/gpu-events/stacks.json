@@ -1,0 +1,224 @@
+{
+  "cases": [
+    {
+      "n": 16,
+      "milliseconds": [
+        0.661952018737793,
+        0.6607679724693298,
+        0.6600319743156433,
+        0.6599680185317993,
+        0.6603519916534424
+      ],
+      "median_ms": 0.6603519916534424,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 16,
+        "triangles": 48,
+        "layers": 16,
+        "boundary_vertices": 48,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 16,
+        "contour_tests": 48,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 32,
+        "ray_hits": 16,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "3 %, 1026 MiB"
+    },
+    {
+      "n": 64,
+      "milliseconds": [
+        1.0616320371627808,
+        1.059999942779541,
+        1.059615969657898,
+        1.0606720447540283,
+        1.060096025466919
+      ],
+      "median_ms": 1.060096025466919,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 64,
+        "triangles": 192,
+        "layers": 64,
+        "boundary_vertices": 192,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 64,
+        "contour_tests": 192,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 128,
+        "ray_hits": 64,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "3 %, 1026 MiB"
+    },
+    {
+      "n": 256,
+      "milliseconds": [
+        2.569888114929199,
+        2.567744016647339,
+        2.5687038898468018,
+        2.5687360763549805,
+        2.5693440437316895
+      ],
+      "median_ms": 2.5687360763549805,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 256,
+        "triangles": 768,
+        "layers": 256,
+        "boundary_vertices": 768,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 256,
+        "contour_tests": 768,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 512,
+        "ray_hits": 256,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "9 %, 1026 MiB"
+    },
+    {
+      "n": 1024,
+      "milliseconds": [
+        8.16988754272461,
+        8.166912078857422,
+        8.153087615966797,
+        8.168895721435547,
+        8.160415649414062
+      ],
+      "median_ms": 8.166912078857422,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 1024,
+        "triangles": 3072,
+        "layers": 1024,
+        "boundary_vertices": 3072,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 1024,
+        "contour_tests": 3072,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 2048,
+        "ray_hits": 1024,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "57 %, 1028 MiB"
+    },
+    {
+      "n": 4096,
+      "milliseconds": [
+        28.5545597076416,
+        28.707807540893555,
+        28.568927764892578,
+        28.560287475585938,
+        28.559104919433594
+      ],
+      "median_ms": 28.560287475585938,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 4096,
+        "triangles": 12288,
+        "layers": 4096,
+        "boundary_vertices": 12288,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 4096,
+        "contour_tests": 12288,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 8192,
+        "ray_hits": 4096,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "71 %, 1092 MiB"
+    },
+    {
+      "n": 16384,
+      "milliseconds": [
+        116.66864013671875,
+        116.66073608398438,
+        116.69058990478516,
+        116.71699523925781,
+        116.70361328125
+      ],
+      "median_ms": 116.69058990478516,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 16384,
+        "triangles": 49152,
+        "layers": 16384,
+        "boundary_vertices": 49152,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 16384,
+        "contour_tests": 49152,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 32768,
+        "ray_hits": 16384,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "100 %, 1348 MiB"
+    },
+    {
+      "n": 65536,
+      "milliseconds": [
+        476.5056457519531,
+        476.3319396972656,
+        476.4593811035156,
+        476.5545349121094,
+        476.5570068359375
+      ],
+      "median_ms": 476.5056457519531,
+      "output": {
+        "residual_patches": 0,
+        "polygons": 65536,
+        "triangles": 196608,
+        "layers": 65536,
+        "boundary_vertices": 196608,
+        "depth_ties": 0,
+        "error": 0,
+        "peak_residual_patches": 0,
+        "target_visits": 65536,
+        "contour_tests": 196608,
+        "splits": 0,
+        "ray_groups": 1,
+        "ray_candidate_tests": 131072,
+        "ray_hits": 65536,
+        "rounds": 1,
+        "unique_contours": 3
+      },
+      "load": "100 %, 2372 MiB"
+    }
+  ],
+  "scope": "Complete captured pipeline; two warmups then five event timings; upload/JIT/capture/readback excluded",
+  "source_sha256": {
+    "warp_peel/kernels.py": "5c8fcafe460647f1185eb88d75e7753c76e3ba6dbfdfdc99fc15f1301e8a9672",
+    "warp_peel/solver.py": "94fab10c7aca2ec38d0ab5c3544b903a41b0561aa49dc9f6b92451d11b94533b",
+    "warp_peel/__init__.py": "6102d3db78afab4e20d13db52c54e4078e6759f564dfce01619ddbf42a67b956",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/__main__.py": "f2956b12b8aaacc144d0da8ef7abef7ab1521352d4b3f72c4660900d62b8424e",
+    "warp_peel/events.py": "2cf5b3cf34d91851c0fe011822b2b6eb3e8589e2d3ae61e7b85bd974aa851258",
+    "warp_peel/event_kernels.py": "7341a46d334dbaa78e63322c22de4b2a297b41354e650dd5231b682d1d0b8896"
+  }
+}

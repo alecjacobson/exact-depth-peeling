@@ -4,6 +4,13 @@ Status: proposed redesign and experiment gates, not an implemented speedup.
 The current device pipeline remains the working baseline. Its measured CPU/GPU
 gap warrants changing the visibility algorithm, not just tuning its BVH.
 
+Implementation update: the separate [EventPeeler prototype](EVENTS.md) now passes
+the fixture and identical-stack gates and has [measured results](../results/gpu-events/README.md).
+It implements contour-guided supporting-line subdivision and exactly shared ray
+locations, rather than the full finite-segment event arrangement or general
+shared ordering proposed below. The original review is retained to distinguish
+those remaining requirements from the completed prototype.
+
 ## Diagnosis
 
 `kernels.classify` uses contours to certify whole-source depth ranks. For

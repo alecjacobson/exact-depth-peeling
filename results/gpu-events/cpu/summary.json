@@ -1,0 +1,225 @@
+{
+  "scope": "CPU fast extraction and conforming meshing only; excludes import/projection/topology, validation/export; first of four repetitions discarded as warmup",
+  "binary_sha256": "46ff2e2b49250d1a65daf19abc101160d3b921b71f1441248b64b69217152475",
+  "cpu_quotas": {
+    "/sys/fs/cgroup/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podf9b96594_c7f4_4724_b524_fa1a584aa156.slice/cri-containerd-e2493d2865d42cc482f1763e4f9426ce7defafd851abdb32e9c4c2e0b8d99419.scope/cpu.max": "400000 100000",
+    "/sys/fs/cgroup/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podf9b96594_c7f4_4724_b524_fa1a584aa156.slice/cpu.max": "400000 100000",
+    "/sys/fs/cgroup/kubepods.slice/kubepods-burstable.slice/cpu.max": "max 100000",
+    "/sys/fs/cgroup/kubepods.slice/cpu.max": "max 100000"
+  },
+  "load_before": [
+    0.89404296875,
+    1.7490234375,
+    2.1728515625
+  ],
+  "cases": [
+    {
+      "scene": "results/global/dragon-cache/1024/resolved.json",
+      "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+      "threads": 1,
+      "sources": 1068,
+      "milliseconds": [
+        32.1449,
+        32.229577,
+        32.268246
+      ],
+      "median_ms": 32.229577,
+      "metrics": "results/gpu-events/cpu/1024-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/1024/resolved.json",
+      "sha256": "3ae5ad33d78e9265c05a0592ab76cccd0b2c6b216a35313a72d4d65ce24302c7",
+      "threads": 4,
+      "sources": 1068,
+      "milliseconds": [
+        13.276965,
+        13.203411,
+        13.125273
+      ],
+      "median_ms": 13.203411,
+      "metrics": "results/gpu-events/cpu/1024-t4/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/2048/resolved.json",
+      "sha256": "873781e473323d2d4164631efbb0959f9aa0791c90ac9fd35133de9fab7b985e",
+      "threads": 1,
+      "sources": 2088,
+      "milliseconds": [
+        86.037929,
+        86.61014899999999,
+        85.72927499999999
+      ],
+      "median_ms": 86.037929,
+      "metrics": "results/gpu-events/cpu/2048-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/2048/resolved.json",
+      "sha256": "873781e473323d2d4164631efbb0959f9aa0791c90ac9fd35133de9fab7b985e",
+      "threads": 4,
+      "sources": 2088,
+      "milliseconds": [
+        31.348562000000005,
+        31.265381,
+        32.465423
+      ],
+      "median_ms": 31.348562000000005,
+      "metrics": "results/gpu-events/cpu/2048-t4/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/4096/resolved.json",
+      "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+      "threads": 1,
+      "sources": 4108,
+      "milliseconds": [
+        218.413116,
+        218.31957799999998,
+        216.920169
+      ],
+      "median_ms": 218.31957799999998,
+      "metrics": "results/gpu-events/cpu/4096-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/4096/resolved.json",
+      "sha256": "f4fe68b87b333565402569089c36dafd7af8ac8d8c1370944739dc52ef2eb996",
+      "threads": 4,
+      "sources": 4108,
+      "milliseconds": [
+        83.676709,
+        83.178786,
+        83.47328599999999
+      ],
+      "median_ms": 83.47328599999999,
+      "metrics": "results/gpu-events/cpu/4096-t4/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/8192/resolved.json",
+      "sha256": "38e654603de2e3807e7d1e6554472ec31c471454df6703a442c5bc6c9c6e2f2e",
+      "threads": 1,
+      "sources": 8200,
+      "milliseconds": [
+        468.020771,
+        466.97830400000004,
+        467.99019400000003
+      ],
+      "median_ms": 467.99019400000003,
+      "metrics": "results/gpu-events/cpu/8192-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/8192/resolved.json",
+      "sha256": "38e654603de2e3807e7d1e6554472ec31c471454df6703a442c5bc6c9c6e2f2e",
+      "threads": 4,
+      "sources": 8200,
+      "milliseconds": [
+        165.449922,
+        164.865744,
+        164.329732
+      ],
+      "median_ms": 164.865744,
+      "metrics": "results/gpu-events/cpu/8192-t4/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/16384/resolved.json",
+      "sha256": "9eb9167c677f6c122da1612e6bc5bdc9ce0b9deebcda6ddd98d0e053839af116",
+      "threads": 1,
+      "sources": 16400,
+      "milliseconds": [
+        969.641623,
+        960.045247,
+        965.903819
+      ],
+      "median_ms": 965.903819,
+      "metrics": "results/gpu-events/cpu/16384-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/16384/resolved.json",
+      "sha256": "9eb9167c677f6c122da1612e6bc5bdc9ce0b9deebcda6ddd98d0e053839af116",
+      "threads": 4,
+      "sources": 16400,
+      "milliseconds": [
+        340.67975900000005,
+        356.047576,
+        363.795654
+      ],
+      "median_ms": 356.047576,
+      "metrics": "results/gpu-events/cpu/16384-t4/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/32768/resolved.json",
+      "sha256": "e1e4c3757a1e29d5d37abc53581d80248775fe07f8221dfeb44242bda3fa92b3",
+      "threads": 1,
+      "sources": 32792,
+      "milliseconds": [
+        2198.476254,
+        2213.135685,
+        2199.066788
+      ],
+      "median_ms": 2199.066788,
+      "metrics": "results/gpu-events/cpu/32768-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/32768/resolved.json",
+      "sha256": "e1e4c3757a1e29d5d37abc53581d80248775fe07f8221dfeb44242bda3fa92b3",
+      "threads": 4,
+      "sources": 32792,
+      "milliseconds": [
+        772.1129370000001,
+        788.820284,
+        800.92287
+      ],
+      "median_ms": 788.820284,
+      "metrics": "results/gpu-events/cpu/32768-t4/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/65536/resolved.json",
+      "sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+      "threads": 1,
+      "sources": 65544,
+      "milliseconds": [
+        4482.166002999999,
+        4363.0463,
+        4355.468356
+      ],
+      "median_ms": 4363.0463,
+      "metrics": "results/gpu-events/cpu/65536-t1/metrics.json"
+    },
+    {
+      "scene": "results/global/dragon-cache/65536/resolved.json",
+      "sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+      "threads": 4,
+      "sources": 65544,
+      "milliseconds": [
+        1630.331324,
+        1634.957708,
+        1580.706225
+      ],
+      "median_ms": 1630.331324,
+      "metrics": "results/gpu-events/cpu/65536-t4/metrics.json"
+    },
+    {
+      "scene": "results/large/scenes/sculpted-102400.json",
+      "sha256": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e",
+      "threads": 1,
+      "sources": 102400,
+      "milliseconds": [
+        470.91938,
+        472.908899,
+        469.808124
+      ],
+      "median_ms": 470.91938,
+      "metrics": "results/gpu-events/cpu/sculpted-102400-t1/metrics.json"
+    },
+    {
+      "scene": "results/large/scenes/sculpted-102400.json",
+      "sha256": "c39e87d673075f2f45586445e16768cdf99f19afb547d9839482dfe887992d8e",
+      "threads": 4,
+      "sources": 102400,
+      "milliseconds": [
+        187.86654,
+        191.60098200000002,
+        191.662416
+      ],
+      "median_ms": 191.60098200000002,
+      "metrics": "results/gpu-events/cpu/sculpted-102400-t4/metrics.json"
+    }
+  ]
+}
