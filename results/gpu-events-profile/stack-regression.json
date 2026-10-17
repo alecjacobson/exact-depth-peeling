@@ -1,0 +1,19 @@
+{
+  "scope": "Fresh coincident-footprint stack runs; benchmarks check every assigned rank and expected work counts. Median timing guard 15%.",
+  "maximum_ratio": 1.15,
+  "cases": [
+    {
+      "n": 1024,
+      "baseline_ms": 1.3112640380859375,
+      "candidate_ms": 1.2588160037994385,
+      "ratio": 0.960001927328795
+    },
+    {
+      "n": 65536,
+      "baseline_ms": 8.99392032623291,
+      "candidate_ms": 10.01427173614502,
+      "ratio": 1.1134490158797616
+    }
+  ],
+  "failures": []
+}

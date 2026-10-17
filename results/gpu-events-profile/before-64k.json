@@ -1,0 +1,156 @@
+{
+  "scene": "results/global/dragon-cache/65536/resolved.json",
+  "scope": "Separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median. Noding, emission and world lifting remain fused.",
+  "warp": "1.15.0",
+  "load_before": "NVIDIA L40, 570.158.01, 41 %, 3295 MiB",
+  "source_sha256": {
+    "warp_peel/__init__.py": "6102d3db78afab4e20d13db52c54e4078e6759f564dfce01619ddbf42a67b956",
+    "warp_peel/__main__.py": "f2956b12b8aaacc144d0da8ef7abef7ab1521352d4b3f72c4660900d62b8424e",
+    "warp_peel/beams.py": "c2605bf47d454b0f081341a42c8929e5e9c5249c578db609939d03915a6cc9a6",
+    "warp_peel/components.py": "5526f86eb15a95bec39a10d62a5fce5236d7b3749226e3f41a0d0079f2acc178",
+    "warp_peel/event_kernels.py": "ad4864790959361715a52d17ed31e71cd4263ae6254f85d08f21ecd180b5d0a7",
+    "warp_peel/events.py": "13db9df518303055b5028e004067ffbb592aa7d1b7d7996dc30e14a2cf5e146f",
+    "warp_peel/frontier.py": "ee453021b7818cb01fc012bc485bf5fd1d7975f8a20959e35851e58281f497d0",
+    "warp_peel/io.py": "bb84ff88b9a5d7a8a6db0a306e31170f5b119bf95a4b1c4a9b8b255aeebd4fcf",
+    "warp_peel/kernels.py": "bcf0c7852084167ec814736f476670dbb7ff385fce6567c3a7baf0d4bd8f3171",
+    "warp_peel/solver.py": "0a17fd7d76c9868e058a0e43830adf61d6ef980f643540ad89ab15cfc021b5b9"
+  },
+  "input_sha256": "ce6a561fe7ef4798f2af78763cf66dd8a0be0011c9b6a57cb446b90d25799e0f",
+  "milliseconds": {
+    "prepare": [
+      7.686272144317627,
+      9.646623611450195,
+      5.754047870635986,
+      5.663519859313965,
+      5.706783771514893
+    ],
+    "subdivide": [
+      7.335391998291016,
+      8.945759773254395,
+      4.892352104187012,
+      4.896224021911621,
+      4.951136112213135
+    ],
+    "rank_connectivity": [
+      3.926784038543701,
+      4.979519844055176,
+      2.8147199153900146,
+      2.781951904296875,
+      2.7969601154327393
+    ],
+    "rank_samples": [
+      0.7762560248374939,
+      0.7825279831886292,
+      0.7780479788780212,
+      0.7864320278167725,
+      0.7734400033950806
+    ],
+    "rank_query_sort": [
+      0.27001601457595825,
+      0.2686080038547516,
+      0.2717440128326416,
+      0.27081599831581116,
+      0.27059200406074524
+    ],
+    "rank_group_certify": [
+      0.16918399930000305,
+      0.16335999965667725,
+      0.18377600610256195,
+      0.16592000424861908,
+      0.17510400712490082
+    ],
+    "rank_ray_primary": [
+      5.116991996765137,
+      5.205664157867432,
+      4.688960075378418,
+      4.632192134857178,
+      4.679520130157471
+    ],
+    "rank_ray_heavy": [
+      0.8061119914054871,
+      0.7743359804153442,
+      0.6792320013046265,
+      0.8297600150108337,
+      0.7713599801063538
+    ],
+    "rank_hit_sort_scan": [
+      0.3933440148830414,
+      0.3954879939556122,
+      0.39475199580192566,
+      0.39552000164985657,
+      0.39529600739479065
+    ],
+    "rank_assign": [
+      0.020959999412298203,
+      0.021727999672293663,
+      0.02127999998629093,
+      0.02099199965596199,
+      0.02179200015962124
+    ],
+    "mesh_vertices_scan": [
+      0.6000319719314575,
+      0.6041280031204224,
+      0.6071040034294128,
+      0.6053119897842407,
+      0.599839985370636
+    ],
+    "mesh_bounds_bvh": [
+      1.091871976852417,
+      1.0906879901885986,
+      1.0875200033187866,
+      1.099552035331726,
+      1.0928319692611694
+    ],
+    "mesh_node_emit_lift": [
+      5.726399898529053,
+      5.204224109649658,
+      5.259520053863525,
+      5.2433600425720215,
+      5.237631797790527
+    ]
+  },
+  "median_ms": {
+    "prepare": 5.754047870635986,
+    "subdivide": 4.951136112213135,
+    "rank_connectivity": 2.8147199153900146,
+    "rank_samples": 0.7780479788780212,
+    "rank_query_sort": 0.27059200406074524,
+    "rank_group_certify": 0.16918399930000305,
+    "rank_ray_primary": 4.688960075378418,
+    "rank_ray_heavy": 0.7743359804153442,
+    "rank_hit_sort_scan": 0.39529600739479065,
+    "rank_assign": 0.02127999998629093,
+    "mesh_vertices_scan": 0.6041280031204224,
+    "mesh_bounds_bvh": 1.091871976852417,
+    "mesh_node_emit_lift": 5.2433600425720215
+  },
+  "output": {
+    "residual_patches": 0,
+    "polygons": 129909,
+    "triangles": 517417,
+    "layers": 16,
+    "boundary_vertices": 447519,
+    "depth_ties": 0,
+    "error": 0,
+    "peak_residual_patches": 38812,
+    "target_visits": 199370,
+    "contour_tests": 308956,
+    "splits": 64365,
+    "ray_groups": 57521,
+    "ray_candidate_tests": 1075754,
+    "ray_hits": 323876,
+    "rounds": 20,
+    "unique_contours": 8977,
+    "heavy_ray_groups": 6331,
+    "beam_attempts": 349,
+    "certified_beams": 0,
+    "beam_candidate_tests": 362,
+    "heavy_beams": 0,
+    "rank_components": 59778,
+    "rank_connections": 85441,
+    "connection_contour_tests": 183335,
+    "merged_polygons": 0,
+    "matched_patch_edges": 141345,
+    "edge_hash_misses": 0
+  }
+}

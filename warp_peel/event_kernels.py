@@ -107,6 +107,47 @@ def contains(p: g.Polygon, x: wp.vec2d):
     return inside and p.n > 0
 
 
+@wp.kernel
+def flatten_sources(
+    original: wp.array(dtype=g.Polygon),
+    points: wp.array2d(dtype=wp.vec2d),
+    sizes: wp.array(dtype=int),
+    status: wp.array(dtype=int),
+):
+    i = wp.tid()
+    n = int(0)
+    if i < original.shape[0] and status[9] == 0:
+        p = original[i]
+        n = p.n
+        # Triangle + one near plane + four window planes: at most eight.
+        if n > points.shape[1]:
+            wp.atomic_or(status, 9, 1)
+            n = 0
+        for j in range(n):
+            points[i, j] = g.point(p, j)
+    sizes[i] = n
+
+
+@wp.func
+def contains_flat(
+    points: wp.array2d(dtype=wp.vec2d),
+    sizes: wp.array(dtype=int),
+    source: int,
+    x: wp.vec2d,
+):
+    n = sizes[source]
+    inside = bool(n > 0)
+    for j in range(n):
+        a = points[source, j]
+        b = points[source, (j + 1) % n]
+        s = g.cross(a, b, x)
+        owned = b[1] > a[1] or (b[1] == a[1] and b[0] < a[0])
+        if s < wp.float64(0.0) or (s == wp.float64(0.0) and not owned):
+            inside = False
+            break
+    return inside
+
+
 @wp.func
 def store_hit(
     source: int,
@@ -157,7 +198,8 @@ def ray_hits(
     points: wp.array(dtype=wp.vec2d),
     query_ids: wp.array(dtype=int),
     groups: wp.array(dtype=int),
-    original: wp.array(dtype=g.Polygon),
+    source_points: wp.array2d(dtype=wp.vec2d),
+    source_sizes: wp.array(dtype=int),
     scores: wp.array(dtype=wp.vec3d),
     tree: g.Tree,
     counts: wp.array(dtype=int),
@@ -184,7 +226,7 @@ def ray_hits(
         if source < 0:
             break
         visits += 1
-        if contains(original[source], x):
+        if contains_flat(source_points, source_sizes, source, x):
             store_hit(
                 source, i, x, scores, depths, sources, hit_groups, status, metrics
             )
@@ -207,7 +249,8 @@ def ray_hits(
 def heavy_ray_hits(
     points: wp.array(dtype=wp.vec2d),
     query_ids: wp.array(dtype=int),
-    original: wp.array(dtype=g.Polygon),
+    source_points: wp.array2d(dtype=wp.vec2d),
+    source_sizes: wp.array(dtype=int),
     scores: wp.array(dtype=wp.vec3d),
     tree: g.Tree,
     counts: wp.array(dtype=int),
@@ -246,7 +289,7 @@ def heavy_ray_hits(
             if source < 0:
                 break
             visits += 1
-            if contains(original[source], x):
+            if contains_flat(source_points, source_sizes, source, x):
                 store_hit(
                     source, i, x, scores, depths, sources, hit_groups, status, metrics
                 )

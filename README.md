@@ -45,17 +45,22 @@ preallocated pools report failures explicitly, and realistic cases require
 substantial memory. The existing Blender images below show the recorded CPU
 outputs; they are not relabelled as GPU results.
 
-The experimental **`EventPeeler`** takes **27.9 ms for the 65,544-face dragon**
-and **19.2 ms for the 102,400-face sculpted mesh**, including all layers and
+The experimental **`EventPeeler`** takes **23.5 ms for the 65,544-face dragon**
+and **18.7 ms for the 102,400-face sculpted mesh**, including all layers and
 conforming world-space output on an L40. A fresh comparison with the previous
-commit gives **27.3 ms and 21.2 ms**: the connectivity change is 2% slower on
-this dragon and 9% faster on the sculpted mesh. It reduces rank-ray candidates
-by 41% and 92%, respectively, but adjacency construction also costs time.
-The full **721,510-face dragon takes 313 ms**, versus 324 ms previously, for
+commit gives **27.8 ms and 19.0 ms**. Flat source vertices remove large polygon
+values from ray containment tests; the geometric tests and candidate work are
+unchanged. The 64K dragon improves by 15.6%; the sculpted mesh changes little
+because connectivity had already removed most of its ray work.
+The full **721,510-face dragon takes 252 ms**, versus 313 ms previously, for
 all 26 layers and 5.44 million output triangles; it remains far from real time.
-These are shared-host device timings, excluding upload/readback/rendering.
-The [latest report](results/gpu-events-components/README.md) includes the full
-dragon, 1K–64K scaling, correctness checks and optional merging measurements.
+The 65,536-layer identical-footprint stack regresses by 11.3% (9.0 → 10.0 ms),
+so the change is not a universal speedup. These are shared-host device timings,
+excluding upload/readback/rendering.
+The [latest report](results/gpu-events-profile/README.md) includes detailed
+stage timings, 1K–64K scaling and correctness checks. The
+[connectivity report](results/gpu-events-components/README.md) retains the
+previous rank-sharing and optional merging measurements.
 The [previous tuning report](results/gpu-events-tuning/README.md) records the
 larger improvement from the first event prototype. The [earlier CPU comparison](results/gpu-events/README.md)
 retains four-thread fast-mode timings of 1,630 ms and 192 ms, measured separately.
@@ -195,10 +200,10 @@ though they may be invisible at GIF resolution.
 | Exact benchmark attempt | 180 s process timeout; no complete timing record |
 
 The current experimental GPU event route extracts this same full scene in
-**323.6 ms**, including projection/topology and conforming 3D output: **26 layers,
+**251.6 ms**, including projection/topology and conforming 3D output: **26 layers,
 5,440,541 triangles**, with zero mismatches across 834 independently audited rays.
 It remains finite precision and the sampled audit is not a full certificate.
-See the [GPU follow-up report](results/gpu-events-tuning/README.md); the Blender
+See the [GPU follow-up report](results/gpu-events-profile/README.md); the Blender
 images above retain the recorded CPU output described here.
 
 This example **does not meet the real-time target**. The surface has many projected
@@ -994,8 +999,9 @@ index box tests, candidate comparisons, intersections, differences, and half-pla
 clips are distinct counters. Validation never contributes to algorithm counters.
 
 See [results/findings.md](results/findings.md) for measured results and limitations.
-This is a reference prototype: no GPU implementation, differentiation, production
-mesh loader, or claim of novelty in polygon visibility is included.
+The CPU reference does not include differentiation, a production mesh loader,
+or a claim of novelty in polygon visibility. The separate Warp GPU routes are
+described above.
 
 ## Reference implementation and licenses
 

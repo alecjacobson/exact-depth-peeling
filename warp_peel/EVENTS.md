@@ -2,7 +2,9 @@
 
 `EventPeeler` is a separate pure-Warp GPU route. It computes all ranks without
 iterative depth peeling and keeps the existing exact CPU solvers as references.
-The [latest measurements](../results/gpu-events-components/README.md) compare
+The [latest measurements](../results/gpu-events-profile/README.md) break down
+rank and meshing costs and measure flat source storage for ray containment.
+The [connectivity report](../results/gpu-events-components/README.md) compares
 certified patch connectivity with the previous event solver. The
 [earlier tuning report](../results/gpu-events-tuning/README.md) compares that
 solver with the first event prototype. The [original comparison](../results/gpu-events/README.md)
@@ -35,6 +37,12 @@ shapes, capacities and addresses must stay fixed.
    classification. Input surface intersections must already be resolved; retain
    open, silhouette, non-manifold and camera-clipping boundaries. Both surface
    entry and exit triangles participate.
+   Copy each clipped source's vertices and count to flat device arrays for ray
+   containment. A triangle clipped by the near plane and four image-window
+   planes has at most eight vertices. This avoids passing a 32-vertex polygon
+   value for every ray candidate. Both primary and heavy ray kernels retain
+   binary64 cross products and the same half-open shared-edge ownership test.
+   These arrays are refreshed on every replay, including changed camera/input.
 2. Extract projected contour segments and canonicalize endpoint order. Stable
    radix sorts group exactly coincident segments. For each group, take the
    minimum depth score at each endpoint; their interpolant is a conservative
@@ -189,6 +197,8 @@ launch grids still process allocated capacity. Connectivity adds O(V)
 edge storage plus a power-of-two hash table with at least 2V slots, where V is
 the reserved boundary-vertex capacity. Optional merging additionally reserves
 one polygon/source/layer compaction pool. No new allocation occurs during replay.
+The flat source cache additionally reserves eight binary64 2D vertices and one
+32-bit count per input face: 132 bytes per face (one slot for empty input).
 
 Overflow invalidates **all** output via sticky `status[9]`, with inherited error
 bits plus 1024 for shared-hit capacity and 2048 for subdivision rounds. Check
@@ -215,6 +225,7 @@ python3 -m pytest tests/gpu -q
 python3 scripts/benchmark_events.py results/global/dragon-cache/{1024,2048,4096,8192,16384,32768,65536}/resolved.json results/large/scenes/sculpted-102400.json --audit
 python3 scripts/benchmark_event_cpu.py results/global/dragon-cache/{1024,2048,4096,8192,16384,32768,65536}/resolved.json results/large/scenes/sculpted-102400.json
 python3 scripts/profile_events.py results/global/dragon-cache/65536/resolved.json
+python3 scripts/profile_events.py results/dragon/scene.json --detailed
 ```
 
 Tests compare source-labelled region unions with the independent exact
@@ -236,3 +247,11 @@ this follow-up against commit `a8082fd`, including the 1K–64K dragon sequence,
 102K sculpted mesh, full dragon, ablations and the optional merge pass. Its
 complete-region comparisons are numerical comparisons to an exact oracle, not
 exact-arithmetic certificates for GPU geometry.
+
+The detailed profiler separates connectivity, sample generation, query sorting,
+group certification, primary rays, heavy continuations, hit sorting/scans, rank
+assignment, boundary scattering/scans, point-BVH construction, and the fused
+noding/emission/lifting kernel. Each stage has its own captured graph and CUDA
+events. Their medians are diagnostics; use the benchmark's complete graph for
+end-to-end device timings. They do not identify memory, arithmetic or atomic
+hardware stalls, and noding versus emission are not timed separately.

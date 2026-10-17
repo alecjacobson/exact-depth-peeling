@@ -2,8 +2,10 @@
 """Captured stage diagnostics, separate from complete graph replay timings."""
 
 import argparse
+import hashlib
 import json
 import statistics
+import subprocess
 import sys
 from pathlib import Path
 
@@ -19,6 +21,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("scene", type=Path, nargs="?")
     ap.add_argument("--stack", type=int)
+    ap.add_argument("--detailed", action="store_true")
     ap.add_argument("--out", type=Path, default=Path("results/gpu-events/phases.json"))
     args = ap.parse_args()
     if (args.scene is None) == (args.stack is None):
@@ -36,6 +39,28 @@ def main():
         ("rank", p._rank),
         ("mesh", p._mesh),
     ]
+    if args.detailed:
+        phases = phases[:2] + [
+            ("rank_connectivity", p._connections),
+            ("rank_samples", p._rank_samples),
+            ("rank_query_sort", p._rank_query_sort),
+            ("rank_group_certify", p._rank_group),
+            ("rank_ray_primary", p._rank_ray_primary),
+            ("rank_ray_heavy", p._rank_ray_heavy),
+            ("rank_hit_sort_scan", p._rank_hit_sort),
+            ("rank_assign", p._rank_assign),
+            ("mesh_vertices_scan", p._mesh_vertices),
+            ("mesh_bounds_bvh", p._mesh_index),
+            ("mesh_node_emit_lift", p._mesh_emit),
+        ]
+    load_before = subprocess.check_output(
+        [
+            "nvidia-smi",
+            "--query-gpu=name,driver_version,utilization.gpu,memory.used",
+            "--format=csv,noheader",
+        ],
+        text=True,
+    ).strip()
     graphs = []
     for name, fn in phases:
         with wp.ScopedStream(p.stream), wp.ScopedCapture(stream=p.stream) as capture:
@@ -55,7 +80,16 @@ def main():
         p.read_status()
     result = {
         "scene": str(args.scene) if args.scene else f"stack:{args.stack}",
-        "scope": "Four separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median.",
+        "scope": "Separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median. Noding, emission and world lifting remain fused.",
+        "warp": wp.__version__,
+        "load_before": load_before,
+        "source_sha256": {
+            str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in Path("warp_peel").glob("*.py")
+        },
+        "input_sha256": hashlib.sha256(args.scene.read_bytes()).hexdigest()
+        if args.scene
+        else None,
         "milliseconds": times,
         "median_ms": {k: statistics.median(v) for k, v in times.items()},
         "output": p.read_status(),

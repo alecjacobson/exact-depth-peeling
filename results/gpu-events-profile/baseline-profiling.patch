@@ -1,0 +1,96 @@
+--- a/warp_peel/events.py
++++ b/warp_peel/events.py
+@@ -455,2 +455 @@
+-    def _rank(self):
+-        self._connections()
++    def _rank_samples(self):
+@@ -464,0 +464,2 @@
++
++    def _rank_query_sort(self):
+@@ -468,0 +470,2 @@
++
++    def _rank_group(self):
+@@ -526,0 +530,2 @@
++
++    def _rank_ray_primary(self):
+@@ -543,0 +549,2 @@
++
++    def _rank_ray_heavy(self):
+@@ -560,0 +568,6 @@
++
++    def _rank_traverse(self):
++        self._rank_ray_primary()
++        self._rank_ray_heavy()
++
++    def _rank_hit_sort(self):
+@@ -574,0 +588,2 @@
++
++    def _rank_assign(self):
+@@ -599,0 +615,9 @@
++
++    def _rank(self):
++        self._connections()
++        self._rank_samples()
++        self._rank_query_sort()
++        self._rank_group()
++        self._rank_traverse()
++        self._rank_hit_sort()
++        self._rank_assign()
+@@ -684 +708 @@
+-    def _mesh(self):
++    def _mesh_vertices(self):
+@@ -706,0 +731,2 @@
++
++    def _mesh_index(self):
+@@ -716,0 +743,2 @@
++
++    def _mesh_emit(self):
+@@ -735,0 +764,5 @@
++
++    def _mesh(self):
++        self._mesh_vertices()
++        self._mesh_index()
++        self._mesh_emit()
+--- a/scripts/profile_events.py
++++ b/scripts/profile_events.py
+@@ -4,0 +5 @@
++import hashlib
+@@ -6,0 +8 @@
++import subprocess
+@@ -21,0 +24 @@
++    ap.add_argument("--detailed", action="store_true")
+@@ -38,0 +42,22 @@
++    if args.detailed:
++        phases = phases[:2] + [
++            ("rank_connectivity", p._connections),
++            ("rank_samples", p._rank_samples),
++            ("rank_query_sort", p._rank_query_sort),
++            ("rank_group_certify", p._rank_group),
++            ("rank_ray_primary", p._rank_ray_primary),
++            ("rank_ray_heavy", p._rank_ray_heavy),
++            ("rank_hit_sort_scan", p._rank_hit_sort),
++            ("rank_assign", p._rank_assign),
++            ("mesh_vertices_scan", p._mesh_vertices),
++            ("mesh_bounds_bvh", p._mesh_index),
++            ("mesh_node_emit_lift", p._mesh_emit),
++        ]
++    load_before = subprocess.check_output(
++        [
++            "nvidia-smi",
++            "--query-gpu=name,driver_version,utilization.gpu,memory.used",
++            "--format=csv,noheader",
++        ],
++        text=True,
++    ).strip()
+@@ -58 +83,10 @@
+-        "scope": "Four separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median.",
++        "scope": "Separately captured stage graphs; two warmup sequences then five measured sequences. Diagnostic medians are not the full-graph median. Noding, emission and world lifting remain fused.",
++        "warp": wp.__version__,
++        "load_before": load_before,
++        "source_sha256": {
++            str(p): hashlib.sha256(p.read_bytes()).hexdigest()
++            for p in Path("warp_peel").glob("*.py")
++        },
++        "input_sha256": hashlib.sha256(args.scene.read_bytes()).hexdigest()
++        if args.scene
++        else None,

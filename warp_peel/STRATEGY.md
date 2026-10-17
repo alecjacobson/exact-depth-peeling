@@ -15,6 +15,14 @@ ranks across certified patch adjacencies, including internal mesh edges. It
 reduces ray work but has mixed total-time results; finite-boundary construction
 and general shared ordering remain incomplete.
 
+17 October follow-up: [detailed stage measurements](../results/gpu-events-profile/README.md)
+show that ray traversal/containment and fused boundary noding/mesh emission were
+the largest rank/mesh costs; query and hit sorting were small. Flat source vertex
+storage now removes large polygon values from both ray containment loops. This
+changes representation, not candidate pruning or asymptotics. The remaining
+meshing, preparation, subdivision and adjacency costs deserve priority over
+compacting sort inputs alone.
+
 ## Diagnosis
 
 `kernels.classify` uses contours to certify whole-source depth ranks. For

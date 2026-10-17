@@ -106,6 +106,8 @@ class EventPeeler(DevicePeeler):
         self.beam_valid = zeros(ec.regions, int)
         self.heavy_beams = zeros(ec.regions, wp.vec2i)
         self.heavy_queries = zeros(ec.regions, wp.vec2i)
+        self.source_points = zeros((max(1, self.n), 8), wp.vec2d)
+        self.source_sizes = zeros(max(1, self.n), int)
         self.samples = zeros(ec.regions, wp.vec2d)
         self.query_keys = zeros(2 * ec.regions, wp.float64)
         self.query_ids = zeros(2 * ec.regions, int)
@@ -145,6 +147,14 @@ class EventPeeler(DevicePeeler):
 
     def _prepare(self):
         super()._prepare(classify=False)
+        self._launch(
+            e.flatten_sources,
+            max(1, self.n),
+            self.original,
+            self.source_points,
+            self.source_sizes,
+            self.status,
+        )
         self._launch(
             f.seed,
             max(self.n, self.metrics.size),
@@ -452,8 +462,7 @@ class EventPeeler(DevicePeeler):
             self.status,
         )
 
-    def _rank(self):
-        self._connections()
+    def _rank_samples(self):
         self._launch(
             e.samples,
             self.cap.polygons,
@@ -462,10 +471,14 @@ class EventPeeler(DevicePeeler):
             self.samples,
             self.status,
         )
+
+    def _rank_query_sort(self):
         if self.device.is_capturing:
             self._query_sort_bucket(0, len(self._query_buckets()) - 1)
         else:
             self._sort_queries(self.cap.polygons)
+
+    def _rank_group(self):
         if self.share_regions:
             self._launch(b.reset, self.cap.polygons, self.beam_bounds, self.beam_valid)
             self._launch(
@@ -524,13 +537,16 @@ class EventPeeler(DevicePeeler):
                 self.counts,
                 self.status,
             )
+
+    def _rank_ray_primary(self):
         self._launch(
             e.ray_hits,
             self.cap.polygons,
             self.samples,
             self.query_ids,
             self.groups,
-            self.original,
+            self.source_points,
+            self.source_sizes,
             self.scores,
             self.source_bvh.tree,
             self.counts,
@@ -541,12 +557,15 @@ class EventPeeler(DevicePeeler):
             self.status,
             self.metrics,
         )
+
+    def _rank_ray_heavy(self):
         self._launch(
             e.heavy_ray_hits,
             8192,
             self.samples,
             self.query_ids,
-            self.original,
+            self.source_points,
+            self.source_sizes,
             self.scores,
             self.source_bvh.tree,
             self.counts,
@@ -558,6 +577,12 @@ class EventPeeler(DevicePeeler):
             self.metrics,
             8192,
         )
+
+    def _rank_traverse(self):
+        self._rank_ray_primary()
+        self._rank_ray_heavy()
+
+    def _rank_hit_sort(self):
         self._scan()
         self._launch(
             e.check_hits,
@@ -572,6 +597,8 @@ class EventPeeler(DevicePeeler):
         else:
             # Prime the largest native scratch allocation before capture.
             self._sort_hits(self.event_cap.hits)
+
+    def _rank_assign(self):
         self._launch(
             e.assign_ranks,
             self.cap.polygons,
@@ -597,6 +624,15 @@ class EventPeeler(DevicePeeler):
                 wp.capture_if(self.connection_condition, self._coalesce)
             else:
                 self._coalesce()
+
+    def _rank(self):
+        self._connections()
+        self._rank_samples()
+        self._rank_query_sort()
+        self._rank_group()
+        self._rank_traverse()
+        self._rank_hit_sort()
+        self._rank_assign()
 
     def _query_buckets(self):
         sizes = []
@@ -681,7 +717,7 @@ class EventPeeler(DevicePeeler):
             keys = self.sort_depths if stage == 1 else self.sort_keys
             wp.utils.radix_sort_pairs(keys, self.hit_ids, count=size)
 
-    def _mesh(self):
+    def _mesh_vertices(self):
         self._launch(
             g.vertex_counts, self.cap.polygons, self.output, self.status, self.counts
         )
@@ -704,6 +740,8 @@ class EventPeeler(DevicePeeler):
             self.mesh_tasks,
             self.status,
         )
+
+    def _mesh_index(self):
         self._launch(
             g.point_bounds,
             self.cap.vertices,
@@ -714,6 +752,8 @@ class EventPeeler(DevicePeeler):
             self.point_upper,
         )
         self.point_bvh.rebuild()
+
+    def _mesh_emit(self):
         self._launch(
             g.mesh_edge_tasks,
             self.cap.vertices,
@@ -733,6 +773,11 @@ class EventPeeler(DevicePeeler):
             self.triangle_layers,
             self.cap.edge_vertices,
         )
+
+    def _mesh(self):
+        self._mesh_vertices()
+        self._mesh_index()
+        self._mesh_emit()
 
     def warmup(self):
         if self.device.is_capturing:
